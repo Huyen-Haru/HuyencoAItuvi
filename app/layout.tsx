@@ -5,19 +5,18 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  title: '紫微命盘 · 倪海夏正宗紫微斗数',
-  description: '基于倪海夏正宗紫微斗数体系，AI深度解读您的命盘格局、大限流年、感情事业财富健康全方位解析',
-  keywords: '紫微斗数, 倪海夏, 倪海厦, 紫微斗数全集, 紫微斗数全书, 骨髓赋, 命盘, 命理, 14主星, 12宫位',
-  metadataBase: new URL('https://wdyziweidoushu666.com'),
+  title: 'Tử Vi AI · Luận Giải Lá Số Tử Vi Đầu Số',
+  description: 'Xem lá số Tử Vi Đầu Số theo hệ thống Nghê Hải Hà, AI luận giải chuyên sâu mệnh cách, đại hạn, tình duyên, sự nghiệp, tài lộc và sức khỏe bằng tiếng Việt.',
+  keywords: 'tử vi, tử vi đầu số, lá số tử vi, xem tử vi, nghê hải hà, luận giải tử vi, tử vi AI, tử vi tiếng việt',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: '紫微命盘 · 倪海夏正宗紫微斗数',
-    description: '基于倪海夏正宗紫微斗数体系，AI深度解读您的命盘格局、大限流年、感情事业财富健康全方位解析',
-    url: 'https://wdyziweidoushu666.com',
-    siteName: '紫微研究',
-    locale: 'zh_CN',
+    title: 'Tử Vi AI · Luận Giải Lá Số Tử Vi Đầu Số',
+    description: 'Xem lá số Tử Vi Đầu Số theo hệ thống Nghê Hải Hà, AI luận giải chuyên sâu bằng tiếng Việt.',
+    siteName: 'Tử Vi AI',
+    locale: 'vi_VN',
     type: 'website',
   },
   // 站长平台验证（拿到 verification code 后填入对应字段，重新部署即可）
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('ziwei-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();` }} />
       </head>
