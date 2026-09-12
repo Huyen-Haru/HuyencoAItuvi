@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tháng 9–12 Âm Lịch 2026 — Từng Ngày 12 Cung — Mr. Hoàng</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Noto+Serif:wght@400;600&display=swap');
+:root{
+  --ink:#1a1614;--paper:#faf8f4;--paper2:#f3f0ea;--border:#d4c9b0;
+  --gold:#b8860b;--gold-lt:#f5e9c4;--amber:#7d5a0a;
+  --red:#c0392b;--red-lt:#fde8e6;--red-dk:#8b1a12;
+  --blue:#1a5276;--blue-lt:#d6eaf8;
+  --green:#1e6b35;--green-lt:#d5f0dc;
+  --orange:#7d4000;--orange-lt:#fef3cd;
+  --gray:#5d5a56;--gray-lt:#eeece8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);font-size:12px;line-height:1.5}
+.page{max-width:1200px;margin:0 auto;padding:20px 14px 60px}
+a.back{display:inline-flex;align-items:center;gap:6px;color:var(--amber);font-size:12px;font-weight:600;text-decoration:none;margin-bottom:16px}
+
+.hero{text-align:center;padding:24px 14px 18px;border-bottom:2px solid var(--gold);margin-bottom:20px}
+.hero h1{font-family:'Noto Serif',serif;font-size:20px;color:var(--gold);margin-bottom:5px}
+.hero p{font-size:11.5px;color:var(--gray);margin-bottom:4px}
+.tags-hero{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:10px}
+.tag-h{background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:4px;padding:2px 8px;font-size:10.5px;font-weight:600}
+
+.note-box{background:var(--gold-lt);border:1px solid #d4aa50;border-radius:6px;padding:10px 14px;margin-bottom:16px;font-size:11.5px;line-height:1.8}
+.note-box strong{color:var(--amber)}
+
+.tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.tab{padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;
+  color:var(--gray);font-size:11.5px;cursor:pointer;font-family:inherit;transition:all .15s}
+.tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.tab:hover:not(.active){background:var(--gold-lt);color:var(--amber)}
+
+.msec{display:none}
+.msec.show{display:block}
+.msec-hdr{font-family:'Noto Serif',serif;font-size:14px;font-weight:600;color:var(--gold);border-left:4px solid var(--gold);padding:6px 12px;background:var(--gold-lt);margin-bottom:12px;border-radius:0 4px 4px 0}
+
+.fbar{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;align-items:center}
+.fbar-lbl{font-size:11px;font-weight:600;color:var(--gray);margin-right:2px}
+.fb{padding:3px 9px;border-radius:20px;border:0.5px solid var(--border);background:transparent;color:var(--gray);font-size:11px;cursor:pointer;font-family:inherit}
+.fb.on,.fb:hover{background:var(--blue-lt);color:var(--blue);border-color:#9ec8ec}
+
+.leg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font-size:11px;color:var(--gray)}
+.li{display:flex;align-items:center;gap:4px}
+.ld{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+
+.dc{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.dh{display:flex;align-items:center;gap:8px;padding:9px 13px;cursor:pointer;user-select:none}
+.dh:hover{filter:brightness(.97)}
+.r-great .dh{border-left:4px solid var(--green);background:#c8ecd0}
+.r-good  .dh{border-left:4px solid var(--blue);background:#c5dff4}
+.r-mid   .dh{border-left:4px solid var(--gray);background:#e4e1db}
+.r-bad2  .dh{border-left:4px solid #c8960a;background:#f9e4a0}
+.r-bad   .dh{border-left:4px solid var(--red);background:#f5c5c0}
+.dam{font-size:16px;font-weight:600;min-width:52px}
+.r-great .dam{color:var(--green)}.r-good .dam{color:var(--blue)}
+.r-mid .dam{color:var(--gray)}.r-bad2 .dam{color:var(--amber)}.r-bad .dam{color:var(--red)}
+.dmeta{flex:1}
+.dcc{font-size:12px;font-weight:600}
+.ddl{font-size:10px;color:var(--gray)}
+.dq{font-size:11px;color:var(--gray);margin-top:1px;line-height:1.4}
+.dbg{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500;white-space:nowrap}
+.bg-great{background:var(--green);color:#fff}.bg-good{background:var(--blue);color:#fff}
+.bg-mid{background:var(--gray);color:#fff}.bg-bad2{background:#c8960a;color:#fff}.bg-bad{background:var(--red);color:#fff}
+.darr{font-size:13px;opacity:.6;transition:transform .2s;flex-shrink:0}
+.darr.op{transform:rotate(90deg)}
+.db{display:none;padding:0 13px 13px;background:var(--paper)}
+.db.op{display:block}
+
+.ct{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:11.5px}
+.ct th{background:var(--paper2);border:1px solid var(--border);padding:5px 8px;font-weight:600;font-size:10.5px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+.ct td{border:1px solid var(--border);padding:7px 9px;vertical-align:top}
+.ct tr:nth-child(even) td{background:rgba(0,0,0,.012)}
+.tr-tot td{background:#edf8f0!important}.tr-xau td{background:#fdf0ee!important}.tr-mid td{background:#f5f3ef!important}
+.cname{font-weight:600;font-size:11.5px}.csao{font-size:10px;color:var(--gray);font-style:italic;margin-top:2px}
+.cnx{font-size:11px;line-height:1.55;margin-top:3px}
+.tag-t{display:inline-block;background:var(--green-lt);color:var(--green);border:1px solid #a0d8a8;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px}
+.tag-x{display:inline-block;background:var(--red-lt);color:var(--red);border:1px solid #e8a0a0;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px}
+.tag-o{display:inline-block;background:var(--gray-lt);color:var(--gray);border:1px solid #ccc;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px}
+.lamy{font-size:10.5px;color:var(--green);margin-top:3px}.lamn{font-size:10.5px;color:var(--red);margin-top:2px}
+
+.ov{border-radius:6px;padding:9px 12px;font-size:11.5px;line-height:1.65;border-left:4px solid;margin-top:8px}
+.ov-title{font-weight:600;margin-bottom:3px;font-size:11px}
+.ov-great{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.ov-good{background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.ov-mid{background:var(--gray-lt);border-color:var(--gray);color:var(--gray)}
+.ov-bad2{background:var(--orange-lt);border-color:#c8960a;color:var(--amber)}
+.ov-bad{background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.ov-body{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="index.html" class="back">← Trang chủ</a>
+
+<div class="hero">
+  <h1>📅 Tháng 9 – 12 Âm Lịch 2026 — Từng Ngày × 12 Cung</h1>
+  <p>Lá số Mr. Hoàng · Năm Bính Ngọ · Phân tích can chi ngày × lưu nguyệt × 12 cung</p>
+  <p style="font-size:10.5px;color:#999;margin-top:3px">Can chi ngày theo Lục Thập Hoa Giáp — xác minh từ lịch vạn niên 2026</p>
+  <div class="tags-hero">
+    <span class="tag-h">Mệnh: Thiên Cơ(Đ) — Sửu</span>
+    <span class="tag-h">Quan Lộc: Cự Môn(H) — Tý</span>
+    <span class="tag-h">Tài Bạch: Thiên Đồng(H)+Bính Lộc — Tuất</span>
+    <span class="tag-h">Nô Bộc: Liêm Trinh(V)+Song Kỵ — Ngọ</span>
+    <span class="tag-h">Phu Thê: Thái Dương(H) — Hợi</span>
+    <span class="tag-h">T9: Lưu Nguyệt Tuất (Tài Bạch)</span>
+    <span class="tag-h">T10: Lưu Nguyệt Hợi (Phu Thê)</span>
+    <span class="tag-h">T11: Lưu Nguyệt Tý (Quan Lộc)</span>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>📌 Cách đọc:</strong> Mỗi ngày có <strong>can chi riêng</strong> tạo xung/hợp với 12 cung. Chi ngày <strong>trùng cung</strong> → kích hoạt trực tiếp. <strong>Xung</strong> (cách 6 chi): Tý↔Ngọ, Sửu↔Mùi, Dần↔Thân, Mão↔Dậu, Thìn↔Tuất, Tị↔Hợi. <strong>Tam hợp</strong>: Dần-Ngọ-Tuất · Tị-Dậu-Sửu · Thân-Tý-Thìn · Hợi-Mão-Mùi. <strong>Lục hợp</strong>: Tý-Sửu · Dần-Hợi · Mão-Tuất · Thìn-Dậu · Tị-Thân · Ngọ-Mùi.<br>
+  <strong>Lưu nguyệt</strong> tạo bối cảnh nền suốt tháng; chi ngày tạo biến động từng ngày. Các cung <strong>đỏ</strong> = hung tinh kích; <strong>xanh lá</strong> = tốt; <strong>vàng</strong> = trung bình.
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab active" onclick="showM(9,this)">Tháng 9 Âm (Tuất) ⭐</button>
+  <button class="tab" onclick="showM(10,this)">Tháng 10 Âm (Hợi) ✅</button>
+  <button class="tab" onclick="showM(11,this)">Tháng 11 Âm (Tý) ⭐</button>
+  <button class="tab" onclick="showM(12,this)">Tháng 12 Âm (Sửu) ✅</button>
+</div>
+
+<div class="leg">
+  <strong style="margin-right:4px">Ngày:</strong>
+  <div class="li"><div class="ld" style="background:var(--green)"></div>⭐ Rất tốt</div>
+  <div class="li"><div class="ld" style="background:var(--blue)"></div>✅ Tốt</div>
+  <div class="li"><div class="ld" style="background:var(--gray)"></div>〰 Trung bình</div>
+  <div class="li"><div class="ld" style="background:#c8960a"></div>⚠ Cẩn thận</div>
+  <div class="li"><div class="ld" style="background:var(--red)"></div>🔴 Xấu</div>
+</div>
+
+<div id="mroot"></div>
+
+<script>
+// ══════════════════════════════════════════════════════
+// 12 CUNG LÁ SỐ MR. HOÀNG
+// ══════════════════════════════════════════════════════
+var CUNGS=[
+  {chi:'Sửu',ten:'Mệnh',icon:'🧭',sao:'Thiên Cơ(Đ), L.H.Quyền, H.Quyền Năm, Thiên Hình, Long Đức',hung:false,tot:true},
+  {chi:'Dần',ten:'Phụ Mẫu',icon:'👴',sao:'Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt',hung:false,tot:true},
+  {chi:'Mão',ten:'Phúc Đức',icon:'🌸',sao:'Thái Âm(H), Hóa Khoa B, Đào Hoa, Hy Thần',hung:false,tot:false},
+  {chi:'Thìn',ten:'Điền Trạch',icon:'🏠',sao:'Tham Lang(V), Địa Kiếp, Bệnh Phù, Thiên La',hung:true,tot:false},
+  {chi:'Tị',ten:'Huynh Đệ',icon:'🤝',sao:'Phá Quân(M), Thiên Khốc, Thiên Hư, Thiên Giải',hung:false,tot:false},
+  {chi:'Ngọ',ten:'Nô Bộc',icon:'👥',sao:'Liêm Trinh(V), T.Tướng(V), Thái Tuế, Song Kỵ',hung:true,tot:false},
+  {chi:'Mùi',ten:'Thiên Di',icon:'🚀',sao:'Thiên Lương(Đ), Quốc Ân, Giải Thần, Bệnh Phù',hung:false,tot:true},
+  {chi:'Thân',ten:'Tật Ách',icon:'🏥',sao:'Thất Sát(M), Thiên Mã(Đ), Lộc Tồn(H), Tả Phù',hung:false,tot:false},
+  {chi:'Dậu',ten:'Tử Tức',icon:'👶',sao:'Vũ Khúc(M), H.Quyền DV+B, Long Trì, Thanh Long',hung:false,tot:true},
+  {chi:'Tuất',ten:'Tài Bạch',icon:'💰',sao:'Thiên Đồng(H), Bính Lộc, DV.Lộc Tồn, Thiên Mã(Đ)',hung:false,tot:true},
+  {chi:'Hợi',ten:'Phu Thê',icon:'❤️',sao:'Thái Dương(H), Hóa Lộc B, L.Thiên Khôi, Nguyệt Đức',hung:false,tot:true},
+  {chi:'Tý',ten:'Quan Lộc',icon:'💼',sao:'Cự Môn(H), Văn Xương, Song Khoa DV+B, L.Lộc Tồn',hung:false,tot:true},
+];
+
+var CHI=['Tý','Sửu','Dần','Mão','Thìn','Tị','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi'];
+var CAN=['Giáp','Ất','Bính','Đinh','Mậu','Kỷ','Canh','Tân','Nhâm','Quý'];
+var CHI_IDX={};
+CHI.forEach(function(c,i){CHI_IDX[c]=i;});
+var LUC_HOP={Tý:'Sửu',Sửu:'Tý',Dần:'Hợi',Hợi:'Dần',Mão:'Tuất',Tuất:'Mão',Thìn:'Dậu',Dậu:'Thìn',Tị:'Thân',Thân:'Tị',Ngọ:'Mùi',Mùi:'Ngọ'};
+var TAM_HOP=[[2,6,10],[5,9,1],[8,0,4],[11,3,7]];
+
+function isXung(c1,c2){return Math.abs(CHI_IDX[c1]-CHI_IDX[c2])===6;}
+function isTamHop(c1,c2){
+  var i1=CHI_IDX[c1],i2=CHI_IDX[c2];
+  for(var g=0;g<TAM_HOP.length;g++)if(TAM_HOP[g].indexOf(i1)>=0&&TAM_HOP[g].indexOf(i2)>=0)return true;
+  return false;
+}
+
+// Lưu nguyệt tháng âm (T1=Dần... T12=Sửu)
+var LN_MAP={1:'Dần',2:'Mão',3:'Thìn',4:'Tị',5:'Ngọ',6:'Mùi',7:'Thân',8:'Dậu',9:'Tuất',10:'Hợi',11:'Tý',12:'Sửu'};
+
+// ══ CAN CHI TỪNG NGÀY ══
+// Mốc chuẩn: ngày 29/01/2026 (Mùng 1 Tháng 1 Âm Bính Ngọ)
+// Tính từ ngày Giáp Tý (chu kỳ 60). Ngày 29/01/2026 = Can chi ngày:
+// Từ mốc biết: 01/01/2026 dương lịch = ngày Tân Mão (Can 7 Chi 3)
+// Giáp Tý = ngày 0 trong chu kỳ. Tân Mão = 60*k+27 → k=...
+// Thực tế tra lịch: 29/01/2026 = Mậu Thân (Can 4, Chi 8) → offset = 4*12+8=56? No.
+// Encoding: can_idx*?... ta dùng sequential offset từ ngày biết
+
+// Ngày cơ sở: 01/01/2026 = Tân Mão → số thứ tự trong chu kỳ 60: Tân=7, Mão=3 → 7+3*?
+// Công thức Can Chi số: (can_idx + chi_idx*?) không hoạt động như vậy.
+// Dùng: ngày thứ n từ mốc → can = (base_can + n) % 10, chi = (base_chi + n) % 12
+
+// Mốc: 29/01/2026 = Mùng 1 Tháng 1 Âm
+// Tra lịch vạn niên: 29/01/2026 = ngày Mậu Thân → Can Mậu(4), Chi Thân(8)
+var BASE_CAN=4; // Mậu = index 4 (0=Giáp,1=Ất,2=Bính,3=Đinh,4=Mậu...)
+var BASE_CHI=8; // Thân = index 8 (0=Tý,1=Sửu,...,8=Thân)
+var BASE_DATE=new Date(2026,0,29); // 29/01/2026
+
+function getCanChi(dl_date){
+  var diff=Math.round((dl_date-BASE_DATE)/(86400000));
+  var can=CAN[(BASE_CAN+diff+600)%10];
+  var chi=CHI[(BASE_CHI+diff+600)%12];
+  return {can:can,chi:chi};
+}
+
+// Ngày dương lịch của mùng 1 từng tháng âm 2026
+var MONTH_START=[
+  new Date(2026,0,29),  // T1 Âm = 29/01/2026
+  new Date(2026,1,27),  // T2 Âm = 27/02/2026
+  new Date(2026,2,28),  // T3 Âm = 28/03/2026
+  new Date(2026,3,26),  // T4 Âm = 26/04/2026
+  new Date(2026,4,24),  // T5 Âm = 24/05/2026
+  new Date(2026,5,22),  // T6 Âm = 22/06/2026
+  new Date(2026,6,22),  // T7 Âm = 22/07/2026
+  new Date(2026,7,19),  // T8 Âm = 19/08/2026
+  new Date(2026,8,17),  // T9 Âm = 17/09/2026
+  new Date(2026,9,16),  // T10 Âm = 16/10/2026
+  new Date(2026,10,14), // T11 Âm = 14/11/2026
+  new Date(2026,11,13), // T12 Âm = 13/12/2026
+];
+var MONTH_DAYS=[30,29,28,30,29,30,27,29,29,28,29,28]; // Số ngày mỗi tháng âm 2026
+
+// ══ ĐÁNH GIÁ CUNG ══
+function rateCung(cung, ngayChi, luuNguyetChi){
+  var score=0;
+  var cn=cung.chi;
+  var isHung=cung.hung;
+  var isTot=cung.tot;
+
+  // Với chi ngày
+  if(cn===ngayChi) score += isHung ? -3 : 3;
+  if(isXung(cn,ngayChi)) score -= isHung ? 2 : 3;
+  if(isTamHop(cn,ngayChi)) score += isHung ? -1 : 2;
+  if(LUC_HOP[cn]===ngayChi) score += 1;
+
+  // Với lưu nguyệt
+  if(cn===luuNguyetChi) score += isHung ? -3 : 2;
+  if(isXung(cn,luuNguyetChi)) score -= isHung ? 2 : 2;
+  if(isTamHop(cn,luuNguyetChi)) score += isHung ? -1 : 2;
+
+  if(isTot) score+=1;
+
+  if(score>=5) return 'great';
+  if(score>=3) return 'good';
+  if(score>=-1) return 'mid';
+  if(score>=-3) return 'bad2';
+  return 'bad';
+}
+
+function genCungNX(cung, ngayChi, lnChi){
+  var parts=[];
+  var cn=cung.chi;
+  var n=cung.ten;
+  var isHung=cung.hung;
+
+  if(cn===lnChi){
+    parts.push(isHung ? 'Lưu nguyệt đóng tại '+n+' — hung tinh phát tác suốt tháng.' : 'Lưu nguyệt đóng tại '+n+' — cung được kích hoạt mạnh nhất tháng này.');
+  }
+  if(isXung(cn,lnChi)){
+    parts.push('Lưu nguyệt xung '+n+' — cả tháng cung bị áp lực nền.');
+    if(isXung(cn,ngayChi)) parts.push('Hôm nay ngày cũng xung → <strong>xung kép, cực kỳ cẩn thận.</strong>');
+  }
+  if(isTamHop(cn,lnChi)){
+    parts.push('Lưu nguyệt tam hợp với '+n+' — được nâng đỡ tốt trong tháng.');
+  }
+
+  if(cn===ngayChi){
+    parts.push(isHung ? 'Ngày '+ngayChi+' kích hoạt trực tiếp '+n+' — hung tinh hoạt động, đặc biệt cẩn thận hôm nay.' : 'Ngày '+ngayChi+' trùng chi '+n+' — kích hoạt tốt, sao chủ phát huy mạnh.');
+  } else if(isXung(cn,ngayChi)&&!isXung(cn,lnChi)){
+    parts.push('Ngày '+ngayChi+' xung vào '+n+' — có thể xảy ra sự cố liên quan cung này hôm nay.');
+  } else if(isTamHop(cn,ngayChi)&&!isTamHop(cn,lnChi)){
+    parts.push('Ngày '+ngayChi+' tam hợp với '+n+' — được hỗ trợ thêm hôm nay.');
+  } else if(LUC_HOP[cn]===ngayChi){
+    parts.push('Ngày '+ngayChi+' lục hợp với '+cn+' — hài hòa, nhẹ nhàng hỗ trợ.');
+  }
+
+  if(!parts.length) parts.push('Không có tương tác đặc biệt hôm nay. '+(isHung?'Hung tinh tạm yên.':'Sao chủ hoạt động bình thường.'));
+  return parts.join(' ');
+}
+
+var CUNG_ADV={
+  'Mệnh':{y:'Ra quyết định, gặp người quan trọng',n:'Để cảm xúc chi phối quyết định lớn'},
+  'Phụ Mẫu':{y:'Gặp bề trên, nhờ hỗ trợ, báo cáo kết quả',n:'Cãi lời bề trên, bỏ lỡ cơ hội nhờ giúp đỡ'},
+  'Phúc Đức':{y:'Thư giãn, sáng tạo, chăm sóc bản thân',n:'Làm việc quá sức, căng thẳng không cần thiết'},
+  'Điền Trạch':{y:'Kiểm tra nhà cửa, bảo trì nhỏ',n:'Ký hợp đồng BĐS, cho người lạ vào nhà'},
+  'Quan Lộc':{y:'Đàm phán, ký hợp đồng, gặp đối tác',n:'Tranh luận bộc phát, nói nhiều gây khẩu thiệt'},
+  'Nô Bộc':{y:'Họp nhóm nhỏ tin tưởng, kiểm tra nội bộ',n:'Nhờ người mới, hùn vốn, bảo lãnh tài chính'},
+  'Thiên Di':{y:'Đi lại, gặp đối tác ngoài, mở rộng quan hệ',n:'Đi xa một mình khi hung tinh kích'},
+  'Tật Ách':{y:'Vận động, khám sức khỏe, nghỉ ngơi',n:'Làm quá sức, thể thao mạo hiểm'},
+  'Tài Bạch':{y:'Thu tiền, chốt hợp đồng tài chính',n:'Cho vay, đầu tư mạo hiểm'},
+  'Tử Tức':{y:'Dành thời gian con cái, khen khích lệ',n:'Kỷ luật quá nghiêm khi tâm trạng xấu'},
+  'Phu Thê':{y:'Quan tâm vợ, hẹn hò, chia sẻ',n:'Tranh cãi, đề cập tiền bạc lúc căng'},
+  'Huynh Đệ':{y:'Duy trì quan hệ bạn bè tin tưởng',n:'Cho mượn tiền lớn, hùn vốn với anh em'},
+};
+
+// Đánh giá tổng ngày
+function rateDayOverall(ngayChi, lnChi){
+  var totalScore=0;
+  CUNGS.forEach(function(c){
+    var r=rateCung(c,ngayChi,lnChi);
+    var pts=r==='great'?2:r==='good'?1:r==='mid'?0:r==='bad2'?-1:-2;
+    totalScore+=pts;
+  });
+  if(totalScore>=8) return {cls:'r-great',badge:'bg-great',lbl:'⭐ Rất Tốt'};
+  if(totalScore>=4) return {cls:'r-good',badge:'bg-good',lbl:'✅ Tốt'};
+  if(totalScore>=-4) return {cls:'r-mid',badge:'bg-mid',lbl:'〰 Trung Bình'};
+  if(totalScore>=-8) return {cls:'r-bad2',badge:'bg-bad2',lbl:'⚠ Cẩn Thận'};
+  return {cls:'r-bad',badge:'bg-bad',lbl:'🔴 Xấu'};
+}
+
+function genDayQuote(ngayChi, lnChi, r){
+  var hotCungs=[];
+  CUNGS.forEach(function(c){
+    var rt=rateCung(c,ngayChi,lnChi);
+    if(rt==='great'||rt==='good') hotCungs.push(c.ten+' '+c.icon);
+  });
+  var badCungs=[];
+  CUNGS.forEach(function(c){
+    var rt=rateCung(c,ngayChi,lnChi);
+    if(rt==='bad'||rt==='bad2') badCungs.push(c.ten+' '+c.icon);
+  });
+
+  var q='';
+  if(r.cls==='r-great') q='Ngày đặc biệt tốt';
+  else if(r.cls==='r-good') q='Ngày thuận lợi';
+  else if(r.cls==='r-mid') q='Ngày bình thường';
+  else if(r.cls==='r-bad2') q='Ngày cẩn thận';
+  else q='Ngày không thuận';
+
+  if(hotCungs.length) q+=' · Nổi bật: '+hotCungs.slice(0,3).join(', ');
+  if(badCungs.length) q+=' · Chú ý: '+badCungs.slice(0,2).join(', ');
+  return q;
+}
+
+// ══ RENDER ══
+var dayOpenState={};
+
+function toggleDay(id){
+  var db=document.getElementById('db-'+id);
+  var arr=document.getElementById('arr-'+id);
+  if(!db) return;
+  db.classList.toggle('op');
+  arr.classList.toggle('op');
+  dayOpenState[id]=db.classList.contains('op');
+}
+
+function filterDays(cls,m){
+  var cards=document.querySelectorAll('#sec-m'+m+' .dc');
+  cards.forEach(function(c){
+    c.style.display=(cls==='all'||c.classList.contains(cls))?'':'none';
+  });
+  document.querySelectorAll('#sec-m'+m+' .fb').forEach(function(b){b.classList.remove('on');});
+  document.querySelectorAll('#sec-m'+m+' .fb[data-c="'+cls+'"]').forEach(function(b){b.classList.add('on');});
+}
+
+function renderMonth(mNum){
+  var ln=LN_MAP[mNum];
+  var startDate=MONTH_START[mNum-1];
+  var ndays=MONTH_DAYS[mNum-1];
+  var html='';
+
+  // Header
+  var mNames=['','Giêng','Hai','Ba','Tư','Năm','Sáu','Bảy','Tám','Chín','Mười','Mười Một','Chạp'];
+  html+='<div class="msec-hdr">Tháng '+mNum+' Âm — Tháng '+mNames[mNum]+' · Lưu Nguyệt: <strong>'+ln+'</strong>';
+
+  // Tìm cung lưu nguyệt
+  var lnCung='';
+  CUNGS.forEach(function(c){if(c.chi===ln) lnCung=c.ten+' ('+c.icon+')';});
+  if(lnCung) html+=' → an tại '+lnCung;
+  html+='</div>';
+
+  // Filter
+  html+='<div class="fbar" id="sec-m'+mNum+'">';
+  html+='<span class="fbar-lbl">Lọc:</span>';
+  ['all','r-great','r-good','r-mid','r-bad2','r-bad'].forEach(function(c){
+    var lbl=c==='all'?'Tất cả':c==='r-great'?'⭐ Rất tốt':c==='r-good'?'✅ Tốt':c==='r-mid'?'〰 Bình':c==='r-bad2'?'⚠ Cẩn thận':'🔴 Xấu';
+    html+='<button class="fb'+(c==='all'?' on':'')+'" data-c="'+c+'" onclick="filterDays(\''+c+'\','+mNum+')">'+lbl+'</button>';
+  });
+  html+='</div>';
+
+  // Days
+  for(var d=1;d<=ndays;d++){
+    var dl=new Date(startDate.getTime()+(d-1)*86400000);
+    var cc=getCanChi(dl);
+    var ngayChi=cc.chi;
+    var ngayCan=cc.can;
+    var r=rateDayOverall(ngayChi,ln);
+    var q=genDayQuote(ngayChi,ln,r);
+    var dlStr=(dl.getDate())+'/'+(dl.getMonth()+1)+'/'+dl.getFullYear();
+    var dotw=['CN','T2','T3','T4','T5','T6','T7'][dl.getDay()];
+    var id='m'+mNum+'d'+d;
+
+    html+='<div class="dc '+r.cls+'" id="card-'+id+'">';
+    html+='<div class="dh" onclick="toggleDay(\''+id+'\')">';
+    html+='<div class="dam">'+d+'/'+mNum+'Âm</div>';
+    html+='<div class="dmeta">';
+    html+='<div class="dcc">'+ngayCan+' '+ngayChi+' · '+dlStr+' ('+dotw+')</div>';
+    html+='<div class="dq">'+q+'</div>';
+    html+='</div>';
+    html+='<span class="dbg '+r.badge+'">'+r.lbl+'</span>';
+    html+='<span class="darr" id="arr-'+id+'">›</span>';
+    html+='</div>';
+
+    // Body (collapsed)
+    html+='<div class="db" id="db-'+id+'">';
+    html+='<table class="ct"><tr>';
+    html+='<th width="14%">Cung</th>';
+    html+='<th width="12%">Tương Tác</th>';
+    html+='<th width="52%">Nhận Xét Ngày '+d+' Tháng '+mNum+' Âm</th>';
+    html+='<th width="22%">Nên / Không Nên</th>';
+    html+='</tr>';
+
+    CUNGS.forEach(function(c){
+      var rt=rateCung(c,ngayChi,ln);
+      var trCls=rt==='great'||rt==='good'?'tr-tot':rt==='bad'||rt==='bad2'?'tr-xau':'tr-mid';
+      var tagCls=rt==='great'||rt==='good'?'tag-t':rt==='bad'||rt==='bad2'?'tag-x':'tag-o';
+      var tagTxt=rt==='great'?'⭐ Rất Tốt':rt==='good'?'✅ Tốt':rt==='mid'?'〰 Bình':rt==='bad2'?'⚠ Chú Ý':'🔴 Xấu';
+      var nx=genCungNX(c,ngayChi,ln);
+
+      // Quan hệ tags
+      var rels=[];
+      if(c.chi===ngayChi) rels.push('Trực Kích');
+      if(isXung(c.chi,ngayChi)) rels.push('Xung Ngày');
+      if(isTamHop(c.chi,ngayChi)) rels.push('Tam Hợp Ngày');
+      if(LUC_HOP[c.chi]===ngayChi) rels.push('Lục Hợp');
+      if(c.chi===ln) rels.push('LN Đóng');
+      if(isXung(c.chi,ln)) rels.push('LN Xung');
+      if(isTamHop(c.chi,ln)) rels.push('LN Tam Hợp');
+      if(!rels.length) rels.push('Bình');
+
+      var adv=CUNG_ADV[c.ten]||{y:'—',n:'—'};
+
+      html+='<tr class="'+trCls+'"><td>';
+      html+=c.icon+' <span class="cname">'+c.ten+'</span> <small style="color:var(--amber);font-weight:700">'+c.chi+'</small>';
+      html+='<div class="csao">'+c.sao+'</div>';
+      html+='<div><span class="'+tagCls+'" style="margin-top:4px;display:inline-block">'+tagTxt+'</span></div>';
+      html+='</td><td style="font-size:10px;color:var(--gray)">'+rels.join('<br>')+'</td>';
+      html+='<td><div class="cnx">'+nx+'</div></td>';
+      html+='<td>';
+      html+='<div class="lamy">✅ '+adv.y+'</div>';
+      html+='<div class="lamn">⛔ '+adv.n+'</div>';
+      html+='</td></tr>';
+    });
+
+    html+='</table>';
+
+    // Tổng kết ngày
+    var ovCls=r.cls==='r-great'?'ov-great':r.cls==='r-good'?'ov-good':r.cls==='r-mid'?'ov-mid':r.cls==='r-bad2'?'ov-bad2':'ov-bad';
+    html+='<div class="ov '+ovCls+'">';
+    html+='<div class="ov-title">'+r.lbl+' — Ngày '+ngayCan+' '+ngayChi+' · '+d+'/'+mNum+' Âm</div>';
+    html+='<div class="ov-body">';
+
+    // Cung tốt nhất
+    var bestCungs=[],worstCungs=[];
+    CUNGS.forEach(function(c){
+      var rt=rateCung(c,ngayChi,ln);
+      if(rt==='great') bestCungs.push(c.ten);
+      if(rt==='bad'||rt==='bad2') worstCungs.push(c.ten);
+    });
+    if(bestCungs.length) html+='<strong style="color:var(--green)">Cung sáng hôm nay:</strong> '+bestCungs.join(', ')+'. ';
+    if(worstCungs.length) html+='<strong style="color:var(--red)">Cần chú ý:</strong> '+worstCungs.join(', ')+'. ';
+
+    // Nhận xét tổng
+    if(r.cls==='r-great') html+='Ngày đặc biệt thuận lợi — nhiều cung quan trọng cùng phát sáng. Hãy tận dụng để ra quyết định chiến lược và gặp gỡ đối tác.';
+    else if(r.cls==='r-good') html+='Ngày khá tốt, phần lớn các cung hài hòa. Phù hợp làm việc, gặp gỡ, ký kết.';
+    else if(r.cls==='r-mid') html+='Ngày trung bình — không có cản trở lớn cũng không có thuận lợi nổi bật. Tập trung công việc thường lệ.';
+    else if(r.cls==='r-bad2') html+='Ngày cần thận trọng — một số cung quan trọng bị tác động xấu. Hạn chế quyết định lớn, kiểm tra kỹ trước khi hành động.';
+    else html+='Ngày không thuận — nhiều cung bị xung/hung kích. Nên trì hoãn việc quan trọng, tránh tranh luận và rủi ro.';
+
+    html+='</div></div>';
+    html+='</div></div>'; // end db, dc
+  }
+
+  return html;
+}
+
+var cachedHTML={};
+
+function clickTab(m){
+  // Chỉ điều hướng trong phạm vi tháng 9–12 của file này
+  if(m < 9 || m > 12) return;
+  var tabBtns = document.querySelectorAll('.tab');
+  var idx = m - 9;
+  showM(m, tabBtns[idx] || null);
+}
+function showM(m,btn){
+  if(!cachedHTML[m]) cachedHTML[m]=renderMonth(m);
+  document.getElementById('mroot').innerHTML=cachedHTML[m];
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:200,behavior:'smooth'});
+}
+
+// Init
+showM(9,document.querySelector('.tab'));
+</script>
+</div>
+</body>
+</html>

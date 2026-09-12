@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tổng Luận Năm Bính Ngọ 2026 — Lá Số Mr. Hoàng</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+:root{
+  --ink:#1a1614;--paper:#faf8f4;--paper2:#f3f0ea;--border:#d4c9b0;
+  --gold:#b8860b;--gold-lt:#f5e9c4;--amber:#7d5a0a;
+  --red:#c0392b;--red-lt:#fde8e6;--red-dk:#8b1a12;
+  --blue:#1a5276;--blue-lt:#d6eaf8;
+  --green:#1e6b35;--green-lt:#d5f0dc;
+  --orange:#7d4000;--orange-lt:#fef3cd;
+  --gray:#5d5a56;--gray-lt:#eeece8;
+  --purple:#4a235a;--purple-lt:#ede0f5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.6}
+.page{max-width:960px;margin:0 auto;padding:24px 16px 80px}
+a.back{display:inline-flex;align-items:center;gap:6px;color:var(--amber);font-size:12px;font-weight:600;text-decoration:none;margin-bottom:20px}
+a.back:hover{color:var(--gold)}
+
+/* HERO */
+.hero{text-align:center;padding:32px 16px 24px;border-bottom:2px solid var(--gold);margin-bottom:28px;background:linear-gradient(180deg,#fff8e8 0%,transparent 100%);border-radius:8px 8px 0 0}
+.hero h1{font-family:'Noto Serif',serif;font-size:22px;color:var(--gold);margin-bottom:8px}
+.hero-sub{font-size:12px;color:var(--gray);margin-bottom:14px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ht{background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:4px;padding:3px 10px;font-size:11px;font-weight:600}
+.ht-red{background:var(--red-lt);color:var(--red-dk);border:1px solid #e8a0a0}
+.ht-blue{background:var(--blue-lt);color:var(--blue);border:1px solid #9ec8ec}
+.ht-green{background:var(--green-lt);color:var(--green);border:1px solid #a0d8a8}
+.ht-purple{background:var(--purple-lt);color:var(--purple);border:1px solid #c8a0e0}
+
+/* SECTION */
+.sec{margin-bottom:32px}
+.sec-hdr{
+  font-family:'Noto Serif',serif;font-size:15px;font-weight:600;color:var(--gold);
+  border-left:4px solid var(--gold);padding:8px 14px;background:var(--gold-lt);
+  margin-bottom:16px;border-radius:0 6px 6px 0;display:flex;align-items:center;gap:8px;
+}
+.sec-hdr .ico{font-size:18px}
+
+/* SUMMARY CARD */
+.sum-card{
+  background:linear-gradient(135deg,#1a1208 0%,#2d1f08 100%);
+  color:#f5e9c4;border-radius:10px;padding:20px 24px;margin-bottom:20px;
+}
+.sum-card h2{font-family:'Noto Serif',serif;font-size:17px;color:#f5d060;margin-bottom:12px}
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.sg-item{background:rgba(255,255,255,.08);border-radius:6px;padding:10px 14px;border-left:3px solid}
+.sg-item.g{border-color:#5dbd77}
+.sg-item.r{border-color:#e87070}
+.sg-item.y{border-color:#d4aa50}
+.sg-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:#c8b882;font-weight:600;margin-bottom:3px}
+.sg-val{font-size:12.5px;color:#f5e9c4;line-height:1.5}
+
+/* RATING BAR */
+.rating-section{margin:20px 0}
+.rating-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.r-label{font-size:12px;font-weight:600;min-width:120px;color:var(--ink)}
+.r-bar-wrap{flex:1;min-width:140px;height:10px;background:var(--gray-lt);border-radius:5px;overflow:hidden}
+.r-bar{height:100%;border-radius:5px;transition:width .5s}
+.r-score{font-size:11px;font-weight:700;min-width:28px}
+.sc-9{background:linear-gradient(90deg,#2ecc71,#27ae60);color:var(--green)}
+.sc-8{background:linear-gradient(90deg,#52be80,#1e8449);color:var(--green)}
+.sc-7{background:linear-gradient(90deg,#5dade2,#2980b9);color:var(--blue)}
+.sc-6{background:linear-gradient(90deg,#f0b429,#d4aa50);color:var(--amber)}
+.sc-5{background:linear-gradient(90deg,#f39c12,#d68910);color:var(--orange)}
+.sc-4{background:linear-gradient(90deg,#e67e22,#ca6f1e);color:var(--orange)}
+.sc-3{background:linear-gradient(90deg,#e74c3c,#c0392b);color:var(--red)}
+.r-note{font-size:11px;color:var(--gray);flex-basis:100%;padding-left:130px}
+
+/* CUNG TABLE */
+.cung-table{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:12px}
+.cung-table th{background:var(--paper2);border:1px solid var(--border);padding:7px 10px;
+  font-weight:600;font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}
+.cung-table td{border:1px solid var(--border);padding:9px 11px;vertical-align:top}
+.cung-table tr:nth-child(even) td{background:rgba(0,0,0,.012)}
+.ct-menh td{background:#fffaee!important}
+.ct-tot td{background:#edf8f0!important}
+.ct-xau td{background:#fdf0ee!important}
+.ct-warn td{background:#fef9ed!important}
+
+.cname{font-weight:700;font-size:12px;color:var(--ink)}
+.cchi{font-size:10px;color:var(--amber);font-weight:700;margin-left:4px}
+.csao{font-size:10px;color:var(--gray);font-style:italic;margin-top:2px;line-height:1.4}
+.crating{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10.5px;font-weight:700}
+.cr-tot{background:var(--green);color:#fff}
+.cr-kha{background:var(--blue);color:#fff}
+.cr-mid{background:var(--gray);color:#fff}
+.cr-can{background:#c8960a;color:#fff}
+.cr-xau{background:var(--red);color:#fff}
+
+.cung-desc{font-size:11.5px;line-height:1.65;color:var(--ink)}
+.cung-good{font-size:11px;color:var(--green);margin-top:4px}
+.cung-bad{font-size:11px;color:var(--red);margin-top:2px}
+
+/* HIGHLIGHTS */
+.highlight-box{border-radius:8px;padding:14px 16px;margin-bottom:12px;border-left:4px solid;font-size:12px;line-height:1.7}
+.hb-gold{background:var(--gold-lt);border-color:var(--gold);color:var(--amber)}
+.hb-red{background:var(--red-lt);border-color:var(--red);color:var(--red-dk)}
+.hb-green{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.hb-blue{background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.hb-purple{background:var(--purple-lt);border-color:var(--purple);color:var(--purple)}
+.hb-title{font-weight:700;font-size:12.5px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.hb-body{color:var(--ink)}
+
+/* PERIOD TABLE */
+.period-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:12px}
+.period-table th{background:var(--paper2);border:1px solid var(--border);padding:7px 10px;font-size:11px;font-weight:600;color:var(--gray)}
+.period-table td{border:1px solid var(--border);padding:8px 10px;vertical-align:top}
+.period-table tr:hover td{background:rgba(184,134,11,.04)}
+.pd-month{font-weight:700;color:var(--gold);font-size:12px}
+.pd-rating{text-align:center}
+.pd-note{font-size:11px;color:var(--gray);margin-top:2px}
+
+/* TAM PHUONG */
+.tam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:16px}
+.tam-card{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.tam-hdr{background:var(--paper2);padding:9px 14px;font-weight:700;font-size:12px;color:var(--ink);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px}
+.tam-body{padding:12px 14px;font-size:11.5px;line-height:1.65}
+.tam-cung{display:inline-block;background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:3px;padding:1px 6px;font-size:10.5px;font-weight:700;margin:1px}
+
+/* MONTH QUICK */
+.month-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.mth-pill{
+  padding:5px 12px;border-radius:20px;font-size:11.5px;font-weight:600;
+  border:1px solid;cursor:default;
+}
+.mp-tot{background:var(--green-lt);color:var(--green);border-color:#a0d8a8}
+.mp-kha{background:var(--blue-lt);color:var(--blue);border-color:#9ec8ec}
+.mp-mid{background:var(--gray-lt);color:var(--gray);border-color:#ccc}
+.mp-can{background:var(--orange-lt);color:var(--orange);border-color:#d4aa50}
+.mp-xau{background:var(--red-lt);color:var(--red);border-color:#e8a0a0}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:24px 0}
+</style>
+</head>
+<body>
+<div class="page">
+
+<a href="index.html" class="back">← Trang chủ</a>
+
+<div class="hero">
+  <h1>🌟 Tổng Luận Năm Bính Ngọ 2026</h1>
+  <div class="hero-sub">Phân tích chuyên sâu lá số Mr. Hoàng · Đại Vận Bính Tuất · Hạn La Hầu · Tuổi 37</div>
+  <div class="hero-tags">
+    <span class="ht">Mệnh Sửu · Thiên Cơ Đắc</span>
+    <span class="ht-green">Tứ Hóa: Lộc→Tài Bạch ✦</span>
+    <span class="ht-green">Quyền→Mệnh ✦</span>
+    <span class="ht-blue">Khoa→Quan Lộc</span>
+    <span class="ht-red">Kỵ→Nô Bộc ⚠</span>
+    <span class="ht-red">Ngọ xung Tý (Quan Lộc) ⚠</span>
+    <span class="ht-purple">Dần-Ngọ-Tuất Tam Hợp Hỏa ✦</span>
+  </div>
+</div>
+
+<!-- ═══ NHẬN ĐỊNH TỔNG QUAN ═══ -->
+<div class="sec">
+  <div class="sec-hdr"><span class="ico">☯</span>Nhận Định Tổng Quan Năm Bính Ngọ</div>
+
+  <div class="sum-card">
+    <h2>Năm 2026 — Năm của Biến Động & Tăng Trưởng Tài Lộc</h2>
+    <p style="font-size:12.5px;line-height:1.7;color:#e8d8b0;margin-bottom:16px">
+      Năm Bính Ngọ 2026 là năm có <strong style="color:#f5d060">tứ hóa cực kỳ thuận lợi cho tài chính và quyền lực cá nhân</strong> nhưng đồng thời cũng là năm chịu <strong style="color:#ff8a7a">áp lực lớn ở Quan Lộc và Nô Bộc</strong>. Chi Ngọ của năm xung thẳng vào Quan Lộc (Tý — Cự Môn Hãm), tạo ra sóng gió trong sự nghiệp, tranh chấp, khẩu thiệt, thay đổi nhân sự cấp cao. Tuy nhiên, Dần-Ngọ-Tuất tam hợp Hỏa kích hoạt bộ 3 Phụ Mẫu–Nô Bộc–Tài Bạch, cộng với Bính Lộc đổ vào Thiên Đồng tại Tài Bạch — đây là năm tiền vào mạnh, đặc biệt từ mạng lưới quan hệ và hỗ trợ từ bề trên.
+    </p>
+    <div class="sum-grid">
+      <div class="sg-item g"><div class="sg-lbl">Tài Chính</div><div class="sg-val">⭐⭐⭐⭐ Rất tốt — Bính Lộc kích Tài Bạch, Thiên Mã động, tiền chảy vào từ nhiều nguồn</div></div>
+      <div class="sg-item g"><div class="sg-lbl">Quyền Lực / Lãnh Đạo</div><div class="sg-val">⭐⭐⭐⭐ Rất tốt — Bính Quyền kích Thiên Cơ tại Mệnh, tự tin, quyết đoán vượt trội</div></div>
+      <div class="sg-item r"><div class="sg-lbl">Sự Nghiệp / Công Việc</div><div class="sg-val">⚠⚠⚠ Thách thức — Ngọ xung Tý/Quan Lộc, dễ tranh chấp quyền lực, mất nhân sự chủ chốt</div></div>
+      <div class="sg-item y"><div class="sg-lbl">Hôn Nhân</div><div class="sg-val">〰 Trung bình — Phu Thê (Hợi) bị Huynh Đệ (Tị) xung, cần chủ động quan tâm vợ</div></div>
+      <div class="sg-item g"><div class="sg-lbl">Con Cái</div><div class="sg-val">⭐⭐⭐ Tốt — Tử Tức (Dậu/Vũ Khúc Miếu) ổn định, con phát triển tốt</div></div>
+      <div class="sg-item r"><div class="sg-lbl">Sức Khỏe</div><div class="sg-val">⚠⚠ Cần chú ý — La Hầu tại Nô Bộc gián tiếp ảnh hưởng Tật Ách, căng thẳng thần kinh</div></div>
+      <div class="sg-item g"><div class="sg-lbl">Bất Động Sản</div><div class="sg-val">⭐⭐ Thận trọng — Điền Trạch (Thìn/Tham Lang Vượng) có Bính Kỵ Liêm Trinh xung, chưa nên mua</div></div>
+      <div class="sg-item y"><div class="sg-lbl">Danh Tiếng</div><div class="sg-val">⭐⭐⭐ Tốt — Bính Khoa kích Văn Xương tại Quan Lộc, tiếng tốt lan rộng dù có thị phi</div></div>
+    </div>
+  </div>
+
+  <div class="highlight-box hb-gold">
+    <div class="hb-title">✦ Cơ Chế Nền Tảng: Đại Vận Bính Tuất (tuổi 31–40) × Năm Bính Ngọ</div>
+    <div class="hb-body">
+      Đây là điểm đặc biệt hiếm gặp: <strong>Đại Vận và Năm Hành cùng Can Bính</strong>, khiến Tứ Hóa Bính được tăng cường gấp đôi. Đại Vận an tại chi <strong>Tuất</strong> (Tài Bạch) với Thiên Đồng–Thiên Mã–Lộc Tồn đại vận; Chi Ngọ của năm tạo <strong>tam hợp Dần-Ngọ-Tuất Hỏa Cục</strong> kích bộ 3: Phụ Mẫu (Dần/Tử Vi+Thiên Phú) – Nô Bộc (Ngọ/Liêm Trinh+Thiên Tướng) – Tài Bạch (Tuất/Thiên Đồng). Kết quả: <strong>tiền bạc từ nhiều nguồn chảy về, được bề trên và mạng lưới hỗ trợ mạnh</strong>. Đây là cơ sở để năm 2026 trở thành năm bứt phá tài chính dù sự nghiệp có sóng.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TỨ HÓA NĂM ═══ -->
+<div class="sec">
+  <div class="sec-hdr"><span class="ico">✦</span>Tứ Hóa Năm Bính — Tác Động Lên 12 Cung</div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px">
+    <div class="highlight-box hb-green" style="margin-bottom:0">
+      <div class="hb-title">🟢 Hóa Lộc — Thiên Đồng</div>
+      <div class="hb-body">Thiên Đồng tọa <strong>Tài Bạch (Tuất)</strong>. Bính Lộc đổ thẳng vào cung tài chính — đây là Lộc Nhập Tài Bạch, cung bậc cao nhất của tài lộc. Thiên Đồng tuy Hãm địa tại Tuất nhưng được Hóa Lộc kéo lên mạnh. Tiền đến từ: dịch vụ, quan hệ, thụ hưởng. Thiên Mã đồng cung tăng tốc luân chuyển tiền. <strong>Năm này tiền vào nhiều nhưng cũng chi nhiều — cần quản lý dòng tiền.</strong></div>
+    </div>
+    <div class="highlight-box hb-green" style="margin-bottom:0">
+      <div class="hb-title">🟢 Hóa Quyền — Thiên Cơ</div>
+      <div class="hb-body">Thiên Cơ tọa <strong>Mệnh (Sửu)</strong>. Bính Quyền hội với L.Hóa Quyền đã có tại Mệnh → <strong>Song Quyền</strong> — quyền lực cá nhân đạt đỉnh trong đại vận này. Thiên Cơ Đắc địa + Song Quyền = tư duy sắc bén, khả năng hoạch định chiến lược vượt trội, dễ thuyết phục người khác. Đây là năm để Mr. Hoàng khẳng định vị thế lãnh đạo.</div>
+    </div>
+    <div class="highlight-box hb-blue" style="margin-bottom:0">
+      <div class="hb-title">🔵 Hóa Khoa — Văn Xương</div>
+      <div class="hb-body">Văn Xương tọa <strong>Quan Lộc (Tý)</strong>. Bính Khoa + L.Hóa Khoa đã ở đây = <strong>Song Khoa tại Quan Lộc</strong>. Dù Cự Môn Hãm tạo thị phi, Văn Xương mang tính văn học, hợp đồng, đàm phán — Song Khoa giúp danh tiếng được bảo vệ. Ký hợp đồng quan trọng, trình bày dự án, họp báo năm này đều được ủng hộ bởi Hóa Khoa.</div>
+    </div>
+    <div class="highlight-box hb-red" style="margin-bottom:0">
+      <div class="hb-title">🔴 Hóa Kỵ — Liêm Trinh</div>
+      <div class="hb-body">Liêm Trinh tọa <strong>Nô Bộc (Ngọ)</strong>. Bính Kỵ + L.Hóa Kỵ = <strong>Song Kỵ tại Nô Bộc</strong>. Đây là điểm yếu lớn nhất năm 2026: nhân viên phản bội, đối tác gian lận, bạn hữu có vấn đề. Liêm Trinh chủ về hình sự, tù đày, phiền não — Kỵ tại đây cực kỳ nguy hiểm về chuyện nhân sự và hợp tác. <strong>Tuyệt đối không bảo lãnh, hùn vốn với người quen mới.</strong></div>
+    </div>
+  </div>
+
+  <div class="highlight-box hb-purple">
+    <div class="hb-title">⚠ Xung Chiếu Năm Ngọ → Quan Lộc (Tý)</div>
+    <div class="hb-body">Chi Ngọ (Thái Tuế) của năm Bính Ngọ <strong>xung thẳng vào Tý (Quan Lộc)</strong>. Cự Môn tại Quan Lộc vốn đã Hãm địa, tượng tranh cãi, thị phi, miệng tiếng — nay bị xung bởi Thái Tuế: <strong>năm này sự nghiệp có biến động lớn</strong>, có thể: thay đổi mô hình kinh doanh, mất hoặc thêm đối tác chiến lược, kiện tụng nhỏ, bị đặt điều. Tuy nhiên Bính Khoa (Song Khoa) tại Quan Lộc bảo vệ danh tiếng. <em>Nếu chủ động cải tổ công ty trước khi bị động — đây là cơ hội tốt.</em></div>
+  </div>
+</div>
+
+<!-- ═══ TAM PHƯƠNG TỨ CHÍNH ═══ -->
+<div class="sec">
+  <div class="sec-hdr"><span class="ico">⬡</span>Phân Tích Tam Phương Tứ Chính</div>
+
+  <div class="tam-grid">
+
+    <div class="tam-card">
+      <div class="tam-hdr">🧭 Tam Phương Mệnh — <span class="tam-cung">Sửu</span><span class="tam-cung">Tị</span><span class="tam-cung">Dậu</span></div>
+      <div class="tam-body">
+        <strong>Tị-Dậu-Sửu: Tam hợp Kim Cục</strong><br>
+        • <strong>Mệnh (Sửu)</strong>: Thiên Cơ Đắc + Song Quyền 2026 → Bản thân mạnh, chủ động<br>
+        • <strong>Huynh Đệ (Tị)</strong>: Phá Quân Miếu + Thiên Khốc + Thiên Hư → Bạn bè, anh em có tính cách mạnh, đôi khi gây rắc rối; Phá Quân chiếu vào Mệnh qua tam phương: đổi mới, phá vỡ cũ để lập mới — phù hợp với vai trò Giám đốc điều hành đổi mới<br>
+        • <strong>Tử Tức (Dậu)</strong>: Vũ Khúc Miếu + Hóa Quyền → Con cái mạnh mẽ, tài năng; Vũ Khúc chiếu vào Mệnh: tính khí cương quyết trong tiền bạc và lãnh đạo<br>
+        <strong style="color:var(--green)">Nhận định 2026:</strong> Tam phương Mệnh được hội chiếu tốt — bản thân được ủng hộ từ tử tức (con cái là phúc đức), đổi mới tư duy kinh doanh là hướng đúng.
+      </div>
+    </div>
+
+    <div class="tam-card">
+      <div class="tam-hdr">💼 Tam Phương Quan Lộc — <span class="tam-cung">Tý</span><span class="tam-cung">Thân</span><span class="tam-cung">Thìn</span></div>
+      <div class="tam-body">
+        <strong>Thân-Tý-Thìn: Tam hợp Thủy Cục</strong><br>
+        • <strong>Quan Lộc (Tý)</strong>: Cự Môn Hãm + Song Khoa + L.Lộc Tồn → Nghề nghiệp có tiếng tốt nhưng nhiều thị phi<br>
+        • <strong>Tật Ách (Thân)</strong>: Thất Sát Miếu + Thiên Mã + Lộc Tồn → Thất Sát chiếu vào Quan Lộc: sự nghiệp mang tính cạnh tranh cao, quyết đoán, đôi khi phải đấu tranh<br>
+        • <strong>Điền Trạch (Thìn)</strong>: Tham Lang Vượng + Địa Kiếp + Bệnh Phù → Tham Lang chiếu vào Quan Lộc: sự nghiệp trong lĩnh vực giao tiếp rộng, thuyết phục, networking<br>
+        <strong style="color:var(--red)">Cảnh báo 2026:</strong> Ngọ năm xung Tý — Thái Tuế xung Quan Lộc mạnh. Thất Sát từ Tật Ách chiếu tăng áp lực. Tuy nhiên Tham Lang Vượng từ Điền Trạch chiếu hỗ trợ — dùng network để vượt khó.
+      </div>
+    </div>
+
+    <div class="tam-card">
+      <div class="tam-hdr">💰 Tam Phương Tài Bạch — <span class="tam-cung">Tuất</span><span class="tam-cung">Dần</span><span class="tam-cung">Ngọ</span></div>
+      <div class="tam-body">
+        <strong>Dần-Ngọ-Tuất: Tam hợp Hỏa Cục</strong><br>
+        • <strong>Tài Bạch (Tuất)</strong>: Thiên Đồng + Bính Lộc + DV.Lộc Tồn + Thiên Mã → Lộc nhập, tiền chảy vào mạnh<br>
+        • <strong>Phụ Mẫu (Dần)</strong>: Tử Vi Miếu + Thiên Phú Miếu → Bề trên, người đỡ đầu, ngân hàng hỗ trợ tài chính — Tử Vi chiếu vào Tài Bạch: nguồn tiền từ bề trên, từ thương hiệu uy tín<br>
+        • <strong>Nô Bộc (Ngọ)</strong>: Liêm Trinh + Thiên Tướng + Song Kỵ → Nhân viên/đối tác đóng góp vào tài chính nhưng cũng gây thất thoát; Liêm Trinh + Kỵ chiếu vào Tài Bạch: có tiền vào nhưng cũng bị thất thoát qua nhân sự, kiện tụng<br>
+        <strong style="color:var(--green)">Nhận định 2026:</strong> Tam phương Tài Bạch được kích mạnh nhất năm — <em>đây là năm tài chính bứt phá</em>. Cần kiểm soát dòng tiền phía Nô Bộc (đối tác, nhân sự).
+      </div>
+    </div>
+
+    <div class="tam-card">
+      <div class="tam-hdr">❤️ Tam Phương Phu Thê — <span class="tam-cung">Hợi</span><span class="tam-cung">Mão</span><span class="tam-cung">Mùi</span></div>
+      <div class="tam-body">
+        <strong>Hợi-Mão-Mùi: Tam hợp Mộc Cục</strong><br>
+        • <strong>Phu Thê (Hợi)</strong>: Thái Dương Hãm + Hóa Lộc bản + L.Thiên Khôi → Vợ hoặc người yêu có năng lực, hào phóng; Thái Dương Hãm: đôi khi tình cảm không sáng rõ như mong đợi<br>
+        • <strong>Phúc Đức (Mão)</strong>: Thái Âm Hãm + Hóa Khoa bản → Tâm hồn sâu sắc, có phúc đức; Thái Âm chiếu vào Phu Thê: tình cảm tế nhị, cần được quan tâm bằng hành động<br>
+        • <strong>Thiên Di (Mùi)</strong>: Thiên Lương Đắc + Quốc Ân + Giải Thần → Thiên Lương chiếu vào Phu Thê: hôn nhân được Thiên Lương bảo hộ, bền vững, nhưng có tính giám hộ/kiểm soát<br>
+        <strong style="color:var(--amber)">Nhận định 2026:</strong> Hôn nhân ổn định nhờ Thiên Lương bảo hộ, nhưng Hợi bị Tị (Huynh Đệ/Phá Quân) xung — dễ có xung đột từ bạn bè/quan hệ bên ngoài ảnh hưởng tình cảm vợ chồng.
+      </div>
+    </div>
+  </div>
+
+  <!-- TỨ CHÍNH XUNG CHIẾU -->
+  <div class="sec-hdr" style="font-size:13px"><span class="ico">↔</span>Tứ Chính — Xung Chiếu Ngang Dọc</div>
+  <table class="cung-table" style="margin-bottom:16px">
+    <tr>
+      <th width="22%">Cặp Xung Chiếu</th>
+      <th width="35%">Phân Tích Tương Tác</th>
+      <th width="43%">Tác Động Thực Tế 2026</th>
+    </tr>
+    <tr class="ct-warn">
+      <td><strong>Mệnh (Sửu)</strong><br><span style="color:var(--gray);font-size:10px">Thiên Cơ Đắc</span><br>↔<br><strong>Thiên Di (Mùi)</strong><br><span style="color:var(--gray);font-size:10px">Thiên Lương Đắc</span></td>
+      <td>Hai ngôi sao đều Đắc địa, đối xung nhau tạo <strong>Song Đắc xung chiếu</strong>. Thiên Cơ chủ biến đổi, tư mưu; Thiên Lương chủ sự nghiêm túc, giám hộ. Mệnh–Thiên Di xung: bản thân vs. môi trường bên ngoài, di chuyển, hợp tác ngoài.</td>
+      <td>Năm 2026 có Bính Quyền tại Mệnh và Thiên Lương Đắc giữ Thiên Di → <strong>ra quyết định nhanh và dứt khoát</strong>. Thích hợp mở rộng thị trường, đàm phán ngoài tỉnh/ngoài nước. Hạn chế: dễ thay đổi kế hoạch đột ngột gây mất ổn định.</td>
+    </tr>
+    <tr class="ct-xau">
+      <td><strong>Quan Lộc (Tý)</strong><br><span style="color:var(--gray);font-size:10px">Cự Môn Hãm</span><br>↔<br><strong>Nô Bộc (Ngọ)</strong><br><span style="color:var(--gray);font-size:10px">Liêm Trinh Vượng + Song Kỵ</span></td>
+      <td>Quan Lộc–Nô Bộc xung: sự nghiệp vs. nhân sự/đối tác. Cự Môn Hãm (thị phi công việc) đối xung Liêm Trinh Vượng + Song Kỵ (nhân sự có vấn đề). <strong>Đây là cặp xung nguy hiểm nhất</strong> trong lá số năm 2026.</td>
+      <td><strong>Rủi ro lớn nhất 2026:</strong> Nhân viên cấp cao phản bội hoặc rời đi đột ngột ảnh hưởng công việc. Đối tác kinh doanh gây tổn thất tài chính–pháp lý. Khẩu thiệt, kiện tụng nhỏ. → Cần ký hợp đồng chặt chẽ, không để quyền lực tập trung vào 1 người.</td>
+    </tr>
+    <tr class="ct-tot">
+      <td><strong>Tài Bạch (Tuất)</strong><br><span style="color:var(--gray);font-size:10px">Thiên Đồng Hãm + Bính Lộc</span><br>↔<br><strong>Điền Trạch (Thìn)</strong><br><span style="color:var(--gray);font-size:10px">Tham Lang Vượng</span></td>
+      <td>Tài Bạch–Điền Trạch xung: tiền mặt vs. bất động sản/tài sản cố định. Thiên Đồng Lộc vs. Tham Lang Vượng. Tham Lang chủ đa dục, cầu tiến; xung vào Tài Bạch: muốn đầu tư, mở rộng tài sản.</td>
+      <td>Tiền mặt dồi dào (Bính Lộc tại Tài Bạch) nhưng <strong>không nên đổ hết vào bất động sản năm này</strong> (Tham Lang+Địa Kiếp+Bệnh Phù tại Điền Trạch). Hãy giữ thanh khoản. Nếu muốn mua BĐS: đợi đến tháng 9–11 âm khi Tuất-Sửu-Tý được kích.</td>
+    </tr>
+    <tr class="ct-warn">
+      <td><strong>Phu Thê (Hợi)</strong><br><span style="color:var(--gray);font-size:10px">Thái Dương Hãm</span><br>↔<br><strong>Huynh Đệ (Tị)</strong><br><span style="color:var(--gray);font-size:10px">Phá Quân Miếu</span></td>
+      <td>Phu Thê–Huynh Đệ xung: hôn nhân vs. bạn bè/anh em. Thái Dương Hãm vs. Phá Quân Miếu — Phá Quân tính cách mạnh, hay phá vỡ — khi chiếu vào Phu Thê dễ gây tình huống bên ngoài ảnh hưởng hôn nhân.</td>
+      <td>Đề phòng: bạn bè, anh em vô tình/cố ý tạo mâu thuẫn vợ chồng. Đi chơi với bạn nhiều, nhậu nhẹt, về trễ → vợ không hài lòng. Năm 2026 nên ưu tiên thời gian gia đình, du lịch vợ chồng, tránh để vợ cảm thấy bị bỏ quên.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══ PHÂN TÍCH 12 CUNG NĂM ═══ -->
+<div class="sec">
+  <div class="sec-hdr"><span class="ico">🏛</span>Phân Tích 12 Cung — Luận Đoán Năm Bính Ngọ</div>
+
+  <div class="rating-section">
+    <div style="font-size:12px;font-weight:600;color:var(--gray);margin-bottom:10px">Tổng Điểm Từng Cung Năm 2026 (thang 10):</div>
+    <div class="rating-row"><div class="r-label">💰 Tài Bạch</div><div class="r-bar-wrap"><div class="r-bar sc-9" style="width:90%"></div></div><div class="r-score sc-9">9/10</div></div>
+    <div class="rating-row"><div class="r-label">🧭 Mệnh</div><div class="r-bar-wrap"><div class="r-bar sc-9" style="width:88%"></div></div><div class="r-score sc-9">8.8/10</div></div>
+    <div class="rating-row"><div class="r-label">👴 Phụ Mẫu</div><div class="r-bar-wrap"><div class="r-bar sc-8" style="width:82%"></div></div><div class="r-score sc-8">8/10</div></div>
+    <div class="rating-row"><div class="r-label">👶 Tử Tức</div><div class="r-bar-wrap"><div class="r-bar sc-8" style="width:80%"></div></div><div class="r-score sc-8">8/10</div></div>
+    <div class="rating-row"><div class="r-label">🚀 Thiên Di</div><div class="r-bar-wrap"><div class="r-bar sc-7" style="width:72%"></div></div><div class="r-score sc-7">7/10</div></div>
+    <div class="rating-row"><div class="r-label">🌸 Phúc Đức</div><div class="r-bar-wrap"><div class="r-bar sc-7" style="width:68%"></div></div><div class="r-score sc-7">7/10</div></div>
+    <div class="rating-row"><div class="r-label">❤️ Phu Thê</div><div class="r-bar-wrap"><div class="r-bar sc-6" style="width:62%"></div></div><div class="r-score sc-6">6/10</div></div>
+    <div class="rating-row"><div class="r-label">🤝 Huynh Đệ</div><div class="r-bar-wrap"><div class="r-bar sc-6" style="width:58%"></div></div><div class="r-score sc-6">6/10</div></div>
+    <div class="rating-row"><div class="r-label">💼 Quan Lộc</div><div class="r-bar-wrap"><div class="r-bar sc-5" style="width:50%"></div></div><div class="r-score sc-5">5/10</div></div>
+    <div class="rating-row"><div class="r-label">🏠 Điền Trạch</div><div class="r-bar-wrap"><div class="r-bar sc-4" style="width:44%"></div></div><div class="r-score sc-4">4/10</div></div>
+    <div class="rating-row"><div class="r-label">🏥 Tật Ách</div><div class="r-bar-wrap"><div class="r-bar sc-4" style="width:42%"></div></div><div class="r-score sc-4">4/10</div></div>
+    <div class="rating-row"><div class="r-label">👥 Nô Bộc</div><div class="r-bar-wrap"><div class="r-bar sc-3" style="width:32%"></div></div><div class="r-score sc-3">3/10</div></div>
+  </div>
+
+  <table class="cung-table">
+    <tr>
+      <th width="18%">Cung</th>
+      <th width="22%">Sao Năm Bính</th>
+      <th width="12%">Điểm</th>
+      <th width="48%">Luận Đoán Chi Tiết & Thực Tế</th>
+    </tr>
+
+    <tr class="ct-tot">
+      <td><span class="cname">💰 Tài Bạch</span><span class="cchi">Tuất</span><div class="csao">Thiên Đồng(H) · Thiên Mã(Đ)<br>DV.Lộc Tồn · L.Hóa Lộc<br>Kinh Dương · Hóa Kỳ</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Bính Hóa Lộc vào đây<br>✦ DV.Lộc Tồn<br>✦ Tam hợp Dần-Ngọ-Tuất<br>✦ Thiên Mã Đắc</span><br><span style="color:var(--red)">⚠ Kinh Dương<br>⚠ Hóa Kỳ</span></td>
+      <td><span class="crating cr-tot">9/10</span></td>
+      <td class="cung-desc">
+        <strong>Năm bứt phá tài chính.</strong> Bính Lộc + DV Lộc Tồn + L.Hóa Lộc = <em>bộ ba Lộc</em> tại Tài Bạch — hiếm gặp. Thiên Mã Đắc thúc đẩy tiền luân chuyển nhanh. Thiên Đồng tuy Hãm nhưng được Lộc kéo lên — tiền đến từ dịch vụ, quan hệ, thụ hưởng. Tam hợp Dần-Ngọ-Tuất kích mạnh thêm.
+        <div class="cung-good">✅ Nên: Đầu tư mở rộng dịch vụ, nhận dự án lớn, đàm phán tăng hợp đồng giá trị cao. Tháng 9 âm (Lưu nguyệt trực tiếp kích Tuất) là thời điểm vàng thu tiền.</div>
+        <div class="cung-bad">⚠ Kinh Dương + Hóa Kỳ: tiền vào nhiều nhưng cũng chi nhiều hoặc bị thất thoát nếu không quản lý. Tránh đầu tư tài chính mạo hiểm (chứng khoán, tiền ảo).</div>
+      </td>
+    </tr>
+
+    <tr class="ct-tot">
+      <td><span class="cname">🧭 Mệnh</span><span class="cchi">Sửu</span><div class="csao">Thiên Cơ(Đ) · Thiên Hình<br>L.H.Quyền · H.Quyền năm<br>Long Đức · Tẩu Thư</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Bính Hóa Quyền vào đây<br>✦ L.Hóa Quyền (Song Quyền)<br>✦ Thiên Cơ Đắc Địa<br>✦ Long Đức</span><br><span style="color:var(--amber)">⚠ Thiên Hình (luật)</span></td>
+      <td><span class="crating cr-tot">8.8/10</span></td>
+      <td class="cung-desc">
+        <strong>Năm của quyền lực và tự chủ tuyệt đối.</strong> Song Quyền tại Mệnh: Mr. Hoàng năm này có tầm nhìn sắc bén, quyết định nhanh và chuẩn, khả năng thuyết phục cao. Thiên Cơ Đắc + Quyền = chiến lược gia tài ba. Long Đức bảo hộ tránh họa lớn. Tẩu Thư: tư duy văn tự, hợp đồng sắc sảo.
+        <div class="cung-good">✅ Nên: Tự ra quyết định thay vì chờ tập thể. Thể hiện vai trò lãnh đạo mạnh mẽ. Năm phù hợp đăng ký thương hiệu, sở hữu trí tuệ, ký kết thỏa thuận quan trọng.</div>
+        <div class="cung-bad">⚠ Thiên Hình: dễ có liên quan pháp lý nhỏ — cẩn thận ký hợp đồng không đọc kỹ. Không dùng quyền lực cứng nhắc với cấp dưới.</div>
+      </td>
+    </tr>
+
+    <tr class="ct-tot">
+      <td><span class="cname">👴 Phụ Mẫu</span><span class="cchi">Dần</span><div class="csao">Tử Vi(M) · Thiên Phú(M)<br>Ân Quang · Thiên Việt<br>DV.Thiên Việt · DV.T.Mã</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Tam hợp Dần-Ngọ-Tuất<br>✦ Tử Vi + Thiên Phú Miếu<br>✦ Ân Quang (quý nhân)</span></td>
+      <td><span class="crating cr-tot">8/10</span></td>
+      <td class="cung-desc">
+        <strong>Được bề trên và quý nhân hỗ trợ mạnh.</strong> Tử Vi Miếu + Thiên Phú Miếu tại Dần — đây là cung Phụ Mẫu mạnh nhất có thể có. Ân Quang + Thiên Việt = quý nhân phù trợ. Tam hợp Dần-Ngọ-Tuất kích mạnh: bề trên (ngân hàng, đối tác cấp cao, cơ quan nhà nước) hỗ trợ tài chính và uy tín cho Mr. Hoàng.
+        <div class="cung-good">✅ Nên: Gặp gỡ nhà đầu tư cấp cao, xin vay vốn ngân hàng (năm này dễ được duyệt), nhờ người lớn tuổi/bề trên giới thiệu hợp đồng. Tháng Dần (T1 âm) là tháng Phụ Mẫu được kích trực tiếp.</div>
+        <div class="cung-bad">⚠ Không có sao xấu đáng kể. Chú ý: cha mẹ/bề trên sức khỏe có thể không ổn định cuối năm.</div>
+      </td>
+    </tr>
+
+    <tr class="ct-tot">
+      <td><span class="cname">👶 Tử Tức</span><span class="cchi">Dậu</span><div class="csao">Vũ Khúc(M) · Hóa Quyền<br>Long Trì · Thanh Long<br>Hoa Cái · DV.H.Quyền</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Vũ Khúc Miếu<br>✦ DV + Bản Hóa Quyền<br>✦ Thanh Long (tài lộc)</span></td>
+      <td><span class="crating cr-tot">8/10</span></td>
+      <td class="cung-desc">
+        <strong>Con cái ngoan giỏi, sáng tạo.</strong> Vũ Khúc Miếu + Song Quyền (DV + bản) tại Tử Tức: con trai sinh 2016 (10 tuổi 2026) đang trong giai đoạn phát triển mạnh, có năng khiếu cứng nhắc trong học tập. Con gái 2022 (4 tuổi) đang phát triển tốt. Thanh Long: tài vận con cái tốt. Long Trì: khả năng nghệ thuật.
+        <div class="cung-good">✅ Nên: Đầu tư giáo dục con, cho con học thêm kỹ năng (âm nhạc, thể thao, toán). Năm 2026 con trai có thể có thành tích đáng tự hào.</div>
+        <div class="cung-bad">⚠ Vũ Khúc Miếu + Quyền: con có cá tính mạnh, dễ phản kháng nếu bị kiểm soát quá chặt. Hãy dùng phương pháp khích lệ thay vì ép buộc.</div>
+      </td>
+    </tr>
+
+    <tr class="ct-warn">
+      <td><span class="cname">💼 Quan Lộc</span><span class="cchi">Tý</span><div class="csao">Cự Môn(H) · Văn Xương<br>L.Lộc Tồn(Đ) · Song Khoa<br>Đại Hao · Thiên Y</div></td>
+      <td style="font-size:11px"><span style="color:var(--blue)">✦ Song Khoa (DV+Bính)<br>✦ L.Lộc Tồn</span><br><span style="color:var(--red)">⚠ Ngọ năm xung Tý<br>⚠ Thái Tuế xung chiếu<br>⚠ Đại Hao<br>⚠ Cự Môn Hãm</span></td>
+      <td><span class="crating cr-can">5/10</span></td>
+      <td class="cung-desc">
+        <strong>Năm sự nghiệp đầy sóng gió nhưng không sụp đổ.</strong> Ngọ xung Tý là xung lớn nhất năm với Quan Lộc. Cự Môn Hãm vốn đã chủ về thị phi, tranh luận — nay bị Thái Tuế xung thêm. Tuy nhiên Song Khoa bảo vệ danh tiếng, L.Lộc Tồn giữ vững nền tảng.
+        <div class="cung-good">✅ Nên: Dùng văn bản, hợp đồng chặt chẽ (Văn Xương + Khoa). Chủ động cải tổ mô hình kinh doanh thay vì bị động. Tháng 11 âm (lưu nguyệt Tý kích Quan Lộc) là tháng sự nghiệp sáng nhất.</div>
+        <div class="cung-bad">⚠ Tránh: tranh luận công khai, kiện tụng (Đại Hao + Cự Môn), nói quá nhiều trong họp. Đề phòng tháng 5 âm (Ngọ — xung trực tiếp) và tháng 6 âm.</div>
+      </td>
+    </tr>
+
+    <tr class="ct-xau">
+      <td><span class="cname">👥 Nô Bộc</span><span class="cchi">Ngọ</span><div class="csao">Liêm Trinh(V) · T.Tướng(V)<br>Thái Tuế · L.Thái Tuế<br>Song Kỵ · Thiên Khôi</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Thiên Khôi (quý nhân)<br>✦ Thiên Tướng Vượng</span><br><span style="color:var(--red)">⚠ Song Kỵ (DV+Bính)<br>⚠ Thái Tuế 2026<br>⚠ Liêm Trinh + Kỵ</span></td>
+      <td><span class="crating cr-xau">3/10</span></td>
+      <td class="cung-desc">
+        <strong>Cung nguy hiểm nhất 2026 — nhân sự và đối tác.</strong> Thái Tuế 2026 đóng tại Ngọ (Nô Bộc) + Song Kỵ: đây là tổ hợp tệ nhất trong lá số. Liêm Trinh chủ về hình ngục, Kỵ gây phong tỏa, Thái Tuế mang áp lực năm — kết quả: nhân sự cốt cán có thể rời đi, đối tác phá hợp đồng, bạn bè vay tiền không trả.
+        <div class="cung-good">✅ Đối phó: Thiên Tướng Vượng giúp có quy tắc quản trị tốt — xây dựng quy trình, hợp đồng lao động chặt chẽ. Thiên Khôi bảo hộ: vẫn có quý nhân giúp thoát khỏi rắc rối nhân sự.</div>
+        <div class="cung-bad">⛔ Tuyệt đối không: bảo lãnh vay tiền cho người thân/bạn bè, hùn vốn mà không có hợp đồng, để 1 nhân viên kiểm soát toàn bộ tài chính công ty.</div>
+      </td>
+    </tr>
+
+    <tr class="ct-xau">
+      <td><span class="cname">🏠 Điền Trạch</span><span class="cchi">Thìn</span><div class="csao">Tham Lang(V) · Địa Kiếp<br>Bệnh Phù · Thiên La<br>Quả Tú · L.Đà La(Đ)</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Tham Lang Vượng</span><br><span style="color:var(--red)">⚠ Địa Kiếp · Bệnh Phù<br>⚠ Thiên La · Quả Tú<br>⚠ L.Đà La</span></td>
+      <td><span class="crating cr-xau">4/10</span></td>
+      <td class="cung-desc">
+        <strong>Năm không thuận cho bất động sản.</strong> Điền Trạch vốn đã có nhiều hung tinh (Địa Kiếp, Bệnh Phù, Thiên La); Tham Lang Vượng chủ cầu tiến, muốn mở rộng — nhưng với nền hung tinh này, mở rộng tài sản cố định dễ gặp rắc rối (tranh chấp, pháp lý, tốn tiền sửa chữa).
+        <div class="cung-good">✅ Nếu bắt buộc giao dịch BĐS: chọn tháng 9–11 âm, phải kiểm tra pháp lý kỹ. Tốt hơn là thuê ngoài thay vì mua.</div>
+        <div class="cung-bad">⚠ Đừng: Mua nhà/đất mới năm 2026. Sửa chữa lớn nhà cửa (tốn mà không hiệu quả). Cho người lạ thuê nhà dài hạn mà không ký hợp đồng.</div>
+      </td>
+    </tr>
+
+    <tr class="ct-xau">
+      <td><span class="cname">🏥 Tật Ách</span><span class="cchi">Thân</span><div class="csao">Thất Sát(M) · Tả Phù<br>Thiên Mã(Đ) · Lộc Tồn(H)<br>Bác Sĩ · L.Thiên Mã</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Thất Sát Miếu<br>✦ Tả Phù (hỗ trợ)<br>✦ Bác Sĩ (y tế tốt)</span><br><span style="color:var(--amber)">⚠ Lộc Tồn Hãm<br>⚠ La Hầu hạn năm</span></td>
+      <td><span class="crating cr-can">4/10</span></td>
+      <td class="cung-desc">
+        <strong>Sức khỏe cần chú ý — áp lực tinh thần cao.</strong> Thất Sát Miếu chủ sức mạnh thể chất tốt nhưng cũng chủ về bạo lực, tai nạn. La Hầu hạn năm ảnh hưởng gián tiếp qua Nô Bộc → Tật Ách: căng thẳng tinh thần từ việc xử lý nhân sự, đối tác. Lộc Tồn Hãm: cần chi nhiều cho y tế.
+        <div class="cung-good">✅ Nên: Khám sức khỏe tổng quát đầu năm (tháng 1–2 âm). Tập thể thao đều đặn (Thất Sát Miếu + Thiên Mã: hợp vận động mạnh). Yoga/thiền để giải stress.</div>
+        <div class="cung-bad">⚠ Cẩn thận: Tai nạn giao thông (Thiên Mã động + Thất Sát). Không lái xe khi mệt mỏi. Tráng tháng 4 âm và tháng 10 âm (Thân bị xung bởi Dần khi lưu nguyệt an tại Dần).</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><span class="cname">❤️ Phu Thê</span><span class="cchi">Hợi</span><div class="csao">Thái Dương(H) · Hóa Lộc B<br>L.Thiên Khôi · Nguyệt Đức<br>Tiểu Hao · Địa Giải</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Hóa Lộc bản mệnh<br>✦ Nguyệt Đức (bảo hộ)<br>✦ Địa Giải (hóa hung)</span><br><span style="color:var(--amber)">⚠ Thái Dương Hãm<br>⚠ Tị xung Hợi (Phá Quân)</span></td>
+      <td><span class="crating cr-mid">6/10</span></td>
+      <td class="cung-desc">
+        <strong>Hôn nhân ổn nhưng thiếu sự nồng nhiệt.</strong> Thái Dương Hãm tại Hợi: ông xã (Thái Dương = chồng/vợ) không tỏa sáng đủ trong mắt bạn đời. Hóa Lộc bản mệnh chiếu vào đây tốt — vật chất trong hôn nhân không thiếu. Nguyệt Đức + Địa Giải: bảo vệ không xảy ra chuyện lớn.
+        <div class="cung-good">✅ Nên: Kỷ niệm, du lịch 2 người (không có con), chia sẻ tâm tư. Vợ cũng sinh năm Canh Ngọ — năm Bính Ngọ xung Canh Ngọ mệnh vợ, vợ cũng có áp lực — hãy đồng hành, không phán xét.</div>
+        <div class="cung-bad">⚠ Phá Quân (Huynh Đệ/Tị) xung Phu Thê: bạn bè, đồng nghiệp vô tình ảnh hưởng hôn nhân. Tránh để người ngoài can thiệp chuyện vợ chồng. Tháng 4 âm (Lưu nguyệt Tị) là tháng cần chú ý nhất cho hôn nhân.</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><span class="cname">🌸 Phúc Đức</span><span class="cchi">Mão</span><div class="csao">Thái Âm(H) · Hóa Khoa B<br>Đào Hoa · Hy Thần<br>Thiên Hi · Phúc Đức</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Hóa Khoa bản mệnh<br>✦ Đào Hoa (sức hút)<br>✦ Phúc Đức tinh</span><br><span style="color:var(--amber)">⚠ Thái Âm Hãm</span></td>
+      <td><span class="crating cr-kha">7/10</span></td>
+      <td class="cung-desc">
+        <strong>Phúc phần, tâm linh và danh tiếng cá nhân tốt.</strong> Thái Âm Hãm nhưng được Hóa Khoa bản mệnh nâng đỡ — phúc đức âm thầm được bảo hộ. Đào Hoa + Hy Thần: có sức hút cá nhân, giao tiếp tốt, được nhiều người quý mến. Thiên Hi: luôn có niềm vui nhỏ trong cuộc sống.
+        <div class="cung-good">✅ Nên: Dành thời gian tĩnh tâm, thiền định, đọc sách. Làm từ thiện nhỏ. Chăm sóc bản thân. Đây là nguồn nạp năng lượng quan trọng giữa năm bận rộn.</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><span class="cname">🚀 Thiên Di</span><span class="cchi">Mùi</span><div class="csao">Thiên Lương(Đ) · Quốc Ân<br>Giải Thần · Phượng Các<br>Bệnh Phù · Địa Kiếp</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Thiên Lương Đắc Địa<br>✦ Quốc Ân · Giải Thần<br>✦ Phượng Các</span><br><span style="color:var(--amber)">⚠ Bệnh Phù · Địa Kiếp</span></td>
+      <td><span class="crating cr-kha">7/10</span></td>
+      <td class="cung-desc">
+        <strong>Ra ngoài gặp quý nhân, mở rộng quan hệ tốt.</strong> Thiên Lương Đắc địa chủ nhân từ, bảo hộ — khi di chuyển, công tác xa được bảo hộ tốt. Quốc Ân + Giải Thần: được nhà nước/tổ chức lớn ghi nhận, có người giải cứu khi gặp nạn ngoài.
+        <div class="cung-good">✅ Nên: Đi công tác, mở rộng thị trường vùng/tỉnh khác. Gặp gỡ đối tác ngoài (nhiều cơ hội hơn ở nhà). Xin giấy phép, thủ tục hành chính năm này thuận.</div>
+        <div class="cung-bad">⚠ Bệnh Phù + Địa Kiếp: đề phòng tai nạn nhỏ khi đi xa, không tham gia hoạt động nguy hiểm khi ở xa nhà.</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><span class="cname">🤝 Huynh Đệ</span><span class="cchi">Tị</span><div class="csao">Phá Quân(M) · Tướng Quân<br>Thiên Khốc · Thiên Hư<br>Thiên Quý · Thiên Giải</div></td>
+      <td style="font-size:11px"><span style="color:var(--green)">✦ Phá Quân Miếu<br>✦ Thiên Giải (hóa hung)</span><br><span style="color:var(--amber)">⚠ Thiên Khốc · Thiên Hư<br>⚠ Tị xung Hợi (Phu Thê)</span></td>
+      <td><span class="crating cr-mid">6/10</span></td>
+      <td class="cung-desc">
+        <strong>Bạn bè mạnh mẽ nhưng hay tạo rắc rối.</strong> Phá Quân Miếu tại Huynh Đệ: anh em, bạn bè có cá tính, cứng đầu, dám làm. Thiên Khốc + Thiên Hư: dễ có cảm giác cô đơn, bị bạn bè bỏ rơi. Tướng Quân: bạn bè có vị thế xã hội.
+        <div class="cung-good">✅ Nên: Duy trì quan hệ với bạn bè lâu năm chân thực. Đừng mất thời gian vào người quen mới chưa rõ tính cách.</div>
+        <div class="cung-bad">⚠ Không cho mượn tiền lớn, không bảo lãnh. Phá Quân xung Phu Thê (Hợi): ít giao lưu bạn bè kiểu nhậu nhẹt về muộn.</div>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<!-- ═══ LỊCH THÁNG ═══ -->
+<div class="sec">
+  <div class="sec-hdr"><span class="ico">📆</span>Lịch Hành Vận Theo 12 Tháng Âm — Tổng Quan</div>
+
+  <div class="month-row">
+    <span class="mth-pill mp-kha">T1 Dần ✅</span>
+    <span class="mth-pill mp-tot">T2 Mão ⭐</span>
+    <span class="mth-pill mp-mid">T3 Thìn 〰</span>
+    <span class="mth-pill mp-xau">T4 Tị 🔴</span>
+    <span class="mth-pill mp-xau">T5 Ngọ 🔴</span>
+    <span class="mth-pill mp-mid">T6 Mùi 〰</span>
+    <span class="mth-pill mp-mid">T7 Thân 〰</span>
+    <span class="mth-pill mp-kha">T8 Dậu ✅</span>
+    <span class="mth-pill mp-tot">T9 Tuất ⭐</span>
+    <span class="mth-pill mp-kha">T10 Hợi ✅</span>
+    <span class="mth-pill mp-tot">T11 Tý ⭐</span>
+    <span class="mth-pill mp-kha">T12 Sửu ✅</span>
+  </div>
+
+  <table class="period-table">
+    <tr>
+      <th width="12%">Tháng</th>
+      <th width="10%">Lưu Nguyệt<br>An Tại</th>
+      <th width="10%">Đánh Giá</th>
+      <th width="68%">Sự Kiện Chính & Khuyến Cáo</th>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T1 Âm<br><small style="color:var(--gray);font-size:10px">29/1–26/2 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Dần<br><small>(Phụ Mẫu)</small></td>
+      <td class="pd-rating"><span class="crating cr-kha">Tốt</span></td>
+      <td>Lưu nguyệt an tại <strong>Phụ Mẫu (Dần/Tử Vi+Thiên Phú)</strong> → kích bộ 3 Tử Vi Phụ Mẫu. Tháng được bề trên ủng hộ, nhận tin tốt đầu năm. <strong>Nên</strong>: gặp đối tác lớn, xin vay vốn, nhận hỗ trợ từ cấp trên, ra quyết định chiến lược. <em>Tết Bính Ngọ rơi vào tháng này — khí tượng đầu năm thuận lợi cho gia chủ.</em></td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T2 Âm<br><small style="color:var(--gray);font-size:10px">27/2–27/3 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Mão<br><small>(Phúc Đức)</small></td>
+      <td class="pd-rating"><span class="crating cr-tot">Rất Tốt</span></td>
+      <td>Lưu nguyệt Mão kích <strong>Phúc Đức (Thái Âm + Hóa Khoa)</strong>. Tháng phúc lành, tâm trạng tốt, có tin vui gia đình. Mão lục hợp Tuất (Tài Bạch) → tài chính hỗ trợ tốt. <strong>Nên</strong>: ký kết hợp đồng quan trọng, tổ chức sự kiện, gặp gỡ đối tác mới. Đây là tháng thuận nhất cho quan hệ công chúng và branding.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T3 Âm<br><small style="color:var(--gray);font-size:10px">28/3–25/4 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Thìn<br><small>(Điền Trạch)</small></td>
+      <td class="pd-rating"><span class="crating cr-mid">Trung Bình</span></td>
+      <td>Lưu nguyệt an tại <strong>Điền Trạch (Tham Lang+Địa Kiếp)</strong> — cung hung. Thìn lục hợp Dậu (Tử Tức) tốt cho con cái. Thìn xung Tuất (Tài Bạch) — tháng tài chính có biến động nhỏ. <strong>Không nên</strong>: đầu tư lớn, giao dịch bất động sản. <strong>Nên</strong>: tập trung vào công việc thường ngày, chăm sóc con cái.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T4 Âm<br><small style="color:var(--gray);font-size:10px">26/4–23/5 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--red)">Tị<br><small>(Huynh Đệ)</small></td>
+      <td class="pd-rating"><span class="crating cr-xau">Cẩn Thận</span></td>
+      <td>Lưu nguyệt <strong>Tị kích Huynh Đệ (Phá Quân)</strong>. Tị xung Hợi (Phu Thê) → <strong>tháng nguy hiểm cho hôn nhân nhất</strong>. Phá Quân nhập Huynh Đệ: bạn bè/anh em có chuyện. Tị tam hợp Sửu (Mệnh) + Dậu (Tử Tức): bản thân và con cái được kích tốt. <em>Xem chi tiết trong file tháng 4</em>.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T5 Âm<br><small style="color:var(--gray);font-size:10px">24/5–21/6 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--red)">Ngọ<br><small>(Nô Bộc)</small></td>
+      <td class="pd-rating"><span class="crating cr-xau">Xấu ⚠</span></td>
+      <td>Lưu nguyệt Ngọ = <strong>Thái Tuế đóng tại Nô Bộc với Song Kỵ</strong> — tháng xấu nhất năm về nhân sự và đối tác. Ngọ xung Tý (Quan Lộc) lần 2 → sự nghiệp bị áp lực kép. <strong>Cực kỳ cẩn thận</strong>: không ký hợp đồng lớn với người mới quen, không sa thải ồ ạt, không tranh cãi công khai. Nên: ở nhà, củng cố nội bộ, kiểm tra lại tất cả hợp đồng đang chạy.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T6 Âm<br><small style="color:var(--gray);font-size:10px">22/6–21/7 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Mùi<br><small>(Thiên Di)</small></td>
+      <td class="pd-rating"><span class="crating cr-mid">Trung Bình</span></td>
+      <td>Lưu nguyệt Mùi kích <strong>Thiên Di (Thiên Lương Đắc)</strong>. Mùi xung Sửu (Mệnh) → bản thân bị áp lực từ môi trường ngoài. Tuy nhiên Thiên Lương Đắc hóa giải. <strong>Nên</strong>: đi công tác, mở rộng thị trường, gặp đối tác ngoài tỉnh. <strong>Không nên</strong>: ở trong văn phòng tranh cãi với nội bộ.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T7 Âm<br><small style="color:var(--gray);font-size:10px">22/7–18/8 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Thân<br><small>(Tật Ách)</small></td>
+      <td class="pd-rating"><span class="crating cr-mid">Trung Bình</span></td>
+      <td>Lưu nguyệt Thân kích <strong>Tật Ách (Thất Sát Miếu)</strong>. Thân xung Dần (Phụ Mẫu) — bề trên có vấn đề nhỏ. Tháng chú ý sức khỏe, tránh làm việc quá sức. Thất Sát Miếu + Thiên Mã: dễ bị tai nạn do vội vàng, di chuyển nhiều. <strong>Nên</strong>: kiểm tra sức khỏe, nghỉ ngơi hợp lý, không leo núi/thể thao mạo hiểm.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T8 Âm<br><small style="color:var(--gray);font-size:10px">19/8–16/9 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Dậu<br><small>(Tử Tức)</small></td>
+      <td class="pd-rating"><span class="crating cr-kha">Tốt</span></td>
+      <td>Lưu nguyệt Dậu kích <strong>Tử Tức (Vũ Khúc Miếu + Quyền)</strong>. Dậu lục hợp Thìn (Điền Trạch) nhẹ. Tháng vui vẻ với con cái, tin tốt từ gia đình. Vũ Khúc Miếu + Quyền: quyết định tài chính sắc bén. <strong>Nên</strong>: đầu tư giáo dục con, ký hợp đồng kinh doanh trung hạn, chốt thương vụ quan trọng.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T9 Âm<br><small style="color:var(--gray);font-size:10px">17/9–15/10 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--green)">Tuất<br><small>(Tài Bạch)</small></td>
+      <td class="pd-rating"><span class="crating cr-tot">⭐ Vàng</span></td>
+      <td>Lưu nguyệt Tuất kích trực tiếp <strong>Tài Bạch (Bính Lộc + DV.Lộc Tồn)</strong>. Đây là <strong>tháng thu tiền tốt nhất năm</strong>. Tuất tam hợp Dần (Phụ Mẫu) + Ngọ (Nô Bộc) → bộ 3 tam hợp được kích đồng thời. Bề trên + mạng lưới cùng hỗ trợ tài chính. <strong>Nên</strong>: chốt hợp đồng lớn, thu hồi công nợ, nhận đầu tư, mở rộng dịch vụ cao cấp.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T10 Âm<br><small style="color:var(--gray);font-size:10px">16/10–13/11 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Hợi<br><small>(Phu Thê)</small></td>
+      <td class="pd-rating"><span class="crating cr-kha">Tốt</span></td>
+      <td>Lưu nguyệt Hợi kích <strong>Phu Thê (Thái Dương + Hóa Lộc)</strong>. Tháng tốt cho hôn nhân và tình cảm. Hợi xung Tị (Huynh Đệ/Phá Quân) — ít gặp bạn bè đi chơi hơn, dành thời gian cho gia đình. <strong>Nên</strong>: du lịch vợ chồng, kỷ niệm ngày cưới, chia sẻ thành quả năm với vợ, mua quà ý nghĩa.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T11 Âm<br><small style="color:var(--gray);font-size:10px">14/11–12/12 DL</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--green)">Tý<br><small>(Quan Lộc)</small></td>
+      <td class="pd-rating"><span class="crating cr-tot">⭐ Tốt</span></td>
+      <td>Lưu nguyệt Tý kích trực tiếp <strong>Quan Lộc (Song Khoa + L.Lộc Tồn)</strong>. Sau nhiều tháng sóng gió ở sự nghiệp, tháng 11 âm là tháng sự nghiệp phục hồi và tỏa sáng. Tý xung Ngọ (Nô Bộc/Song Kỵ) — đây là tháng để đối mặt và xử lý dứt điểm vấn đề nhân sự. <strong>Nên</strong>: ký kết hợp đồng năm mới, tổng kết, công bố thành tích.</td>
+    </tr>
+    <tr>
+      <td><div class="pd-month">T12 Âm<br><small style="color:var(--gray);font-size:10px">13/12–29/1/2027</small></div></td>
+      <td style="text-align:center;font-weight:700;color:var(--amber)">Sửu<br><small>(Mệnh)</small></td>
+      <td class="pd-rating"><span class="crating cr-kha">Tốt</span></td>
+      <td>Lưu nguyệt Sửu kích trực tiếp <strong>Mệnh (Thiên Cơ Đắc + Song Quyền)</strong>. Tháng kết năm — bản thân mạnh, quyết đoán, tổng kết và lên kế hoạch 2027. Sửu xung Mùi (Thiên Di): ít đi lại, ở nhà lên kế hoạch. Tam hợp Tị (Huynh Đệ) + Dậu (Tử Tức) → cuối năm vui vẻ với gia đình và những người thân thiết.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══ KHUYẾN CÁO THỰC TẾ ═══ -->
+<div class="sec">
+  <div class="sec-hdr"><span class="ico">📋</span>Khuyến Cáo Thực Tế Tổng Hợp Năm 2026</div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
+
+    <div class="highlight-box hb-green" style="margin-bottom:0">
+      <div class="hb-title">✅ Nên Làm Năm 2026</div>
+      <div class="hb-body">
+        <strong>Kinh doanh:</strong> Mở rộng mảng dịch vụ cao cấp, ký hợp đồng dài hạn với đối tác lớn (tháng 1–2, 8–9 âm). Tăng giá dịch vụ — Song Quyền tại Mệnh hỗ trợ.<br>
+        <strong>Tài chính:</strong> Thu hồi công nợ cũ, chốt hợp đồng lớn vào T9 âm. Tái cơ cấu dòng tiền, tránh để tiền chết trong BĐS.<br>
+        <strong>Nhân sự:</strong> Xây dựng quy trình nội bộ chặt chẽ, ký hợp đồng lao động rõ ràng. Tuyển dụng người mới chỉ sau khi kiểm tra kỹ lưỡng.<br>
+        <strong>Gia đình:</strong> Du lịch vợ chồng T10 âm. Đầu tư giáo dục con T8 âm.<br>
+        <strong>Sức khỏe:</strong> Khám tổng quát T1–2 âm. Tập thể dục đều đặn.
+      </div>
+    </div>
+
+    <div class="highlight-box hb-red" style="margin-bottom:0">
+      <div class="hb-title">⛔ Tuyệt Đối Tránh Năm 2026</div>
+      <div class="hb-body">
+        <strong>T4–T5 âm:</strong> Không ký hợp đồng quan trọng, không tranh luận công khai, không sa thải hàng loạt.<br>
+        <strong>Nhân sự:</strong> Không bảo lãnh vay tiền cho bất kỳ ai (kể cả người thân). Không để 1 người kiểm soát toàn bộ tài chính.<br>
+        <strong>Tài chính:</strong> Không đầu tư chứng khoán/tiền ảo với vốn lớn. Không mua BĐS mới năm nay.<br>
+        <strong>Pháp lý:</strong> Đọc kỹ mọi hợp đồng trước khi ký. Không ký nhanh vì áp lực thời gian.<br>
+        <strong>Hôn nhân:</strong> Không để bạn bè can thiệp chuyện gia đình.
+      </div>
+    </div>
+
+    <div class="highlight-box hb-gold" style="margin-bottom:0">
+      <div class="hb-title">🌟 3 Cơ Hội Vàng Năm 2026</div>
+      <div class="hb-body">
+        <strong>1. Tháng 1–2 âm:</strong> Gặp nhà đầu tư/đối tác cấp cao, ký hợp đồng chiến lược — Tử Vi Miếu kích Phụ Mẫu + Mão tam hợp Tuất.<br>
+        <strong>2. Tháng 9 âm:</strong> Thu tiền, chốt deal lớn — Lưu nguyệt Tuất kích bộ ba Lộc tại Tài Bạch. Đây là thời điểm vàng nhất năm.<br>
+        <strong>3. Tháng 11 âm:</strong> Công bố kết quả, ký hợp đồng năm mới — Quan Lộc được kích với Song Khoa + Lộc Tồn. Tốt nhất để tổ chức sự kiện, họp báo cuối năm.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+<div style="text-align:center;font-size:11px;color:var(--gray);padding-bottom:20px">
+  <a href="index.html" style="color:var(--amber);font-weight:600;text-decoration:none">← Về Trang Chủ</a>
+  &nbsp;|&nbsp;
+  <a href="tuvi-thang-2026.html" style="color:var(--amber);font-weight:600;text-decoration:none">Xem Phân Tích 12 Tháng →</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tử Vi Mr. Hoàng 2026 — Năm Bính Ngọ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+:root{
+  --ink:#1a1614;--paper:#faf8f4;--paper2:#f3f0ea;--border:#d4c9b0;
+  --gold:#b8860b;--gold-lt:#f5e9c4;--amber:#7d5a0a;--gold-dk:#8a6508;
+  --red:#c0392b;--red-lt:#fde8e6;--blue:#1a5276;--blue-lt:#d6eaf8;
+  --green:#1e6b35;--green-lt:#d5f0dc;--gray:#5d5a56;--gray-lt:#eeece8;
+  --purple:#4a235a;--purple-lt:#f0e6f8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh}
+
+/* HERO */
+.hero{
+  background:linear-gradient(160deg,#0d0a07 0%,#1a1208 50%,#2a1e08 100%);
+  color:#fff;text-align:center;padding:56px 20px 44px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(184,134,11,.25) 0%,transparent 70%);
+}
+.hero-seal{font-size:52px;margin-bottom:12px;position:relative}
+.hero h1{
+  font-family:'Noto Serif',serif;font-size:28px;font-weight:600;
+  color:#f5e9c4;margin-bottom:8px;position:relative;letter-spacing:.5px;
+}
+.hero-sub{font-size:13px;color:#c8b882;margin-bottom:6px;position:relative}
+.hero-year{
+  display:inline-block;font-family:'Noto Serif',serif;font-size:15px;
+  color:#f5e9c4;border:1px solid rgba(184,134,11,.6);border-radius:20px;
+  padding:4px 20px;margin-top:10px;position:relative;background:rgba(184,134,11,.12);
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;position:relative}
+.ht{background:rgba(245,233,196,.12);color:#f5e9c4;border:1px solid rgba(245,233,196,.3);
+  border-radius:4px;padding:3px 10px;font-size:11px;font-weight:500}
+.ht.special{background:rgba(184,134,11,.3);border-color:rgba(184,134,11,.6)}
+
+/* BORN INFO */
+.born-box{
+  max-width:900px;margin:28px auto 0;padding:0 16px;
+}
+.born-card{
+  background:var(--gold-lt);border:1px solid #d4aa50;border-radius:10px;
+  padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;
+  font-size:12px;
+}
+.bi{display:flex;align-items:center;gap:6px}
+.bi-icon{font-size:16px}
+.bi-lbl{color:var(--amber);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.3px}
+.bi-val{color:var(--ink);font-weight:500}
+
+/* NAV CARDS */
+.nav-section{max-width:1000px;margin:32px auto;padding:0 16px 60px}
+.nav-title{font-family:'Noto Serif',serif;font-size:16px;color:var(--gold);
+  text-align:center;margin-bottom:24px;letter-spacing:.3px}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+
+.nav-card{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);transition:all .2s;display:flex;flex-direction:column;
+}
+.nav-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12);border-color:var(--gold)}
+
+.nc-top{padding:20px 20px 14px;flex:1}
+.nc-icon{font-size:32px;margin-bottom:10px}
+.nc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.badge-year{background:#fef3cd;color:#7d4000}
+.badge-month{background:var(--blue-lt);color:var(--blue)}
+.badge-day{background:var(--green-lt);color:var(--green)}
+.badge-hot{background:var(--red-lt);color:var(--red)}
+.nc-title{font-family:'Noto Serif',serif;font-size:16px;font-weight:600;margin-bottom:6px;line-height:1.4}
+.nc-desc{font-size:11.5px;color:var(--gray);line-height:1.6}
+.nc-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.nc-tag{font-size:10px;background:var(--paper2);border:1px solid var(--border);
+  border-radius:3px;padding:2px 6px;color:var(--gray)}
+
+.nc-foot{
+  background:var(--gold-lt);border-top:1px solid #e0cc88;
+  padding:10px 20px;font-size:11px;color:var(--amber);font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nc-foot .arrow{font-size:14px}
+
+/* CHART SUMMARY */
+.chart-section{max-width:1000px;margin:0 auto 0;padding:0 16px}
+.chart-title{font-family:'Noto Serif',serif;font-size:15px;color:var(--gold);
+  text-align:center;margin-bottom:16px}
+
+.chart-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:32px}
+@media(max-width:600px){.chart-grid{grid-template-columns:repeat(2,1fr)}}
+
+.cung-cell{
+  background:#fff;border:1px solid var(--border);border-radius:8px;
+  padding:10px 10px 8px;text-align:center;
+}
+.cung-cell.menh{background:var(--gold-lt);border-color:#d4aa50}
+.cung-cell.kl-tot{border-left:3px solid var(--green)}
+.cung-cell.kl-mid{border-left:3px solid var(--gray)}
+.cung-cell.kl-xau{border-left:3px solid var(--red)}
+
+.cc-icon{font-size:20px;margin-bottom:4px}
+.cc-name{font-weight:600;font-size:11px;color:var(--ink)}
+.cc-chi{font-size:10px;color:var(--amber);font-weight:600}
+.cc-sao{font-size:9.5px;color:var(--gray);margin-top:3px;line-height:1.4}
+
+/* DIVIDER */
+.divider{max-width:200px;margin:28px auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;font-size:11px;color:var(--gray);
+  border-top:1px solid var(--border);background:var(--paper2)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-seal">🔮</div>
+  <h1>Tử Vi Đẩu Số — Lá Số Mr. Hoàng</h1>
+  <div class="hero-sub">Phân tích chuyên sâu theo phương pháp Tử Vi Đẩu Số, Bát Tự Tứ Trụ, Huyền Không Phi Tinh</div>
+  <div class="hero-year">Năm Bính Ngọ 2026 · Đại Vận Bính Tuất · Hạn La Hầu · 37 tuổi</div>
+  <div class="hero-tags">
+    <span class="ht">Nam mệnh · Canh Ngọ</span>
+    <span class="ht">03/06/1990 · 9h30 sáng</span>
+    <span class="ht">Giờ Tỵ · Tháng 5 Âm</span>
+    <span class="ht">Mệnh Cung: Sửu</span>
+    <span class="ht special">Mệnh Cục: Hỏa Lục Cục ☲</span>
+    <span class="ht special">Thiên Cơ Đắc Địa ✦</span>
+  </div>
+</div>
+
+<div class="born-box">
+  <div class="born-card">
+    <div class="bi"><span class="bi-icon">📅</span><div><div class="bi-lbl">Dương lịch</div><div class="bi-val">03/06/1990 · 9h30</div></div></div>
+    <div class="bi"><span class="bi-icon">🌙</span><div><div class="bi-lbl">Âm lịch</div><div class="bi-val">11/05/Canh Ngọ · Giờ Tỵ</div></div></div>
+    <div class="bi"><span class="bi-icon">🏢</span><div><div class="bi-lbl">Nghề nghiệp</div><div class="bi-val">Giám đốc điều hành · Dịch vụ</div></div></div>
+    <div class="bi"><span class="bi-icon">👨‍👩‍👧‍👦</span><div><div class="bi-lbl">Gia đình</div><div class="bi-val">Vợ Canh Ngọ · Con trai 2016 · Con gái 2022</div></div></div>
+    <div class="bi"><span class="bi-icon">⚡</span><div><div class="bi-lbl">Đại Vận hiện tại</div><div class="bi-val">Bính Tuất (tuổi 31–40)</div></div></div>
+    <div class="bi"><span class="bi-icon">☄️</span><div><div class="bi-lbl">Hạn sao 2026</div><div class="bi-val">La Hầu — Cung Nô Bộc (Ngọ)</div></div></div>
+  </div>
+</div>
+
+<div class="chart-section">
+  <div class="divider"></div>
+  <div class="chart-title">☯ Cấu Hình 12 Cung Bản Mệnh</div>
+  <div class="chart-grid">
+    <div class="cung-cell menh kl-tot"><div class="cc-icon">🧭</div><div class="cc-name">Mệnh</div><div class="cc-chi">Sửu</div><div class="cc-sao">Thiên Cơ(Đ)<br>H.Quyền·L.H.Quyền</div></div>
+    <div class="cung-cell kl-tot"><div class="cc-icon">💼</div><div class="cc-name">Quan Lộc</div><div class="cc-chi">Tý</div><div class="cc-sao">Cự Môn(H)<br>Văn Xương·L.Lộc Tồn</div></div>
+    <div class="cung-cell kl-tot"><div class="cc-icon">💰</div><div class="cc-name">Tài Bạch</div><div class="cc-chi">Tuất</div><div class="cc-sao">Thiên Đồng(H)<br>L.H.Lộc·Thiên Mã</div></div>
+    <div class="cung-cell kl-mid"><div class="cc-icon">❤️</div><div class="cc-name">Phu Thê</div><div class="cc-chi">Hợi</div><div class="cc-sao">Thái Dương(H)<br>Hóa Lộc·L.Thiên Khôi</div></div>
+    <div class="cung-cell kl-tot"><div class="cc-icon">👴</div><div class="cc-name">Phụ Mẫu</div><div class="cc-chi">Dần</div><div class="cc-sao">Tử Vi(M)·Thiên Phú(M)<br>Ân Quang·Thiên Việt</div></div>
+    <div class="cung-cell kl-mid"><div class="cc-icon">🌸</div><div class="cc-name">Phúc Đức</div><div class="cc-chi">Mão</div><div class="cc-sao">Thái Âm(H)<br>Hóa Khoa·Đào Hoa</div></div>
+    <div class="cung-cell kl-xau"><div class="cc-icon">🏠</div><div class="cc-name">Điền Trạch</div><div class="cc-chi">Thìn</div><div class="cc-sao">Tham Lang(V)<br>Địa Kiếp·Bệnh Phù</div></div>
+    <div class="cung-cell kl-xau"><div class="cc-icon">👥</div><div class="cc-name">Nô Bộc</div><div class="cc-chi">Ngọ</div><div class="cc-sao">Liêm Trinh(V)·T.Tướng(V)<br>Thái Tuế·L.Hóa Kỵ</div></div>
+    <div class="cung-cell kl-mid"><div class="cc-icon">🚀</div><div class="cc-name">Thiên Di</div><div class="cc-chi">Mùi</div><div class="cc-sao">Thiên Lương(Đ)<br>Quốc Ân·Giải Thần</div></div>
+    <div class="cung-cell kl-xau"><div class="cc-icon">🏥</div><div class="cc-name">Tật Ách</div><div class="cc-chi">Thân</div><div class="cc-sao">Thất Sát(M)<br>Thiên Mã·Lộc Tồn</div></div>
+    <div class="cung-cell kl-tot"><div class="cc-icon">👶</div><div class="cc-name">Tử Tức</div><div class="cc-chi">Dậu</div><div class="cc-sao">Vũ Khúc(M)<br>Hóa Quyền·Long Trì</div></div>
+    <div class="cung-cell kl-mid"><div class="cc-icon">🤝</div><div class="cc-name">Huynh Đệ</div><div class="cc-chi">Tị</div><div class="cc-sao">Phá Quân(M)<br>Thiên Khốc·Tướng Quân</div></div>
+  </div>
+</div>
+
+<div class="nav-section">
+  <div class="nav-title">✦ Chọn Mục Phân Tích</div>
+  <div class="card-grid">
+
+    <a href="tuvi-lich-2026.html" class="nav-card" style="border:2px solid var(--gold);background:linear-gradient(135deg,#fff8e8,#fff)">
+      <div class="nc-top">
+        <div class="nc-icon">📅</div>
+        <div class="nc-badge" style="background:#1a5276;color:#fff">MỚI · Tra Cứu Theo Ngày</div>
+        <div class="nc-title" style="font-size:17px">Lịch Tử Vi Toàn Năm 2026</div>
+        <div class="nc-desc">Chọn tháng → chọn ngày → xem ngay phân tích 12 cung. Lịch màu trực quan, bộ lọc ngày tốt/xấu, hiển thị can chi từng ngày. Giao diện đẹp, dễ tra cứu nhất.</div>
+        <div class="nc-tags">
+          <span class="nc-tag" style="background:#d5f0dc;color:var(--green)">Lịch Tháng</span>
+          <span class="nc-tag" style="background:#d5f0dc;color:var(--green)">12 Tháng</span>
+          <span class="nc-tag" style="background:#d5f0dc;color:var(--green)">365 Ngày</span>
+          <span class="nc-tag" style="background:#d5f0dc;color:var(--green)">12 Cung</span>
+        </div>
+      </div>
+      <div class="nc-foot" style="background:var(--gold);color:#fff"><span>🗓 Mở Lịch Tra Cứu</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi-nam-2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">🌟</div>
+        <div class="nc-badge badge-year">Cả Năm</div>
+        <div class="nc-title">Tổng Luận Năm Bính Ngọ 2026</div>
+        <div class="nc-desc">Phân tích toàn diện 12 cung theo năm. Đại vận Bính Tuất, hạn La Hầu, tứ hóa năm. Tam phương tứ chính hội chiếu. Dự báo từng lĩnh vực: sự nghiệp, tài chính, hôn nhân, sức khỏe, con cái.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">Đại Vận</span><span class="nc-tag">Tứ Hóa Năm</span>
+          <span class="nc-tag">Tam Phương</span><span class="nc-tag">Tứ Chính</span>
+          <span class="nc-tag">12 Cung</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem phân tích năm đầy đủ</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi-thang-2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">📆</div>
+        <div class="nc-badge badge-month">Từng Tháng</div>
+        <div class="nc-title">Phân Tích 12 Tháng Âm Lịch 2026</div>
+        <div class="nc-desc">Mỗi tháng âm có lưu nguyệt an tại cung riêng, tạo xung hợp khác nhau. Phân tích chi tiết từng tháng: tháng tốt/xấu cho từng lĩnh vực, khuyến cáo cụ thể.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">Lưu Nguyệt</span><span class="nc-tag">Xung Hợp Tháng</span>
+          <span class="nc-tag">12 Tháng</span><span class="nc-tag">Tiểu Vận</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem phân tích 12 tháng</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi-ngay-t1t3-2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">📅</div>
+        <div class="nc-badge badge-day">Từng Ngày</div>
+        <div class="nc-title">Tháng 1 – 3 Âm Lịch 2026</div>
+        <div class="nc-desc">Phân tích từng ngày × 12 cung. Tháng 1 (Dần) — Tết Bính Ngọ. Tháng 2 (Mão). Tháng 3 (Thìn). Can chi ngày, xung hợp, lời khuyên thực tế cho từng ngày.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">T1 Dần</span><span class="nc-tag">T2 Mão</span><span class="nc-tag">T3 Thìn</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem tháng 1 – 3</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi_12cung_t4am_2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">🔥</div>
+        <div class="nc-badge badge-hot">Chi Tiết Nhất</div>
+        <div class="nc-title">Tháng 4 Âm Lịch 2026</div>
+        <div class="nc-desc">Phân tích sâu nhất — từng ngày × 12 cung với nhận xét chi tiết, lưu nguyệt Tị đóng tại Huynh Đệ (Phá Quân). Bao gồm lời khuyên nên/không nên từng ngày.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">T4 Tị</span><span class="nc-tag">30 Ngày</span><span class="nc-tag">12 Cung</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem tháng 4 chi tiết</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi-ngay-t5t8-2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">📅</div>
+        <div class="nc-badge badge-day">Từng Ngày</div>
+        <div class="nc-title">Tháng 5 – 8 Âm Lịch 2026</div>
+        <div class="nc-desc">Tháng 5 (Ngọ) — Thái Tuế nhập Nô Bộc, chú ý nhân sự. Tháng 6 (Mùi) — Thiên Di được kích. Tháng 7 (Thân) — Tật Ách cần giữ sức. Tháng 8 (Dậu) — Tử Tức sáng.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">T5 Ngọ</span><span class="nc-tag">T6 Mùi</span>
+          <span class="nc-tag">T7 Thân</span><span class="nc-tag">T8 Dậu</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem tháng 5 – 8</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi-ngay-t9t12-2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">📅</div>
+        <div class="nc-badge badge-day">Từng Ngày</div>
+        <div class="nc-title">Tháng 9 – 12 Âm Lịch 2026</div>
+        <div class="nc-desc">Tháng 9 (Tuất) — Tài Bạch được kích, tài lộc mạnh. Tháng 10 (Hợi) — Phu Thê hội chiếu. Tháng 11 (Tý) — Quan Lộc trực tiếp. Tháng 12 (Sửu) — Mệnh Cung kết năm.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">T9 Tuất</span><span class="nc-tag">T10 Hợi</span>
+          <span class="nc-tag">T11 Tý</span><span class="nc-tag">T12 Sửu</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem tháng 9 – 12</span><span class="arrow">›</span></div>
+    </a>
+
+    <a href="tuvi_t3_t5_t12_am_2026.html" class="nav-card">
+      <div class="nc-top">
+        <div class="nc-icon">📊</div>
+        <div class="nc-badge badge-month">Tổng Quan</div>
+        <div class="nc-title">Tổng Quan T3 &amp; T5–12 Âm 2026</div>
+        <div class="nc-desc">Bảng tổng hợp nhanh theo tháng — đánh giá từng ngày và 12 cung. Phù hợp tra cứu nhanh khi cần xem tổng thể cả giai đoạn.</div>
+        <div class="nc-tags">
+          <span class="nc-tag">Tra cứu nhanh</span><span class="nc-tag">9 tháng</span>
+        </div>
+      </div>
+      <div class="nc-foot"><span>Xem tổng quan</span><span class="arrow">›</span></div>
+    </a>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="background:var(--gold-lt);border:1px solid #d4aa50;border-radius:10px;padding:16px 20px;font-size:11.5px;line-height:1.9;color:var(--ink);margin-top:8px">
+    <strong style="color:var(--amber);font-size:12px">📌 Hướng dẫn đọc lá số:</strong><br>
+    <strong>Tam phương:</strong> Mỗi cung có 2 cung tam hợp tạo thành bộ 3 liên kết chặt chẽ — Mệnh(Sửu)↔Huynh(Tị)↔Tử Tức(Dậu) · Quan Lộc(Tý)↔Tật Ách(Thân)↔Điền Trạch(Thìn) · Tài Bạch(Tuất)↔Phụ Mẫu(Dần)↔Nô Bộc(Ngọ) · Phu Thê(Hợi)↔Phúc Đức(Mão)↔Thiên Di(Mùi)<br>
+    <strong>Tứ chính (xung chiếu):</strong> Mệnh(Sửu)↔Thiên Di(Mùi) · Quan Lộc(Tý)↔Nô Bộc(Ngọ) · Tài Bạch(Tuất)↔Điền Trạch(Thìn) · Phu Thê(Hợi)↔Huynh Đệ(Tị)<br>
+    <strong>Tứ Hóa Năm Bính:</strong> Lộc→Thiên Đồng(Tài Bạch) · Quyền→Thiên Cơ(Mệnh) · Khoa→Văn Xương(Quan Lộc) · Kỵ→Liêm Trinh(Nô Bộc)
+  </div>
+</div>
+
+<footer>
+  Tử Vi Đẩu Số · Lá Số Mr. Hoàng · Năm Bính Ngọ 2026 · Đại Vận Bính Tuất<br>
+  Phân tích theo phương pháp truyền thống — Lịch vạn niên âm dương 2026
+</footer>
+
+</body>
+</html>

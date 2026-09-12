@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tử Vi 12 Cung — Tháng 3, 5–12 Âm Lịch 2026 — Lá Số Mr. Hoàng</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Noto+Serif:wght@400;600&display=swap');
+:root{
+  --ink:#1a1614;--paper:#faf8f4;--paper2:#f3f0ea;--border:#d4c9b0;
+  --gold:#b8860b;--gold-lt:#f5e9c4;--amber:#7d5a0a;
+  --red:#c0392b;--red-lt:#fde8e6;
+  --blue:#1a5276;--blue-lt:#d6eaf8;
+  --green:#1e6b35;--green-lt:#d5f0dc;
+  --orange-lt:#fef3cd;--gray:#5d5a56;--gray-lt:#eeece8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);font-size:12px;line-height:1.5}
+.page{max-width:1200px;margin:0 auto;padding:20px 14px 60px}
+.hero{text-align:center;padding:24px 14px 18px;border-bottom:2px solid var(--gold);margin-bottom:20px}
+.hero h1{font-family:'Noto Serif',serif;font-size:20px;color:var(--gold);margin-bottom:5px}
+.hero p{font-size:11.5px;color:var(--gray);margin-bottom:4px}
+.note-box{background:var(--gold-lt);border:1px solid #d4aa50;border-radius:6px;padding:10px 14px;margin-bottom:18px;font-size:11.5px;line-height:1.8}
+.note-box strong{color:var(--amber);font-weight:600}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tab{padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--gray);font-size:11.5px;cursor:pointer;font-family:inherit;transition:all .15s}
+.tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.tab:hover:not(.active){background:var(--gold-lt);color:var(--amber)}
+.msec{display:none}
+.msec.show{display:block}
+.msec-hdr{font-family:'Noto Serif',serif;font-size:14px;font-weight:600;color:var(--gold);border-left:4px solid var(--gold);padding:6px 12px;background:var(--gold-lt);margin-bottom:12px;border-radius:0 4px 4px 0}
+.fbar{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;align-items:center}
+.fbar-lbl{font-size:11px;font-weight:600;color:var(--gray);margin-right:2px}
+.fb{padding:3px 9px;border-radius:20px;border:0.5px solid var(--border);background:transparent;color:var(--gray);font-size:11px;cursor:pointer;font-family:inherit}
+.fb.on,.fb:hover{background:var(--blue-lt);color:var(--blue);border-color:#9ec8ec}
+.leg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font-size:11px;color:var(--gray)}
+.li{display:flex;align-items:center;gap:4px}
+.ld{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.dc{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.dh{display:flex;align-items:center;gap:8px;padding:9px 13px;cursor:pointer;user-select:none}
+.dh:hover{filter:brightness(.97)}
+.r-great .dh{border-left:4px solid var(--green);background:#c8ecd0}
+.r-good  .dh{border-left:4px solid var(--blue);background:#c5dff4}
+.r-mid   .dh{border-left:4px solid var(--gray);background:#e4e1db}
+.r-bad2  .dh{border-left:4px solid #c8960a;background:#f9e4a0}
+.r-bad   .dh{border-left:4px solid var(--red);background:#f5c5c0}
+.dam{font-size:16px;font-weight:600;min-width:52px}
+.r-great .dam{color:var(--green)}.r-good .dam{color:var(--blue)}
+.r-mid .dam{color:var(--gray)}.r-bad2 .dam{color:var(--amber)}.r-bad .dam{color:var(--red)}
+.dmeta{flex:1}
+.dcc{font-size:12px;font-weight:600}
+.ddl{font-size:10px;color:var(--gray)}
+.dq{font-size:11px;color:var(--gray);margin-top:1px;line-height:1.4}
+.dbg{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500;white-space:nowrap}
+.bg-great{background:var(--green);color:#fff}.bg-good{background:var(--blue);color:#fff}
+.bg-mid{background:var(--gray);color:#fff}.bg-bad2{background:#c8960a;color:#fff}.bg-bad{background:var(--red);color:#fff}
+.darr{font-size:13px;opacity:.6;transition:transform .2s;flex-shrink:0}
+.darr.op{transform:rotate(90deg)}
+.db{display:none;padding:0 13px 13px;background:var(--paper)}
+.db.op{display:block}
+.ct{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:11.5px}
+.ct th{background:var(--paper2);border:1px solid var(--border);padding:5px 8px;font-weight:600;font-size:10.5px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+.ct td{border:1px solid var(--border);padding:7px 9px;vertical-align:top}
+.ct tr:nth-child(even) td{background:rgba(0,0,0,.012)}
+.tr-tot td{background:#edf8f0!important}.tr-xau td{background:#fdf0ee!important}.tr-mid td{background:#f5f3ef!important}
+.cname{font-weight:600;font-size:11.5px}.csao{font-size:10px;color:var(--gray);font-style:italic;margin-top:2px}
+.cnx{font-size:11px;line-height:1.55;margin-top:3px}
+.tag-t{display:inline-block;background:var(--green-lt);color:var(--green);border:1px solid #a0d8a8;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px}
+.tag-x{display:inline-block;background:var(--red-lt);color:var(--red);border:1px solid #e8a0a0;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px}
+.tag-o{display:inline-block;background:var(--gray-lt);color:var(--gray);border:1px solid #ccc;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px}
+.lamy{font-size:10.5px;color:var(--green);margin-top:3px}.lamn{font-size:10.5px;color:var(--red);margin-top:2px}
+.ov{border-radius:6px;padding:9px 12px;font-size:11.5px;line-height:1.65;border-left:4px solid;margin-top:8px}
+.ov-title{font-weight:600;margin-bottom:3px;font-size:11px}
+.ov-great{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.ov-good{background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.ov-mid{background:var(--gray-lt);border-color:var(--gray);color:var(--gray)}
+.ov-bad2{background:var(--orange-lt);border-color:#c8960a;color:var(--amber)}
+.ov-bad{background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.ov-body{color:var(--ink)}
+.tags-hero{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:10px}
+.tag-h{background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:4px;padding:2px 8px;font-size:10.5px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <h1>🔮 Tử Vi 12 Cung — Tháng 3, 5–12 Âm Lịch 2026</h1>
+  <p>Phân tích chi tiết từng ngày × 12 cung theo lá số Mr. Hoàng · Năm Bính Ngọ · Sao hạn La Hầu · 37 tuổi</p>
+  <p style="font-size:10.5px;color:#999;margin-top:3px">Dữ liệu can chi từng ngày được tính theo Lục Thập Hoa Giáp — xác minh từ lịch vạn niên 2026</p>
+  <div class="tags-hero">
+    <span class="tag-h">Mệnh: Thiên Cơ(Đ) — Sửu</span>
+    <span class="tag-h">Quan Lộc: Cự Môn(H) — Tý</span>
+    <span class="tag-h">Tài Bạch: Thiên Đồng(H) — Tuất</span>
+    <span class="tag-h">Phu Thê: Thái Dương(H) — Hợi</span>
+    <span class="tag-h">Nô Bộc: Liêm Trinh(V)+Thiên Tướng(V) — Ngọ</span>
+    <span class="tag-h">Phụ Mẫu: Tử Vi(M)+Thiên Phú(M) — Dần</span>
+    <span class="tag-h">Phúc Đức: Thái Âm(H) — Mão</span>
+    <span class="tag-h">Điền Trạch: Tham Lang(V) — Thìn</span>
+    <span class="tag-h">Thiên Di: Thiên Lương(Đ) — Mùi</span>
+    <span class="tag-h">Tật Ách: Thất Sát(M) — Thân</span>
+    <span class="tag-h">Tử Tức: Vũ Khúc(M) — Dậu</span>
+    <span class="tag-h">Huynh Đệ: Phá Quân(M) — Tị</span>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>📌 Cách đọc bảng phân tích:</strong> Mỗi tháng âm lịch, lưu nguyệt (tháng) an tại một cung theo quy tắc: <strong>T1=Dần, T2=Mão, T3=Thìn... đi thuận</strong>. Ngày trong tháng có can chi riêng. Khi chi ngày <strong>trùng với Cung Mệnh (Sửu)</strong> → ngày Mệnh rất mạnh. Chi ngày <strong>xung với cung quan trọng</strong> → cung đó bị tác động xấu. Chi ngày <strong>hợp tam hợp</strong> với cung → cung đó được hỗ trợ tốt.<br>
+  <strong>12 quan hệ cơ bản:</strong> Xung (cách 6): Tý↔Ngọ, Sửu↔Mùi, Dần↔Thân, Mão↔Dậu, Thìn↔Tuất, Tị↔Hợi | Tam hợp: Dần-Ngọ-Tuất, Tị-Dậu-Sửu, Thân-Tý-Thìn, Hợi-Mão-Mùi | Lục hợp: Tý-Sửu, Dần-Hợi, Mão-Tuất, Thìn-Dậu, Tị-Thân, Ngọ-Mùi
+</div>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="leg">
+  <strong style="margin-right:4px">Ngày:</strong>
+  <div class="li"><div class="ld" style="background:var(--green)"></div>⭐ Rất tốt</div>
+  <div class="li"><div class="ld" style="background:var(--blue)"></div>✅ Tốt</div>
+  <div class="li"><div class="ld" style="background:var(--gray)"></div>〰 Trung bình</div>
+  <div class="li"><div class="ld" style="background:#c8960a"></div>⚠ Khá xấu</div>
+  <div class="li"><div class="ld" style="background:var(--red)"></div>🔴 Xấu</div>
+  <span style="margin:0 8px;color:var(--border)">|</span>
+  <strong style="margin-right:4px">Cung:</strong>
+  <div class="li"><div class="ld" style="background:#edf8f0;border:1px solid #a0d8a8"></div>Tốt</div>
+  <div class="li"><div class="ld" style="background:#f5f3ef;border:1px solid #ccc"></div>Bình</div>
+  <div class="li"><div class="ld" style="background:#fdf0ee;border:1px solid #e8a0a0"></div>Xấu</div>
+</div>
+
+<div id="mroot"></div>
+
+</div>
+<script>
+// ═══════════════════════════════════════════════════════════════
+// ENGINE: Tự động tính xung/hợp và đánh giá 12 cung từng ngày
+// ═══════════════════════════════════════════════════════════════
+
+// 12 cung của lá số Mr. Hoàng (chi → tên cung, sao chủ, sao phụ)
+var CUNGS = [
+  {chi:'Sửu', ten:'Mệnh', sao:'Thiên Cơ(Đ), Thiên Hình, Long Đức, L.H Quyền, Tẩu Thư, Đường Phủ',
+   icon:'🧭', idx:1},
+  {chi:'Dần', ten:'Phụ Mẫu', sao:'Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt, ĐV.T Mã(Đ)',
+   icon:'👴', idx:10},
+  {chi:'Mão', ten:'Phúc Đức', sao:'Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, L.Đào Hoa, DV.H Khoa(V)',
+   icon:'🌸', idx:11},
+  {chi:'Thìn', ten:'Điền Trạch', sao:'Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La, Quả Tú, L.Đà La(Đ)',
+   icon:'🏠', idx:12},
+  {chi:'Tý', ten:'Quan Lộc', sao:'Cự Môn(H), Văn Xương(V), L.Lộc Tồn(Đ), L.H Khoa(Đ), Đại Hao(H), Thiên Y',
+   icon:'💼', idx:1},
+  {chi:'Ngọ', ten:'Nô Bộc', sao:'Liêm Trinh(V), Thiên Tướng(V), Thái Tuế, L.Thái Tuế, L.K Dương(H), L.Hóa Kỳ(H), Thiên Khôi, Hữu Bật',
+   icon:'👥', idx:6},
+  {chi:'Mùi', ten:'Thiên Di', sao:'Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù, Thiên La',
+   icon:'🚀', idx:7},
+  {chi:'Thân', ten:'Tật Ách', sao:'Thất Sát(M), Tả Phù, Bát Tọa, Thiên Mã(Đ), Lộc Tồn(H), Bác Sĩ, L.Thiên Mã(Đ), DV.Lộc Tồn(H)',
+   icon:'🏥', idx:8},
+  {chi:'Tuất', ten:'Tài Bạch', sao:'Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, Hóa Kỳ(H), Kinh Dương(H), DV.Lộc Tồn, Thiên Mã(Đ)',
+   icon:'💰', idx:5},
+  {chi:'Dậu', ten:'Tử Tức', sao:'Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)',
+   icon:'👶', idx:6},
+  {chi:'Hợi', ten:'Phu Thê', sao:'Thái Dương(H), Hóa Lộc(B), L.Thiên Khôi, L.Kiếp Sát, Địa Giải, Tiểu Hao, Nguyệt Đức',
+   icon:'❤️', idx:11},
+  {chi:'Tị', ten:'Huynh Đệ', sao:'Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)',
+   icon:'🤝', idx:8},
+];
+
+// Chi index (0=Tý, 1=Sửu, 2=Dần... 11=Hợi)
+var CHI_IDX = {Tý:0,Sửu:1,Dần:2,Mão:3,Thìn:4,Tị:5,Ngọ:6,Mùi:7,Thân:8,Dậu:9,Tuất:10,Hợi:11};
+var CHI_NAM = ['Tý','Sửu','Dần','Mão','Thìn','Tị','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi'];
+
+// Lưu nguyệt: tháng âm n an tại chi nào (T1=Dần, đi thuận)
+// T3=Thìn, T4=Tị, T5=Ngọ, T6=Mùi, T7=Thân, T8=Dậu, T9=Tuất, T10=Hợi, T11=Tý, T12=Sửu
+var LUU_NGUYET = {3:'Thìn',4:'Tị',5:'Ngọ',6:'Mùi',7:'Thân',8:'Dậu',9:'Tuất',10:'Hợi',11:'Tý',12:'Sửu'};
+// Sao chủ cung lưu nguyệt (cung Huynh Đệ = Phá Quân)
+// Lưu nguyệt an vào cung nào của lá số? Tháng 4 = Tị = Huynh Đệ (Phá Quân)
+// Map: chi lưu nguyệt → cung lá số
+var CHI_TO_CUNG = {};
+CUNGS.forEach(function(c){ CHI_TO_CUNG[c.chi] = c.ten; });
+
+// Quan hệ xung (cách 6 chi)
+function isXung(c1, c2){
+  var d = Math.abs(CHI_IDX[c1] - CHI_IDX[c2]);
+  return d===6;
+}
+// Lục hợp
+var LUC_HOP = {Tý:'Sửu',Sửu:'Tý',Dần:'Hợi',Hợi:'Dần',Mão:'Tuất',Tuất:'Mão',Thìn:'Dậu',Dậu:'Thìn',Tị:'Thân',Thân:'Tị',Ngọ:'Mùi',Mùi:'Ngọ'};
+// Tam hợp groups
+var TAM_HOP = [[2,6,10],[5,9,1],[8,0,4],[11,3,7]]; // [Dần,Ngọ,Tuất],[Tị,Dậu,Sửu],[Thân,Tý,Thìn],[Hợi,Mão,Mùi]
+
+function isTamHop(c1,c2){
+  var i1=CHI_IDX[c1], i2=CHI_IDX[c2];
+  for(var g=0;g<TAM_HOP.length;g++){
+    if(TAM_HOP[g].indexOf(i1)>=0 && TAM_HOP[g].indexOf(i2)>=0) return true;
+  }
+  return false;
+}
+function isLieuCung(c1,c2){// cùng chi = kích hoạt trực tiếp
+  return c1===c2;
+}
+
+// Đánh giá một cung với chi ngày và lưu nguyệt
+function rateRel(cungChi, ngayChi, luuNguyetChi){
+  // 1. Ngày = chi cung → kích hoạt trực tiếp (TỐT nếu cung tốt, XẤU nếu cung xấu)
+  var direct = isLieuCung(cungChi, ngayChi);
+  // 2. Xung ngày
+  var xungNgay = isXung(cungChi, ngayChi);
+  // 3. Tam hợp ngày  
+  var tamNgay = isTamHop(cungChi, ngayChi);
+  // 4. Lục hợp ngày
+  var hopNgay = LUC_HOP[cungChi]===ngayChi;
+  // 5. Lưu nguyệt xung vào cung
+  var xungLN = isXung(cungChi, luuNguyetChi);
+  // 6. Tam hợp với lưu nguyệt
+  var tamLN = isTamHop(cungChi, luuNguyetChi);
+  // 7. Lưu nguyệt đóng tại cung
+  var directLN = isLieuCung(cungChi, luuNguyetChi);
+
+  return {direct,xungNgay,tamNgay,hopNgay,xungLN,tamLN,directLN};
+}
+
+// Cung "nhạy cảm" với hung tinh: Điền Trạch, Nô Bộc, Thiên Di, Huynh Đệ
+var HUNG_CUNGS = {Thìn:true, Ngọ:true, Mùi:true, Tị:true};
+// Cung "bảo hộ" có sao tốt mạnh: Mệnh (L.H Quyền), Phụ Mẫu (Tử Vi), Tài Bạch (L.Hóa Lộc), Phu Thê (Hóa Lộc B)
+var TOT_CUNGS = {Sửu:true, Dần:true, Tuất:true, Hợi:true, Tý:true, Dậu:true};
+
+// Đánh giá tổng thể cung (rt: "t","o","x")
+function getCungRt(cungChi, rel){
+  var isHung = HUNG_CUNGS[cungChi];
+  var isTot = TOT_CUNGS[cungChi];
+  
+  // Tính điểm
+  var score = 0;
+  if(rel.direct) score += isHung ? -2 : 2;   // Kích trực tiếp: tốt cung thì tốt, hung cung thì xấu
+  if(rel.directLN) score += isHung ? -3 : 1; // Lưu nguyệt đóng tại: tùy cung
+  if(rel.xungNgay) score -= 2;
+  if(rel.xungLN) score -= 3;
+  if(rel.tamNgay) score += 1;
+  if(rel.tamLN) score += 2;
+  if(rel.hopNgay) score += 1;
+  if(isTot) score += 1; // cung có nhiều sao tốt thêm bonus
+
+  if(score >= 3) return 't';
+  if(score <= -2) return 'x';
+  return 'o';
+}
+
+// Sinh nhận xét tự động cho từng cung
+function genNX(cung, ngayChi, luuNguyetChi, rel){
+  var parts = [];
+  var cn = cung.chi;
+  
+  if(rel.directLN){
+    var saoLN = CHI_TO_CUNG[luuNguyetChi];
+    parts.push('Lưu nguyệt tháng này đóng tại cung ' + cung.ten + ' → kích hoạt trực tiếp. ');
+    if(HUNG_CUNGS[cn]) parts.push('Cần đặc biệt chú ý vì đây là cung có nhiều hung tinh.');
+    else parts.push('Cung tốt được kích hoạt — phát huy mạnh trong tháng.');
+  }
+  if(rel.direct){
+    if(HUNG_CUNGS[cn]) parts.push('Ngày ' + ngayChi + ' kích hoạt cung ' + cung.ten + ' trực tiếp — ' + cn + ' đánh động, hung tinh phát tác.');
+    else parts.push('Ngày ' + ngayChi + ' trùng với chi cung ' + cung.ten + ' → kích hoạt tốt, phát huy sức mạnh sao chủ.');
+  }
+  if(rel.xungLN && rel.xungNgay){
+    parts.push('Ngày bị xung KÉP: vừa bị lưu nguyệt xung vừa bị ngày xung → tác động xấu mạnh nhất. Cẩn thận cao độ.');
+  } else if(rel.xungLN){
+    parts.push('Lưu nguyệt tháng này xung vào cung ' + cung.ten + ' → cả tháng cần chú ý.');
+    if(rel.xungNgay) parts.push('Hôm nay ngày cũng xung → xấu kép.');
+  } else if(rel.xungNgay){
+    parts.push('Ngày ' + ngayChi + ' xung trực tiếp vào cung ' + cung.ten + ' → tác động xấu hôm nay, dễ có sự cố.');
+  }
+  if(rel.tamLN && rel.tamNgay){
+    parts.push('Tam hợp KÉP: lưu nguyệt và ngày cùng tam hợp với cung → được hỗ trợ đặc biệt mạnh.');
+  } else if(rel.tamLN){
+    parts.push('Lưu nguyệt tam hợp với cung ' + cung.ten + ' → cả tháng được hỗ trợ tốt.');
+    if(rel.tamNgay) parts.push('Ngày cũng tam hợp → hôm nay đặc biệt tốt.');
+  } else if(rel.tamNgay){
+    parts.push('Ngày ' + ngayChi + ' tam hợp với cung ' + cung.ten + ' → hỗ trợ tốt hôm nay.');
+  }
+  if(rel.hopNgay){
+    parts.push('Ngày ' + ngayChi + ' lục hợp với chi ' + cn + ' → quan hệ hài hòa, hỗ trợ nhẹ.');
+  }
+  if(!parts.length){
+    parts.push('Không có quan hệ xung hợp đặc biệt với chi ngày hôm nay. ' +
+      (HUNG_CUNGS[cn] ? 'Hung tinh trong cung tạm yên.' : 'Sao chủ hoạt động bình thường.'));
+  }
+  return parts.join(' ');
+}
+
+// Sinh lời khuyên "nên/không nên" theo từng cung
+var CUNG_ADVICE = {
+  'Mệnh':     {y:'Ra quyết định, gặp người quan trọng, hành động theo kế hoạch',n:'Để cảm xúc chi phối quyết định lớn'},
+  'Phụ Mẫu':  {y:'Gặp gỡ cha mẹ/bề trên, nhờ hỗ trợ, báo cáo thành quả',n:'Cãi lời hoặc xung đột với bề trên'},
+  'Phúc Đức': {y:'Thư giãn, sáng tạo, chăm sóc bản thân, gặp bạn bè vui vẻ',n:'Làm việc quá sức, căng thẳng không cần thiết'},
+  'Điền Trạch':{y:'Kiểm tra nhà cửa, bảo trì nhỏ, dọn dẹp tươm tất',n:'Ký hợp đồng bất động sản, cho người lạ vào nhà'},
+  'Quan Lộc': {y:'Đàm phán, thuyết trình, gặp sếp/đối tác, ký hợp đồng công việc',n:'Tranh luận với cấp trên, nói nhiều gây khẩu thiệt'},
+  'Nô Bộc':   {y:'Làm việc nhóm nhỏ tin tưởng, gặp bạn bè lâu năm',n:'Nhờ người mới quen, hùn vốn, bảo lãnh tài chính'},
+  'Thiên Di':  {y:'Đi lại bình thường, gặp gỡ đối tác ngoài, mở rộng quan hệ',n:'Đi xa một mình khi có hung tinh, liều lĩnh giao thông'},
+  'Tật Ách':  {y:'Vận động thể dục, kiểm tra sức khỏe định kỳ',n:'Làm việc quá sức, hoạt động thể chất mạo hiểm'},
+  'Tài Bạch': {y:'Thu tiền, nhận thanh toán, ký hợp đồng tài chính tốt',n:'Cho vay, đầu tư mạo hiểm, chi tiêu không kế hoạch'},
+  'Tử Tức':   {y:'Dành thời gian con cái, đầu tư giáo dục, khen thưởng người học',n:'Kỷ luật quá nghiêm khắc khi tâm trạng không tốt'},
+  'Phu Thê':  {y:'Quan tâm người yêu/vợ chồng, hẹn hò, chia sẻ tin vui',n:'Tranh cãi, đề cập tiền bạc trong lúc tình cảm căng'},
+  'Huynh Đệ': {y:'Duy trì quan hệ anh em/bạn thân bình thường, chia sẻ',n:'Cho mượn tiền lớn, hùn vốn với anh em, tranh chấp'},
+};
+
+// ═══ DATA 9 THÁNG ════════════════════════════════════════════
+var MONTHS = [
+{so:3,ten:"Nhâm Thìn",dl1:"17/04/2026",note:"Lưu nguyệt = Thìn (Điền Trạch — Tham Lang) · Toàn tháng: Điền Trạch bị kích, cẩn thận nhà cửa và bất động sản",
+ days:[{n:1,dl:"17/04",cc:"Tân Hợi",chi:"Hợi"},{n:2,dl:"18/04",cc:"Nhâm Tý",chi:"Tý"},{n:3,dl:"19/04",cc:"Quý Sửu",chi:"Sửu"},{n:4,dl:"20/04",cc:"Giáp Dần",chi:"Dần"},{n:5,dl:"21/04",cc:"Ất Mão",chi:"Mão"},{n:6,dl:"22/04",cc:"Bính Thìn",chi:"Thìn"},{n:7,dl:"23/04",cc:"Đinh Tị",chi:"Tị"},{n:8,dl:"24/04",cc:"Mậu Ngọ",chi:"Ngọ"},{n:9,dl:"25/04",cc:"Kỷ Mùi",chi:"Mùi"},{n:10,dl:"26/04",cc:"Canh Thân",chi:"Thân"},{n:11,dl:"27/04",cc:"Tân Dậu",chi:"Dậu"},{n:12,dl:"28/04",cc:"Nhâm Tuất",chi:"Tuất"},{n:13,dl:"29/04",cc:"Quý Hợi",chi:"Hợi"},{n:14,dl:"30/04",cc:"Giáp Tý",chi:"Tý"},{n:15,dl:"01/05",cc:"Ất Sửu",chi:"Sửu"},{n:16,dl:"02/05",cc:"Bính Dần",chi:"Dần"},{n:17,dl:"03/05",cc:"Đinh Mão",chi:"Mão"},{n:18,dl:"04/05",cc:"Mậu Thìn",chi:"Thìn"},{n:19,dl:"05/05",cc:"Kỷ Tị",chi:"Tị"},{n:20,dl:"06/05",cc:"Canh Ngọ",chi:"Ngọ"},{n:21,dl:"07/05",cc:"Tân Mùi",chi:"Mùi"},{n:22,dl:"08/05",cc:"Nhâm Thân",chi:"Thân"},{n:23,dl:"09/05",cc:"Quý Dậu",chi:"Dậu"},{n:24,dl:"10/05",cc:"Giáp Tuất",chi:"Tuất"},{n:25,dl:"11/05",cc:"Ất Hợi",chi:"Hợi"},{n:26,dl:"12/05",cc:"Bính Tý",chi:"Tý"},{n:27,dl:"13/05",cc:"Đinh Sửu",chi:"Sửu"},{n:28,dl:"14/05",cc:"Mậu Dần",chi:"Dần"},{n:29,dl:"15/05",cc:"Kỷ Mão",chi:"Mão"},{n:30,dl:"16/05",cc:"Canh Thìn",chi:"Thìn"}]},
+{so:5,ten:"Giáp Ngọ",dl1:"15/06/2026",note:"Lưu nguyệt = Ngọ (Nô Bộc — Liêm Trinh+Thiên Tướng+Thái Tuế) · Toàn tháng: Nô Bộc bị kích, quan hệ xã hội căng thẳng, Thái Tuế phát tác",
+ days:[{n:1,dl:"15/06",cc:"Canh Tuất",chi:"Tuất"},{n:2,dl:"16/06",cc:"Tân Hợi",chi:"Hợi"},{n:3,dl:"17/06",cc:"Nhâm Tý",chi:"Tý"},{n:4,dl:"18/06",cc:"Quý Sửu",chi:"Sửu"},{n:5,dl:"19/06",cc:"Giáp Dần",chi:"Dần"},{n:6,dl:"20/06",cc:"Ất Mão",chi:"Mão"},{n:7,dl:"21/06",cc:"Bính Thìn",chi:"Thìn"},{n:8,dl:"22/06",cc:"Đinh Tị",chi:"Tị"},{n:9,dl:"23/06",cc:"Mậu Ngọ",chi:"Ngọ"},{n:10,dl:"24/06",cc:"Kỷ Mùi",chi:"Mùi"},{n:11,dl:"25/06",cc:"Canh Thân",chi:"Thân"},{n:12,dl:"26/06",cc:"Tân Dậu",chi:"Dậu"},{n:13,dl:"27/06",cc:"Nhâm Tuất",chi:"Tuất"},{n:14,dl:"28/06",cc:"Quý Hợi",chi:"Hợi"},{n:15,dl:"29/06",cc:"Giáp Tý",chi:"Tý"},{n:16,dl:"30/06",cc:"Ất Sửu",chi:"Sửu"},{n:17,dl:"01/07",cc:"Bính Dần",chi:"Dần"},{n:18,dl:"02/07",cc:"Đinh Mão",chi:"Mão"},{n:19,dl:"03/07",cc:"Mậu Thìn",chi:"Thìn"},{n:20,dl:"04/07",cc:"Kỷ Tị",chi:"Tị"},{n:21,dl:"05/07",cc:"Canh Ngọ",chi:"Ngọ"},{n:22,dl:"06/07",cc:"Tân Mùi",chi:"Mùi"},{n:23,dl:"07/07",cc:"Nhâm Thân",chi:"Thân"},{n:24,dl:"08/07",cc:"Quý Dậu",chi:"Dậu"},{n:25,dl:"09/07",cc:"Giáp Tuất",chi:"Tuất"},{n:26,dl:"10/07",cc:"Ất Hợi",chi:"Hợi"},{n:27,dl:"11/07",cc:"Bính Tý",chi:"Tý"},{n:28,dl:"12/07",cc:"Đinh Sửu",chi:"Sửu"},{n:29,dl:"13/07",cc:"Mậu Dần",chi:"Dần"},{n:30,dl:"14/07",cc:"Kỷ Mão",chi:"Mão"}]},
+{so:6,ten:"Ất Mùi",dl1:"15/07/2026",note:"Lưu nguyệt = Mùi (Thiên Di — Thiên Lương) · Toàn tháng: Thiên Di bị kích (Địa Kiếp+Bệnh Phù), Mùi xung Sửu(Mệnh) nhẹ, cẩn thận đi lại",
+ days:[{n:1,dl:"15/07",cc:"Canh Thìn",chi:"Thìn"},{n:2,dl:"16/07",cc:"Tân Tị",chi:"Tị"},{n:3,dl:"17/07",cc:"Nhâm Ngọ",chi:"Ngọ"},{n:4,dl:"18/07",cc:"Quý Mùi",chi:"Mùi"},{n:5,dl:"19/07",cc:"Giáp Thân",chi:"Thân"},{n:6,dl:"20/07",cc:"Ất Dậu",chi:"Dậu"},{n:7,dl:"21/07",cc:"Bính Tuất",chi:"Tuất"},{n:8,dl:"22/07",cc:"Đinh Hợi",chi:"Hợi"},{n:9,dl:"23/07",cc:"Mậu Tý",chi:"Tý"},{n:10,dl:"24/07",cc:"Kỷ Sửu",chi:"Sửu"},{n:11,dl:"25/07",cc:"Canh Dần",chi:"Dần"},{n:12,dl:"26/07",cc:"Tân Mão",chi:"Mão"},{n:13,dl:"27/07",cc:"Nhâm Thìn",chi:"Thìn"},{n:14,dl:"28/07",cc:"Quý Tị",chi:"Tị"},{n:15,dl:"29/07",cc:"Giáp Ngọ",chi:"Ngọ"},{n:16,dl:"30/07",cc:"Ất Mùi",chi:"Mùi"},{n:17,dl:"31/07",cc:"Bính Thân",chi:"Thân"},{n:18,dl:"01/08",cc:"Đinh Dậu",chi:"Dậu"},{n:19,dl:"02/08",cc:"Mậu Tuất",chi:"Tuất"},{n:20,dl:"03/08",cc:"Kỷ Hợi",chi:"Hợi"},{n:21,dl:"04/08",cc:"Canh Tý",chi:"Tý"},{n:22,dl:"05/08",cc:"Tân Sửu",chi:"Sửu"},{n:23,dl:"06/08",cc:"Nhâm Dần",chi:"Dần"},{n:24,dl:"07/08",cc:"Quý Mão",chi:"Mão"},{n:25,dl:"08/08",cc:"Giáp Thìn",chi:"Thìn"},{n:26,dl:"09/08",cc:"Ất Tị",chi:"Tị"},{n:27,dl:"10/08",cc:"Bính Ngọ",chi:"Ngọ"},{n:28,dl:"11/08",cc:"Đinh Mùi",chi:"Mùi"},{n:29,dl:"12/08",cc:"Mậu Thân",chi:"Thân"}]},
+{so:7,ten:"Bính Thân",dl1:"13/08/2026",note:"Lưu nguyệt = Thân (Tật Ách — Thất Sát) · Toàn tháng: Tật Ách bị kích (Thất Sát bùng), chú ý sức khỏe và tai nạn toàn tháng",
+ days:[{n:1,dl:"13/08",cc:"Kỷ Dậu",chi:"Dậu"},{n:2,dl:"14/08",cc:"Canh Tuất",chi:"Tuất"},{n:3,dl:"15/08",cc:"Tân Hợi",chi:"Hợi"},{n:4,dl:"16/08",cc:"Nhâm Tý",chi:"Tý"},{n:5,dl:"17/08",cc:"Quý Sửu",chi:"Sửu"},{n:6,dl:"18/08",cc:"Giáp Dần",chi:"Dần"},{n:7,dl:"19/08",cc:"Ất Mão",chi:"Mão"},{n:8,dl:"20/08",cc:"Bính Thìn",chi:"Thìn"},{n:9,dl:"21/08",cc:"Đinh Tị",chi:"Tị"},{n:10,dl:"22/08",cc:"Mậu Ngọ",chi:"Ngọ"},{n:11,dl:"23/08",cc:"Kỷ Mùi",chi:"Mùi"},{n:12,dl:"24/08",cc:"Canh Thân",chi:"Thân"},{n:13,dl:"25/08",cc:"Tân Dậu",chi:"Dậu"},{n:14,dl:"26/08",cc:"Nhâm Tuất",chi:"Tuất"},{n:15,dl:"27/08",cc:"Quý Hợi",chi:"Hợi"},{n:16,dl:"28/08",cc:"Giáp Tý",chi:"Tý"},{n:17,dl:"29/08",cc:"Ất Sửu",chi:"Sửu"},{n:18,dl:"30/08",cc:"Bính Dần",chi:"Dần"},{n:19,dl:"31/08",cc:"Đinh Mão",chi:"Mão"},{n:20,dl:"01/09",cc:"Mậu Thìn",chi:"Thìn"},{n:21,dl:"02/09",cc:"Kỷ Tị",chi:"Tị"},{n:22,dl:"03/09",cc:"Canh Ngọ",chi:"Ngọ"},{n:23,dl:"04/09",cc:"Tân Mùi",chi:"Mùi"},{n:24,dl:"05/09",cc:"Nhâm Thân",chi:"Thân"},{n:25,dl:"06/09",cc:"Quý Dậu",chi:"Dậu"},{n:26,dl:"07/09",cc:"Giáp Tuất",chi:"Tuất"},{n:27,dl:"08/09",cc:"Ất Hợi",chi:"Hợi"},{n:28,dl:"09/09",cc:"Bính Tý",chi:"Tý"},{n:29,dl:"10/09",cc:"Đinh Sửu",chi:"Sửu"}]},
+{so:8,ten:"Đinh Dậu",dl1:"11/09/2026",note:"Lưu nguyệt = Dậu (Tử Tức — Vũ Khúc+Hóa Quyền) · Dậu–Sửu–Tị tam hợp với Mệnh → toàn tháng Mệnh được hỗ trợ · Dậu xung Mão(Phúc Đức)",
+ days:[{n:1,dl:"11/09",cc:"Mậu Dần",chi:"Dần"},{n:2,dl:"12/09",cc:"Kỷ Mão",chi:"Mão"},{n:3,dl:"13/09",cc:"Canh Thìn",chi:"Thìn"},{n:4,dl:"14/09",cc:"Tân Tị",chi:"Tị"},{n:5,dl:"15/09",cc:"Nhâm Ngọ",chi:"Ngọ"},{n:6,dl:"16/09",cc:"Quý Mùi",chi:"Mùi"},{n:7,dl:"17/09",cc:"Giáp Thân",chi:"Thân"},{n:8,dl:"18/09",cc:"Ất Dậu",chi:"Dậu"},{n:9,dl:"19/09",cc:"Bính Tuất",chi:"Tuất"},{n:10,dl:"20/09",cc:"Đinh Hợi",chi:"Hợi"},{n:11,dl:"21/09",cc:"Mậu Tý",chi:"Tý"},{n:12,dl:"22/09",cc:"Kỷ Sửu",chi:"Sửu"},{n:13,dl:"23/09",cc:"Canh Dần",chi:"Dần"},{n:14,dl:"24/09",cc:"Tân Mão",chi:"Mão"},{n:15,dl:"25/09",cc:"Nhâm Thìn",chi:"Thìn"},{n:16,dl:"26/09",cc:"Quý Tị",chi:"Tị"},{n:17,dl:"27/09",cc:"Giáp Ngọ",chi:"Ngọ"},{n:18,dl:"28/09",cc:"Ất Mùi",chi:"Mùi"},{n:19,dl:"29/09",cc:"Bính Thân",chi:"Thân"},{n:20,dl:"30/09",cc:"Đinh Dậu",chi:"Dậu"},{n:21,dl:"01/10",cc:"Mậu Tuất",chi:"Tuất"},{n:22,dl:"02/10",cc:"Kỷ Hợi",chi:"Hợi"},{n:23,dl:"03/10",cc:"Canh Tý",chi:"Tý"},{n:24,dl:"04/10",cc:"Tân Sửu",chi:"Sửu"},{n:25,dl:"05/10",cc:"Nhâm Dần",chi:"Dần"},{n:26,dl:"06/10",cc:"Quý Mão",chi:"Mão"},{n:27,dl:"07/10",cc:"Giáp Thìn",chi:"Thìn"},{n:28,dl:"08/10",cc:"Ất Tị",chi:"Tị"},{n:29,dl:"09/10",cc:"Bính Ngọ",chi:"Ngọ"}]},
+{so:9,ten:"Mậu Tuất",dl1:"10/10/2026",note:"Lưu nguyệt = Tuất (Tài Bạch — Thiên Đồng+L.Hóa Lộc) · Toàn tháng TÀI BẠCH được kích hoạt — tháng tài lộc tốt · Tuất xung Thìn(Điền Trạch)",
+ days:[{n:1,dl:"10/10",cc:"Đinh Mùi",chi:"Mùi"},{n:2,dl:"11/10",cc:"Mậu Thân",chi:"Thân"},{n:3,dl:"12/10",cc:"Kỷ Dậu",chi:"Dậu"},{n:4,dl:"13/10",cc:"Canh Tuất",chi:"Tuất"},{n:5,dl:"14/10",cc:"Tân Hợi",chi:"Hợi"},{n:6,dl:"15/10",cc:"Nhâm Tý",chi:"Tý"},{n:7,dl:"16/10",cc:"Quý Sửu",chi:"Sửu"},{n:8,dl:"17/10",cc:"Giáp Dần",chi:"Dần"},{n:9,dl:"18/10",cc:"Ất Mão",chi:"Mão"},{n:10,dl:"19/10",cc:"Bính Thìn",chi:"Thìn"},{n:11,dl:"20/10",cc:"Đinh Tị",chi:"Tị"},{n:12,dl:"21/10",cc:"Mậu Ngọ",chi:"Ngọ"},{n:13,dl:"22/10",cc:"Kỷ Mùi",chi:"Mùi"},{n:14,dl:"23/10",cc:"Canh Thân",chi:"Thân"},{n:15,dl:"24/10",cc:"Tân Dậu",chi:"Dậu"},{n:16,dl:"25/10",cc:"Nhâm Tuất",chi:"Tuất"},{n:17,dl:"26/10",cc:"Quý Hợi",chi:"Hợi"},{n:18,dl:"27/10",cc:"Giáp Tý",chi:"Tý"},{n:19,dl:"28/10",cc:"Ất Sửu",chi:"Sửu"},{n:20,dl:"29/10",cc:"Bính Dần",chi:"Dần"},{n:21,dl:"30/10",cc:"Đinh Mão",chi:"Mão"},{n:22,dl:"31/10",cc:"Mậu Thìn",chi:"Thìn"},{n:23,dl:"01/11",cc:"Kỷ Tị",chi:"Tị"},{n:24,dl:"02/11",cc:"Canh Ngọ",chi:"Ngọ"},{n:25,dl:"03/11",cc:"Tân Mùi",chi:"Mùi"},{n:26,dl:"04/11",cc:"Nhâm Thân",chi:"Thân"},{n:27,dl:"05/11",cc:"Quý Dậu",chi:"Dậu"},{n:28,dl:"06/11",cc:"Giáp Tuất",chi:"Tuất"},{n:29,dl:"07/11",cc:"Ất Hợi",chi:"Hợi"},{n:30,dl:"08/11",cc:"Bính Tý",chi:"Tý"}]},
+{so:10,ten:"Kỷ Hợi",dl1:"09/11/2026",note:"Lưu nguyệt = Hợi (Phu Thê — Thái Dương+Hóa Lộc) · Toàn tháng PHU THÊ được kích hoạt tốt · Hợi–Dần lục hợp hỗ trợ Phụ Mẫu · Hợi–Tị xung Huynh Đệ",
+ days:[{n:1,dl:"09/11",cc:"Đinh Sửu",chi:"Sửu"},{n:2,dl:"10/11",cc:"Mậu Dần",chi:"Dần"},{n:3,dl:"11/11",cc:"Kỷ Mão",chi:"Mão"},{n:4,dl:"12/11",cc:"Canh Thìn",chi:"Thìn"},{n:5,dl:"13/11",cc:"Tân Tị",chi:"Tị"},{n:6,dl:"14/11",cc:"Nhâm Ngọ",chi:"Ngọ"},{n:7,dl:"15/11",cc:"Quý Mùi",chi:"Mùi"},{n:8,dl:"16/11",cc:"Giáp Thân",chi:"Thân"},{n:9,dl:"17/11",cc:"Ất Dậu",chi:"Dậu"},{n:10,dl:"18/11",cc:"Bính Tuất",chi:"Tuất"},{n:11,dl:"19/11",cc:"Đinh Hợi",chi:"Hợi"},{n:12,dl:"20/11",cc:"Mậu Tý",chi:"Tý"},{n:13,dl:"21/11",cc:"Kỷ Sửu",chi:"Sửu"},{n:14,dl:"22/11",cc:"Canh Dần",chi:"Dần"},{n:15,dl:"23/11",cc:"Tân Mão",chi:"Mão"},{n:16,dl:"24/11",cc:"Nhâm Thìn",chi:"Thìn"},{n:17,dl:"25/11",cc:"Quý Tị",chi:"Tị"},{n:18,dl:"26/11",cc:"Giáp Ngọ",chi:"Ngọ"},{n:19,dl:"27/11",cc:"Ất Mùi",chi:"Mùi"},{n:20,dl:"28/11",cc:"Bính Thân",chi:"Thân"},{n:21,dl:"29/11",cc:"Đinh Dậu",chi:"Dậu"},{n:22,dl:"30/11",cc:"Mậu Tuất",chi:"Tuất"},{n:23,dl:"01/12",cc:"Kỷ Hợi",chi:"Hợi"},{n:24,dl:"02/12",cc:"Canh Tý",chi:"Tý"},{n:25,dl:"03/12",cc:"Tân Sửu",chi:"Sửu"},{n:26,dl:"04/12",cc:"Nhâm Dần",chi:"Dần"},{n:27,dl:"05/12",cc:"Quý Mão",chi:"Mão"},{n:28,dl:"06/12",cc:"Giáp Thìn",chi:"Thìn"},{n:29,dl:"07/12",cc:"Ất Tị",chi:"Tị"},{n:30,dl:"08/12",cc:"Bính Ngọ",chi:"Ngọ"}]},
+{so:11,ten:"Canh Tý",dl1:"09/12/2026",note:"Lưu nguyệt = Tý (Quan Lộc — Cự Môn+L.H Khoa) · Toàn tháng QUAN LỘC được kích hoạt — danh tiếng nổi bật · Tý xung Ngọ(Nô Bộc–Thái Tuế) · Tý–Sửu lục hợp Mệnh",
+ days:[{n:1,dl:"09/12",cc:"Đinh Mùi",chi:"Mùi"},{n:2,dl:"10/12",cc:"Mậu Thân",chi:"Thân"},{n:3,dl:"11/12",cc:"Kỷ Dậu",chi:"Dậu"},{n:4,dl:"12/12",cc:"Canh Tuất",chi:"Tuất"},{n:5,dl:"13/12",cc:"Tân Hợi",chi:"Hợi"},{n:6,dl:"14/12",cc:"Nhâm Tý",chi:"Tý"},{n:7,dl:"15/12",cc:"Quý Sửu",chi:"Sửu"},{n:8,dl:"16/12",cc:"Giáp Dần",chi:"Dần"},{n:9,dl:"17/12",cc:"Ất Mão",chi:"Mão"},{n:10,dl:"18/12",cc:"Bính Thìn",chi:"Thìn"},{n:11,dl:"19/12",cc:"Đinh Tị",chi:"Tị"},{n:12,dl:"20/12",cc:"Mậu Ngọ",chi:"Ngọ"},{n:13,dl:"21/12",cc:"Kỷ Mùi",chi:"Mùi"},{n:14,dl:"22/12",cc:"Canh Thân",chi:"Thân"},{n:15,dl:"23/12",cc:"Tân Dậu",chi:"Dậu"},{n:16,dl:"24/12",cc:"Nhâm Tuất",chi:"Tuất"},{n:17,dl:"25/12",cc:"Quý Hợi",chi:"Hợi"},{n:18,dl:"26/12",cc:"Giáp Tý",chi:"Tý"},{n:19,dl:"27/12",cc:"Ất Sửu",chi:"Sửu"},{n:20,dl:"28/12",cc:"Bính Dần",chi:"Dần"},{n:21,dl:"29/12",cc:"Đinh Mão",chi:"Mão"},{n:22,dl:"30/12",cc:"Mậu Thìn",chi:"Thìn"},{n:23,dl:"31/12",cc:"Kỷ Tị",chi:"Tị"},{n:24,dl:"01/01",cc:"Canh Ngọ",chi:"Ngọ"},{n:25,dl:"02/01",cc:"Tân Mùi",chi:"Mùi"},{n:26,dl:"03/01",cc:"Nhâm Thân",chi:"Thân"},{n:27,dl:"04/01",cc:"Quý Dậu",chi:"Dậu"},{n:28,dl:"05/01",cc:"Giáp Tuất",chi:"Tuất"},{n:29,dl:"06/01",cc:"Ất Hợi",chi:"Hợi"},{n:30,dl:"07/01",cc:"Bính Tý",chi:"Tý"}]},
+{so:12,ten:"Tân Sửu",dl1:"08/01/2027",note:"Lưu nguyệt = Sửu (Mệnh — Thiên Cơ+L.H Quyền) · Toàn tháng MỆNH được kích hoạt trực tiếp — tháng mạnh nhất cho bản thân · Sửu–Tị–Dậu tam hợp phát huy",
+ days:[{n:1,dl:"08/01",cc:"Đinh Sửu",chi:"Sửu"},{n:2,dl:"09/01",cc:"Mậu Dần",chi:"Dần"},{n:3,dl:"10/01",cc:"Kỷ Mão",chi:"Mão"},{n:4,dl:"11/01",cc:"Canh Thìn",chi:"Thìn"},{n:5,dl:"12/01",cc:"Tân Tị",chi:"Tị"},{n:6,dl:"13/01",cc:"Nhâm Ngọ",chi:"Ngọ"},{n:7,dl:"14/01",cc:"Quý Mùi",chi:"Mùi"},{n:8,dl:"15/01",cc:"Giáp Thân",chi:"Thân"},{n:9,dl:"16/01",cc:"Ất Dậu",chi:"Dậu"},{n:10,dl:"17/01",cc:"Bính Tuất",chi:"Tuất"},{n:11,dl:"18/01",cc:"Đinh Hợi",chi:"Hợi"},{n:12,dl:"19/01",cc:"Mậu Tý",chi:"Tý"},{n:13,dl:"20/01",cc:"Kỷ Sửu",chi:"Sửu"},{n:14,dl:"21/01",cc:"Canh Dần",chi:"Dần"},{n:15,dl:"22/01",cc:"Tân Mão",chi:"Mão"},{n:16,dl:"23/01",cc:"Nhâm Thìn",chi:"Thìn"},{n:17,dl:"24/01",cc:"Quý Tị",chi:"Tị"},{n:18,dl:"25/01",cc:"Giáp Ngọ",chi:"Ngọ"},{n:19,dl:"26/01",cc:"Ất Mùi",chi:"Mùi"},{n:20,dl:"27/01",cc:"Bính Thân",chi:"Thân"},{n:21,dl:"28/01",cc:"Đinh Dậu",chi:"Dậu"},{n:22,dl:"29/01",cc:"Mậu Tuất",chi:"Tuất"},{n:23,dl:"30/01",cc:"Kỷ Hợi",chi:"Hợi"},{n:24,dl:"31/01",cc:"Canh Tý",chi:"Tý"},{n:25,dl:"01/02",cc:"Tân Sửu",chi:"Sửu"},{n:26,dl:"02/02",cc:"Nhâm Dần",chi:"Dần"},{n:27,dl:"03/02",cc:"Quý Mão",chi:"Mão"},{n:28,dl:"04/02",cc:"Giáp Thìn",chi:"Thìn"},{n:29,dl:"05/02",cc:"Ất Tị",chi:"Tị"}]},
+];
+
+// ═══ RATING LOGIC ═══════════════════════════════════════════
+function rateDay(ngayChi, lnChi){
+  // Tính điểm tổng cho ngày dựa trên 12 cung quan trọng
+  var score = 0;
+  var xungMenh = isXung('Sửu', ngayChi);
+  var hopMenh  = LUC_HOP['Sửu']===ngayChi || isTamHop('Sửu',ngayChi) || ngayChi==='Sửu';
+  var xungPT   = isXung('Hợi', ngayChi) || isXung('Hợi', lnChi);
+  var xungNB   = isXung('Ngọ', ngayChi);
+  var xungQL   = isXung('Tý', ngayChi);
+  var hopTB    = isTamHop('Tuất', ngayChi) || ngayChi==='Tuất' || LUC_HOP['Tuất']===ngayChi;
+  var xungTB   = isXung('Tuất', ngayChi);
+
+  if(hopMenh) score+=3;
+  if(xungMenh) score-=2;
+  if(xungPT) score-=3; // Phu Thê rất nhạy cảm
+  if(xungNB) score-=2;
+  if(xungQL) score-=1;
+  if(hopTB) score+=2;
+  if(xungTB) score-=2;
+
+  // Bonus: lưu nguyệt hỗ trợ Mệnh
+  if(isTamHop('Sửu',lnChi)) score+=1;
+
+  if(score>=4) return 'great';
+  if(score>=1) return 'good';
+  if(score>=-1) return 'mid';
+  if(score>=-3) return 'bad2';
+  return 'bad';
+}
+
+var BADGE = {great:'⭐ Rất tốt',good:'✅ Tốt',mid:'〰 Trung bình',bad2:'⚠ Khá xấu',bad:'🔴 Xấu'};
+var BCLASS = {great:'bg-great',good:'bg-good',mid:'bg-mid',bad2:'bg-bad2',bad:'bg-bad'};
+var RCLASS = {great:'r-great',good:'r-good',mid:'r-mid',bad2:'r-bad2',bad:'r-bad'};
+var OVCLASS = {great:'ov-great',good:'ov-good',mid:'ov-mid',bad2:'ov-bad2',bad:'ov-bad'};
+var TRCLASS = {t:'tr-tot',o:'tr-mid',x:'tr-xau'};
+var TAG = {t:"<span class='tag-t'>⭐ Tốt</span>",o:"<span class='tag-o'>〰 Bình</span>",x:"<span class='tag-x'>⚠ Xấu</span>"};
+
+// ═══ RENDER ═════════════════════════════════════════════════
+var mroot = document.getElementById('mroot');
+var tabsEl = document.getElementById('tabs');
+var openMap = {}; // month -> openIdx
+
+MONTHS.forEach(function(m, mi){
+  // Tab
+  var tab = document.createElement('button');
+  tab.className='tab'+(mi===0?' active':'');
+  tab.textContent='Tháng '+m.so+' âm ('+m.ten+')';
+  tab.onclick=(function(idx){ return function(){ switchTab(idx); }; })(mi);
+  tabsEl.appendChild(tab);
+
+  // Section
+  var sec = document.createElement('div');
+  sec.className='msec'+(mi===0?' show':'');
+  sec.id='m'+mi;
+
+  var lnChi = LUU_NGUYET[m.so];
+
+  // Fbar
+  var fbarHTML = '<div class="msec-hdr">📅 Tháng '+m.so+' Âm Lịch 2026 — '+m.ten+' · Mùng 1 = '+m.dl1+' DL</div>'+
+    '<div style="background:var(--gold-lt);border:1px solid #d4aa50;border-radius:5px;padding:8px 12px;margin-bottom:10px;font-size:11px;color:var(--amber)">⚡ '+m.note+'</div>'+
+    '<div class="fbar"><span class="fbar-lbl">Lọc:</span>'+
+    '<button class="fb on" onclick="flt('+mi+',\'all\',this)">Tất cả</button>'+
+    '<button class="fb" onclick="flt('+mi+',\'great\',this)">⭐ Rất tốt</button>'+
+    '<button class="fb" onclick="flt('+mi+',\'good\',this)">✅ Tốt</button>'+
+    '<button class="fb" onclick="flt('+mi+',\'mid\',this)">〰 Trung bình</button>'+
+    '<button class="fb" onclick="flt('+mi+',\'bad2\',this)">⚠ Khá xấu</button>'+
+    '<button class="fb" onclick="flt('+mi+',\'bad\',this)">🔴 Xấu</button>'+
+    '</div>';
+  sec.innerHTML = fbarHTML;
+  var cardsEl = document.createElement('div');
+  cardsEl.id='cards'+mi;
+  sec.appendChild(cardsEl);
+  mroot.appendChild(sec);
+
+  // Build day cards
+  openMap[mi] = -1;
+  m.days.forEach(function(d, di){
+    var r = rateDay(d.chi, lnChi);
+    var card = document.createElement('div');
+    card.className='dc '+RCLASS[r];
+    card.dataset.r = r;
+
+    // Build cung rows
+    var rows = CUNGS.map(function(c){
+      var rel = rateRel(c.chi, d.chi, lnChi);
+      var rt = getCungRt(c.chi, rel);
+      var nx = genNX(c, d.chi, lnChi, rel);
+      var adv = CUNG_ADVICE[c.ten] || {y:'Hành động bình thường theo kế hoạch',n:'Không làm gì liều lĩnh'};
+      // Tùy biến lời khuyên dựa trên rating
+      var yText, nText;
+      if(rt==='t'){
+        yText = adv.y + (rel.tamNgay||rel.hopNgay||rel.tamLN ? ' — Đây là thời điểm tốt nhất trong tháng cho cung này.' : '');
+        nText = 'Không bỏ lỡ — cung đang được hỗ trợ';
+      } else if(rt==='x'){
+        yText = 'Cẩn thận và hạn chế ' + adv.y.toLowerCase();
+        nText = adv.n + (rel.xungNgay||rel.xungLN ? ' — TUYỆT ĐỐI tránh vì đang bị xung' : '');
+      } else {
+        yText = adv.y;
+        nText = adv.n;
+      }
+      return '<tr class="'+TRCLASS[rt]+'">'+
+        '<td style="min-width:100px"><div class="cname">'+c.icon+' '+c.ten+'</div>'+
+        '<div class="csao">Chi: '+c.chi+'</div>'+
+        '<div class="csao" style="margin-top:1px">'+c.sao+'</div></td>'+
+        '<td style="width:60px;text-align:center;vertical-align:middle">'+TAG[rt]+'</td>'+
+        '<td><div class="cnx">'+nx+'</div></td>'+
+        '<td style="min-width:170px"><div class="lamy">✅ '+yText+'</div><div class="lamn">❌ '+nText+'</div></td>'+
+        '</tr>';
+    }).join('');
+
+    // Tổng kết ngày
+    var goodCungs = CUNGS.filter(function(c){ return getCungRt(c.chi, rateRel(c.chi, d.chi, lnChi))==='t'; }).map(function(c){return c.ten;});
+    var badCungs  = CUNGS.filter(function(c){ return getCungRt(c.chi, rateRel(c.chi, d.chi, lnChi))==='x'; }).map(function(c){return c.ten;});
+    var ovText = '';
+    if(r==='great'||r==='good'){
+      ovText = (goodCungs.length?'✅ Cung tốt nhất hôm nay: '+goodCungs.join(', ')+'. ':'')+'Ưu tiên hành động liên quan đến các cung này.'+(badCungs.length?' ⚠ Vẫn cẩn thận: '+badCungs.join(', '):'');
+    } else if(r==='bad'||r==='bad2'){
+      ovText = (badCungs.length?'⚠ Cung cần đề phòng: '+badCungs.join(', ')+'. ':'')+'Hạn chế hành động lớn.'+(goodCungs.length?' 💡 Điểm sáng: '+goodCungs.join(', '):'');
+    } else {
+      ovText = 'Ngày trung bình — xử lý công việc thường ngày.'+(goodCungs.length?' Cung tương đối tốt: '+goodCungs.join(', '):'')+(badCungs.length?' Cẩn thận: '+badCungs.join(', '):'');
+    }
+
+    var dayLabel = d.n===1?'Mùng 1':d.n===15?'Rằm '+d.n:d.n===2?'Mùng 2':d.n===3?'Mùng 3':d.n===4?'Mùng 4':d.n===5?'Mùng 5':d.n===6?'Mùng 6':d.n===7?'Mùng 7':d.n===8?'Mùng 8':d.n===9?'Mùng 9':d.n===10?'Mùng 10':('Ngày '+d.n);
+
+    var id = 'c'+mi+'_'+di;
+    card.innerHTML=
+      '<div class="dh" onclick="tog(\''+id+'\','+mi+','+di+')">'+
+        '<div class="dam">'+dayLabel+'</div>'+
+        '<div class="dmeta">'+
+          '<div class="dcc">'+d.cc+' &nbsp;<span class="ddl">'+d.dl+' DL</span></div>'+
+          '<div class="dq">Chi ngày: '+d.chi+' · Lưu nguyệt tháng: '+lnChi+'</div>'+
+        '</div>'+
+        '<span class="dbg '+BCLASS[r]+'">'+BADGE[r]+'</span>'+
+        '<span class="darr" id="arr'+id+'">›</span>'+
+      '</div>'+
+      '<div class="db" id="body'+id+'">'+
+        '<table class="ct">'+
+          '<thead><tr><th>Cung — Chi</th><th style="text-align:center">T.thái</th><th>Phân tích chi tiết (xung/hợp/tam hợp)</th><th>Nên làm / Không nên</th></tr></thead>'+
+          '<tbody>'+rows+'</tbody>'+
+        '</table>'+
+        '<div class="ov '+OVCLASS[r]+'"><div class="ov-title">🎯 Tổng kết '+dayLabel+' tháng '+m.so+' âm ('+d.cc+')</div><div class="ov-body">'+ovText+'</div></div>'+
+      '</div>';
+    cardsEl.appendChild(card);
+  });
+});
+
+function switchTab(idx){
+  document.querySelectorAll('.tab').forEach(function(t,i){ t.classList.toggle('active',i===idx); });
+  document.querySelectorAll('.msec').forEach(function(s,i){ s.classList.toggle('show',i===idx); });
+}
+
+function tog(id, mi, di){
+  var body=document.getElementById('body'+id);
+  var arr=document.getElementById('arr'+id);
+  var prev=openMap[mi];
+  if(prev>=0 && prev!==di){
+    var pid='c'+mi+'_'+prev;
+    var pb=document.getElementById('body'+pid);
+    var pa=document.getElementById('arr'+pid);
+    if(pb){pb.classList.remove('op');pa.classList.remove('op');}
+  }
+  if(prev===di){body.classList.remove('op');arr.classList.remove('op');openMap[mi]=-1;return;}
+  body.classList.add('op');arr.classList.add('op');openMap[mi]=di;
+  setTimeout(function(){body.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
+}
+
+function flt(mi, r, btn){
+  document.querySelectorAll('#m'+mi+' .fb').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  document.querySelectorAll('#cards'+mi+' .dc').forEach(function(c){
+    c.style.display=(r==='all'||c.dataset.r===r)?'block':'none';
+  });
+  // Close open
+  if(openMap[mi]>=0){
+    var id='c'+mi+'_'+openMap[mi];
+    var b=document.getElementById('body'+id);var a=document.getElementById('arr'+id);
+    if(b){b.classList.remove('op');a.classList.remove('op');}
+    openMap[mi]=-1;
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phân Tích 12 Tháng Âm Lịch 2026 — Lá Số Mr. Hoàng</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+:root{
+  --ink:#1a1614;--paper:#faf8f4;--paper2:#f3f0ea;--border:#d4c9b0;
+  --gold:#b8860b;--gold-lt:#f5e9c4;--amber:#7d5a0a;
+  --red:#c0392b;--red-lt:#fde8e6;--red-dk:#8b1a12;
+  --blue:#1a5276;--blue-lt:#d6eaf8;
+  --green:#1e6b35;--green-lt:#d5f0dc;
+  --orange:#7d4000;--orange-lt:#fef3cd;
+  --gray:#5d5a56;--gray-lt:#eeece8;
+  --purple:#4a235a;--purple-lt:#ede0f5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.6}
+.page{max-width:960px;margin:0 auto;padding:24px 16px 80px}
+a.back{display:inline-flex;align-items:center;gap:6px;color:var(--amber);font-size:12px;font-weight:600;text-decoration:none;margin-bottom:20px}
+
+.hero{text-align:center;padding:28px 16px 20px;border-bottom:2px solid var(--gold);margin-bottom:24px}
+.hero h1{font-family:'Noto Serif',serif;font-size:21px;color:var(--gold);margin-bottom:7px}
+.hero-sub{font-size:12px;color:var(--gray)}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;justify-content:center}
+.tab{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;
+  color:var(--gray);font-size:12px;cursor:pointer;font-family:inherit;transition:all .15s;font-weight:500}
+.tab.active,.tab:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.tab.r-xau{border-color:var(--red);color:var(--red)}
+.tab.r-xau.active,.tab.r-xau:hover{background:var(--red);color:#fff}
+.tab.r-tot{border-color:var(--green);color:var(--green)}
+.tab.r-tot.active,.tab.r-tot:hover{background:var(--green);color:#fff}
+
+/* MONTH SECTION */
+.msec{display:none}
+.msec.show{display:block}
+
+/* MONTH HEADER */
+.mhdr{
+  background:linear-gradient(135deg,#1a1208 0%,#2d1f08 100%);
+  color:#f5e9c4;border-radius:10px;padding:18px 22px;margin-bottom:18px;
+}
+.mhdr-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.mhdr-left h2{font-family:'Noto Serif',serif;font-size:18px;color:#f5d060;margin-bottom:4px}
+.mhdr-left .dates{font-size:11px;color:#c8b882}
+.mhdr-score{
+  background:rgba(255,255,255,.12);border-radius:8px;padding:8px 14px;text-align:center;min-width:80px;
+}
+.ms-num{font-size:26px;font-weight:700;color:#f5d060;line-height:1}
+.ms-lbl{font-size:10px;color:#c8b882;margin-top:2px}
+.mhdr-tags{display:flex;flex-wrap:wrap;gap:5px}
+.mt{border-radius:3px;padding:2px 8px;font-size:10.5px;font-weight:600}
+.mt-g{background:rgba(46,204,113,.2);color:#5dbd77}
+.mt-r{background:rgba(192,57,43,.25);color:#ff8a7a}
+.mt-y{background:rgba(212,170,80,.2);color:#d4aa50}
+.mt-b{background:rgba(26,82,118,.25);color:#7ec8ec}
+
+/* CUNG TABLE */
+.ct{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:12px}
+.ct th{background:var(--paper2);border:1px solid var(--border);padding:6px 9px;
+  font-weight:600;font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}
+.ct td{border:1px solid var(--border);padding:8px 10px;vertical-align:top}
+.ct tr:nth-child(even) td{background:rgba(0,0,0,.012)}
+.tr-tot td{background:#edf8f0!important}
+.tr-xau td{background:#fdf0ee!important}
+.tr-warn td{background:#fef9ed!important}
+.tr-mid td{background:#f5f3ef!important}
+.cname{font-weight:700;font-size:12px}
+.cchi{font-size:10px;color:var(--amber);font-weight:700;margin-left:3px}
+.csao{font-size:10px;color:var(--gray);font-style:italic;margin-top:1px}
+.rel-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
+.rt{display:inline-block;font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px}
+.rt-g{background:var(--green-lt);color:var(--green);border:1px solid #a0d8a8}
+.rt-r{background:var(--red-lt);color:var(--red);border:1px solid #e8a0a0}
+.rt-y{background:var(--orange-lt);color:var(--orange);border:1px solid #d4aa50}
+.rt-b{background:var(--blue-lt);color:var(--blue);border:1px solid #9ec8ec}
+.rt-m{background:var(--gray-lt);color:var(--gray);border:1px solid #ccc}
+.cnx{font-size:11.5px;line-height:1.6;margin-top:4px}
+.nens{font-size:11px;color:var(--green);margin-top:3px}
+.khong{font-size:11px;color:var(--red);margin-top:2px}
+.crating{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10.5px;font-weight:700;margin-top:3px}
+.cr-tot{background:var(--green);color:#fff}
+.cr-kha{background:var(--blue);color:#fff}
+.cr-mid{background:var(--gray);color:#fff}
+.cr-can{background:#c8960a;color:#fff}
+.cr-xau{background:var(--red);color:#fff}
+
+/* OVERALL BOX */
+.ovbox{border-radius:8px;padding:12px 16px;margin-bottom:16px;border-left:4px solid;font-size:12px;line-height:1.7}
+.ov-tot{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.ov-kha{background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.ov-mid{background:var(--gray-lt);border-color:var(--gray);color:var(--gray)}
+.ov-warn{background:var(--orange-lt);border-color:#c8960a;color:var(--orange)}
+.ov-xau{background:var(--red-lt);border-color:var(--red);color:var(--red-dk)}
+.ov-title{font-weight:700;font-size:12.5px;margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.ov-body{color:var(--ink)}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:20px 0}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="index.html" class="back">← Trang chủ</a>
+
+<div class="hero">
+  <h1>📆 Phân Tích 12 Tháng Âm Lịch 2026</h1>
+  <div class="hero-sub">Lá số Mr. Hoàng · Năm Bính Ngọ · Lưu nguyệt an từng cung × tác động 12 cung × khuyến cáo thực tế</div>
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab r-tot active" onclick="showMonth(1,this)">T1 Dần ✅</button>
+  <button class="tab r-tot" onclick="showMonth(2,this)">T2 Mão ✅</button>
+  <button class="tab" onclick="showMonth(3,this)">T3 Thìn 〰</button>
+  <button class="tab r-tot" onclick="showMonth(4,this)">T4 Tị ✅</button>
+  <button class="tab r-xau" onclick="showMonth(5,this)">T5 Ngọ 🔴</button>
+  <button class="tab" onclick="showMonth(6,this)">T6 Mùi 〰</button>
+  <button class="tab" onclick="showMonth(7,this)">T7 Thân 〰</button>
+  <button class="tab r-tot" onclick="showMonth(8,this)">T8 Dậu ⭐</button>
+  <button class="tab r-tot" onclick="showMonth(9,this)">T9 Tuất ✅</button>
+  <button class="tab r-tot" onclick="showMonth(10,this)">T10 Hợi ✅</button>
+  <button class="tab" onclick="showMonth(11,this)">T11 Tý 〰</button>
+  <button class="tab r-tot" onclick="showMonth(12,this)">T12 Sửu ⭐</button>
+</div>
+
+<div id="m-root"></div>
+
+<script>
+// ══════════════════════════════════════════════════════
+// DATA: 12 CUNG LÁ SỐ MR. HOÀNG
+// ══════════════════════════════════════════════════════
+var CUNGS=[
+  {chi:'Sửu',ten:'Mệnh',icon:'🧭',sao:'Thiên Cơ(Đ), Thiên Hình, L.H.Quyền, H.Quyền năm, Long Đức',
+   tot:true,hung:false,key:'menh'},
+  {chi:'Dần',ten:'Phụ Mẫu',icon:'👴',sao:'Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, DV.T.Mã',
+   tot:true,hung:false,key:'phumu'},
+  {chi:'Mão',ten:'Phúc Đức',icon:'🌸',sao:'Thái Âm(H), Hóa Khoa B, Đào Hoa, Hy Thần, Thiên Hi',
+   tot:true,hung:false,key:'phucduc'},
+  {chi:'Thìn',ten:'Điền Trạch',icon:'🏠',sao:'Tham Lang(V), Địa Kiếp, Bệnh Phù, Thiên La, L.Đà La',
+   tot:false,hung:true,key:'dientrac'},
+  {chi:'Tị',ten:'Quan Lộc',icon:'💼',sao:'Cự Môn(V), Văn Xương, Song Khoa(DV+B), L.Lộc Tồn, Đại Hao',
+   tot:true,hung:false,key:'quanloc'},
+  {chi:'Ngọ',ten:'Nô Bộc',icon:'👥',sao:'Liêm Trinh(V), T.Tướng(V), Thái Tuế, Song Kỵ, Thiên Khôi',
+   tot:false,hung:true,key:'noboc'},
+  {chi:'Mùi',ten:'Thiên Di',icon:'🚀',sao:'Thiên Lương(Đ), Quốc Ân, Giải Thần, Phượng Các, Bệnh Phù',
+   tot:true,hung:false,key:'thiendi'},
+  {chi:'Thân',ten:'Tật Ách',icon:'🏥',sao:'Thất Sát(M), Tả Phù, Thiên Mã(Đ), Lộc Tồn(H), Bác Sĩ',
+   tot:false,hung:false,key:'tatach'},
+  {chi:'Dậu',ten:'Tài Bạch',icon:'💰',sao:'Thiên Đồng(H), Bính Lộc, DV.Lộc Tồn, Thiên Mã(Đ), Kình Dương',
+   tot:true,hung:false,key:'taibac'},
+  {chi:'Tuất',ten:'Tử Tức',icon:'👶',sao:'Vũ Khúc(M), Hóa Quyền (DV+B), Long Trì, Thanh Long, Hoa Cái',
+   tot:true,hung:false,key:'tutuc'},
+  {chi:'Hợi',ten:'Phu Thê',icon:'❤️',sao:'Thái Dương(H), Hóa Lộc B, L.Thiên Khôi, Nguyệt Đức, Tiểu Hao',
+   tot:true,hung:false,key:'phute'},
+  {chi:'Tý',ten:'Huynh Đệ',icon:'🤝',sao:'Phá Quân(M), Thiên Khốc, Thiên Hư, Thiên Giải, Tướng Quân',
+   tot:false,hung:false,key:'huynhde'},
+];
+
+var CHI_IDX={Tý:0,Sửu:1,Dần:2,Mão:3,Thìn:4,Tị:5,Ngọ:6,Mùi:7,Thân:8,Dậu:9,Tuất:10,Hợi:11};
+var CHI_NAME=['Tý','Sửu','Dần','Mão','Thìn','Tị','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi'];
+var LUC_HOP={Tý:'Sửu',Sửu:'Tý',Dần:'Hợi',Hợi:'Dần',Mão:'Tuất',Tuất:'Mão',Thìn:'Dậu',Dậu:'Thìn',Tị:'Thân',Thân:'Tị',Ngọ:'Mùi',Mùi:'Ngọ'};
+var TAM_HOP=[[2,6,10],[5,9,1],[8,0,4],[11,3,7]];
+
+function isXung(c1,c2){return Math.abs(CHI_IDX[c1]-CHI_IDX[c2])===6;}
+function isTamHop(c1,c2){
+  var i1=CHI_IDX[c1],i2=CHI_IDX[c2];
+  for(var g=0;g<TAM_HOP.length;g++)if(TAM_HOP[g].indexOf(i1)>=0&&TAM_HOP[g].indexOf(i2)>=0)return true;
+  return false;
+}
+function isHop(c1,c2){return LUC_HOP[c1]===c2;}
+
+// Lưu nguyệt: T1=Dần... T12=Sửu
+var LUU_NGUYET=['Dần','Mão','Thìn','Tị','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi','Tý','Sửu'];
+
+// Dương lịch tương ứng 2026
+// Tết Bính Ngọ = 17/02/2026 (mồng 1 tháng Giêng). Hôm nay 13/08/2026 = mồng 1 tháng 7.
+var DL=[
+  '17/02–18/03/2026','19/03–16/04/2026','17/04–16/05/2026',
+  '17/05–14/06/2026','15/06–13/07/2026','14/07–12/08/2026',
+  '13/08–10/09/2026','11/09–09/10/2026','10/10–08/11/2026',
+  '09/11–08/12/2026','09/12/2026–07/01/2027','08/01–05/02/2027'
+];
+
+// Điểm tổng tháng
+var MSCORE=[8,8,6,7,3,6,6,9,7,8,6,9];
+var MGRADE=['✅ Tốt','✅ Tốt','〰 Trung Bình','✅ Tốt','🔴 Xấu','〰 Trung Bình','〰 Trung Bình','⭐ Rất Tốt','✅ Tốt','✅ Tốt','〰 Trung Bình','⭐ Rất Tốt'];
+
+// Mô tả tổng quan mỗi tháng
+var MOVERVIEW=[
+  // T1 Dần
+  {cls:'ov-kha',title:'Tháng 1 — Khởi đầu được bề trên nâng đỡ',
+   body:'Lưu nguyệt Dần đóng thẳng vào <strong>Phụ Mẫu</strong> (Tử Vi + Thiên Phủ Miếu) — cung mạnh nhất lá số phát huy: bề trên, nhà đầu tư, ngân hàng sẵn lòng hỗ trợ ngay đầu năm. Dần lục hợp <strong>Phu Thê (Hợi)</strong> → gia đạo thuận hòa. Tam hợp kéo theo <strong>Tử Tức (Tuất)</strong> tốt, nhưng cũng động cả <strong>Nô Bộc (Song Kỵ–Thái Tuế, Ngọ)</strong> → cẩn trọng nhân sự; Dần xung nhẹ <strong>Tật Ách (Thân)</strong> → giữ sức. <strong>Hợp gặp đối tác chiến lược, xin hỗ trợ vốn, ký hợp đồng dài hạn.</strong>'},
+  // T2 Mão
+  {cls:'ov-kha',title:'Tháng 2 — Phúc đức & quan hệ hanh thông, giữ chặt hầu bao',
+   body:'Lưu nguyệt Mão đóng vào <strong>Phúc Đức</strong> (Thái Âm + Hóa Khoa) — tinh thần an, danh tiếng và quan hệ tốt. Mão tam hợp <strong>Phu Thê (Hợi)</strong> + <strong>Thiên Di (Mùi)</strong> → gia đạo êm, ra ngoài gặp quý nhân; lục hợp <strong>Tử Tức (Tuất)</strong>. Nhưng Mão <strong>xung Tài Bạch (Dậu)</strong> → tiền bạc dễ biến động, chi tiêu phát sinh. <strong>Hợp xây thương hiệu, PR, mở rộng quan hệ; thận trọng dòng tiền.</strong>'},
+  // T3 Thìn
+  {cls:'ov-mid',title:'Tháng 3 — Thận trọng nhà cửa & con cái',
+   body:'Lưu nguyệt Thìn đóng vào <strong>Điền Trạch</strong> (Tham Lang + Địa Kiếp) — cung hung bị kích: nhà cửa/tài sản dễ hao tán, phát sinh sửa chữa. Thìn <strong>xung Tử Tức (Vũ Khúc, Tuất)</strong> → chú ý con cái/dự án tâm huyết. May có Thìn lục hợp <strong>Tài Bạch (Dậu)</strong> đỡ phần tiền bạc, và tam hợp Tật Ách + Huynh Đệ. <strong>Không giao dịch bất động sản; tập trung việc thường ngày.</strong>'},
+  // T4 Tị
+  {cls:'ov-kha',title:'Tháng 4 — Sự nghiệp bứt tốc, nhưng giữ gìn hôn nhân',
+   body:'Lưu nguyệt Tị đóng thẳng vào <strong>Quan Lộc</strong> (Cự Môn + Song Khoa + Văn Xương) — sự nghiệp bứt tốc, đàm phán/giấy tờ rất thuận. Tị tam hợp <strong>Tài Bạch (Dậu)</strong> + <strong>Mệnh (Sửu)</strong> → bản thân, sự nghiệp và tiền bạc cùng lên. <strong>Nhưng Tị xung Phu Thê (Hợi) — đây là tháng dễ căng thẳng nhất cho hôn nhân cả năm.</strong> Càng được việc ngoài xã hội càng phải dành thời gian và sự dịu dàng cho vợ.'},
+  // T5 Ngọ
+  {cls:'ov-xau',title:'Tháng 5 — Tháng xấu nhất năm, đề phòng nhân sự & tiểu nhân',
+   body:'Lưu nguyệt Ngọ đóng thẳng vào <strong>Nô Bộc</strong> (Liêm Trinh + Thiên Tướng + <strong>Thái Tuế + Song Kỵ</strong>) — tổ hợp nguy hiểm nhất lá số bị kích trực tiếp: đề phòng tiểu nhân, phản trắc, thị phi từ cộng sự/nhân viên. Ngọ <strong>xung Huynh Đệ (Phá Quân, Tý)</strong> → quan hệ anh em/đối tác dễ rạn. May có tam hợp Phụ Mẫu + Tử Tức đỡ phần nào. <strong>Tuyệt đối không bảo lãnh, không hùn vốn miệng, không ký kết quan trọng; rà soát mọi hợp đồng đang chạy.</strong>'},
+  // T6 Mùi
+  {cls:'ov-mid',title:'Tháng 6 — Đi ngoài tốt hơn ở trong',
+   body:'Lưu nguyệt Mùi đóng vào <strong>Thiên Di</strong> (Thiên Lương Đắc) — ra ngoài có quý nhân che chở, hợp đi công tác, mở rộng thị trường. Mùi <strong>xung Mệnh (Sửu)</strong> → bản thân chịu áp lực từ môi trường, dễ mệt mỏi tinh thần (Thiên Lương Đắc hóa giải). Tam hợp <strong>Phu Thê (Hợi)</strong> + <strong>Phúc Đức (Mão)</strong> → tâm an, gia đạo êm; lục hợp Nô Bộc: hòa với nhân sự nhưng vẫn thận trọng. <strong>Hạn chế tranh luận nội bộ, ưu tiên việc bên ngoài.</strong>'},
+  // T7 Thân
+  {cls:'ov-mid',title:'Tháng 7 — Dưỡng sức, giữ quan hệ, dựng nền',
+   body:'Lưu nguyệt Thân đóng thẳng vào <strong>Tật Ách</strong> (Thất Sát) — sức khỏe là ưu tiên số một cả tháng. Thân <strong>xung Dần (Phụ Mẫu)</strong> — giữ hòa khí với bề trên/nhà đầu tư, hoãn chốt khoản lớn phụ thuộc vào họ. Thân tam hợp <strong>Huynh Đệ (Phá Quân, Tý)</strong> + Điền Trạch → nhóm cộng sự và nhà cửa nhiều biến động. Thân lục hợp <strong>Quan Lộc (Cự Môn, Tị)</strong> → sự nghiệp được hỗ trợ êm, hợp làm giấy tờ – đàm phán. Đây là tháng "nạp lại pin và dựng nền": giữ sức, giữ người, chuẩn bị kỹ cho chuỗi tháng tốt phía sau.'},
+  // T8 Dậu
+  {cls:'ov-tot',title:'Tháng 8 — Tháng thu tiền & sự nghiệp sáng nhất giai đoạn cuối năm',
+   body:'Lưu nguyệt Dậu đóng thẳng vào <strong>Tài Bạch</strong> (Thiên Đồng + Bính Lộc) — tài lộc hanh thông, tiền vào thuận. Dậu tam hợp <strong>Quan Lộc (Cự Môn, Tị)</strong> + <strong>Mệnh (Sửu)</strong> → bản thân sắc bén, sự nghiệp và giấy tờ đồng loạt được nâng đỡ; Dậu lục hợp <strong>Điền Trạch (Thìn)</strong> → cả chuyện nhà cửa cũng thuận. Chỉ có Dậu <strong>xung Phúc Đức (Thái Âm, Mão)</strong> khiến tinh thần dễ căng, ngủ kém. <strong>Nên: chốt hợp đồng lớn, thu hồi công nợ, nhận đầu tư, ra quyết định tài chính quan trọng.</strong>'},
+  // T9 Tuất
+  {cls:'ov-kha',title:'Tháng 9 — Quyết đoán "dự án con đẻ", được bề trên nâng đỡ',
+   body:'Lưu nguyệt Tuất đóng thẳng vào <strong>Tử Tức</strong> (Vũ Khúc Miếu + Hóa Quyền) — tư duy tài chính, tổ chức, kỷ luật sắc bén; tốt cho con cái và các "dự án tâm huyết". Tuất tam hợp <strong>Phụ Mẫu (Tử Vi–Thiên Phủ, Dần)</strong> → bề trên/nhà đầu tư nâng đỡ mạnh. Nhưng Tuất <strong>xung Điền Trạch (Tham Lang–Địa Kiếp, Thìn)</strong> → dễ biến động/hao về nhà cửa, tài sản; và tam hợp kéo động <strong>Nô Bộc (Song Kỵ–Thái Tuế, Ngọ)</strong> → cảnh giác nhân sự, thị phi. <strong>Nên: xin hỗ trợ từ bề trên, quyết định dự án tâm huyết. Không: giao dịch bất động sản, buông lỏng kiểm soát nhân sự.</strong>'},
+  // T10 Hợi
+  {cls:'ov-kha',title:'Tháng 10 — Tháng vàng cho hôn nhân & gia đình',
+   body:'Lưu nguyệt Hợi đóng thẳng vào <strong>Phu Thê</strong> (Thái Dương + Hóa Lộc + Nguyệt Đức) — hôn nhân ấm áp, nhiều tin vui, hợp vun đắp tình cảm. Hợi tam hợp <strong>Phúc Đức (Mão)</strong> + <strong>Thiên Di (Mùi)</strong> → tâm hồn an lạc; lục hợp <strong>Phụ Mẫu (Dần)</strong> → bề trên hòa thuận. Chỉ có Hợi <strong>xung Quan Lộc (Cự Môn, Tị)</strong> → công việc dễ thị phi lời tiếng; tách bạch việc – nhà. <strong>Nên: du lịch vợ chồng, kỷ niệm, chia sẻ thành quả với vợ.</strong>'},
+  // T11 Tý
+  {cls:'ov-mid',title:'Tháng 11 — Tái cấu trúc cộng sự, xử lý dứt điểm nhân sự',
+   body:'Lưu nguyệt Tý đóng thẳng vào <strong>Huynh Đệ</strong> (Phá Quân Miếu) — nhóm anh em/cộng sự biến động mạnh: người đến kẻ đi, hợp tác được "đập đi xây lại". Tý <strong>xung Nô Bộc (Song Kỵ–Thái Tuế, Ngọ)</strong> → đây là thời điểm đối mặt và xử lý dứt điểm vấn đề nhân sự/tiểu nhân tồn đọng. Tý lục hợp <strong>Mệnh (Sửu)</strong> → bản thân đủ bản lĩnh cầm trịch; tam hợp Tật Ách + Điền Trạch. <strong>Chủ động dẫn dắt thay đổi, nhưng mọi việc phải rõ ràng giấy tờ.</strong>'},
+  // T12 Sửu
+  {cls:'ov-tot',title:'Tháng 12 — Bản thân tỏa sáng, khép năm rực rỡ',
+   body:'Lưu nguyệt Sửu đóng thẳng vào <strong>Mệnh</strong> (Thiên Cơ Đắc) — bản thân minh mẫn, chủ động, làm chủ cuộc chơi. Sửu tam hợp <strong>Quan Lộc (Cự Môn, Tị)</strong> + <strong>Tài Bạch (Thiên Đồng, Dậu)</strong> → sự nghiệp và tài chính cùng được nâng đỡ. Sửu <strong>xung Thiên Di (Mùi)</strong> → ít đi xa, ở nhà lên kế hoạch; lục hợp <strong>Huynh Đệ (Tý)</strong> → cộng sự đồng lòng. <strong>Tháng tổng kết, ký hợp đồng đầu năm sau, lập kế hoạch 2027.</strong>'},
+];
+
+// Chi tiết từng cung theo từng tháng (luận đoán tùy chỉnh)
+// [cung_key][month_0based] = {nx:'', nen:'', khong:'', score:'tot|kha|mid|warn|xau'}
+var CUNG_DETAIL = {
+  menh:{6:{score:'kha',
+    nx:'Lưu nguyệt Thân không tạo quan hệ trực tiếp với Mệnh nên bản thân giữ được sự tỉnh táo, chủ động suốt tháng. Thiên Cơ Đắc cho đầu óc mưu lược — đây là tháng của vai trò "người cầm cờ": lùi lại quan sát, tính toán chiến lược và điều phối quân cờ, thay vì xông ra tuyến đầu.',
+    nen:'Lập kế hoạch dài hạn, sắp xếp lại tổ chức, ra quyết định điềm tĩnh dựa trên số liệu',
+    khong:'Nóng vội hành động theo cảm xúc; ôm đồm việc của người khác'},
+    7:{score:'kha',
+    nx:'Lưu nguyệt Dậu tam hợp (Tị–Dậu–Sửu) chiếu về Mệnh — bản thân minh mẫn, được thời. Thiên Cơ Đắc phối cùng thế tam hợp tài–quan giúp ra quyết định sắc bén, nắm cơ hội đúng lúc.',
+    nen:'Ra quyết định lớn, chốt kèo quan trọng, thể hiện vai trò dẫn dắt',
+    khong:'Do dự bỏ lỡ thời cơ; ôm việc quá sức khi đang thuận'},
+    8:{score:'mid',
+    nx:'Lưu nguyệt Tuất không tác động trực tiếp — bản thân giữ nhịp ổn định, đóng vai người điều phối. Thiên Cơ Đắc hợp việc tính toán lợi hại trước khi bề trên "chống lưng".',
+    nen:'Lên kế hoạch, cân nhắc kỹ trước khi nhận hỗ trợ từ bề trên',
+    khong:'Chủ quan; quyết vội khi chưa đủ dữ kiện'}},
+  phumu:{6:{score:'warn',
+    nx:'Lưu nguyệt Thân XUNG thẳng cung Phụ Mẫu — cung mạnh nhất lá số (Tử Vi + Thiên Phủ Miếu) bị chấn động. Quan hệ với bề trên, nhà đầu tư, ngân hàng, người bảo trợ dễ trục trặc/hiểu lầm, hoặc chính họ bận – mệt – đổi lịch. Tử Vi–Thiên Phủ rất vững nên không đổ vỡ, chỉ là sóng gợn — chớ chủ động va chạm.',
+    nen:'Giữ liên lạc mềm mỏng, hỏi thăm sức khỏe cha mẹ/người bảo trợ, nhường một bước',
+    khong:'Tranh luận tay đôi với bề trên; chốt vay vốn/đầu tư lớn phụ thuộc vào họ trong tháng này'},
+    7:{score:'mid',
+    nx:'Không tác động trực tiếp — quan hệ bề trên ổn định trở lại sau tháng 7 bị xung. Tranh thủ hâm nóng kết nối với nhà đầu tư/người bảo trợ để chuẩn bị cho tháng 9.',
+    nen:'Thăm hỏi, nối lại liên hệ với bề trên',
+    khong:'Nhắc lại mâu thuẫn cũ của tháng trước'},
+    8:{score:'kha',
+    nx:'Lưu nguyệt Tuất tam hợp (Dần–Ngọ–Tuất) kích mạnh Phụ Mẫu — Tử Vi + Thiên Phủ Miếu phát huy: bề trên, nhà đầu tư, ngân hàng sẵn lòng nâng đỡ. Đây là tháng vàng để xin hỗ trợ từ người có ảnh hưởng.',
+    nen:'Gặp bề trên/nhà đầu tư, đề xuất vay vốn, nhờ người uy tín đứng sau',
+    khong:'Bỏ lỡ cơ hội tiếp cận quý nhân; ngại mở lời'}},
+  phucduc:{6:{score:'mid',
+    nx:'Không bị lưu nguyệt tác động trực tiếp, tâm trạng nhìn chung ổn. Nhưng Thái Âm hơi nhạy cảm khiến dễ suy nghĩ nhiều về đêm; cộng thêm áp lực sức khỏe của tháng (Tật Ách bị kích) nên cần chủ động buông bớt.',
+    nen:'Thiền, ngủ sớm, đi bộ nhẹ, làm việc thiện tâm, tĩnh dưỡng tinh thần',
+    khong:'Thức khuya suy nghĩ tiêu cực; để môi trường ồn ào bào mòn tâm trạng'},
+    7:{score:'warn',
+    nx:'Lưu nguyệt Dậu XUNG Phúc Đức (Thái Âm) — tinh thần dễ căng, mất ngủ, lo nghĩ dù việc bên ngoài rất thuận. Cần chủ động chăm sóc nội tâm để không "được việc mà mệt người".',
+    nen:'Ngủ đủ, thiền, giảm cà phê/rượu, thư giãn cuối ngày',
+    khong:'Thức khuya làm việc; ôm suy nghĩ tiêu cực trước khi ngủ'},
+    8:{score:'kha',
+    nx:'Lưu nguyệt Tuất lục hợp Phúc Đức — tâm trạng được xoa dịu, an yên hơn hẳn tháng trước. Hợp để tĩnh dưỡng, tái tạo năng lượng tinh thần.',
+    nen:'Nghỉ ngơi, du lịch nhẹ, làm việc thiện tâm',
+    khong:'Tự tạo áp lực không cần thiết'}},
+  dientrac:{6:{score:'mid',
+    nx:'Lưu nguyệt Thân tam hợp (Thân–Tý–Thìn) làm cung nhà cửa "động". Tham Lang giỏi giao tế → thuận để dùng không gian sống làm nơi kết nối, tiếp khách, tiệc tùng. Mặt trái: Địa Kiếp–Đà La dễ phát sinh sửa chữa, hao tán nhỏ cho nhà cửa/đồ đạc.',
+    nen:'Bảo trì, dọn dẹp, dùng nhà làm nơi gắn kết quan hệ',
+    khong:'Mua bán bất động sản; ký hợp đồng nhà đất tháng này'},
+    7:{score:'mid',
+    nx:'Lưu nguyệt Dậu lục hợp Điền Trạch — chuyện nhà cửa, tài sản hài hòa, thuận cho sắp xếp, tu bổ. Tham Lang giao tế tốt, có thể dùng nhà làm nơi kết nối, tiếp khách.',
+    nen:'Tu sửa, sắp xếp nhà cửa, tiếp khách tại gia',
+    khong:'Vẫn nên tránh mua bán bất động sản lớn'},
+    8:{score:'warn',
+    nx:'Lưu nguyệt Tuất XUNG Điền Trạch (Tham Lang–Địa Kiếp) — cung nhà cửa/tài sản bị chấn động: dễ hao tán, hỏng hóc, tranh chấp đất–nhà. Đây là cung cần cẩn trọng nhất về tài sản trong giai đoạn này.',
+    nen:'Kiểm tra giấy tờ nhà đất, bảo hiểm tài sản, siết chi tiêu cho nhà cửa',
+    khong:'Mua/bán/thế chấp bất động sản; giao tài sản cho người lạ quản lý'}},
+  quanloc:{6:{score:'kha',
+    nx:'Lưu nguyệt Thân LỤC HỢP với Quan Lộc — sự nghiệp được hỗ trợ một cách êm, kín đáo. Cự Môn là sao của ngôn luận – hợp đồng – đàm phán, nên tháng 7 rất hợp thương lượng, hoàn thiện giấy tờ, xử lý mọi việc bằng văn bản chặt chẽ. Đây là giai đoạn "dựng nền" — chuẩn bị kỹ cho lúc bung ra.',
+    nen:'Đàm phán, soạn – rà hợp đồng, chuẩn hóa quy trình, thuyết trình có chuẩn bị',
+    khong:'Tranh cãi công khai, đôi co thị phi (Cự Môn dễ khẩu thiệt); kiện tụng không cần thiết'},
+    7:{score:'kha',
+    nx:'Lưu nguyệt Dậu tam hợp (Tị–Dậu–Sửu) kích Quan Lộc — Cự Môn + Song Khoa + Văn Xương phát huy: đàm phán, hợp đồng, hồ sơ đều thuận. Cùng lúc Tài Bạch được trực kích → sự nghiệp và tiền bạc cộng hưởng.',
+    nen:'Chốt hợp đồng, ký kết, thuyết trình quan trọng, xét duyệt hồ sơ',
+    khong:'Tranh cãi công khai (Cự Môn dễ thị phi lúc đang nổi bật)'},
+    8:{score:'mid',
+    nx:'Không tác động trực tiếp — sự nghiệp giữ nhịp, xử lý việc thường ngày. Tận dụng đà tốt của tháng 8 để hoàn tất các việc còn dang dở.',
+    nen:'Hoàn thiện việc dở dang, duy trì quan hệ đối tác',
+    khong:'Khởi việc mới quá lớn khi chưa thật cần'}},
+  noboc:{6:{score:'mid',
+    nx:'Không bị lưu nguyệt kích trực tiếp nên tạm lắng, nhưng đây là cung hung nặng nhất lá số (Song Kỵ + Thái Tuế). Hãy tận dụng tháng "yên" này để âm thầm củng cố tuyến phòng thủ nhân sự trước khi cung bị kích ở các tháng sau.',
+    nen:'Rà soát nhân sự, kiểm tra hợp đồng cộng sự, dựng lại quy trình kiểm soát',
+    khong:'Bảo lãnh vay tiền; giao toàn quyền tài chính cho một người; tuyển vội người lạ'},
+    7:{score:'mid',
+    nx:'Không bị kích trực tiếp, cung hung tạm yên. Tiếp tục âm thầm củng cố kiểm soát nhân sự trong lúc thuận lợi, ghi nhận người thực sự đóng góp.',
+    nen:'Rà soát quy trình, ghi nhận đóng góp của cộng sự tốt',
+    khong:'Bảo lãnh; giao toàn quyền tài chính cho một người'},
+    8:{score:'mid',
+    nx:'Lưu nguyệt Tuất tam hợp (Dần–Ngọ–Tuất) kéo Nô Bộc "động" — cung có Song Kỵ + Thái Tuế nên dễ phát sinh thị phi, mâu thuẫn nhân sự, tiểu nhân nhân lúc mình bận việc lớn. Cảnh giác nhưng đừng để cuốn theo.',
+    nen:'Giữ khoảng cách với thị phi, minh bạch mọi giao dịch chung',
+    khong:'Bảo lãnh, hùn vốn miệng; tin lời gièm pha một chiều'}},
+  thiendi:{6:{score:'kha',
+    nx:'Ra ngoài an toàn, có quý nhân che chở (Thiên Lương Đắc — phúc tinh giải nạn). Đi công tác, mở rộng thị trường, gặp đối tác bên ngoài đều thuận. Chỉ cần nhớ giữ sức vì cơ thể tháng này dễ quá tải.',
+    nen:'Đi công tác, mở rộng thị trường ngoài, gặp đối tác/xin giấy phép',
+    khong:'Đi xa một mình không báo; lịch trình dày đặc vắt kiệt sức'},
+    7:{score:'mid',
+    nx:'Không tác động trực tiếp, đi lại bình thường và an toàn (Thiên Lương Đắc che chở). Hợp kết hợp công tác với việc chốt hợp đồng của tháng.',
+    nen:'Đi gặp đối tác để chốt kèo, mở rộng thị trường',
+    khong:'Lịch trình quá dày làm hao sức'},
+    8:{score:'mid',
+    nx:'Ra ngoài vẫn có quý nhân che chở. Có thể cần di chuyển để gặp bề trên/nhà đầu tư (liên hệ Phụ Mẫu đang được tam hợp).',
+    nen:'Đi gặp quý nhân, xúc tiến hỗ trợ từ bên ngoài',
+    khong:'Đi xa một mình không báo lịch'}},
+  tatach:{6:{score:'warn',
+    nx:'⚡ TÂM ĐIỂM CỦA THÁNG: lưu nguyệt Thân đóng thẳng vào cung Bệnh, kích Thất Sát — sao của cường độ và sức bật. Năng lượng dồn vào cơ thể dễ sinh trạng thái "gồng quá tải": ôm việc, ngủ ít, ăn thất thường; cảnh giác vai gáy, dạ dày, tim mạch – huyết áp do căng thẳng. Đầu tháng (13–22/8) hưng phấn dễ làm quá; giữa–cuối tháng (01–10/9) là lúc cơ thể "đòi nợ". May có Lộc Tồn + Bác Sĩ hộ mệnh: có bệnh cũng gặp đúng thầy đúng thuốc.',
+    nen:'Khám sức khỏe định kỳ ngay đầu tháng, ngủ đủ, ăn đúng bữa, tập nhẹ đều',
+    khong:'Làm >10h/ngày liên tục; thể thao mạo hiểm; bỏ bữa; lạm dụng rượu bia'},
+    7:{score:'mid',
+    nx:'Sau tháng 7 bị trực kích, sức khỏe tháng 8 hạ nhiệt nhưng vẫn cần "trả nợ" phục hồi: ngủ bù, ăn điều độ, tái khám nếu tháng trước có dấu hiệu bất thường.',
+    nen:'Phục hồi thể lực, tái khám, duy trì vận động nhẹ',
+    khong:'Lại lao vào làm quá sức khi vừa thấy khỏe'},
+    8:{score:'mid',
+    nx:'Sức khỏe ổn định dần, không sự cố lớn. Duy trì nếp sinh hoạt lành mạnh đã thiết lập từ hai tháng trước.',
+    nen:'Giữ nếp ăn – ngủ – tập đều',
+    khong:'Chủ quan bỏ tái khám'}},
+  taibac:{6:{score:'mid',
+    nx:'Lưu nguyệt không tác động trực tiếp — dòng tiền đi ngang, ổn định, không đột biến. Thiên Đồng là phúc tinh hưởng thụ nên tài chính đủ đầy, thư thái, nhưng không phải tháng bung tiền hay đầu tư lớn. Giữ tiền và cân đối dòng tiền là chính.',
+    nen:'Cân đối dòng tiền, giữ quỹ dự phòng, thu các khoản nhỏ đến hạn',
+    khong:'Đầu tư/đầu cơ vốn lớn; chi tiêu bốc đồng; mua bất động sản'},
+    7:{score:'tot',
+    nx:'⚡ TÂM ĐIỂM THÁNG: lưu nguyệt Dậu đóng thẳng vào Tài Bạch (Thiên Đồng + Bính Lộc) — tài lộc hanh thông, tiền vào thuận. Cộng hưởng tam hợp Quan Lộc + Mệnh → đây là tháng tốt nhất để thu tiền, chốt kèo, nhận đầu tư trong giai đoạn cuối năm.',
+    nen:'Chốt hợp đồng lớn, thu hồi công nợ, nhận đầu tư, tái cơ cấu dòng tiền',
+    khong:'Đầu cơ mạo hiểm quá tay; chi tiêu phóng túng vì thấy tiền vào dễ'},
+    8:{score:'mid',
+    nx:'Sau đỉnh tháng 8, dòng tiền tháng 9 đi ngang, ổn định. Đây là thời điểm quản trị và cất giữ thành quả vừa thu được.',
+    nen:'Cân đối, cất giữ, lập quỹ dự phòng',
+    khong:'Vung tay tiêu theo quán tính tháng trước'}},
+  tutuc:{6:{score:'kha',
+    nx:'Cung con cái / "đứa con tinh thần" (dự án tâm huyết) có Vũ Khúc Miếu + Hóa Quyền — tư duy quyết đoán, kỷ luật, giỏi tổ chức. Tháng không có sự kiện lớn nhưng là lúc tốt để đặt kỷ luật, định hướng cho con hoặc dự án "con đẻ". Lưu ý Vũ Khúc tính cương: khi mệt (do sức khỏe tháng 7) dễ nghiêm khắc quá mức.',
+    nen:'Định hướng, đầu tư giáo dục cho con/dự án; khích lệ đúng lúc',
+    khong:'Kỷ luật hà khắc lúc tâm trạng xấu; áp đặt khi đang kiệt sức'},
+    7:{score:'mid',
+    nx:'Con cái/dự án tâm huyết ổn định, chưa nổi bật. Chuẩn bị kế hoạch sẵn cho tháng 9 khi cung được kích mạnh.',
+    nen:'Quan sát, đồng hành, chuẩn bị kế hoạch cho con/dự án',
+    khong:'Áp đặt khi chưa đến lúc'},
+    8:{score:'tot',
+    nx:'⚡ Lưu nguyệt Tuất đóng thẳng vào Tử Tức — Vũ Khúc Miếu + Hóa Quyền phát huy tối đa: tư duy tài chính, tổ chức, kỷ luật sắc bén. Tháng tốt để ra quyết định lớn cho "đứa con đẻ" (dự án tâm huyết) hoặc đầu tư mạnh cho con cái; có thể có tin vui từ con.',
+    nen:'Quyết định lớn cho dự án tâm huyết; đầu tư giáo dục cho con; khích lệ con',
+    khong:'Vũ Khúc tính cương — tránh kỷ luật hà khắc, áp đặt quá mức'}},
+  phute:{6:{score:'kha',
+    nx:'Hôn nhân bình yên, được Thái Dương + Nguyệt Đức che chở, không sóng gió. Rủi ro duy nhất là bản thân kiệt sức (Tật Ách) rồi vô tình lạnh nhạt với vợ. Ngược lại, dành thời gian nghỉ ngơi bên vợ chính là cách dưỡng sức tốt nhất tháng này — "lùi về gia đình để sạc lại pin".',
+    nen:'Nghỉ ngơi cùng vợ, chia sẻ tâm tư, ăn tối nhẹ nhàng ở nhà',
+    khong:'Về trễ triền miên không báo; mang căng thẳng công việc trút lên gia đình'},
+    7:{score:'mid',
+    nx:'Hôn nhân êm, không sự kiện lớn. Khi công việc/tiền bạc thuận, nhớ chia sẻ niềm vui và thành quả với vợ để giữ ấm gia đình.',
+    nen:'Chia sẻ thành quả, tặng quà nhỏ, dành thời gian cho vợ',
+    khong:'Mải việc bỏ bê gia đình dù tháng bận rộn'},
+    8:{score:'mid',
+    nx:'Quan hệ vợ chồng ổn định, được Nguyệt Đức che chở. Có thể cùng vợ bàn kế hoạch tài chính/gia đình khi cung Tử Tức và Phụ Mẫu đang tốt.',
+    nen:'Cùng vợ bàn kế hoạch gia đình, con cái',
+    khong:'Tự quyết chuyện lớn của gia đình mà không hỏi ý vợ'}},
+  huynhde:{6:{score:'kha',
+    nx:'Lưu nguyệt Thân tam hợp (Thân–Tý–Thìn) kích cung anh em – bạn bè – cộng sự, nơi có Phá Quân Miếu (sao của phá – lập, thay đổi mạnh). Tháng 7 dễ biến động trong nhóm cộng sự: người đến kẻ đi, tái cấu trúc hợp tác, một dự án chung được "đập đi xây lại". Phá Quân Miếu nghiêng về đổi mới tích cực nếu mình chủ động dẫn dắt; nhưng Thiên Khốc–Thiên Hư nhắc giữ tình nghĩa.',
+    nen:'Chủ động dẫn dắt việc tái cấu trúc hợp tác; củng cố quan hệ bạn bè lâu năm',
+    khong:'Cho vay/hùn vốn thiếu giấy tờ; để thay đổi làm sứt mẻ tình nghĩa'},
+    7:{score:'mid',
+    nx:'Sau biến động tháng 7, quan hệ cộng sự/bạn bè lắng lại. Củng cố những hợp tác đã qua "sàng lọc", giữ người thực sự đồng hành.',
+    nen:'Củng cố hợp tác tốt, tri ân cộng sự đáng tin',
+    khong:'Cho vay/hùn vốn thiếu giấy tờ'},
+    8:{score:'mid',
+    nx:'Không bị kích trực tiếp, nhóm cộng sự ổn định. Lưu ý gián tiếp: khi Nô Bộc bị động (thị phi), cần phân biệt rõ bạn bè chân thành với người xu nịnh.',
+    nen:'Giữ quan hệ bạn bè chân thành, minh bạch việc chung',
+    khong:'Nghe lời gièm pha gây rạn nứt anh em'}},
+};
+
+// Hàm tính quan hệ xung/hợp giữa lưu nguyệt và cung
+function calcRel(ln, cung){
+  var rels=[];
+  if(ln===cung) rels.push({cls:'rt-g',txt:'Trực Kích ⚡'});
+  if(isXung(ln,cung)) rels.push({cls:'rt-r',txt:'Xung ☇'});
+  if(isTamHop(ln,cung)) rels.push({cls:'rt-g',txt:'Tam Hợp ✦'});
+  if(isHop(ln,cung)) rels.push({cls:'rt-b',txt:'Lục Hợp ☯'});
+  if(!rels.length) rels.push({cls:'rt-m',txt:'Trung Lập'});
+  return rels;
+}
+
+// Tự động chấm điểm cung theo lưu nguyệt
+function scoreRel(ln, c){
+  var score=0;
+  var isHung=c.hung;
+  var isTot=c.tot;
+  if(ln===c.chi){ score += isHung ? -3 : 3; }
+  if(isXung(ln,c.chi)){ score -= isHung ? 2 : 3; }
+  if(isTamHop(ln,c.chi)){ score += isHung ? -1 : 2; }
+  if(isHop(ln,c.chi)){ score += 1; }
+  if(isTot) score+=1;
+  if(score>=4) return 'tot';
+  if(score>=2) return 'kha';
+  if(score>=-1) return 'mid';
+  if(score>=-3) return 'warn';
+  return 'xau';
+}
+
+// Sinh nhận xét chi tiết theo tháng và cung
+function genNX(ln, c, month){
+  var m=month+1; // tháng 1-based
+  var isHung=c.hung;
+  var isTot=c.tot;
+  var star=(c.sao||'').split(',')[0].trim(); // sao chủ
+
+  if(ln===c.chi){
+    if(isHung) return 'Lưu nguyệt T'+m+' ('+ln+') đóng thẳng vào '+c.ten+' — hung tinh '+star+' bị kích, đây là tâm điểm cảnh báo của tháng. Cần đặc biệt thận trọng, phòng ngừa rủi ro thuộc lĩnh vực '+c.ten.toLowerCase()+'.';
+    if(isTot) return 'Lưu nguyệt T'+m+' ('+ln+') đóng thẳng vào '+c.ten+' — '+star+' được kích hoạt mạnh, cung phát huy tối đa. Đây là cung trọng tâm nên chủ động tận dụng cơ hội thuộc '+c.ten.toLowerCase()+'.';
+    return 'Lưu nguyệt T'+m+' ('+ln+') đóng thẳng vào '+c.ten+' — '+star+' được kích hoạt, lĩnh vực '+c.ten.toLowerCase()+' thành tâm điểm tháng: chú ý cả cơ hội lẫn áp lực.';
+  }
+  if(isXung(ln,c.chi)){
+    if(isHung) return 'Lưu nguyệt '+ln+' xung cung hung '+c.ten+' ('+c.chi+', '+star+') — có thể là dịp đối mặt và xử lý dứt điểm vấn đề tồn đọng, nhưng phải rất cẩn trọng suốt tháng.';
+    if(isTot) return 'Lưu nguyệt '+ln+' xung '+c.ten+' ('+c.chi+') — sao tốt '+star+' bị chấn động, lĩnh vực '+c.ten.toLowerCase()+' dễ trục trặc/biến động dù nền tảng vững; nên xử lý mềm mỏng, tránh va chạm.';
+    return 'Lưu nguyệt '+ln+' xung '+c.ten+' ('+c.chi+', '+star+') — lĩnh vực này chịu áp lực từ bên ngoài trong tháng.';
+  }
+  if(isTamHop(ln,c.chi)){
+    if(isHung) return 'Lưu nguyệt '+ln+' tam hợp cung hung '+c.ten+' ('+c.chi+', '+star+') — cung bị kéo "động", dễ phát sinh rắc rối thuộc '+c.ten.toLowerCase()+'; cảnh giác nhưng không quá lo.';
+    return 'Lưu nguyệt '+ln+' tam hợp '+c.ten+' ('+c.chi+') — '+star+' được nâng đỡ tốt, lĩnh vực '+c.ten.toLowerCase()+' hanh thông, phối hợp thuận trong tháng.';
+  }
+  if(isHop(ln,c.chi)){
+    return 'Lưu nguyệt '+ln+' lục hợp '+c.ten+' ('+c.chi+') — quan hệ hài hòa, '+star+' được hỗ trợ nhẹ, thuận để vun đắp lĩnh vực '+c.ten.toLowerCase()+'.';
+  }
+  return 'Lưu nguyệt T'+m+' không tác động trực tiếp '+c.ten+' — lĩnh vực này vận hành ổn định theo sao bản mệnh '+star+'.';
+}
+
+// Sinh khuyến cáo Nên/Không theo quan hệ lưu nguyệt của từng tháng
+function genAdvice(ln, c){
+  var isHung=c.hung, np, kp;
+  if(ln===c.chi){
+    if(isHung){ np='Cung hung bị kích — phòng thủ tối đa: '; kp='Tuyệt đối tránh tháng này: '; }
+    else { np='Cung trọng tâm tháng, ưu tiên cao nhất: '; kp='Tối kỵ trong tháng: '; }
+  } else if(isXung(ln,c.chi)){
+    if(isHung){ np='Cung hung bị xung — dịp xử lý dứt điểm, rất thận trọng: '; kp='Rất tránh khi cung bị xung: '; }
+    else { np='Cung bị xung, giữ mình & xử lý mềm mỏng: '; kp='Đặc biệt tránh khi bị xung: '; }
+  } else if(isTamHop(ln,c.chi)){
+    if(isHung){ np='Cung hung bị kéo động — chủ động kiểm soát: '; kp='Cảnh giác: '; }
+    else { np='Được tam hợp nâng đỡ, tranh thủ: '; kp='Dù thuận vẫn tránh: '; }
+  } else if(isHop(ln,c.chi)){
+    np='Được lục hợp hỗ trợ nhẹ, thuận để: '; kp='Tránh: ';
+  } else {
+    np='Duy trì ổn định: '; kp='Tránh: ';
+  }
+  return {nen: np+NEN[c.key], khong: kp+KHONG[c.key]};
+}
+
+// Nên/Không nên theo cung
+var NEN={
+  menh:'Ra quyết định chiến lược, gặp đối tác quan trọng, thể hiện quyền lực lãnh đạo',
+  phumu:'Gặp bề trên, nhà đầu tư, ngân hàng; nhờ sự hỗ trợ của người lớn tuổi có uy tín',
+  phucduc:'Thư giãn, tĩnh tâm, làm từ thiện, chăm sóc bản thân, tổ chức sự kiện quan hệ',
+  dientrac:'Kiểm tra, bảo trì nhà cửa; không giao dịch bất động sản mới',
+  huynhde:'Duy trì quan hệ bạn bè lâu năm; không cho vay hoặc bảo lãnh',
+  noboc:'Kiểm tra, rà soát nội bộ; xây dựng quy trình quản lý; không tuyển người mới vội',
+  thiendi:'Đi công tác, mở rộng thị trường ngoài; gặp đối tác bên ngoài; xin giấy phép',
+  tatach:'Khám sức khỏe, tập thể dục; không làm việc quá sức',
+  tutuc:'Dành thời gian cho con; đầu tư giáo dục; khen ngợi khích lệ con',
+  taibac:'Thu tiền, chốt hợp đồng lớn; nhận đầu tư; tái cơ cấu dòng tiền',
+  phute:'Quan tâm vợ/chồng; du lịch đôi; chia sẻ tâm tư; mua quà ý nghĩa',
+  quanloc:'Dùng văn bản hợp đồng chặt; thuyết trình, đàm phán kỹ; không tranh luận bộc phát',
+};
+var KHONG={
+  menh:'Để cảm xúc chi phối quyết định; ký hợp đồng thiếu kiểm tra kỹ lưỡng',
+  phumu:'Tranh luận với bề trên; bỏ lỡ cơ hội nhận hỗ trợ từ người có ảnh hưởng',
+  phucduc:'Làm việc quá sức; để môi trường tiêu cực ảnh hưởng tâm trạng',
+  dientrac:'Mua nhà/đất; ký hợp đồng bất động sản; để người lạ vào nhà quản lý',
+  huynhde:'Cho mượn tiền lớn; hùn vốn với bạn; để bạn bè can thiệp chuyện gia đình',
+  noboc:'Bảo lãnh vay tiền; hùn vốn không hợp đồng; để 1 người kiểm soát tài chính toàn bộ',
+  thiendi:'Đi xa một mình không thông báo; tham gia hoạt động mạo hiểm',
+  tatach:'Làm việc >10h/ngày liên tục; leo núi/thể thao mạo hiểm; bỏ bữa ăn uống',
+  tutuc:'Kỷ luật quá nghiêm khi tâm trạng không tốt; so sánh con với người khác',
+  taibac:'Đầu tư chứng khoán/tiền ảo vốn lớn; mua bất động sản; chi tiêu không kế hoạch',
+  phute:'Tranh luận chuyện tiền bạc lúc căng thẳng; về trễ không báo trước; ít quan tâm vợ',
+  quanloc:'Tranh cãi công khai; kiện tụng không cần thiết; nói nhiều gây khẩu thiệt',
+};
+
+// ══════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════
+function renderMonth(m){
+  var idx=m-1;
+  var ln=LUU_NGUYET[idx];
+  var dl=DL[idx];
+  var ov=MOVERVIEW[idx];
+  var score=MSCORE[idx];
+  var grade=MGRADE[idx];
+
+  var scoreColor=score>=8?'#2ecc71':score>=7?'#5dade2':score>=6?'#f0b429':score>=5?'#e67e22':'#e74c3c';
+
+  var html='';
+  // Header
+  html+='<div class="mhdr">';
+  html+='<div class="mhdr-top"><div class="mhdr-left">';
+  html+='<h2>Tháng '+m+' Âm Lịch 2026 — Lưu Nguyệt: '+ln+'</h2>';
+  html+='<div class="dates">📅 Dương lịch: '+dl+'</div>';
+  html+='</div>';
+  html+='<div class="mhdr-score"><div class="ms-num" style="color:'+scoreColor+'">'+score+'</div><div class="ms-lbl">/ 10 · '+grade+'</div></div>';
+  html+='</div>';
+
+  // Tags
+  html+='<div class="mhdr-tags">';
+  html+='<span class="mt mt-y">Lưu Nguyệt: '+ln+'</span>';
+  CUNGS.forEach(function(c){
+    if(c.chi===ln) html+='<span class="mt mt-b">Đóng tại: '+c.ten+' ('+c.chi+')</span>';
+  });
+  // Xung của lưu nguyệt
+  CUNGS.forEach(function(c){
+    if(isXung(ln,c.chi)) html+='<span class="mt mt-r">Xung: '+c.ten+' ('+c.chi+')</span>';
+  });
+  html+='</div>';
+  html+='</div>'; // end mhdr
+
+  // Overview
+  html+='<div class="ovbox '+ov.cls+'">';
+  html+='<div class="ov-title">'+ov.title+'</div>';
+  html+='<div class="ov-body">'+ov.body+'</div>';
+  html+='</div>';
+
+  // Cung table
+  html+='<table class="ct"><tr>';
+  html+='<th width="15%">Cung</th>';
+  html+='<th width="18%">Quan Hệ<br>Lưu Nguyệt</th>';
+  html+='<th width="9%">Điểm</th>';
+  html+='<th width="58%">Phân Tích & Khuyến Cáo Tháng '+m+'</th>';
+  html+='</tr>';
+
+  CUNGS.forEach(function(c){
+    var rels=calcRel(ln,c.chi);
+    var det=(CUNG_DETAIL[c.key]&&CUNG_DETAIL[c.key][idx])?CUNG_DETAIL[c.key][idx]:null;
+    var sc=(det&&det.score)?det.score:scoreRel(ln,c);
+    var trCls=sc==='tot'?'tr-tot':sc==='xau'||sc==='warn'?'tr-xau':sc==='mid'?'tr-mid':'';
+    var crCls='cr-'+sc;
+    var crTxt=sc==='tot'?'Rất Tốt':sc==='kha'?'Tốt':sc==='mid'?'Bình':sc==='warn'?'Cẩn Thận':'Xấu';
+    var nx=(det&&det.nx)?det.nx:genNX(ln,c,idx);
+    var adv=genAdvice(ln,c);
+    var nenTxt=(det&&det.nen)?det.nen:adv.nen;
+    var khongTxt=(det&&det.khong)?det.khong:adv.khong;
+
+    html+='<tr class="'+trCls+'"><td>';
+    html+=c.icon+' <span class="cname">'+c.ten+'</span><span class="cchi">'+c.chi+'</span>';
+    html+='<div class="csao">'+c.sao+'</div>';
+    html+='</td><td>';
+    html+='<div class="rel-tags">';
+    rels.forEach(function(r){ html+='<span class="rt '+r.cls+'">'+r.txt+'</span>'; });
+    html+='</div>';
+    html+='</td><td><span class="crating '+crCls+'">'+crTxt+'</span></td>';
+    html+='<td><div class="cnx">'+nx+'</div>';
+    html+='<div class="nens">✅ Nên: '+nenTxt+'</div>';
+    html+='<div class="khong">⛔ Không: '+khongTxt+'</div>';
+    html+='</td></tr>';
+  });
+
+  html+='</table>';
+
+  // Navigation
+  html+='<div style="display:flex;justify-content:space-between;margin-top:12px;font-size:12px">';
+  if(m>1) html+='<button onclick="clickTab('+(m-1)+')" style="background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:20px;padding:5px 14px;cursor:pointer;font-family:inherit;font-weight:600">← Tháng '+(m-1)+'</button>';
+  else html+='<span></span>';
+  if(m<12) html+='<button onclick="clickTab('+(m+1)+')" style="background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:20px;padding:5px 14px;cursor:pointer;font-family:inherit;font-weight:600">Tháng '+(m+1)+' →</button>';
+  else html+='<a href="index.html" style="background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:20px;padding:5px 14px;text-decoration:none;font-weight:600">← Trang Chủ</a>';
+  html+='</div>';
+
+  return html;
+}
+
+function showMonth(m, btn){
+  document.getElementById('m-root').innerHTML=renderMonth(m);
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function clickTab(m){
+  var tabs=document.querySelectorAll('.tab');
+  showMonth(m, tabs[m-1]);
+}
+
+// Init
+showMonth(1, document.querySelector('.tab'));
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Tử Vi Mr. Hoàng 2026 — Preview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600&display=swap');
+:root{
+  --bg:#0d0b06;--card:#181309;--card2:#201a08;--card3:#2a2210;
+  --gold:#c8960a;--gold2:#e6b030;--gold-lt:#f7e8a8;--gold-dim:rgba(200,150,10,.12);
+  --text:#f0e6cc;--text2:#c8b06a;--text3:#7a6840;--text4:#4a3e25;
+  --border:rgba(200,150,10,.22);--border2:rgba(200,150,10,.10);
+  --green:#27ae60;--green2:rgba(39,174,96,.15);
+  --blue:#2980b9;--blue2:rgba(41,128,185,.15);
+  --orange:#e67e22;--orange2:rgba(230,126,34,.15);
+  --red:#e74c3c;--red2:rgba(231,76,60,.15);
+  --gray:#555;--gray2:rgba(85,85,85,.2);
+  --nav-h:62px;--r:14px;--r-sm:9px;--r-xs:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text);font-size:13.5px;line-height:1.6;min-height:100vh;padding-bottom:var(--nav-h)}
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+button{font-family:inherit;cursor:pointer;border:none;outline:none;-webkit-tap-highlight-color:transparent}
+/* ─── TOP BAR ─── */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(13,11,6,.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border2);padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between}
+.tb-brand{font-family:'Noto Serif',serif;font-size:14px;color:var(--gold);letter-spacing:.3px}
+.tb-sub{font-size:10px;color:var(--text3);margin-top:1px}
+.tb-picker{display:flex;align-items:center;gap:6px}
+.picker-btn{background:var(--card2);border:1px solid var(--border2);border-radius:var(--r-xs);
+  padding:5px 10px;font-size:11.5px;color:var(--text2);cursor:pointer;transition:all .15s}
+.picker-btn:hover,.picker-btn.on{background:var(--gold-dim);border-color:var(--border);color:var(--gold)}
+/* ─── BOTTOM NAV ─── */
+.bot-nav{position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(13,11,6,.97);backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);height:var(--nav-h);
+  display:flex;align-items:stretch}
+.bn-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;cursor:pointer;transition:all .15s;color:var(--text3);border-top:2px solid transparent}
+.bn-tab.on{color:var(--gold);border-top-color:var(--gold)}
+.bn-ico{font-size:20px;line-height:1}
+.bn-lbl{font-size:10px;font-weight:600;letter-spacing:.2px}
+/* ─── VIEWS ─── */
+.view{display:none;padding:14px 14px 20px;animation:fadeIn .2s ease}
+.view.on{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+/* ─── TODAY HERO ─── */
+.hero{background:linear-gradient(135deg,#1a1203 0%,#241a06 60%,#1a130a 100%);
+  border:1px solid var(--border);border-radius:var(--r);padding:18px 16px 14px;
+  margin-bottom:14px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30px;right:-20px;width:130px;height:130px;
+  background:radial-gradient(circle,rgba(200,150,10,.12) 0%,transparent 70%);border-radius:50%}
+.hero-date-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.hero-dl-big{font-family:'Noto Serif',serif;font-size:52px;font-weight:600;color:var(--gold2);line-height:1}
+.hero-dl-info{flex:1}
+.hero-dl-label{font-size:11px;color:var(--text3);margin-bottom:2px}
+.hero-dow{font-size:13px;font-weight:700;color:var(--text)}
+.hero-month{font-size:11.5px;color:var(--text2)}
+.hero-al{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border2)}
+.hero-al-date{font-size:14px;font-weight:700;color:var(--gold-lt)}
+.hero-al-label{font-size:10.5px;color:var(--text3)}
+.hero-canchi{font-size:16px;font-weight:700;color:var(--gold);font-family:'Noto Serif',serif}
+.hero-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.hbadge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;border:1px solid}
+.hb-hoang{background:rgba(200,150,10,.18);border-color:rgba(200,150,10,.5);color:var(--gold2)}
+.hb-hac{background:rgba(80,80,100,.2);border-color:rgba(120,120,160,.4);color:#aaa8d0}
+.hb-great{background:rgba(39,174,96,.18);border-color:rgba(39,174,96,.5);color:#5dbd77}
+.hb-good{background:rgba(41,128,185,.18);border-color:rgba(41,128,185,.5);color:#7ec8e3}
+.hb-mid{background:var(--gray2);border-color:rgba(120,120,120,.4);color:#aaa}
+.hb-warn{background:rgba(230,126,34,.18);border-color:rgba(230,126,34,.5);color:#f0b070}
+.hb-bad{background:rgba(231,76,60,.18);border-color:rgba(231,76,60,.5);color:#ff8a7a}
+.hb-truc-g{background:rgba(39,174,96,.12);border-color:rgba(39,174,96,.35);color:#5dbd77}
+.hb-truc-r{background:rgba(231,76,60,.12);border-color:rgba(231,76,60,.35);color:#ff8a7a}
+.hb-truc-y{background:rgba(230,126,34,.12);border-color:rgba(230,126,34,.35);color:#f0b070}
+.hero-rating{display:flex;align-items:center;gap:8px}
+.hr-dot{width:10px;height:10px;border-radius:50%}
+.hr-txt{font-size:13px;font-weight:700}
+/* ─── SECTION ─── */
+.sec{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);
+  margin-bottom:12px;overflow:hidden}
+.sec-hdr{display:flex;align-items:center;gap:8px;padding:11px 14px;
+  border-bottom:1px solid var(--border2);background:rgba(200,150,10,.04)}
+.sec-title{font-size:12.5px;font-weight:700;color:var(--gold)}
+.sec-body{padding:12px 14px}
+/* ─── TRỰC ADVICE ─── */
+.truc-box{background:var(--card2);border-radius:var(--r-sm);padding:11px 13px;font-size:12px;color:var(--text2);line-height:1.6}
+/* ─── ACTIVITY FILTER ─── */
+.act-scroll{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.act-scroll::-webkit-scrollbar{display:none}
+.act-chip{flex-shrink:0;padding:5px 11px;border-radius:20px;font-size:11px;font-weight:600;
+  border:1px solid var(--border2);background:var(--card2);color:var(--text3);
+  cursor:pointer;transition:all .15s;white-space:nowrap}
+.act-chip.on{background:var(--gold-dim);border-color:var(--border);color:var(--gold2)}
+/* ─── CUNG GRID ─── */
+.cung-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:520px){.cung-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:720px){.cung-grid{grid-template-columns:repeat(4,1fr)}}
+.cc{border-radius:var(--r-sm);border:1px solid var(--border2);overflow:hidden;
+  cursor:pointer;transition:all .15s;background:var(--card2)}
+.cc:hover{border-color:var(--border)}
+.cc.expanded{border-color:var(--border)}
+.cc-hdr{display:flex;align-items:center;gap:6px;padding:9px 10px}
+.cc-ico{font-size:17px;flex-shrink:0}
+.cc-info{flex:1;min-width:0}
+.cc-name{font-size:11.5px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc-chi{font-size:10px;color:var(--text3)}
+.cc-badge{padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;flex-shrink:0}
+.cc-ev{font-size:11px;color:var(--text2);padding:0 10px 8px;line-height:1.5;border-bottom:1px solid var(--border2)}
+.cc-detail{display:none;padding:8px 10px}
+.cc.expanded .cc-detail{display:block}
+.cc-sao{font-size:10px;color:var(--text3);line-height:1.5;margin-bottom:6px}
+.cc-nen{font-size:10.5px;color:#5dbd77;margin-bottom:2px}
+.cc-khong{font-size:10.5px;color:#ff8a7a}
+.cc-rels{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.cc-rel{font-size:9.5px;padding:2px 6px;border-radius:8px;border:1px solid}
+/* color classes for cc */
+.cc.great{border-left:3px solid var(--green)}
+.cc.good{border-left:3px solid var(--blue)}
+.cc.mid{border-left:3px solid var(--gray)}
+.cc.warn{border-left:3px solid var(--orange)}
+.cc.bad{border-left:3px solid var(--red)}
+/* ─── FAMILY ROW ─── */
+.family-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.family-row::-webkit-scrollbar{display:none}
+.fm{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px;
+  background:var(--card2);border:1px solid var(--border2);border-radius:var(--r-sm);
+  padding:9px 11px;min-width:70px;text-align:center}
+.fm-ico{font-size:22px}
+.fm-name{font-size:10px;color:var(--text2);font-weight:600}
+.fm-rate{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:8px;margin-top:1px}
+/* ─── CALENDAR VIEW ─── */
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-nav{display:flex;align-items:center;gap:10px}
+.cal-nav-btn{background:var(--card2);border:1px solid var(--border2);border-radius:var(--r-xs);
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--text2);cursor:pointer;transition:all .15s}
+.cal-nav-btn:hover{border-color:var(--border);color:var(--gold)}
+.cal-title{font-family:'Noto Serif',serif;font-size:16px;color:var(--gold);font-weight:600}
+.cal-today-btn{background:var(--gold-dim);border:1px solid var(--border);border-radius:var(--r-xs);
+  padding:5px 11px;font-size:11px;font-weight:700;color:var(--gold);cursor:pointer}
+.cal-wrap{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);background:var(--card2);border-bottom:1px solid var(--border2)}
+.cal-dow div{text-align:center;padding:8px 2px;font-size:10px;font-weight:700;color:var(--text3)}
+.cal-dow div:last-child{color:#d4875a}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border2)}
+.dc{background:var(--bg);padding:5px 3px 4px;text-align:center;cursor:pointer;
+  transition:background .1s;position:relative;min-height:54px;
+  display:flex;flex-direction:column;align-items:center;gap:1px}
+.dc:hover:not(.empty){background:var(--card3)}
+.dc.today{background:rgba(200,150,10,.08)}
+.dc.empty{visibility:hidden;pointer-events:none}
+.dc-num{font-size:14px;font-weight:700;color:var(--text);line-height:1.1}
+.dc.today .dc-num{background:var(--gold);color:#000;border-radius:50%;width:22px;height:22px;
+  display:flex;align-items:center;justify-content:center;font-size:12px}
+.dc-al{font-size:9px;color:var(--text3)}
+.dc-cc{font-size:8.5px;color:var(--text4)}
+.dc-dot{width:6px;height:6px;border-radius:50%}
+.dc.r-great .dc-dot{background:var(--green)}
+.dc.r-good .dc-dot{background:var(--blue)}
+.dc.r-mid .dc-dot{background:var(--gray)}
+.dc.r-warn .dc-dot{background:var(--orange)}
+.dc.r-bad .dc-dot{background:var(--red)}
+/* ─── YEAR VIEW ─── */
+.year-overview{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);
+  padding:14px;margin-bottom:14px}
+.year-title{font-family:'Noto Serif',serif;font-size:16px;color:var(--gold);margin-bottom:10px}
+.year-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:500px){.year-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:720px){.year-grid{grid-template-columns:repeat(4,1fr)}}
+.ym{background:var(--card2);border:1px solid var(--border2);border-radius:var(--r-sm);
+  padding:10px 11px;cursor:pointer;transition:all .15s;border-left:3px solid var(--border2)}
+.ym:hover{background:var(--card3);transform:translateY(-1px)}
+.ym.great{border-left-color:var(--green)}.ym.good{border-left-color:var(--blue)}
+.ym.mid{border-left-color:var(--gray)}.ym.warn{border-left-color:var(--orange)}.ym.bad{border-left-color:var(--red)}
+.ym-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.ym-num{font-family:'Noto Serif',serif;font-size:24px;color:var(--text3)}
+.ym-score{font-size:11px;font-weight:700;padding:2px 7px;border-radius:8px}
+.ym-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px}
+.ym-chi{font-size:10px;color:var(--text3);margin-bottom:5px}
+.ym-bar{height:4px;border-radius:2px;background:var(--border2);overflow:hidden}
+.ym-bar-fill{height:100%;border-radius:2px}
+.ym-grade{font-size:10px;color:var(--text3);margin-top:4px}
+/* ─── YEAR SUMMARY STATS ─── */
+.yr-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.yr-stat{background:var(--card);border:1px solid var(--border2);border-radius:var(--r-sm);
+  padding:10px;text-align:center;border-left:3px solid}
+.yr-stat-n{font-size:22px;font-weight:700;line-height:1;margin-bottom:2px}
+.yr-stat-l{font-size:9.5px;color:var(--text3)}
+/* ─── I CHING (GIEO QUẺ) ─── */
+.que-view{text-align:center;padding:20px 14px}
+.que-title{font-family:'Noto Serif',serif;font-size:18px;color:var(--gold);margin-bottom:6px}
+.que-sub{font-size:12px;color:var(--text3);margin-bottom:24px;line-height:1.6}
+.que-btn{background:linear-gradient(135deg,var(--gold),#b8820a);color:#000;
+  font-family:'Noto Serif',serif;font-size:17px;font-weight:700;
+  border-radius:50%;width:120px;height:120px;
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  box-shadow:0 0 30px rgba(200,150,10,.3),0 4px 16px rgba(0,0,0,.4);
+  transition:all .2s;border:3px solid rgba(255,200,50,.3)}
+.que-btn:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(200,150,10,.5)}
+.que-btn:active{transform:scale(.96)}
+.que-btn-ico{font-size:32px;line-height:1}
+.que-btn-lbl{font-size:12px;letter-spacing:.5px}
+.que-result{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:20px;margin-top:24px;text-align:left;
+  animation:slideUp .3s ease;display:none}
+.que-result.on{display:block}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.que-hex-num{font-size:11px;color:var(--text3);margin-bottom:6px}
+.que-hex-char{font-size:56px;line-height:1;text-align:center;margin-bottom:8px;
+  color:var(--gold-lt);text-shadow:0 0 20px rgba(200,150,10,.4)}
+.que-hex-name{font-family:'Noto Serif',serif;font-size:22px;font-weight:600;color:var(--gold2);
+  text-align:center;margin-bottom:4px}
+.que-hex-vn{font-size:14px;color:var(--text2);text-align:center;margin-bottom:16px}
+.que-divider{height:1px;background:var(--border2);margin:14px 0}
+.que-section{margin-bottom:12px}
+.que-sec-title{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;
+  letter-spacing:.5px;margin-bottom:5px}
+.que-sec-body{font-size:12.5px;color:var(--text);line-height:1.7}
+.que-luck{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.que-luck-item{font-size:11px;padding:4px 10px;border-radius:12px;
+  background:var(--card2);border:1px solid var(--border2);color:var(--text2)}
+/* ─── MONTH PICKER MODAL ─── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;
+  display:flex;align-items:flex-end;justify-content:center;
+  animation:fadeIn .2s;display:none}
+.modal-overlay.on{display:flex}
+.modal-sheet{background:var(--card);border-radius:var(--r) var(--r) 0 0;
+  width:100%;max-width:460px;padding:16px;max-height:70vh;overflow-y:auto}
+.modal-title{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:12px;text-align:center}
+.mpick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mpick-btn{background:var(--card2);border:1px solid var(--border2);border-radius:var(--r-sm);
+  padding:10px 6px;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;
+  text-align:center;transition:all .15s}
+.mpick-btn:hover,.mpick-btn.on{background:var(--gold-dim);border-color:var(--border);color:var(--gold)}
+.modal-close{width:100%;padding:12px;background:transparent;border:1px solid var(--border2);
+  border-radius:var(--r-sm);color:var(--text3);font-size:13px;cursor:pointer;margin-top:10px}
+/* ─── DAY DETAIL PANEL (inline) ─── */
+.day-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:14px;margin-bottom:12px;animation:fadeIn .2s}
+.dp-back{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);
+  cursor:pointer;margin-bottom:10px;padding:4px 0}
+.dp-back:hover{color:var(--text2)}
+/* ─── UTILS ─── */
+.tag-green{background:var(--green2);border:1px solid rgba(39,174,96,.3);color:#5dbd77}
+.tag-blue{background:var(--blue2);border:1px solid rgba(41,128,185,.3);color:#7ec8e3}
+.tag-orange{background:var(--orange2);border:1px solid rgba(230,126,34,.3);color:#f0b070}
+.tag-red{background:var(--red2);border:1px solid rgba(231,76,60,.3);color:#ff8a7a}
+.tag-gray{background:var(--gray2);border:1px solid rgba(120,120,120,.3);color:#aaa}
+.notice{background:rgba(200,150,10,.08);border:1px solid var(--border);border-radius:var(--r-sm);
+  padding:10px 13px;font-size:11.5px;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.preview-banner{background:linear-gradient(90deg,rgba(200,150,10,.15),rgba(200,150,10,.05));
+  border-bottom:1px solid rgba(200,150,10,.2);padding:6px 14px;font-size:10.5px;color:var(--text3);
+  text-align:center}
+</style>
+</head>
+<body>
+
+<div class="preview-banner">🔍 PREVIEW — Giao diện mới chờ duyệt · Hiển thị ngày 19/05/2026 · Chưa deploy</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>
+    <div class="tb-brand">🔮 Tử Vi Mr. Hoàng</div>
+    <div class="tb-sub">Năm Bính Ngọ 2026</div>
+  </div>
+  <div class="tb-picker">
+    <button class="picker-btn" onclick="openMonthPicker()">📅 Tháng <span id="cur-m-lbl">4 Âm</span></button>
+    <button class="picker-btn" onclick="goCalSolar()">DL 5/2026</button>
+  </div>
+</div>
+
+<!-- VIEWS -->
+<div id="v-today" class="view on"></div>
+<div id="v-cal" class="view"></div>
+<div id="v-year" class="view"></div>
+<div id="v-que" class="view"></div>
+
+<!-- MONTH PICKER -->
+<div class="modal-overlay" id="month-modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-sheet">
+    <div class="modal-title">Chọn Tháng Âm Lịch</div>
+    <div class="mpick-grid" id="mpick-grid"></div>
+    <button class="modal-close" onclick="closeModal()">Đóng</button>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bot-nav">
+  <div class="bn-tab on" id="bn-today" onclick="switchTab('today')">
+    <div class="bn-ico">☀️</div>
+    <div class="bn-lbl">Hôm Nay</div>
+  </div>
+  <div class="bn-tab" id="bn-cal" onclick="switchTab('cal')">
+    <div class="bn-ico">📅</div>
+    <div class="bn-lbl">Lịch</div>
+  </div>
+  <div class="bn-tab" id="bn-year" onclick="switchTab('year')">
+    <div class="bn-ico">🌟</div>
+    <div class="bn-lbl">Năm 2026</div>
+  </div>
+  <div class="bn-tab" id="bn-que" onclick="switchTab('que')">
+    <div class="bn-ico">🎋</div>
+    <div class="bn-lbl">Gieo Quẻ</div>
+  </div>
+</div>
+
+<script>
+'use strict';
+/* ══════ CORE DATA ══════ */
+var CAN=['Giáp','Ất','Bính','Đinh','Mậu','Kỷ','Canh','Tân','Nhâm','Quý'];
+var CHI=['Tý','Sửu','Dần','Mão','Thìn','Tị','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi'];
+var DOW_VN=['Chủ Nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+var DOW_S=['CN','T2','T3','T4','T5','T6','T7'];
+var CHI_IDX={}; CHI.forEach(function(c,i){CHI_IDX[c]=i;});
+var LUC_HOP={Tý:'Sửu',Sửu:'Tý',Dần:'Hợi',Hợi:'Dần',Mão:'Tuất',Tuất:'Mão',Thìn:'Dậu',Dậu:'Thìn',Tị:'Thân',Thân:'Tị',Ngọ:'Mùi',Mùi:'Ngọ'};
+var TAM_HOP=[[2,6,10],[5,9,1],[8,0,4],[11,3,7]];
+function isXung(a,b){return Math.abs(CHI_IDX[a]-CHI_IDX[b])===6;}
+function isTH(a,b){var i=CHI_IDX[a],j=CHI_IDX[b];for(var g=0;g<4;g++)if(TAM_HOP[g].indexOf(i)>=0&&TAM_HOP[g].indexOf(j)>=0)return true;return false;}
+
+var CUNGS=[
+  {chi:'Sửu',ten:'Mệnh',      icon:'🧭',sao:'Thiên Cơ(Đ)·H.Quyền+L.H.Quyền·Thiên Hình·Long Đức',hung:false,tot:true},
+  {chi:'Dần',ten:'Phụ Mẫu',   icon:'👴',sao:'Tử Vi(M)·Thiên Phú(M)·Ân Quang·Thiên Việt·DV.T.Mã',hung:false,tot:true},
+  {chi:'Mão',ten:'Phúc Đức',  icon:'🌸',sao:'Thái Âm(H)·Hóa Khoa B·Đào Hoa·Hy Thần·Thiên Hi',hung:false,tot:false},
+  {chi:'Thìn',ten:'Điền Trạch',icon:'🏠',sao:'Tham Lang(V)·Địa Kiếp·Bệnh Phù·Thiên La·L.Đà La',hung:true,tot:false},
+  {chi:'Tị',ten:'Huynh Đệ',   icon:'🤝',sao:'Phá Quân(M)·Thiên Khốc·Thiên Hư·Thiên Giải·Tướng Quân',hung:false,tot:false},
+  {chi:'Ngọ',ten:'Nô Bộc',    icon:'👥',sao:'Liêm Trinh(V)·T.Tướng(V)·Thái Tuế·Song Kỵ·Thiên Khôi',hung:true,tot:false},
+  {chi:'Mùi',ten:'Thiên Di',   icon:'🚀',sao:'Thiên Lương(Đ)·Quốc Ân·Giải Thần·Phượng Các·Bệnh Phù',hung:false,tot:true},
+  {chi:'Thân',ten:'Tật Ách',   icon:'🏥',sao:'Thất Sát(M)·Thiên Mã(Đ)·Lộc Tồn(H)·Tả Phù·Bác Sĩ',hung:false,tot:false},
+  {chi:'Dậu',ten:'Tử Tức',    icon:'👶',sao:'Vũ Khúc(M)·H.Quyền DV+B·Long Trì·Thanh Long·Hoa Cái',hung:false,tot:true},
+  {chi:'Tuất',ten:'Tài Bạch',  icon:'💰',sao:'Thiên Đồng(H)·Bính Lộc·DV.Lộc Tồn·Thiên Mã(Đ)·Kinh Dương',hung:false,tot:true},
+  {chi:'Hợi',ten:'Phu Thê',    icon:'❤️',sao:'Thái Dương(H)·Hóa Lộc B·L.Thiên Khôi·Nguyệt Đức·Tiểu Hao',hung:false,tot:true},
+  {chi:'Tý', ten:'Quan Lộc',   icon:'💼',sao:'Cự Môn(H)·Văn Xương·Song Khoa DV+B·L.Lộc Tồn·Đại Hao',hung:false,tot:true}
+];
+var CUNG_NEN={Mệnh:'Ra quyết định, gặp đối tác quan trọng',Phụ_Mẫu:'Gặp bề trên, xin hỗ trợ vốn',Phúc_Đức:'Tĩnh tâm, chăm sóc bản thân',Điền_Trạch:'Kiểm tra bảo trì, không mua BĐS',Huynh_Đệ:'Gặp bạn lâu năm, không cho vay',Nô_Bộc:'Họp nhóm tin cậy, kiểm tra nội bộ',Thiên_Di:'Đi công tác, gặp đối tác ngoài',Tật_Ách:'Tập thể dục, khám sức khỏe',Tử_Tức:'Dành thời gian con, khích lệ',Tài_Bạch:'Thu tiền, chốt hợp đồng',Phu_Thê:'Quan tâm vợ, du lịch đôi',Quan_Lộc:'Đàm phán, ký hợp đồng rõ ràng'};
+var CUNG_KHONG={Mệnh:'Để cảm xúc chi phối quyết định',Phụ_Mẫu:'Tranh luận với bề trên',Phúc_Đức:'Làm việc quá sức, căng thẳng',Điền_Trạch:'Ký BĐS, cho người lạ vào nhà',Huynh_Đệ:'Cho mượn tiền, bảo lãnh',Nô_Bộc:'Tuyển người mới vội, hùn vốn',Thiên_Di:'Đi xa một mình khi hung tinh',Tật_Ách:'Quá sức, mạo hiểm thể thao',Tử_Tức:'Kỷ luật nặng khi tâm trạng xấu',Tài_Bạch:'Tiền ảo, đầu tư mạo hiểm',Phu_Thê:'Tranh cãi tiền bạc, về trễ',Quan_Lộc:'Tranh luận bộc phát, khẩu thiệt'};
+function getNen(t){return CUNG_NEN[t.replace(' ','_')]||'—';}
+function getKhong(t){return CUNG_KHONG[t.replace(' ','_')]||'—';}
+
+var LN=['Dần','Mão','Thìn','Tị','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi','Tý','Sửu'];
+var M_START=[new Date(2026,1,17),new Date(2026,2,19),new Date(2026,3,17),new Date(2026,4,17),new Date(2026,5,15),new Date(2026,6,15),new Date(2026,7,13),new Date(2026,8,11),new Date(2026,9,11),new Date(2026,10,9),new Date(2026,11,9),new Date(2027,0,7)];
+var M_DAYS=[30,29,30,29,30,29,29,30,29,30,29,30];
+var M_NAME=['Giêng','Hai','Ba','Tư','Năm','Sáu','Bảy','Tám','Chín','Mười','Mười Một','Chạp'];
+var M_SCORE=[8,9,6,5,3,6,6,8,9,8,9,8];
+var M_GRADE=['Tốt','Rất Tốt','Trung Bình','Cẩn Thận','Xấu Nhất','Trung Bình','Trung Bình','Tốt','Tháng Vàng','Tốt','Rất Tốt','Tốt'];
+var M_OV=['Lưu nguyệt Dần kích Phụ Mẫu — Tết Bính Ngọ, bề trên hỗ trợ, tài chính khởi đầu thuận.','Lưu nguyệt Mão lục hợp Tuất (Tài Bạch) — tháng tốt nhất ký hợp đồng, branding, gặp đối tác mới.','Lưu nguyệt Thìn kích Điền Trạch (hung), xung Tuất (Tài Bạch) — biến động tài chính, không mua BĐS.','Lưu nguyệt Tị kích Huynh Đệ, xung Hợi (Phu Thê) — tháng nguy hiểm cho hôn nhân. Bản thân và con được tam hợp hỗ trợ.','Lưu nguyệt Ngọ — Thái Tuế+Song Kỵ đóng Nô Bộc, xung Quan Lộc. Xấu nhất năm — không ký gì lớn, kiểm soát nhân sự.','Lưu nguyệt Mùi kích Thiên Di, xung Mệnh — áp lực từ ngoài. Đi công tác tốt hơn ở trong.','Lưu nguyệt Thân kích Tật Ách, xung Phụ Mẫu — chú ý sức khỏe, không làm quá sức.','Lưu nguyệt Dậu kích Tử Tức — ra quyết định tài chính sắc bén. Tin vui con cái.','Lưu nguyệt Tuất kích Tài Bạch (Bính Lộc+DV.Lộc Tồn) — THÁNG VÀNG thu tiền, chốt hợp đồng lớn nhất năm.','Lưu nguyệt Hợi kích Phu Thê (Thái Dương+Hóa Lộc) — tháng tốt nhất cho gia đình, du lịch vợ chồng.','Lưu nguyệt Tý kích Quan Lộc (Song Khoa+Lộc Tồn) — sự nghiệp phục hồi, xung Nô Bộc — giải quyết nhân sự.','Lưu nguyệt Sửu kích Mệnh (Thiên Cơ+Song Quyền) — kết năm bằng bản lĩnh, lập kế hoạch 2027.'];
+
+var BASE_DATE=new Date(2026,0,29);
+function getCC(d){var n=Math.round((d-BASE_DATE)/86400000);return{can:CAN[(4+n%10+600)%10],chi:CHI[(8+n%12+600)%12]};}
+function rateC(c,nc,ln){
+  var s=0,h=c.hung,t=c.tot,cn=c.chi;
+  if(cn===nc)s+=h?-3:3;if(isXung(cn,nc))s-=h?2:3;if(isTH(cn,nc))s+=h?-1:2;if(LUC_HOP[cn]===nc)s+=1;
+  if(cn===ln)s+=h?-3:2;if(isXung(cn,ln))s-=h?2:2;if(isTH(cn,ln))s+=h?-1:2;
+  if(t)s+=1;
+  return s>=5?'great':s>=3?'good':s>=-1?'mid':s>=-3?'warn':'bad';
+}
+function rateDay(nc,ln){var t=0;CUNGS.forEach(function(c){var r=rateC(c,nc,ln);t+=r==='great'?2:r==='good'?1:r==='mid'?0:r==='warn'?-1:-2;});return t>=8?'great':t>=4?'good':t>=-4?'mid':t>=-8?'warn':'bad';}
+function rateLabel(r){return r==='great'?'⭐ Rất Tốt':r==='good'?'✅ Tốt':r==='mid'?'〰 Trung Bình':r==='warn'?'⚠ Cẩn Thận':'🔴 Xấu';}
+function rateColor(r){return r==='great'?'#27ae60':r==='good'?'#2980b9':r==='mid'?'#666':r==='warn'?'#e67e22':'#e74c3c';}
+function rateBadgeClass(r){return r==='great'?'hb-great':r==='good'?'hb-good':r==='mid'?'hb-mid':r==='warn'?'hb-warn':'hb-bad';}
+function rateCSSClass(r){return 'r-'+r;}
+
+var TRUC=['Kiến','Trừ','Mãn','Bình','Định','Chấp','Phá','Nguy','Thành','Thu','Khai','Bế'];
+var TRUC_TYPE={Kiến:'good',Trừ:'good',Mãn:'good',Bình:'good',Định:'good',Thành:'good',Khai:'good',Chấp:'ok',Thu:'ok',Phá:'bad',Nguy:'bad',Bế:'bad'};
+var TRUC_ADV={Kiến:'Ngày KHỞI SỰ — tốt để ký kết, khai trương, bắt đầu dự án mới.',Trừ:'Ngày TRỪ BỎ — kết thúc cũ, giải quyết tồn đọng. Không bắt đầu việc mới.',Mãn:'Ngày VIÊN MÃN — thu tiền, nhận hàng, hoàn thành milestone.',Bình:'Ngày BÌNH ỔN — họp bàn thường lệ, không kỳ vọng đột phá.',Định:'Ngày ĐỊNH VỊ — ký hợp đồng dài hạn, xây dựng nền móng chiến lược.',Chấp:'Ngày CHẤP HÀNH — thực thi đã quyết, cẩn thận pháp lý. Tránh tranh chấp.',Phá:'Ngày PHÁ VỠ ⛔ — TRÁNH ký kết, ra mắt, đầu tư quan trọng. Xử lý việc cũ.',Nguy:'Ngày NGUY HIỂM ⚠ — Đi lại cẩn thận, tránh kiện tụng và mạo hiểm.',Thành:'Ngày THÀNH TỰU ⭐ — Mọi việc đều tốt: ký kết, gặp gỡ, đầu tư.',Thu:'Ngày THU — Thu hồi kết quả cũ. Không ra quyết định mới.',Khai:'Ngày KHAI THÔNG ✨ — Cơ hội từ hướng không ngờ. Tốt cho gặp gỡ, mở rộng.',Bế:'Ngày BẾ TẮC ⛔ — Không bắt đầu dự án. Hoàn thiện việc sắp xong, nghỉ ngơi.'};
+var THAN=['Thanh Long','Minh Đường','Thiên Hình','Chu Tước','Kim Quỹ','Bảo Quang','Bạch Hổ','Ngọc Đường','Thiên Lao','Huyền Vũ','Tư Mệnh','Câu Trận'];
+var HOANG_DAO={'Thanh Long':1,'Minh Đường':1,'Kim Quỹ':1,'Bảo Quang':1,'Ngọc Đường':1,'Tư Mệnh':1};
+var THAN_BASE=[0,6,0,6,0,6,0,6,0,6,0,6];
+function getTruc(di,mi){return TRUC[(di-CHI_IDX[LN[mi]]+12)%12];}
+function getThan(di,mi){return THAN[(di-THAN_BASE[mi]+12)%12];}
+
+var CUNG_EV={'Mệnh':{kic:'☀ Thiên Cơ H.Quyền phát sáng — trực giác lãnh đạo ở đỉnh. Quyết định hôm nay chính xác, dứt khoát.',xun:'⚡ Mệnh bị xung — ý chí dao động. Hoãn quyết định quan trọng, xử lý việc sẵn có.',tha:'✨ Tam phương hỗ trợ Mệnh — ý tưởng được nhiều phía ủng hộ.',lho:'〰 Bề trên nhìn thiện cảm hơn bình thường.',bin:'— Mệnh ổn định, không áp lực đặc biệt hôm nay.'},'Phụ Mẫu':{kic:'☀ Tử Vi+Thiên Phú sáng — bề trên hỗ trợ mạnh. Xin phê duyệt, gặp nhà đầu tư rất thuận.',xun:'⚡ Phụ Mẫu bị xung — bề trên phản đối hoặc vắng mặt hôm nay. Tự xử lý.',tha:'✨ Nguồn lực từ trên bất ngờ — ngân sách, dự án mới từ cấp trên.',lho:'〰 Quan hệ bề trên hài hòa nhẹ.',bin:'— Phụ Mẫu bình thường, bề trên không có gì đặc biệt.'},'Phúc Đức':{kic:'☀ Thái Âm+Đào Hoa kích — sáng tạo, trực giác phát sáng. Gặp gỡ phụ nữ rất thuận.',xun:'⚡ Phúc Đức bị xung — nội tâm bất an. Tránh quyết định thuần cảm xúc.',tha:'✨ Phúc lành lan tỏa — việc thiện, chia sẻ mang kết quả tốt hôm nay.',lho:'〰 Tâm trạng nhẹ nhàng, bình yên.',bin:'— Phúc Đức trung bình, tinh thần ổn định.'},'Điền Trạch':{kic:'⚠ Tham Lang+Địa Kiếp kích — vấn đề nhà cửa/BĐS nổi lên. Kiểm tra nhỏ, không mua BĐS.',xun:'⚠ Điền Trạch bị xung — tin không tốt tài sản cố định. Hủy/hoãn giao dịch nhà đất.',tha:'〰 BĐS được hỗ trợ nhẹ — gia hạn thuê ổn, không mua mới.',lho:'〰 Nhà cửa yên lặng, không biến động.',bin:'— Điền Trạch bình lặng, không lo nhà cửa hôm nay.'},'Huynh Đệ':{kic:'⚡ Phá Quân kích — bạn bè sôi động, khó đoán. Tụ tập được nhưng không bàn tiền.',xun:'⚡ Huynh Đệ bị xung — đồng nghiệp gây phiền. Giữ khoảng cách.',tha:'✨ Bạn bè hỗ trợ bất ngờ — người quen cũ mở ra cơ hội.',lho:'〰 Quan hệ đồng nghiệp hài hòa, tốt làm nhóm.',bin:'— Huynh Đệ bình, không cho vay, không bảo lãnh.'},'Nô Bộc':{kic:'🔴 Song Kỵ+Thái Tuế kích — nhân sự/đối tác có thể phản trắc HÔM NAY. Kiểm tra tức thì.',xun:'🔴 Nô Bộc bị xung — đối tác thất hứa, nhân sự làm sai. Yêu cầu bằng chứng.',tha:'⚡ Đội nhóm phối hợp được nhưng không bền — giám sát chặt.',lho:'〰 Đối tác/nhân sự tương đối ổn hôm nay.',bin:'— Nô Bộc trong tầm kiểm soát, Song Kỵ tạm yên.'},'Thiên Di':{kic:'☀ Thiên Lương phát sáng — đi công tác, gặp đối tác ngoài rất thuận.',xun:'⚡ Thiên Di bị xung — di chuyển gặp trở ngại, dễ trễ hẹn. Hoãn chuyến đi nếu được.',tha:'✨ Quan hệ đối tác ngoài được nâng đỡ — cơ hội mở rộng thị trường.',lho:'〰 Đường đi thuận nhẹ, không trở ngại lớn.',bin:'— Thiên Di ổn, đi lại bình thường.'},'Tật Ách':{kic:'⚡ Thất Sát+Thiên Mã kích — năng lượng bộc phát, dễ quá sức. Kiểm soát cường độ.',xun:'⚠ Tật Ách bị xung — sức khỏe dễ tác động đột xuất. Nghỉ đủ, tránh mạo hiểm.',tha:'✨ Sức khỏe được hỗ trợ — phục hồi nhanh, năng lượng dồi dào.',lho:'〰 Thân thể khỏe ổn nhẹ.',bin:'— Tật Ách trung bình, sức khỏe không đặc biệt.'},'Tử Tức':{kic:'☀ Vũ Khúc+Song Quyền kích — con cái nổi bật hôm nay, quyết định về con rất thuận.',xun:'⚡ Tử Tức bị xung — con không nghe lời hoặc gặp vấn đề. Kiên nhẫn.',tha:'✨ Sáng tạo và con cái được nâng đỡ — ý tưởng mới dễ thành công.',lho:'〰 Quan hệ con cái hài hòa, ngày vui vẻ.',bin:'— Tử Tức ổn, con không có vấn đề nổi bật.'},'Tài Bạch':{kic:'☀ Bính Lộc+DV.Lộc Tồn kích — NGÀY THU TIỀN MẠNH NHẤT. Yêu cầu thanh toán, chốt deal ngay.',xun:'🔴 Tài Bạch bị xung — dòng tiền gián đoạn, chi bất ngờ. Không đầu tư lớn.',tha:'✨ Tài vận tam phương — cơ hội thu tiền từ nhiều nguồn qua giới thiệu.',lho:'〰 Thu nhỏ thuận lợi, dòng tiền đều đặn.',bin:'— Tài Bạch bình lặng, không biến động tài chính.'},'Phu Thê':{kic:'☀ Thái Dương+Hóa Lộc kích — vợ rạng rỡ, gia đình thuận. Hẹn hò, tặng quà rất tốt.',xun:'⚡ Phu Thê bị xung — dễ cáu gắt với vợ. Về nhà sớm, không tranh luận tiền.',tha:'✨ Gia đình được nâng đỡ — tin vui, vợ chồng thêm gắn kết.',lho:'〰 Vợ chồng hài hòa nhẹ, ngày tốt cho gia đình.',bin:'— Phu Thê ổn, không biến động hôn nhân.'},'Quan Lộc':{kic:'☀ Song Khoa+Văn Xương kích — sự nghiệp sáng ngời. Đàm phán, ký kết, báo cáo đều thuận.',xun:'🔴 Quan Lộc bị xung — sự nghiệp áp lực mạnh. Tránh đối đầu sếp, không ký hợp đồng lớn.',tha:'✨ Sự nghiệp được hậu thuẫn — hợp đồng/thỏa thuận hỗ trợ rõ ràng.',lho:'〰 Công việc thuận nhẹ, tiến độ đều đặn.',bin:'— Quan Lộc bình thường, sự nghiệp không biến động.'}};
+function getCungEvent(c,nc,ln){var ev=CUNG_EV[c.ten];if(!ev)return'';var cn=c.chi;if(cn===nc)return ev.kic;if(isXung(cn,nc))return ev.xun;if(isTH(cn,nc))return ev.tha;if(LUC_HOP[cn]===nc)return ev.lho;return ev.bin;}
+
+var FAMILY=[
+  {name:'Vợ Huyền',    icon:'❤️',year:1990,chi:'Ngọ'},
+  {name:'Con Thế Lâm', icon:'👦',year:2016,chi:'Thân'},
+  {name:'Con Huyền Vy',icon:'👧',year:2022,chi:'Dần'},
+  {name:'Bố Hòa',      icon:'👴',year:1954,chi:'Ngọ'},
+  {name:'Mẹ Hằng',     icon:'👩',year:1962,chi:'Dần'}
+];
+function familyRate(dayChiIdx,mchi){
+  var d=CHI[dayChiIdx];
+  if(d===mchi)return{r:'great',c:'#27ae60'};
+  if(isXung(d,mchi))return{r:'bad',c:'#e74c3c'};
+  if(isTH(d,mchi))return{r:'good',c:'#2980b9'};
+  if(LUC_HOP[d]===mchi)return{r:'good',c:'#2980b9'};
+  return{r:'mid',c:'#666'};
+}
+
+var ACT_TYPES=[
+  {id:'all',    label:'Tất cả'},
+  {id:'kyHD',   label:'📝 Ký HĐ',   cungs:['Quan Lộc','Tài Bạch']},
+  {id:'gapDT',  label:'🤝 Gặp ĐT',  cungs:['Quan Lộc','Thiên Di']},
+  {id:'congTac',label:'✈ Công tác', cungs:['Thiên Di','Tật Ách']},
+  {id:'suckHoe',label:'💊 Sức khỏe',cungs:['Tật Ách','Phúc Đức']},
+  {id:'giadinh',label:'🏠 Gia đình', cungs:['Phu Thê','Tử Tức']},
+  {id:'thuTien',label:'💰 Thu tiền', cungs:['Tài Bạch']}
+];
+
+/* Pre-compute all days */
+var ALL=[];
+for(var mi=0;mi<12;mi++){
+  for(var di=0;di<M_DAYS[mi];di++){
+    var dl=new Date(M_START[mi].getTime()+di*86400000);
+    var cc=getCC(dl);
+    ALL.push({m:mi+1,d:di+1,dl:dl,cc:cc,r:rateDay(cc.chi,LN[mi])});
+  }
+}
+function getDay(m,d){return ALL.find(function(x){return x.m===m&&x.d===d;});}
+function lookupBySolar(sm,sd){return ALL.find(function(d){return d.dl.getMonth()===sm&&d.dl.getDate()===sd;});}
+function getSolarDays(sm){return ALL.filter(function(d){return d.dl.getMonth()===sm;});}
+
+/* ══════ STATE ══════ */
+var curTab='today';
+var curLunarMonth=4; // default tháng 4 âm (May 2026)
+var curSolarMonth=4; // 0-based, May=4
+var selectedDayObj=null;
+var calMode='solar'; // 'solar' or 'lunar'
+var curActivity='all';
+
+/* ══════ TABS ══════ */
+function switchTab(t){
+  curTab=t;
+  ['today','cal','year','que'].forEach(function(id){
+    document.getElementById('v-'+id).classList.toggle('on',id===t);
+    document.getElementById('bn-'+id).classList.toggle('on',id===t);
+  });
+  if(t==='today')renderToday(selectedDayObj);
+  else if(t==='cal')renderCal();
+  else if(t==='year')renderYear();
+  else if(t==='que')renderQue();
+}
+
+function goCalSolar(){
+  calMode='solar';
+  curSolarMonth=4;
+  switchTab('cal');
+}
+
+/* ══════ TODAY VIEW ══════ */
+function renderToday(dayOverride){
+  var el=document.getElementById('v-today');
+  // Find today or use May 19 as demo
+  var now=new Date();
+  var day=dayOverride||lookupBySolar(now.getMonth(),now.getDate())||lookupBySolar(4,19);
+  if(!day)day=lookupBySolar(4,19);
+  selectedDayObj=day;
+
+  var nc=day.cc.chi, ln=LN[day.m-1];
+  var chiIdx=CHI_IDX[nc];
+  var lnIdx=day.m-1;
+  var truc=getTruc(chiIdx,lnIdx);
+  var than=getThan(chiIdx,lnIdx);
+  var isHD=!!HOANG_DAO[than];
+  var rc=day.r;
+  var rcColor=rateColor(rc);
+  var trucType=TRUC_TYPE[truc];
+
+  var h='';
+
+  /* ── HERO ── */
+  h+='<div class="hero">';
+  h+='<div class="hero-date-row">';
+  h+='<div class="hero-dl-big">'+day.dl.getDate()+'</div>';
+  h+='<div class="hero-dl-info">';
+  h+='<div class="hero-dl-label">Tháng '+(day.dl.getMonth()+1)+' · '+day.dl.getFullYear()+'</div>';
+  h+='<div class="hero-dow">'+DOW_VN[day.dl.getDay()]+'</div>';
+  h+='<div class="hero-month">Tháng '+M_NAME[day.m-1]+' (T'+day.m+') Âm Lịch</div>';
+  h+='</div></div>';
+
+  h+='<div class="hero-al">';
+  h+='<div><div class="hero-al-label">Âm Lịch</div><div class="hero-al-date">'+day.d+' / '+day.m+' 🌙</div></div>';
+  h+='<div style="width:1px;background:var(--border2)"></div>';
+  h+='<div><div class="hero-al-label">Can Chi</div><div class="hero-canchi">'+day.cc.can+' '+day.cc.chi+'</div></div>';
+  h+='<div style="width:1px;background:var(--border2)"></div>';
+  h+='<div><div class="hero-al-label">Lưu Niên</div><div class="hero-canchi" style="font-size:13px">'+ln+'</div></div>';
+  h+='</div>';
+
+  h+='<div class="hero-badges">';
+  // Trực badge
+  var trucCls=trucType==='good'?'hb-truc-g':trucType==='bad'?'hb-truc-r':'hb-truc-y';
+  h+='<span class="hbadge '+trucCls+'">'+truc+'</span>';
+  // Thần badge
+  h+='<span class="hbadge '+(isHD?'hb-hoang':'hb-hac')+'">'+(isHD?'☀':'🌑')+' '+than+'</span>';
+  // Rating badge
+  h+='<span class="hbadge '+rateBadgeClass(rc)+'">'+rateLabel(rc)+'</span>';
+  h+='</div>';
+
+  // Trực advice
+  h+='<div class="truc-box">'+TRUC_ADV[truc]+'</div>';
+  h+='</div>'; // hero
+
+  /* ── CUNG SUMMARY ── */
+  var best=[],neg=[];
+  CUNGS.forEach(function(c){var r=rateC(c,nc,ln);if(r==='great'||r==='good')best.push(c);if(r==='bad'||r==='warn')neg.push(c);});
+
+  h+='<div class="sec">';
+  h+='<div class="sec-hdr"><span class="sec-title">✨ Tổng Quan Năng Lượng Ngày</span></div>';
+  h+='<div class="sec-body">';
+  if(best.length){
+    h+='<div style="margin-bottom:8px"><div style="font-size:11px;font-weight:700;color:#5dbd77;margin-bottom:5px">CUNG PHÁT SÁNG HÔM NAY</div>';
+    h+='<div style="display:flex;flex-wrap:wrap;gap:5px">';
+    best.forEach(function(c){h+='<span style="background:var(--green2);border:1px solid rgba(39,174,96,.3);border-radius:20px;padding:3px 9px;font-size:11px;color:#5dbd77">'+c.icon+' '+c.ten+'</span>';});
+    h+='</div></div>';
+  }
+  if(neg.length){
+    h+='<div><div style="font-size:11px;font-weight:700;color:#ff8a7a;margin-bottom:5px">CHÚ Ý / HẠN CHẾ</div>';
+    h+='<div style="display:flex;flex-wrap:wrap;gap:5px">';
+    neg.forEach(function(c){h+='<span style="background:var(--red2);border:1px solid rgba(231,76,60,.3);border-radius:20px;padding:3px 9px;font-size:11px;color:#ff8a7a">'+c.icon+' '+c.ten+'</span>';});
+    h+='</div></div>';
+  }
+  h+='</div></div>';
+
+  /* ── FAMILY ── */
+  h+='<div class="sec">';
+  h+='<div class="sec-hdr"><span class="sec-title">👨‍👩‍👧‍👦 Vận Khí Gia Đình</span></div>';
+  h+='<div class="sec-body"><div class="family-row">';
+  var fColors={'great':'#27ae60','good':'#2980b9','mid':'#666','warn':'#e67e22','bad':'#e74c3c'};
+  var fLabels={'great':'Rất thuận','good':'Thuận lợi','mid':'Bình thường','warn':'Chú ý','bad':'Cẩn thận'};
+  FAMILY.forEach(function(f){
+    var fr=familyRate(chiIdx,f.chi);
+    h+='<div class="fm">';
+    h+='<div class="fm-ico">'+f.icon+'</div>';
+    h+='<div class="fm-name">'+f.name.split(' ')[0]+'</div>';
+    h+='<div class="fm-rate" style="background:'+fr.c+'22;border:1px solid '+fr.c+'55;color:'+fr.c+'">'+fLabels[fr.r]+'</div>';
+    h+='</div>';
+  });
+  h+='</div></div></div>';
+
+  /* ── ACTIVITY FILTER ── */
+  h+='<div class="sec">';
+  h+='<div class="sec-hdr"><span class="sec-title">🎯 Lọc Theo Việc</span></div>';
+  h+='<div class="sec-body">';
+  h+='<div class="act-scroll">';
+  ACT_TYPES.forEach(function(a){
+    h+='<span class="act-chip'+(curActivity===a.id?' on':'')+'" onclick="setAct(\''+a.id+'\')">'+a.label+'</span>';
+  });
+  h+='</div>';
+  if(curActivity!=='all'){
+    var act=ACT_TYPES.find(function(a){return a.id===curActivity;});
+    if(act&&act.cungs){
+      h+='<div style="margin-top:10px;font-size:11.5px;color:var(--text2)">';
+      act.cungs.forEach(function(cn){
+        var cung=CUNGS.find(function(c){return c.ten===cn;});
+        if(cung){var r=rateC(cung,nc,ln);h+='<span style="display:inline-block;margin:3px 6px 3px 0;padding:3px 9px;border-radius:12px;background:'+rateColor(r)+'20;border:1px solid '+rateColor(r)+'40;color:'+rateColor(r)+'">'+cung.icon+' '+cung.ten+': '+rateLabel(r)+'</span>';}
+      });
+      h+='</div>';
+    }
+  }
+  h+='</div></div>';
+
+  /* ── 12 CUNGS ── */
+  h+='<div class="sec">';
+  h+='<div class="sec-hdr"><span class="sec-title">🏛 12 Cung Chi Tiết</span><span style="font-size:11px;color:var(--text3);margin-left:auto">Nhấn để mở</span></div>';
+  h+='<div class="sec-body"><div class="cung-grid" id="cung-grid-today">';
+  CUNGS.forEach(function(c,i){
+    var r=rateC(c,nc,ln);
+    var ev=getCungEvent(c,nc,ln);
+    var rels=[];
+    if(c.chi===nc)rels.push({t:'Ngày kích',c:rateColor(r)});
+    if(isXung(c.chi,nc))rels.push({t:'Ngày xung',c:'#e74c3c'});
+    if(isTH(c.chi,nc))rels.push({t:'Tam hợp',c:'#27ae60'});
+    if(LUC_HOP[c.chi]===nc)rels.push({t:'Lục hợp',c:'#2980b9'});
+    if(c.chi===ln)rels.push({t:'LN đóng',c:c.hung?'#e74c3c':'#27ae60'});
+    if(isXung(c.chi,ln))rels.push({t:'LN xung',c:'#e74c3c'});
+    if(isTH(c.chi,ln))rels.push({t:'LN tam hợp',c:'#27ae60'});
+    if(!rels.length)rels.push({t:'Bình thường',c:'#666'});
+    h+='<div class="cc '+r+'" id="cc-'+i+'" onclick="toggleCC('+i+')">';
+    h+='<div class="cc-hdr"><span class="cc-ico">'+c.icon+'</span>';
+    h+='<div class="cc-info"><div class="cc-name">'+c.ten+'</div><div class="cc-chi">'+c.chi+'</div></div>';
+    var bdgC=rateColor(r);h+='<span class="cc-badge" style="background:'+bdgC+'20;border:1px solid '+bdgC+'40;color:'+bdgC+'">'+rateLabel(r).replace(/[⭐✅〰⚠🔴] /,'')+'</span>';
+    h+='</div>';
+    h+='<div class="cc-ev">'+ev+'</div>';
+    h+='<div class="cc-detail">';
+    h+='<div class="cc-sao">'+c.sao+'</div>';
+    h+='<div class="cc-nen">✅ '+getNen(c.ten)+'</div>';
+    h+='<div class="cc-khong">⛔ '+getKhong(c.ten)+'</div>';
+    h+='<div class="cc-rels">';
+    rels.forEach(function(rel){h+='<span class="cc-rel" style="color:'+rel.c+';border-color:'+rel.c+'40">'+rel.t+'</span>';});
+    h+='</div></div></div>';
+  });
+  h+='</div></div></div>';
+
+  el.innerHTML=h;
+}
+
+function toggleCC(i){
+  var el=document.getElementById('cc-'+i);
+  if(el)el.classList.toggle('expanded');
+}
+function setAct(id){curActivity=id;renderToday(selectedDayObj);}
+
+/* ══════ CALENDAR VIEW ══════ */
+function renderCal(){
+  var el=document.getElementById('v-cal');
+  var sm=curSolarMonth; // 0-based
+  var smName=['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'];
+
+  var h='';
+  h+='<div class="cal-header">';
+  h+='<button class="cal-nav-btn" onclick="calPrev()">‹</button>';
+  h+='<div class="cal-title">'+smName[sm]+' 2026</div>';
+  h+='<button class="cal-nav-btn" onclick="calNext()">›</button>';
+  h+='</div>';
+  h+='<button class="cal-today-btn" onclick="calGoToday()" style="margin-bottom:12px">Hôm Nay</button>';
+
+  // Build calendar grid
+  var year=sm===11?2027:2026;
+  var month=sm; // JS month 0-based
+  var firstDay=new Date(year,month,1).getDay();
+  var daysInMonth=new Date(year,month+1,0).getDate();
+
+  h+='<div class="cal-wrap">';
+  h+='<div class="cal-dow">';
+  DOW_S.forEach(function(d){h+='<div>'+d+'</div>';});
+  h+='</div>';
+  h+='<div class="cal-grid">';
+
+  for(var i=0;i<firstDay;i++)h+='<div class="dc empty"></div>';
+
+  var today=new Date();
+  for(var dd=1;dd<=daysInMonth;dd++){
+    var dayObj=lookupBySolar(sm,dd);
+    var isToday=(today.getMonth()===sm&&today.getDate()===dd&&today.getFullYear()===year);
+    var cls='dc';
+    if(isToday)cls+=' today';
+    if(dayObj)cls+=' r-'+dayObj.r;
+    var al=dayObj?dayObj.d+'/'+dayObj.m:'';
+    var cc=dayObj?dayObj.cc.can[0]+dayObj.cc.chi:'';
+    h+='<div class="'+cls+'" onclick="calSelectDay('+sm+','+dd+')">';
+    h+='<div class="dc-num">'+dd+'</div>';
+    h+='<div class="dc-al">'+al+'</div>';
+    h+='<div class="dc-cc">'+cc+'</div>';
+    if(dayObj)h+='<div class="dc-dot"></div>';
+    h+='</div>';
+  }
+  h+='</div></div>';
+
+  el.innerHTML=h;
+}
+
+function calPrev(){if(curSolarMonth>0){curSolarMonth--;renderCal();}}
+function calNext(){if(curSolarMonth<11){curSolarMonth++;renderCal();}}
+function calGoToday(){var now=new Date();curSolarMonth=now.getMonth();renderCal();}
+function calSelectDay(sm,dd){
+  var d=lookupBySolar(sm,dd);
+  if(d){selectedDayObj=d;switchTab('today');}
+}
+
+/* ══════ YEAR VIEW ══════ */
+function renderYear(){
+  var el=document.getElementById('v-year');
+  var h='';
+
+  // Stats
+  var best=0,good=0,mid=0,bad=0;
+  ALL.forEach(function(d){if(d.r==='great')best++;else if(d.r==='good')good++;else if(d.r==='mid')mid++;else bad++;});
+  h+='<div class="yr-stats">';
+  h+='<div class="yr-stat" style="border-left-color:#27ae60"><div class="yr-stat-n" style="color:#27ae60">'+best+'</div><div class="yr-stat-l">Ngày Rất Tốt</div></div>';
+  h+='<div class="yr-stat" style="border-left-color:#2980b9"><div class="yr-stat-n" style="color:#2980b9">'+good+'</div><div class="yr-stat-l">Ngày Tốt</div></div>';
+  h+='<div class="yr-stat" style="border-left-color:#e74c3c"><div class="yr-stat-n" style="color:#e74c3c">'+bad+'</div><div class="yr-stat-l">Ngày Cẩn Thận</div></div>';
+  h+='</div>';
+
+  h+='<div class="year-overview">';
+  h+='<div class="year-title">🌟 Năm Bính Ngọ 2026 — Tổng Quan 12 Tháng</div>';
+  h+='<div class="year-grid">';
+  for(var mi=0;mi<12;mi++){
+    var sc=M_SCORE[mi];
+    var rc=sc>=8?'great':sc>=7?'good':sc>=5?'mid':sc>=4?'warn':'bad';
+    var fillW=(sc/10*100)+'%';
+    var ln=LN[mi];
+    h+='<div class="ym '+rc+'" onclick="calGoMonth('+(mi)+','+mi+')">';
+    h+='<div class="ym-top">';
+    h+='<div class="ym-num">'+(mi+1)+'</div>';
+    h+='<span class="ym-score" style="background:'+rateColor(rc)+'20;border:1px solid '+rateColor(rc)+'40;color:'+rateColor(rc)+'">'+sc+'/10</span>';
+    h+='</div>';
+    h+='<div class="ym-name">Tháng '+M_NAME[mi]+'</div>';
+    h+='<div class="ym-chi">LN: '+ln+' · '+M_GRADE[mi]+'</div>';
+    h+='<div class="ym-bar"><div class="ym-bar-fill" style="width:'+fillW+';background:'+rateColor(rc)+'"></div></div>';
+    h+='<div class="ym-grade" style="font-size:10px;color:var(--text3);margin-top:4px;line-height:1.4">'+M_OV[mi].substring(0,60)+'…</div>';
+    h+='</div>';
+  }
+  h+='</div></div>';
+
+  // Top golden days
+  var topDays=ALL.slice().filter(function(d){return d.r==='great';}).slice(0,8);
+  if(topDays.length){
+    h+='<div class="sec"><div class="sec-hdr"><span class="sec-title">⭐ Ngày Vàng Nổi Bật</span></div><div class="sec-body">';
+    h+='<div style="display:flex;flex-wrap:wrap;gap:6px">';
+    topDays.forEach(function(d){
+      h+='<span onclick="selDay('+d.m+','+d.d+')" style="cursor:pointer;background:rgba(39,174,96,.12);border:1px solid rgba(39,174,96,.35);border-radius:20px;padding:4px 10px;font-size:11.5px;color:#5dbd77">'+d.dl.getDate()+'/'+(d.dl.getMonth()+1)+' · '+d.d+'/'+d.m+'🌙</span>';
+    });
+    h+='</div></div></div>';
+  }
+
+  el.innerHTML=h;
+}
+
+function calGoMonth(sm,mi){
+  curSolarMonth=sm;
+  switchTab('cal');
+}
+function selDay(m,d){
+  var day=getDay(m,d);
+  if(day){selectedDayObj=day;switchTab('today');}
+}
+
+/* ══════ MONTH PICKER ══════ */
+function openMonthPicker(){
+  var grid=document.getElementById('mpick-grid');
+  var h='';
+  for(var i=0;i<12;i++){
+    h+='<button class="mpick-btn'+(i===curLunarMonth-1?' on':'')+'" onclick="pickMonth('+(i+1)+')">T'+(i+1)+' · '+M_NAME[i]+'<br><small style="font-size:9.5px;opacity:.7">'+M_SCORE[i]+'/10</small></button>';
+  }
+  grid.innerHTML=h;
+  document.getElementById('month-modal').classList.add('on');
+}
+function pickMonth(m){
+  curLunarMonth=m;
+  document.getElementById('cur-m-lbl').textContent=m+' Âm';
+  closeModal();
+  // Go to first day of that lunar month
+  var d=getDay(m,1);
+  if(d){selectedDayObj=d;curSolarMonth=d.dl.getMonth();}
+  renderToday(d);
+}
+function closeModal(){document.getElementById('month-modal').classList.remove('on');}
+
+/* ══════ I CHING ══════ */
+var HEXAGRAMS=[
+  {n:1,char:'䷀',name:'Kiền',vn:'Trời — Sáng Tạo',judge:'Đại hanh. Lợi trinh.',img:'Cả sáu hào đều dương. Thời cơ lớn đang đến, hành động quyết đoán mang lại thành công.',luck:['Sự nghiệp','Lãnh đạo','Quyết định']},
+  {n:2,char:'䷁',name:'Khôn',vn:'Đất — Tiếp Nhận',judge:'Nguyên hanh. Lợi trinh.',img:'Đất nuôi dưỡng vạn vật. Nhu thuận và kiên nhẫn sẽ mang lại kết quả bền vững.',luck:['Hợp tác','Gia đình','Nhẫn nại']},
+  {n:3,char:'䷂',name:'Truân',vn:'Mầm Sống — Khó Khăn Ban Đầu',judge:'Đại hanh. Lợi trinh.',img:'Như mầm cây chọc qua đất cứng. Vượt qua khó khăn ban đầu sẽ đến thành công.',luck:['Kiên trì','Mới bắt đầu','Vượt trở ngại']},
+  {n:4,char:'䷃',name:'Mông',vn:'Trẻ Thơ — Học Hỏi',judge:'Hanh. Lợi trinh.',img:'Người trẻ cần thầy. Khiêm tốn học hỏi là đường đến minh tuệ.',luck:['Học hỏi','Khiêm tốn','Giáo dục']},
+  {n:5,char:'䷄',name:'Nhu',vn:'Chờ Đợi — Nuôi Dưỡng',judge:'Có phu. Quang hanh.',img:'Mây tụ chưa mưa. Thời chưa đến, hãy kiên nhẫn chờ đợi cơ hội chín muồi.',luck:['Kiên nhẫn','Chờ thời','Dưỡng sức']},
+  {n:6,char:'䷅',name:'Tụng',vn:'Tranh Cãi — Thận Trọng',judge:'Có phu. Tắc lệ.',img:'Tranh cãi sinh ra từ hiểu lầm. Tìm người hòa giải, tránh đối đầu trực tiếp.',luck:['Hòa giải','Thận trọng','Tránh kiện tụng']},
+  {n:7,char:'䷆',name:'Sư',vn:'Đoàn Quân — Tổ Chức',judge:'Trinh. Trượng nhân cát.',img:'Quân đội cần kỷ luật và chỉ huy tốt. Tổ chức đội ngũ, phân công rõ ràng.',luck:['Lãnh đạo','Tổ chức','Nhân sự']},
+  {n:8,char:'䷇',name:'Tỷ',vn:'Đoàn Kết — Nương Tựa',judge:'Cát. Nguyên phệ.',img:'Nước tụ lại thành biển. Liên minh và đoàn kết mang lại sức mạnh lớn.',luck:['Hợp tác','Liên minh','Đối tác']},
+  {n:9,char:'䷈',name:'Tiểu Súc',vn:'Tích Lũy Nhỏ — Chú Ý Chi Tiết',judge:'Hanh. Mật vân bất vũ.',img:'Mây nhỏ chưa đủ mưa. Tích lũy từng bước nhỏ, chú ý từng chi tiết quan trọng.',luck:['Chi tiết','Tích lũy','Chuẩn bị']},
+  {n:10,char:'䷉',name:'Lý',vn:'Đi Trên Đuôi Hổ — Cẩn Trọng',judge:'Lý hổ vĩ. Bất giết nhân. Hanh.',img:'Bước đi trên đuôi hổ mà không bị cắn. Hành xử đúng mực và khéo léo trong tình huống nguy hiểm.',luck:['Thận trọng','Lễ nghĩa','Ứng xử']},
+  {n:11,char:'䷊',name:'Thái',vn:'Thịnh Vượng — Hòa Hợp',judge:'Tiểu vãng đại lai. Cát hanh.',img:'Trời đất giao hòa. Thời kỳ thịnh vượng nhất, mọi việc đều hanh thông.',luck:['Thịnh vượng','Hòa hợp','Tài lộc']},
+  {n:12,char:'䷋',name:'Phủ',vn:'Ngăn Trở — Trì Trệ',judge:'Phủ chi phỉ nhân.',img:'Trời đất không thông. Thời điểm khó khăn, nên tích lũy nội lực, tránh hành động lớn.',luck:['Ẩn nhẫn','Tích lũy','Chờ thời']},
+  {n:13,char:'䷌',name:'Đồng Nhân',vn:'Cộng Đồng — Liên Kết',judge:'Đồng nhân vu dã. Hanh.',img:'Người đồng chí tụ hội nơi đồng hoang. Xây dựng cộng đồng và liên kết mạnh mẽ.',luck:['Cộng đồng','Bạn bè','Hợp tác']},
+  {n:14,char:'䷍',name:'Đại Hữu',vn:'Sở Hữu Lớn — Phong Phú',judge:'Nguyên hanh.',img:'Lửa sáng trên trời. Thời của sự giàu có và thành công. Chia sẻ tài nguyên mang phúc lớn.',luck:['Tài lộc','Thành công','Chia sẻ']},
+  {n:15,char:'䷎',name:'Khiêm',vn:'Khiêm Tốn — Nhún Nhường',judge:'Hanh. Quân tử hữu chung.',img:'Núi nằm dưới đất. Sự khiêm tốn thực sự mang lại tôn trọng và thành công bền vững.',luck:['Khiêm tốn','Uy tín','Bền vững']},
+  {n:16,char:'䷏',name:'Dự',vn:'Hăng Hái — Nhiệt Tình',judge:'Lợi kiến hầu hành sư.',img:'Sấm sét nổ vang. Hành động với nhiệt huyết và quyết đoán. Thời cơ để khởi đầu.',luck:['Hành động','Nhiệt huyết','Khởi đầu']},
+  {n:17,char:'䷐',name:'Tùy',vn:'Thuận Theo — Linh Hoạt',judge:'Nguyên hanh. Lợi trinh.',img:'Sấm trong đầm. Thích nghi và linh hoạt theo hoàn cảnh. Đi theo người có năng lực.',luck:['Linh hoạt','Thích nghi','Theo dõi']},
+  {n:18,char:'䷑',name:'Cổ',vn:'Sửa Chữa — Khắc Phục',judge:'Nguyên hanh. Lợi thiệp đại xuyên.',img:'Gió thổi núi. Thời để sửa chữa những gì đã hư hỏng. Đối mặt và giải quyết vấn đề gốc rễ.',luck:['Sửa chữa','Khắc phục','Đổi mới']},
+  {n:19,char:'䷒',name:'Lâm',vn:'Tiếp Cận — Quan Sát',judge:'Nguyên hanh. Lợi trinh.',img:'Đất trên đầm. Thời của sự phát triển nhanh chóng. Tiếp cận người khác với tấm lòng rộng mở.',luck:['Phát triển','Tiếp cận','Cơ hội']},
+  {n:20,char:'䷓',name:'Quan',vn:'Quan Sát — Chiêm Nghiệm',judge:'Quán. Tẩy nhi bất tiến.',img:'Gió thổi trên đất. Quan sát từ xa để hiểu sâu. Học hỏi từ những gì đang xảy ra xung quanh.',luck:['Quan sát','Học hỏi','Chiêm nghiệm']},
+  {n:21,char:'䷔',name:'Phệ Hạp',vn:'Cắn Qua — Pháp Luật',judge:'Hanh. Lợi dụng ngục.',img:'Sấm sét và lửa. Loại bỏ trở ngại bằng hành động quyết đoán. Áp dụng kỷ luật khi cần thiết.',luck:['Quyết đoán','Kỷ luật','Loại bỏ trở ngại']},
+  {n:22,char:'䷕',name:'Bí',vn:'Trang Điểm — Vẻ Đẹp Bề Ngoài',judge:'Hanh. Tiểu lợi hữu du vãng.',img:'Lửa dưới núi. Vẻ đẹp bề ngoài quan trọng nhưng không thay thế được thực chất bên trong.',luck:['Hình thức','Nghệ thuật','Vẻ đẹp']},
+  {n:23,char:'䷖',name:'Bác',vn:'Tan Rã — Tách Lớp',judge:'Bất lợi hữu du vãng.',img:'Núi trên đất. Thời khó, mọi thứ đang sụp đổ. Giữ vững nền móng, không hành động vội vàng.',luck:['Giữ vững','Nền tảng','Tích lũy']},
+  {n:24,char:'䷗',name:'Phục',vn:'Trở Về — Phục Hồi',judge:'Hanh. Xuất nhập vô tật.',img:'Sấm trong đất. Thời của sự phục hồi và trở về. Ánh sáng bắt đầu quay lại sau bóng tối.',luck:['Phục hồi','Trở lại','Đổi mới']},
+  {n:25,char:'䷘',name:'Vô Vọng',vn:'Chính Trực — Không Lo Âu',judge:'Nguyên hanh. Lợi trinh.',img:'Sấm dưới trời. Hành động chân thành và không toan tính. Điều tốt lành đến tự nhiên.',luck:['Chân thành','Chính trực','Tự nhiên']},
+  {n:26,char:'䷙',name:'Đại Súc',vn:'Tích Lũy Lớn — Kiềm Chế',judge:'Lợi trinh. Bất gia thực cát.',img:'Trời trong núi. Tích lũy sức mạnh và kiến thức. Kiềm chế để bùng phát đúng lúc.',luck:['Tích lũy','Kiềm chế','Sức mạnh']},
+  {n:27,char:'䷚',name:'Di',vn:'Nuôi Dưỡng — Ăn Uống',judge:'Trinh cát. Quan di.',img:'Sấm dưới núi. Sự nuôi dưỡng cả thể xác lẫn tinh thần. Chú ý đến sức khỏe và lối sống.',luck:['Sức khỏe','Nuôi dưỡng','Chăm sóc']},
+  {n:28,char:'䷛',name:'Đại Quá',vn:'Vượt Mức — Gánh Nặng Lớn',judge:'Đống nao. Lợi hữu du vãng.',img:'Đầm dâng lên. Vượt quá giới hạn. Cần điều chỉnh trước khi sụp đổ.',luck:['Điều chỉnh','Cân bằng','Thận trọng']},
+  {n:29,char:'䷜',name:'Khảm',vn:'Nước — Nguy Hiểm Liên Tiếp',judge:'Hữu phu duy tâm hanh.',img:'Nước chảy liên tiếp. Nguy hiểm bủa vây, nhưng nước vẫn chảy không ngừng. Giữ vững nội tâm.',luck:['Kiên cường','Nội tâm','Vượt khó']},
+  {n:30,char:'䷝',name:'Ly',vn:'Lửa — Sáng Rõ',judge:'Lợi trinh. Hanh.',img:'Lửa đôi. Sự sáng rõ và nhận thức cao. Bám vào điều đúng đắn như lửa bám vào củi.',luck:['Trí tuệ','Sáng suốt','Nhận thức']},
+  {n:31,char:'䷞',name:'Hàm',vn:'Ảnh Hưởng — Cảm Ứng',judge:'Hanh. Lợi trinh.',img:'Đầm trên núi. Sự thu hút và ảnh hưởng. Cởi mở đón nhận mang lại kết nối sâu sắc.',luck:['Tình cảm','Kết nối','Ảnh hưởng']},
+  {n:32,char:'䷟',name:'Hằng',vn:'Bền Vững — Kiên Trì',judge:'Hanh. Vô cữu.',img:'Sấm và gió. Sự bền vững và kiên định. Theo đuổi mục tiêu dài hạn mang lại thành công.',luck:['Bền vững','Kiên trì','Dài hạn']},
+  {n:33,char:'䷠',name:'Độn',vn:'Rút Lui — Ẩn Nhẫn',judge:'Hanh. Tiểu lợi trinh.',img:'Trời dưới núi. Thời để rút lui chiến lược. Ẩn nhẫn chờ cơ hội tốt hơn.',luck:['Ẩn nhẫn','Chiến lược','Chờ đợi']},
+  {n:34,char:'䷡',name:'Đại Tráng',vn:'Sức Mạnh Lớn — Hành Động',judge:'Lợi trinh.',img:'Sấm trên trời. Sức mạnh vượt trội. Hành động mạnh mẽ nhưng phải giữ đúng đạo lý.',luck:['Sức mạnh','Hành động','Quyết đoán']},
+  {n:35,char:'䷢',name:'Tấn',vn:'Tiến Lên — Thăng Tiến',judge:'Khang hầu dụng tích mã.',img:'Lửa trên đất. Mặt trời mọc, thăng tiến nhanh chóng. Thời của sự công nhận và thăng tiến.',luck:['Thăng tiến','Công nhận','Phát triển']},
+  {n:36,char:'䷣',name:'Minh Di',vn:'Ánh Sáng Bị Che — Ẩn Tài',judge:'Lợi gian trinh.',img:'Đất che lửa. Ánh sáng bị che giấu. Giữ trí tuệ bên trong, không biểu lộ ra ngoài.',luck:['Ẩn tài','Bảo vệ','Thận trọng']},
+  {n:37,char:'䷤',name:'Gia Nhân',vn:'Gia Đình — Trật Tự Trong Nhà',judge:'Lợi nữ trinh.',img:'Gió từ lửa. Gia đình là nền tảng. Vai trò rõ ràng và kỷ luật trong gia đình mang lại hạnh phúc.',luck:['Gia đình','Trật tự','Nền tảng']},
+  {n:38,char:'䷥',name:'Khuê',vn:'Đối Lập — Mâu Thuẫn',judge:'Tiểu sự cát.',img:'Lửa trên đầm. Sự đối lập và mâu thuẫn. Tìm điểm chung trong khác biệt để hóa giải.',luck:['Hòa giải','Điểm chung','Linh hoạt']},
+  {n:39,char:'䷦',name:'Kiển',vn:'Trở Ngại — Khó Khăn',judge:'Lợi tây nam.',img:'Nước trên núi. Con đường đầy chướng ngại vật. Tìm sự giúp đỡ và đi vòng qua trở ngại.',luck:['Tìm giúp đỡ','Kiên nhẫn','Vòng tránh']},
+  {n:40,char:'䷧',name:'Giải',vn:'Giải Phóng — Tháo Gỡ',judge:'Lợi tây nam.',img:'Sấm và mưa. Giải phóng khỏi áp lực và ràng buộc. Tha thứ và buông bỏ mang lại nhẹ nhàng.',luck:['Giải phóng','Tha thứ','Buông bỏ']},
+  {n:41,char:'䷨',name:'Tổn',vn:'Giảm Thiểu — Hy Sinh',judge:'Hữu phu. Nguyên cát.',img:'Núi dưới đầm. Giảm bớt để tăng. Hy sinh nhỏ mang lại lợi ích lớn hơn.',luck:['Hy sinh','Giảm bớt','Tích lũy dài hạn']},
+  {n:42,char:'䷩',name:'Ích',vn:'Tăng Trưởng — Lợi Ích',judge:'Lợi hữu du vãng.',img:'Gió và sấm. Thời của tăng trưởng và lợi ích. Hành động nhanh để tận dụng cơ hội.',luck:['Tăng trưởng','Lợi ích','Cơ hội']},
+  {n:43,char:'䷪',name:'Quải',vn:'Đột Phá — Quyết Đoán',judge:'Dương vu vương đình.',img:'Đầm trên trời. Đột phá quyết đoán. Công khai tuyên bố và hành động mạnh mẽ.',luck:['Đột phá','Quyết đoán','Công khai']},
+  {n:44,char:'䷫',name:'Cấu',vn:'Gặp Gỡ — Cơ Hội Bất Ngờ',judge:'Nữ tráng.',img:'Trời và gió. Gặp gỡ bất ngờ. Cẩn thận với những cám dỗ và cơ hội quá dễ dàng.',luck:['Cảnh giác','Phân biệt','Bất ngờ']},
+  {n:45,char:'䷬',name:'Tụy',vn:'Tụ Họp — Thu Thập',judge:'Hanh. Vương cách miếu.',img:'Đầm trên đất. Tập hợp và tụ hội. Thời để xây dựng liên minh và kết hợp nguồn lực.',luck:['Tụ họp','Liên minh','Tập hợp']},
+  {n:46,char:'䷭',name:'Thăng',vn:'Thăng Tiến — Leo Lên',judge:'Nguyên hanh.',img:'Gió trong đất. Cây mọc lên từ đất. Tiến lên từng bước, nỗ lực không ngừng.',luck:['Thăng tiến','Nỗ lực','Tiến lên']},
+  {n:47,char:'䷮',name:'Khốn',vn:'Kiệt Sức — Gian Khổ',judge:'Hanh. Trinh đại nhân cát.',img:'Đầm không có nước. Thời khốn khó và kiệt sức. Giữ vững ý chí và phẩm hạnh bên trong.',luck:['Ý chí','Phẩm hạnh','Vượt khốn']},
+  {n:48,char:'䷯',name:'Tỉnh',vn:'Giếng Nước — Nguồn Tài Nguyên',judge:'Cải ấp bất cải tỉnh.',img:'Nước trong gió. Giếng nước không bao giờ cạn. Tìm về nguồn gốc và những giá trị cơ bản.',luck:['Nguồn lực','Giá trị cơ bản','Bền vững']},
+  {n:49,char:'䷰',name:'Cách',vn:'Cách Mạng — Thay Đổi',judge:'Kỷ nhật nãi phu.',img:'Lửa trong đầm. Cách mạng và thay đổi. Thời điểm chín muồi cho sự đổi mới lớn.',luck:['Đổi mới','Cách mạng','Thay đổi']},
+  {n:50,char:'䷱',name:'Đỉnh',vn:'Vạc — Biến Đổi Thành Dưỡng',judge:'Nguyên cát. Hanh.',img:'Gió dưới lửa. Biến đổi nguyên liệu thô thành thứ có giá trị. Nuôi dưỡng tài năng và tri thức.',luck:['Sáng tạo','Nuôi dưỡng','Biến đổi']},
+  {n:51,char:'䷲',name:'Chấn',vn:'Sấm Sét — Rung Động',judge:'Hanh. Chấn lai hức hức.',img:'Sấm đôi. Cú sốc và sự thức tỉnh. Duy trì bình tĩnh trong hỗn loạn.',luck:['Bình tĩnh','Thức tỉnh','Vượt sốc']},
+  {n:52,char:'䷳',name:'Cấn',vn:'Núi — Tĩnh Lặng',judge:'Cấn kỳ bối.',img:'Núi đôi. Dừng lại khi đúng thời điểm. Tĩnh lặng và thiền định mang lại minh tuệ.',luck:['Thiền định','Tĩnh lặng','Suy ngẫm']},
+  {n:53,char:'䷴',name:'Tiệm',vn:'Tiệm Tiến — Từng Bước',judge:'Nữ quy cát.',img:'Gió trên núi. Chim nhạn di trú theo mùa. Tiến từng bước vững chắc hơn nhảy vọt.',luck:['Kiên định','Từng bước','Vững chắc']},
+  {n:54,char:'䷵',name:'Quy Muội',vn:'Hôn Nhân Nhỏ — Thứ Yếu',judge:'Chinh hung.',img:'Sấm trên đầm. Vị trí không thuận lợi. Chấp nhận vai trò nhỏ hơn trong hiện tại.',luck:['Chấp nhận','Khiêm tốn','Chờ thời']},
+  {n:55,char:'䷶',name:'Phong',vn:'Phong Phú — Đỉnh Cao',judge:'Hanh. Vương giả chi.',img:'Sấm và lửa. Thời kỳ phong phú và đỉnh cao. Tận hưởng nhưng nhớ rằng cực thịnh thì suy.',luck:['Phong phú','Đỉnh cao','Tận hưởng']},
+  {n:56,char:'䷷',name:'Lữ',vn:'Người Lữ Hành — Xa Quê',judge:'Tiểu hanh. Lữ trinh cát.',img:'Lửa trên núi. Người đi xa xứ. Cẩn thận, không gây thù, tự bảo vệ mình.',luck:['Du lịch','Thận trọng','Tự bảo vệ']},
+  {n:57,char:'䷸',name:'Tốn',vn:'Gió — Nhún Nhường Xâm Nhập',judge:'Tiểu hanh. Lợi hữu du vãng.',img:'Gió đôi. Sự nhún nhường kiên trì xâm nhập dần. Ảnh hưởng bằng sự mềm mại, không cứng nhắc.',luck:['Mềm mại','Kiên trì','Ảnh hưởng']},
+  {n:58,char:'䷹',name:'Đoài',vn:'Đầm — Vui Vẻ',judge:'Hanh. Lợi trinh.',img:'Đầm đôi. Niềm vui và sự vui vẻ. Chia sẻ niềm vui với người khác nhân lên gấp bội.',luck:['Vui vẻ','Chia sẻ','Hòa hợp']},
+  {n:59,char:'䷺',name:'Hoán',vn:'Phân Tán — Giải Hòa',judge:'Hanh. Vương giả chi miếu.',img:'Gió trên nước. Tan chảy và phân tán. Vượt qua rào cản và hóa giải mâu thuẫn.',luck:['Hóa giải','Vượt rào','Tan chảy']},
+  {n:60,char:'䷻',name:'Tiết',vn:'Giới Hạn — Điều Tiết',judge:'Hanh. Khổ tiết bất khả trinh.',img:'Nước trong đầm. Điều tiết và giới hạn. Kỷ luật tự giác mang lại sự tự do thực sự.',luck:['Kỷ luật','Điều tiết','Tự do']},
+  {n:61,char:'䷼',name:'Trung Phu',vn:'Trung Thực — Tin Tưởng Lẫn Nhau',judge:'Đồn ngư cát.',img:'Gió trên đầm. Lòng tin thực sự. Trung thực và tin tưởng lẫn nhau vượt qua mọi rào cản.',luck:['Tin tưởng','Trung thực','Kết nối sâu']},
+  {n:62,char:'䷽',name:'Tiểu Quá',vn:'Vượt Nhỏ — Cẩn Thận Chi Tiết',judge:'Hanh. Lợi trinh.',img:'Sấm trên núi. Vượt qua giới hạn nhỏ. Hành động nhỏ đúng lúc quan trọng hơn kế hoạch lớn.',luck:['Chi tiết','Cẩn thận','Hành động nhỏ']},
+  {n:63,char:'䷾',name:'Ký Tế',vn:'Đã Hoàn Thành — Cân Bằng',judge:'Hanh. Tiểu lợi trinh.',img:'Nước trên lửa. Mọi thứ đã ổn định và hoàn chỉnh. Duy trì trạng thái cân bằng.',luck:['Hoàn thành','Cân bằng','Duy trì']},
+  {n:64,char:'䷿',name:'Vị Tế',vn:'Chưa Hoàn Thành — Tiềm Năng',judge:'Hanh. Tiểu hồ uế tế.',img:'Lửa trên nước. Chưa hoàn thành nhưng đầy tiềm năng. Bình minh trước khi vượt qua thử thách cuối.',luck:['Tiềm năng','Chuẩn bị','Bình minh']}
+];
+
+function renderQue(){
+  var el=document.getElementById('v-que');
+  var h='<div class="que-view">';
+  h+='<div class="que-title">🎋 Gieo Quẻ Kinh Dịch</div>';
+  h+='<div class="que-sub">Tĩnh tâm, hít thở sâu, nghĩ đến câu hỏi trong lòng<br>rồi nhấn nút để nhận quẻ</div>';
+  h+='<button class="que-btn" onclick="throwHex()">';
+  h+='<div class="que-btn-ico">☯</div>';
+  h+='<div class="que-btn-lbl">GIEO QUẺ</div>';
+  h+='</button>';
+  h+='<div class="que-result" id="que-result"></div>';
+  h+='</div>';
+  el.innerHTML=h;
+}
+
+function throwHex(){
+  var idx=Math.floor(Math.random()*64);
+  var hx=HEXAGRAMS[idx];
+  var res=document.getElementById('que-result');
+  if(!res)return;
+  var h='';
+  h+='<div class="que-hex-num">Quẻ thứ '+hx.n+' trong 64 quẻ</div>';
+  h+='<div class="que-hex-char">'+hx.char+'</div>';
+  h+='<div class="que-hex-name">'+hx.name+'</div>';
+  h+='<div class="que-hex-vn">'+hx.vn+'</div>';
+  h+='<div class="que-divider"></div>';
+  h+='<div class="que-section"><div class="que-sec-title">Lời Phán</div>';
+  h+='<div class="que-sec-body" style="color:var(--gold2);font-style:italic">'+hx.judge+'</div></div>';
+  h+='<div class="que-section"><div class="que-sec-title">Ý Nghĩa</div>';
+  h+='<div class="que-sec-body">'+hx.img+'</div></div>';
+  h+='<div class="que-section"><div class="que-sec-title">Ứng Dụng</div>';
+  h+='<div class="que-luck">';
+  hx.luck.forEach(function(l){h+='<span class="que-luck-item">'+l+'</span>';});
+  h+='</div></div>';
+  h+='<div style="margin-top:14px;text-align:center">';
+  h+='<button onclick="throwHex()" style="background:var(--gold-dim);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--gold);cursor:pointer">🔄 Gieo Lại</button>';
+  h+='</div>';
+  res.className='que-result on';
+  res.innerHTML=h;
+  res.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ══════ INIT ══════ */
+(function(){
+  // Default: show May 19, 2026 (preview day)
+  var demo=lookupBySolar(4,19); // May=4 (0-based)
+  if(demo)selectedDayObj=demo;
+  renderToday(selectedDayObj);
+  renderQue();
+})();
+</script>
+</body>
+</html>

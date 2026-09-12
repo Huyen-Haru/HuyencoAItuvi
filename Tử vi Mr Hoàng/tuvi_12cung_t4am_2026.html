@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tử Vi 12 Cung × 30 Ngày — Tháng 4 Âm 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Noto+Serif:wght@400;600&display=swap');
+:root{
+  --ink:#1a1614;--paper:#faf8f4;--paper2:#f3f0ea;--border:#d4c9b0;
+  --gold:#b8860b;--gold-lt:#f5e9c4;--amber:#7d5a0a;
+  --red:#c0392b;--red-lt:#fde8e6;--red-dk:#8b1a12;
+  --blue:#1a5276;--blue-lt:#d6eaf8;
+  --green:#1e6b35;--green-lt:#d5f0dc;
+  --orange:#7d4000;--orange-lt:#fef3cd;
+  --gray:#5d5a56;--gray-lt:#eeece8;
+  --purple:#4a235a;--purple-lt:#e8d5f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);font-size:12px;line-height:1.5}
+.page{max-width:1200px;margin:0 auto;padding:24px 16px 60px}
+
+/* HERO */
+.hero{text-align:center;padding:28px 16px 20px;border-bottom:2px solid var(--gold);margin-bottom:24px}
+.hero h1{font-family:'Noto Serif',serif;font-size:22px;color:var(--gold);margin-bottom:6px}
+.hero p{font-size:12px;color:var(--gray);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+.tag{background:var(--gold-lt);color:var(--amber);border:1px solid #d4aa50;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:600}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;background:var(--paper2);border:1px solid var(--border);border-radius:6px;margin-bottom:20px;font-size:11px}
+.li{display:flex;align-items:center;gap:4px}
+.ld{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+
+/* FILTER BAR */
+.fbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;align-items:center}
+.fbar span{font-size:11px;font-weight:600;color:var(--gray);margin-right:4px}
+.fb{padding:3px 10px;border-radius:20px;border:0.5px solid var(--border);background:transparent;color:var(--gray);font-size:11px;cursor:pointer;transition:all .15s}
+.fb.on,.fb:hover{background:var(--blue-lt);color:var(--blue);border-color:#9ec8ec}
+
+/* WEEK TITLE */
+.wk-title{font-family:'Noto Serif',serif;font-size:14px;font-weight:600;color:var(--gold);border-left:4px solid var(--gold);padding:6px 12px;background:var(--gold-lt);margin:28px 0 12px;border-radius:0 4px 4px 0}
+
+/* DAY CARD */
+.dc{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.dh{display:flex;align-items:center;gap:10px;padding:9px 14px;cursor:pointer;user-select:none}
+.dh:hover{filter:brightness(.97)}
+.r-great .dh{border-left:4px solid var(--green);background:#c8ecd0}
+.r-good  .dh{border-left:4px solid var(--blue);background:#c5dff4}
+.r-mid   .dh{border-left:4px solid var(--gray);background:#e4e1db}
+.r-bad2  .dh{border-left:4px solid #c8960a;background:#f9e4a0}
+.r-bad   .dh{border-left:4px solid var(--red);background:#f5c5c0}
+.dam{font-size:17px;font-weight:600;min-width:54px}
+.r-great .dam{color:var(--green)}
+.r-good  .dam{color:var(--blue)}
+.r-mid   .dam{color:var(--gray)}
+.r-bad2  .dam{color:var(--amber)}
+.r-bad   .dam{color:var(--red)}
+.dmeta{flex:1}
+.dcc{font-size:12px;font-weight:600}
+.ddl{font-size:10px;color:var(--gray)}
+.dq{font-size:11px;color:var(--gray);margin-top:1px;line-height:1.4}
+.dbadge{padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.bg-great{background:var(--green);color:#fff}
+.bg-good {background:var(--blue);color:#fff}
+.bg-mid  {background:var(--gray);color:#fff}
+.bg-bad2 {background:#c8960a;color:#fff}
+.bg-bad  {background:var(--red);color:#fff}
+.darr{font-size:14px;opacity:.6;transition:transform .2s;flex-shrink:0}
+.darr.op{transform:rotate(90deg)}
+
+/* BODY */
+.db{display:none;padding:0 14px 14px;background:var(--paper)}
+.db.op{display:block}
+
+/* CUNG TABLE */
+.ct{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:11.5px}
+.ct th{background:var(--paper2);border:1px solid var(--border);padding:5px 8px;font-weight:600;font-size:10.5px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+.ct td{border:1px solid var(--border);padding:7px 9px;vertical-align:top}
+.ct tr:nth-child(even) td{background:rgba(0,0,0,.012)}
+.tr-tot td{background:#edf8f0!important}
+.tr-xau td{background:#fdf0ee!important}
+.tr-mid td{background:#f5f3ef!important}
+.cname{font-weight:600;font-size:11.5px;color:var(--ink)}
+.csao{font-size:10px;color:var(--gray);font-style:italic;margin-top:2px;line-height:1.4}
+.cnx{font-size:11px;line-height:1.55;margin-top:3px}
+.tag-t{display:inline-block;background:var(--green-lt);color:var(--green);border:1px solid #a0d8a8;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px;margin-right:3px}
+.tag-x{display:inline-block;background:var(--red-lt);color:var(--red);border:1px solid #e8a0a0;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px;margin-right:3px}
+.tag-o{display:inline-block;background:var(--gray-lt);color:var(--gray);border:1px solid #ccc;border-radius:3px;font-size:10px;font-weight:600;padding:1px 5px;margin-right:3px}
+.lamy{font-size:10.5px;color:var(--green);margin-top:3px}
+.lamn{font-size:10.5px;color:var(--red);margin-top:2px}
+
+/* OVERALL */
+.ov{border-radius:6px;padding:9px 12px;font-size:11.5px;line-height:1.65;border-left:4px solid;margin-top:8px}
+.ov-title{font-weight:600;margin-bottom:3px;font-size:11px}
+.ov-great{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.ov-good {background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.ov-mid  {background:var(--gray-lt);border-color:var(--gray);color:var(--gray)}
+.ov-bad2 {background:var(--orange-lt);border-color:#c8960a;color:var(--amber)}
+.ov-bad  {background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.ov-body{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <h1>🔮 Tử Vi Tháng 4 Âm Lịch 2026 — 12 Cung × 30 Ngày</h1>
+  <p>Phân tích chi tiết từng ngày × 12 cung theo lá số Mr. Hoàng · Tháng Quý Tị · Năm Bính Ngọ · Lưu nguyệt = Cung Tị (Phá Quân M)</p>
+  <div class="tags">
+    <span class="tag">Mệnh: Thiên Cơ(Đ) — Sửu</span>
+    <span class="tag">Phụ Mẫu: Tử Vi(M)+Thiên Phú(M) — Dần</span>
+    <span class="tag">Phúc Đức: Thái Âm(H) — Mão</span>
+    <span class="tag">Điền Trạch: Tham Lang(V) — Thìn</span>
+    <span class="tag">Quan Lộc: Cự Môn(H) — Tý</span>
+    <span class="tag">Nô Bộc: Liêm Trinh(V)+Thiên Tướng(V) — Ngọ</span>
+    <span class="tag">Thiên Di: Thiên Lương(Đ) — Mùi</span>
+    <span class="tag">Tật Ách: Thất Sát(M) — Thân</span>
+    <span class="tag">Tài Bạch: Thiên Đồng(H) — Tuất</span>
+    <span class="tag">Tử Tức: Vũ Khúc(M) — Dậu</span>
+    <span class="tag">Phu Thê: Thái Dương(H) — Hợi</span>
+    <span class="tag">Huynh Đệ: Phá Quân(M) — Tị</span>
+  </div>
+</div>
+
+<div class="legend">
+  <strong style="margin-right:4px">Ngày:</strong>
+  <div class="li"><div class="ld" style="background:var(--green)"></div>⭐ Rất tốt</div>
+  <div class="li"><div class="ld" style="background:var(--blue)"></div>✅ Tốt</div>
+  <div class="li"><div class="ld" style="background:var(--gray)"></div>〰 Trung bình</div>
+  <div class="li"><div class="ld" style="background:#c8960a"></div>⚠ Khá xấu</div>
+  <div class="li"><div class="ld" style="background:var(--red)"></div>🔴 Xấu</div>
+  <span style="margin:0 8px;color:var(--border)">|</span>
+  <strong style="margin-right:4px">Cung:</strong>
+  <div class="li"><div class="ld" style="background:#edf8f0;border:1px solid #a0d8a8"></div>⭐ Tốt</div>
+  <div class="li"><div class="ld" style="background:#f5f3ef;border:1px solid #ccc"></div>〰 Bình</div>
+  <div class="li"><div class="ld" style="background:#fdf0ee;border:1px solid #e8a0a0"></div>⚠ Xấu</div>
+</div>
+
+<div class="fbar">
+  <span>Lọc:</span>
+  <button class="fb on" onclick="flt('all',this)">Tất cả</button>
+  <button class="fb" onclick="flt('great',this)">⭐ Rất tốt</button>
+  <button class="fb" onclick="flt('good',this)">✅ Tốt</button>
+  <button class="fb" onclick="flt('mid',this)">〰 Trung bình</button>
+  <button class="fb" onclick="flt('bad2',this)">⚠ Khá xấu</button>
+  <button class="fb" onclick="flt('bad',this)">🔴 Xấu</button>
+</div>
+
+<div id="root"></div>
+</div>
+
+<script>
+// ─── DATA ─────────────────────────────────────────────────────────────────
+// cs = array of 12 cung objects
+// rt: "t"=tốt, "o"=bình, "x"=xấu
+// ─────────────────────────────────────────────────────────────────────────
+var W=[
+"Tuần 1 — Mùng 1 đến Mùng 7 (17/5–23/5/2026 DL)",
+"Tuần 2 — Mùng 8 đến 14 (24/5–30/5/2026 DL)",
+"Tuần 3 — Ngày 15 đến 21 (31/5–6/6/2026 DL)",
+"Tuần 4 — Ngày 22 đến 30 (7/6–15/6/2026 DL)"
+];
+
+var D=[
+// ══════════════════════ TUẦN 1 ══════════════════════
+{w:0,a:"Mùng 1",d:"17/5",cc:"Canh Tuất",r:"good",badge:"✅ Tốt",
+q:"Tuất hợp Sửu(Mệnh) · Tuất = Tài Bạch → tiền về, quý nhân xuất hiện",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức, L.H Quyền, Tẩu Thư",rt:"o",
+nx:"Tuất–Sửu lục hợp → Mệnh được hỗ trợ. Thiên Cơ linh hoạt, Long Đức quý nhân, L.H Quyền chủ động. Tinh thần tích cực.",
+y:"Lên kế hoạch, họp chiến lược, gặp cố vấn",n:"Không do dự — hành động sớm tốt hơn"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt, ĐV.T Mã(Đ)",rt:"t",
+nx:"Dần–Ngọ–Tuất tam hợp → Phụ Mẫu được hỗ trợ tốt. Tử Vi và Thiên Phú cùng phát huy — cha mẹ/bề trên khỏe mạnh, quan hệ hài hòa. Thiên Việt quý nhân từ bề trên. Ngày tốt để nhờ hỗ trợ từ người lớn tuổi.",
+y:"Gặp gỡ cha mẹ, nhờ bề trên hỗ trợ, làm việc liên quan đến người lớn tuổi",n:"Không nên cãi lời bề trên, tránh xung đột với người lớn"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, Thiên Đức, L.Đào Hoa, L.Phúc Đức, L.Thiên Đức, DV.H Khoa(V), DV.Khúc(Đ)",rt:"t",
+nx:"Mão–Tuất không quan hệ đặc biệt. Thái Âm(H) + Hóa Khoa → tinh thần lãng mạn, nhẹ nhàng. Phúc Đức, Hy Thần, Thiên Hi — ngày có nhiều niềm vui, an lạc nội tâm. Đào Hoa + L.Đào Hoa tăng duyên sắc.",
+y:"Thư giãn, hưởng thụ, hoạt động sáng tạo, gặp gỡ bạn bè vui vẻ",n:"Không nên làm việc căng thẳng — ngày phù hợp nghỉ ngơi"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La, Quả Tú, L.Đà La(Đ)",rt:"x",
+nx:"Thìn–Tuất xung → Điền Trạch bị khuấy động. Tham Lang gặp hung — có vấn đề nhỏ liên quan đến nhà cửa, bất động sản. Địa Kiếp hao tổn. Bệnh Phù cảnh báo sức khỏe tại nhà. Điếu Khách dễ có khách không mong muốn.",
+y:"Kiểm tra nhà cửa, dọn dẹp nhà ở, tránh ký hợp đồng bất động sản",n:"Không mua bán nhà đất, không sửa chữa lớn, không cho ai vào nhà khi không rõ"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.Lộc Tồn(Đ), L.H Khoa(Đ), Đại Hao(H)",rt:"o",
+nx:"Tý–Tuất không quan hệ đặc biệt. Cự Môn hoạt động bình thường. L.Lộc Tồn bảo toàn thu nhập. Đại Hao nhắc chi phí nhỏ. Phù hợp công việc thường ngày.",
+y:"Xử lý hồ sơ, email, việc văn bản tồn đọng",n:"Không khởi dự án lớn, không ra quyết định sự nghiệp quan trọng"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Liêm Trinh(V), Thiên Tướng(V), Thái Tuế, L.Thái Tuế, L.K Dương(H), L.Hóa Kỳ(H), Thiên Khôi, Hữu Bật, Tam Thai",rt:"o",
+nx:"Tuất–Ngọ không kích động. Thái Tuế không bị khuấy động hôm nay. Thiên Khôi trung hòa. Hữu Bật hỗ trợ nhẹ. Quan hệ đồng nghiệp/bạn bè bình thường, an toàn.",
+y:"Gặp bạn bè cũ tin tưởng, trao đổi thông tin nhẹ",n:"Không nhờ người mới quen giải quyết việc quan trọng"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La, Quả Tú, L.Đà La(Đ)",rt:"o",
+nx:"Mùi–Tuất tứ hành xung nhẹ → Thiên Di bị áp lực nhỏ. Thiên Lương(Đ) bảo hộ. Tuy nhiên Bệnh Phù + Điếu Khách nhắc cẩn thận khi ra ngoài. Giải Thần hóa giải phần nào.",
+y:"Đi lại bình thường, cẩn thận hơn khi đi xa hoặc gặp người lạ",n:"Tránh đi xa một mình, hạn chế những chuyến đi đột xuất không cần thiết"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Tả Phù, Bát Tọa, Thiên Mã(Đ), Lộc Tồn(H), Bác Sĩ, L.Thiên Mã(Đ), L.V Xương(Đ), DV.Lộc Tồn(H), DV.Lộc Tồn",rt:"o",
+nx:"Thân không bị khuấy động. Thất Sát bình thường. Lộc Tồn(H) + Bác Sĩ hỗ trợ sức khỏe. Thiên Mã + L.Thiên Mã cho thấy ngày phù hợp vận động, di chuyển. Sức khỏe ổn định.",
+y:"Vận động nhẹ, thể dục, đi dạo, kiểm tra sức khỏe định kỳ",n:"Không nên làm việc quá sức, nghỉ ngơi đầy đủ"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, Hóa Kỳ(H), Kinh Dương(H), L.Thiên Mã(Đ)",rt:"t",
+nx:"TUẤT = cung Tài Bạch → kích hoạt trực tiếp. L.Hóa Lộc phát huy mạnh. L.Thiên Việt quý nhân tài chính. Hóa Kỳ nhắc cẩn thận rủi ro nhỏ. Kinh Dương cảnh báo tranh chấp nhỏ.",
+y:"Thu tiền, nhận thanh toán, đòi nợ — ưu tiên buổi sáng",n:"Không cho vay, không đầu tư mạo hiểm dù ngày tốt về tiền"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",
+nx:"Dậu–Tuất liền cung, không xung hợp đặc biệt. Vũ Khúc(M) bình thường — quan hệ con cái/đệ tử ổn định. Hóa Quyền(V) + DV.H Quyền → có quyền lực nhỏ trong tập thể. Thanh Long mang may mắn nhỏ.",
+y:"Hướng dẫn, dạy dỗ người dưới, chia sẻ kinh nghiệm",n:"Không nên kỳ vọng quá cao vào người dưới hôm nay"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), L.Thiên Khôi, L.Kiếp Sát, Địa Giải, Tiểu Hao, Thai Phụ",rt:"o",
+nx:"Tuất không xung Hợi. Thái Dương sáng chiếu, đối phương vui vẻ. Địa Giải bảo vệ. L.Kiếp Sát nhắc tránh bất ngờ nhỏ. Quan hệ tình cảm bình thường tốt.",
+y:"Nói chuyện quan trọng về tình cảm, tặng quà nhỏ, đi ăn cùng nhau",n:"Tránh đề cập chuyện tiền bạc chung trong buổi hẹn"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, L.Hý Thần, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ), L.T Khốc(Đ), L.T Hư(Đ)",rt:"o",
+nx:"Tị là lưu nguyệt tháng 4. Huynh Đệ — Phá Quân cư đây gây biến động trong quan hệ anh em, bạn bè gần. Tuế Phá cảnh báo dễ phá vỡ quan hệ. Thiên Giải + Thiên Quý giảm nhẹ. L.Hý Thần mang niềm vui nhỏ.",
+y:"Duy trì quan hệ anh em, bạn bè nhẹ nhàng, không tạo áp lực",n:"Không cho anh em/bạn thân mượn tiền lớn, tránh tranh cãi"},
+],
+ov:"Ngày tốt — ưu tiên thu tiền buổi sáng, gặp đối tác buổi chiều. Phụ Mẫu và Phúc Đức tốt — ngày an vui. Điền Trạch cần chú ý nhà cửa nhỏ.",ovc:"ov-good"},
+
+{w:0,a:"Mùng 2",d:"18/5",cc:"Tân Hợi",r:"bad",badge:"🔴 Xấu",
+q:"HỢI bị Tị(lưu nguyệt) XUNG TRỰC TIẾP → Phu Thê tổn thương nặng nhất tháng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức, L.H Quyền",rt:"o",
+nx:"Hợi không kích Sửu trực tiếp. Khí trường ngày xấu lan ra. Thiên Hình nhạy cảm — dễ bực bội. Long Đức vẫn bảo vệ ở nền.",
+y:"Làm việc cá nhân, tự kiểm soát cảm xúc",n:"Không ký hợp đồng, không ra quyết định quan trọng"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt",rt:"o",
+nx:"Dần–Hợi không quan hệ đặc biệt. Tử Vi + Thiên Phú bình thường. Ân Quang hỗ trợ nhẹ. Quan hệ với cha mẹ/bề trên bình thường hôm nay.",
+y:"Liên lạc hỏi thăm cha mẹ, bề trên bình thường",n:"Không nhờ bề trên giải quyết việc quan trọng trong ngày xấu"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, L.Đào Hoa, DV.H Khoa(V)",rt:"o",
+nx:"Mão–Hợi không xung. Thái Âm bình thường. Phúc Đức và Hy Thần hỗ trợ nhẹ nội tâm. Tinh thần có thể hơi u ám do khí ngày xấu nhưng không nghiêm trọng.",
+y:"Thiền định, đọc sách, hoạt động thư giãn cá nhân",n:"Không tham gia tiệc tùng hay hoạt động đông người trong ngày xấu"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La, Quả Tú, L.Đà La(Đ)",rt:"x",
+nx:"Thìn–Hợi không quan hệ trực tiếp nhưng khí ngày xấu khuếch đại Điều Khách, Bệnh Phù tại Điền Trạch. Tham Lang bị kích bởi hung khí — dễ có vấn đề nhà cửa. Địa Kiếp hao tổn.",
+y:"Kiểm tra an toàn nhà cửa, khóa cửa cẩn thận",n:"Không ký hợp đồng bất động sản, không để người lạ vào nhà"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), Trực Phù, Đại Hao(H), L.Lộc Tồn(Đ)",rt:"o",
+nx:"Tý không bị khuấy động trực tiếp. Cự Môn dễ gây khẩu thiệt trong khí xấu. Đại Hao phát sinh chi phí bất ngờ. Trực Phù cảnh báo xung đột quản lý.",
+y:"Xử lý việc cũ, đọc tài liệu, làm việc yên lặng",n:"Không tranh luận với sếp hay đồng nghiệp, không thương lượng hợp đồng"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, L.K Dương(H), L.Hóa Kỳ(H), Âm Sát, Thiên Khôi",rt:"x",
+nx:"Khí ngày xấu khuếch đại Thái Tuế. Âm Sát — kẻ xấu ẩn mình. L.K Dương dễ gây va chạm bất ngờ. Ba hung tinh lưu đều nhạy cảm hơn.",
+y:"Làm việc hoàn toàn một mình, tránh mọi tiếp xúc không cần thiết",n:"Không nhờ vả, không hùn vốn, không tin người mới"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù, Thiên La",rt:"x",
+nx:"Mùi–Hợi không quan hệ trực tiếp nhưng Bệnh Phù + Địa Kiếp + Thiên La tại Thiên Di bị kích bởi khí xấu ngày → dễ có tai nạn nhỏ khi di chuyển. Ngày KHÔNG nên đi xa.",
+y:"Hạn chế đi lại, nếu phải đi thì đi đường quen thuộc, cẩn thận giao thông",n:"Không đi xa, không lái xe đường dài, không di chuyển ban đêm"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Tả Phù, Thiên Mã(Đ), Lộc Tồn(H), Bác Sĩ, DV.Lộc Tồn(H)",rt:"o",
+nx:"Thân không bị xung khuấy trong ngày Hợi. Thất Sát bình thường. Lộc Tồn + Bác Sĩ duy trì. Sức khỏe ổn định, không có vấn đề đặc biệt.",
+y:"Duy trì chế độ ăn uống, nghỉ ngơi bình thường",n:"Không làm việc quá sức trong ngày năng lượng thấp"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), Kinh Dương(H), L.Thiên Việt",rt:"o",
+nx:"Tuất không bị xung. L.Hóa Lộc ổn định nhưng khí xấu làm tài lộc không phát huy. Hóa Kỳ tạo rủi ro tiềm ẩn. Tiền không mất nhưng không vào.",
+y:"Giữ tiền nguyên, kiểm tra tài khoản ngân hàng",n:"Không đầu tư, không cho vay, không nhận tiền từ nguồn lạ"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",
+nx:"Dậu–Hợi không xung. Vũ Khúc bình thường. Quan hệ con cái/đệ tử ổn định. Thanh Long mang may mắn nhỏ trong tập thể.",
+y:"Duy trì quan hệ với con cái/người học bình thường",n:"Không nên kỷ luật hay phạt con cái trong ngày tâm trạng xấu"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), L.Thiên Khôi, L.Kiếp Sát, Địa Giải, Tiểu Hao",rt:"x",
+nx:"⚠️ HỢI = NGÀY HÔM NAY → lưu nguyệt Tị XUNG THẲNG vào Phu Thê. Phá Quân từ Tị phá vỡ sự hài hòa của Thái Dương. L.Kiếp Sát gây bất ngờ. Tiểu Hao chi tiêu. Đây là ngày DỄ CÃI VÃ NHẤT THÁNG trong tình cảm.",
+y:"Chủ động quan tâm trước, nhường nhịn 100% suốt cả ngày",n:"TUYỆT ĐỐI không tranh cãi, không đề cập tiền bạc, không đưa ra yêu cầu hay phán xét gì"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"x",
+nx:"Tị = lưu nguyệt tháng 4 → Huynh Đệ bị kích hoạt. Phá Quân + Tuế Phá khuếch đại. Thiên Khốc + Thiên Hư — buồn bã, hao tổn trong quan hệ anh em. Dễ bất hòa với anh chị em, bạn thân.",
+y:"Giữ khoảng cách an toàn với anh em/bạn thân, không tạo áp lực",n:"Không cho mượn tiền, không bàn chuyện quan trọng với anh em/bạn thân hôm nay"},
+],
+ov:"Ngày xấu — ở nhà làm việc yên tĩnh. Ưu tiên số 1: bảo vệ Phu Thê. Thiên Di xấu: hạn chế đi xa. Điền Trạch và Huynh Đệ cũng cần chú ý.",ovc:"ov-bad"},
+
+{w:0,a:"Mùng 3",d:"19/5",cc:"Nhâm Tý",r:"good",badge:"✅ Tốt",
+q:"Tý = Quan Lộc → kích hoạt sự nghiệp · Tý–Sửu hợp Mệnh · L.H Khoa phát huy danh tiếng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức, Tẩu Thư, L.H Quyền, Đường Phủ",rt:"t",
+nx:"Tý–Sửu lục hợp → Mệnh được hỗ trợ tốt. Thiên Cơ sắc bén. Tẩu Thư hỗ trợ học hỏi. L.H Quyền chủ động. Đường Phủ tăng khả năng diễn đạt.",
+y:"Học kỹ năng mới, nghiên cứu chuyên môn, chuẩn bị thuyết trình",n:"Không vi phạm quy tắc, không hứa hẹn điều khó thực hiện"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt",rt:"o",
+nx:"Dần–Tý không quan hệ đặc biệt. Tử Vi + Thiên Phú bình thường. Quan hệ với cha mẹ/bề trên bình ổn. Ngày phù hợp hỏi thăm bình thường.",
+y:"Liên lạc hỏi thăm cha mẹ bình thường",n:"Không nhờ bề trên giải quyết việc lớn — để ngày tốt hơn"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, DV.H Khoa(V), DV.Khúc(Đ)",rt:"t",
+nx:"Mão–Tý không xung. Thái Âm hài hòa. Hóa Khoa(V) + DV.H Khoa nâng cao tinh thần và danh tiếng. Phúc Đức + Thiên Hi — ngày tinh thần vui vẻ, hạnh phúc, cảm giác bình an nội tâm tốt.",
+y:"Thư giãn có chất lượng, làm điều bản thân yêu thích, sáng tạo",n:"Không để áp lực công việc ảnh hưởng đến giờ nghỉ ngơi hôm nay"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"x",
+nx:"Thìn–Tý không quan hệ đặc biệt. Bệnh Phù + Điếu Khách tại Điền Trạch vẫn cần chú ý. Tham Lang bình thường. Nhà cửa không có vấn đề lớn nhưng cần duy trì kiểm tra.",
+y:"Bảo trì nhà cửa, kiểm tra thiết bị điện nước nhỏ",n:"Không sửa chữa lớn, không ký hợp đồng bất động sản"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.Lộc Tồn(Đ), L.H Khoa(Đ), Thiên Y",rt:"t",
+nx:"TÝ = cung Quan Lộc → kích hoạt trực tiếp. L.H Khoa phát huy mạnh nhất — danh tiếng chuyên môn nổi bật, dễ được công nhận. Văn Xương xuất sắc cho trình bày, báo cáo. Cự Môn đàm phán sắc bén.",
+y:"Thuyết trình, nộp báo cáo, đề xuất dự án, gặp sếp/đối tác — buổi sáng tốt nhất",n:"Không nói quá nhiều — Cự Môn hay gây khẩu thiệt khi nói nhiều"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, Thiên Khôi, Hữu Bật, Tam Thai",rt:"o",
+nx:"Tý–Ngọ xung nhẹ → đồng nghiệp khó phối hợp đôi chút. Hữu Bật vẫn hỗ trợ. Thiên Khôi bảo vệ. Thái Tuế yên dần.",
+y:"Làm việc cá nhân, chỉ tiếp xúc đồng nghiệp thân thiết",n:"Tránh họp team lớn, không tranh luận trong nhóm"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Bệnh Phù, Thiên La",rt:"o",
+nx:"Mùi–Tý không quan hệ. Thiên Lương(Đ) bảo hộ đi lại. Bệnh Phù cần cẩn thận nhỏ. Nhìn chung Thiên Di ổn định — đi lại bình thường.",
+y:"Đi lại bình thường, gặp gỡ đối tác ngoài văn phòng",n:"Tránh đi xa một mình buổi tối"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), L.Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"t",
+nx:"Thân–Tý không xung. Thất Sát bình thường. Lộc Tồn(H) + Bác Sĩ + DV.Lộc Tồn → sức khỏe được bảo vệ tốt. Thiên Mã + L.Thiên Mã cho thấy vận động, di chuyển có lợi.",
+y:"Vận động thể dục, đi bộ, tập luyện nhẹ — sức khỏe tốt hôm nay",n:"Không bỏ bữa hoặc làm việc quá sức"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), Kinh Dương(H), Thiếu Âm",rt:"o",
+nx:"Tuất không bị khuấy động. L.Hóa Lộc ổn định. Thiên Đồng thụ động — tiền cần nhận từ việc đã làm chứ không chủ động về.",
+y:"Nhận thanh toán từ công việc đã hoàn thành, theo dõi công nợ",n:"Không đầu tư hay mạo hiểm tài chính — tập trung vào sự nghiệp"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",
+nx:"Dậu–Tý không xung. Vũ Khúc + Hóa Quyền + DV.H Quyền → có quyền lực và uy tín trong tập thể. Thanh Long mang may mắn. Quan hệ con cái/đệ tử tốt.",
+y:"Hướng dẫn, dạy dỗ, chia sẻ kinh nghiệm cho người trẻ",n:"Không quá kỳ vọng hoặc quá dễ dãi với người dưới"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Địa Giải, L.Kiếp Sát, Nguyệt Đức",rt:"o",
+nx:"Tý không xung Hợi. Thái Dương sáng chiếu trở lại. Địa Giải + Nguyệt Đức hóa giải dư âm mùng 2. Quan hệ tình cảm đang hồi phục tốt.",
+y:"Chủ động xin lỗi nếu hôm qua có mâu thuẫn, hòa giải nhẹ nhàng",n:"Không nhắc lại chuyện xấu mùng 2, không phân tích ai đúng ai sai"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",
+nx:"Tị là lưu nguyệt. Huynh Đệ bình thường hơn mùng 2 vì không có xung mạnh hôm nay. Thiên Giải + Thiên Quý hỗ trợ. Tuy nhiên Phá Quân vẫn đóng đây — quan hệ anh em vẫn cần chú ý.",
+y:"Duy trì quan hệ anh em/bạn thân bình thường",n:"Không cho mượn tiền lớn, không nhờ bạn thân giải quyết việc quan trọng hôm nay"},
+],
+ov:"Ngày tốt cho sự nghiệp — thuyết trình và gặp sếp buổi sáng. Phúc Đức và Tật Ách tốt. Tình cảm hồi phục sau mùng 2.",ovc:"ov-good"},
+
+{w:0,a:"Mùng 4",d:"20/5",cc:"Quý Sửu",r:"great",badge:"⭐ Rất tốt",
+q:"SỬU = CUNG MỆNH + Tị–Dậu–Sửu tam hợp → NGÀY MẠNH NHẤT THÁNG — hành động lớn",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức, L.H Quyền, Tẩu Thư, Đường Phủ",rt:"t",
+nx:"SỬU = CUNG MỆNH → bản thân tỏa sáng nhất tháng. Thiên Cơ đạt đỉnh. Long Đức quý nhân lớn xuất hiện rõ. L.H Quyền đạt đỉnh — quyết đoán, tự tin vượt trội.",
+y:"Gặp sếp cấp cao, ký hợp đồng, đề xuất tăng lương, phỏng vấn xin việc",n:"Không bỏ lỡ vì lưỡng lự — ngày Mệnh chỉ có 3 lần trong tháng"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt",rt:"t",
+nx:"Dần–Sửu không hợp đặc biệt nhưng Tử Vi + Thiên Phú cùng năng lượng ngày tốt → bề trên/cha mẹ vui vẻ, sẵn sàng hỗ trợ. Thiên Việt + ĐV.Thiên Việt quý nhân từ bề trên xuất hiện. Ngày rất tốt để nhờ bề trên hỗ trợ việc quan trọng.",
+y:"Nhờ cha mẹ/bề trên hỗ trợ, báo cáo thành quả với người lớn tuổi",n:"Không để bề trên chờ đợi — ngày bề trên sẵn lòng hỗ trợ nhất"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, DV.H Khoa(V), DV.Khúc(Đ)",rt:"t",
+nx:"Mão–Sửu không xung. Thái Âm hài hòa. Hóa Khoa + DV.H Khoa + DV.Khúc → ngày tinh thần đặc biệt tốt, danh tiếng sáng lên rõ. Phúc Đức + Thiên Hi + Hy Thần — hạnh phúc, bình an nội tâm cao. Đào Hoa tăng sức hút cá nhân.",
+y:"Thư giãn, sáng tạo, gặp gỡ những người bạn muốn gặp — tinh thần cao nhất",n:"Không nên lãng phí ngày tốt này vào việc không quan trọng"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",
+nx:"Thìn–Sửu tứ hành xung nhẹ → Điền Trạch có áp lực nhỏ. Tuy nhiên Tham Lang(V) được hỗ trợ từ năng lượng ngày tốt. Nhà cửa bình thường, không có vấn đề lớn.",
+y:"Bảo trì nhà cửa nhỏ, dọn dẹp sạch sẽ để đón năng lượng tốt",n:"Không ký hợp đồng bất động sản trong ngày tứ hành xung"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.Lộc Tồn(Đ), L.H Khoa(Đ), Thiên Y",rt:"t",
+nx:"Sửu–Tý lục hợp → Quan Lộc được hỗ trợ rất tốt. L.H Khoa phát huy đỉnh điểm. Cự Môn thuyết trình và đàm phán sắc bén. Văn Xương hoàn hảo cho hợp đồng văn bản.",
+y:"Ký hợp đồng chính thức, thuyết trình ban lãnh đạo, phỏng vấn, nhận giải thưởng",n:"Không trì hoãn bất kỳ việc quan trọng nào — hôm nay là lúc tốt nhất"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, Thiên Khôi, Hữu Bật, ĐV.Thiên Khôi, Tam Thai",rt:"o",
+nx:"Sửu không kích Ngọ. Thiên Khôi + ĐV.Thiên Khôi nổi bật — quý nhân trong đồng nghiệp/bạn bè xuất hiện rõ. Hữu Bật hỗ trợ làm việc nhóm. Thái Tuế không bị khuấy động.",
+y:"Họp nhóm hiệu quả, nhờ đồng nghiệp thân giới thiệu đối tác",n:"Không tiết lộ kế hoạch tài chính lớn cho người chưa thực sự tin"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Bệnh Phù, Địa Kiếp(H)",rt:"o",
+nx:"Mùi–Sửu tứ hành xung nhẹ → Thiên Di có chút áp lực. Thiên Lương(Đ) bảo hộ đủ mạnh. Đi lại ổn định nhưng cần cẩn thận hơn mức bình thường.",
+y:"Đi lại cẩn thận, gặp gỡ đối tác ngoài văn phòng nếu cần",n:"Tránh đi xa một mình, không liều lĩnh trên đường"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), L.Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"t",
+nx:"Thân–Sửu không xung. Lộc Tồn + Bác Sĩ + DV.Lộc Tồn bảo vệ tốt. Thiên Mã + L.Thiên Mã → năng lượng dồi dào, vận động có lợi. Sức khỏe tốt nhất trong tuần.",
+y:"Vận động tích cực, tập luyện thể thao, sức khỏe dồi dào hôm nay",n:"Không quá sức do hứng khởi — phân bổ năng lượng hợp lý"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, DV.Lộc Tồn, Thiên Mã(Đ), L.Thiên Mã(Đ)",rt:"t",
+nx:"Sửu tam hợp Tị (lưu nguyệt) → tài lộc kích hoạt mạnh nhất tuần. L.Hóa Lộc + DV.Lộc Tồn — tiền về 2 luồng. L.Thiên Việt quý nhân tài chính. Thiên Mã + L.Thiên Mã tài về nhanh.",
+y:"Ký hợp đồng tài chính quan trọng, thu tiền lớn, nhận đầu tư",n:"Tránh chi tiêu ngay số tiền mới nhận — giữ lại bảo toàn"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"t",
+nx:"Dậu–Sửu–Tị tam hợp → Tử Tức cũng được hỗ trợ mạnh từ tam hợp. Vũ Khúc + Hóa Quyền + DV.H Quyền → con cái/đệ tử thành công, tiến bộ. Thanh Long mang tin vui. Đây là ngày cực tốt về quan hệ Tử Tức.",
+y:"Đầu tư cho con cái, hướng dẫn đệ tử quan trọng, nhận tin vui từ con cái",n:"Không nên thả lỏng kỷ luật — Vũ Khúc đòi hỏi sự nghiêm túc"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), L.Thiên Khôi, Địa Giải, Nguyệt Đức",rt:"o",
+nx:"Sửu không xung Hợi. Thái Dương + Hóa Lộc bản mệnh chiếu — đối phương tốt bụng, vui vẻ. Nguyệt Đức hóa giải mọi dư âm. L.Thiên Khôi quý nhân trong tình cảm.",
+y:"Hẹn hò ăn tối, nói về kế hoạch tương lai chung",n:"Không cần làm gì đặc biệt — quan hệ tự nhiên đang rất tốt"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",
+nx:"Sửu tam hợp với Tị → Huynh Đệ nhận năng lượng từ tam hợp. Thiên Quý + Thiên Giải giảm hung khí của Phá Quân. Quan hệ anh em/bạn thân hòa giải, có thể nhận tin tốt từ bạn bè.",
+y:"Gặp gỡ bạn thân, chia sẻ tin vui, hỗ trợ lẫn nhau",n:"Vẫn không cho mượn tiền lớn dù hôm nay anh em vui vẻ"},
+],
+ov:"NGÀY TỐT NHẤT THÁNG — Hành động lớn ngay. Ký hợp đồng, gặp sếp, thu tiền, Tử Tức và Phụ Mẫu cũng rất tốt. Cả 12 cung đều ở mức ổn định trở lên. Không bỏ lỡ.",ovc:"ov-great"},
+
+{w:0,a:"Mùng 5",d:"21/5",cc:"Giáp Dần",r:"good",badge:"✅ Tốt",
+q:"Dần tương sinh — tiếp nối mùng 4 · Nô Bộc đặc biệt tốt · Phụ Mẫu và Phúc Đức tốt",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức, Tẩu Thư",rt:"o",
+nx:"Dần tương sinh với Sửu. Thiên Cơ bình thường hướng ngoại. Tinh thần dồi dào sau mùng 4. Phù hợp tiếp nối và mở rộng.",
+y:"Tiếp nối kế hoạch từ mùng 4, gặp gỡ người mới",n:"Không bắt đầu việc hoàn toàn mới — củng cố thành quả mùng 4 trước"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt",rt:"t",
+nx:"DẦN = CUNG PHỤ MẪU → kích hoạt trực tiếp. Tử Vi + Thiên Phú bùng phát — cha mẹ/bề trên khỏe mạnh, vui vẻ và sẵn sàng hỗ trợ tối đa. Thiên Việt + ĐV.Thiên Việt quý nhân bề trên xuất hiện mạnh nhất. Ngày tốt nhất để làm việc liên quan bề trên.",
+y:"Gặp gỡ cha mẹ/bề trên, nhờ hỗ trợ quan trọng, báo cáo thành quả, nhận lời khuyên",n:"Không bỏ lỡ ngày Phụ Mẫu tốt — chỉ có ít ngày như thế này trong tháng"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, DV.H Khoa(V), DV.Khúc(Đ)",rt:"t",
+nx:"Mão không xung Dần. Thái Âm hài hòa. Hóa Khoa + DV.Khúc nâng cao tinh thần và sức hút cá nhân. Phúc Đức + Thiên Hi + Hy Thần — ngày hạnh phúc và bình an nội tâm cao. Đào Hoa tăng sức hút.",
+y:"Thư giãn, hoạt động sáng tạo, gặp gỡ bạn bè vui vẻ, chăm sóc bản thân",n:"Không làm việc quá sức — ngày phù hợp hưởng thụ"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",
+nx:"Thìn–Dần không quan hệ đặc biệt. Điền Trạch bình thường. Bệnh Phù cần chú ý nhỏ. Tham Lang bình thường.",
+y:"Duy trì nhà cửa bình thường, dọn dẹp nhẹ",n:"Không sửa chữa lớn, không ký hợp đồng bất động sản"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.H Khoa(Đ), Đại Hao(H), Thiên Y",rt:"o",
+nx:"Dần không kích Tý. Cự Môn phù hợp giao tiếp mở rộng. L.H Khoa duy trì danh tiếng. Đại Hao nhắc chi phí nhỏ. Tốt để gặp khách hàng mới.",
+y:"Mở rộng mạng lưới khách hàng, gặp đối tác tiềm năng mới",n:"Tránh cam kết hợp đồng vội vàng — để dành ngày tốt hơn"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, Thiên Khôi, Hữu Bật, Tam Thai, ĐV.Thiên Khôi",rt:"t",
+nx:"Dần–Ngọ tam hợp → cung Nô Bộc được hỗ trợ trực tiếp. Thái Tuế tạm lắng. Thiên Khôi nổi lên mạnh — quý nhân trong bạn bè xuất hiện. Hữu Bật hỗ trợ tích cực. Đây là ngày đặc biệt tốt về quan hệ xã hội.",
+y:"Gặp gỡ bạn bè, mở rộng network, nhờ bạn bè giới thiệu kết nối đối tác",n:"Không nhờ người quen bảo lãnh tài chính — chỉ nên kết nối"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù",rt:"o",
+nx:"Mùi–Dần không quan hệ đặc biệt. Thiên Lương(Đ) bảo hộ tốt. Phượng Các và Quốc Ân hỗ trợ khi di chuyển. Đi lại bình thường ổn định.",
+y:"Đi lại thoải mái, gặp gỡ nhiều người, mở rộng quan hệ xã hội",n:"Tránh đi vào những nơi đông người không quen biết một mình"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), L.Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"o",
+nx:"Thân–Dần không xung. Sức khỏe bình thường ổn định. Lộc Tồn + Bác Sĩ duy trì bảo vệ. Thiên Mã + L.Thiên Mã — vận động có lợi.",
+y:"Vận động thể dục nhẹ, đi dạo, duy trì sức khỏe",n:"Không bỏ bữa hoặc ngủ không đủ giấc"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, Thiếu Âm",rt:"o",
+nx:"Dần–Ngọ–Tuất tam hợp hỏa → Tài Bạch được hỗ trợ nhẹ qua tam hợp. L.Hóa Lộc ổn định. Tiền bình tốt — không đột biến nhưng ổn định.",
+y:"Thu tiền nhỏ, xử lý tài chính tồn đọng, kiểm tra công nợ",n:"Không đầu tư lớn hoặc vay mượn"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",
+nx:"Dậu–Dần không xung. Vũ Khúc + Hóa Quyền bình thường. Quan hệ con cái/đệ tử ổn định. Thanh Long mang may mắn nhỏ.",
+y:"Duy trì quan hệ với con cái/đệ tử bình thường, chơi cùng con",n:"Không gây áp lực cho con cái hôm nay — ngày vui vẻ"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Địa Giải, Nguyệt Đức",rt:"o",
+nx:"Dần không xung Hợi. Quan hệ tình cảm nhẹ nhàng bình thường. Thái Dương hài hòa. Nguyệt Đức bảo vệ.",
+y:"Cùng nhau đi ăn, mua sắm nhỏ, hoạt động ngoài trời nhẹ nhàng",n:"Không cần bàn chuyện nghiêm túc hôm nay — giữ không khí vui vẻ"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",
+nx:"Dần–Tị không quan hệ đặc biệt. Huynh Đệ bình thường. Thiên Quý + Thiên Giải giữ hung khí ở mức thấp. Quan hệ anh em/bạn thân ổn định.",
+y:"Gặp gỡ bạn thân qua giới thiệu của người quen, kết nối xã hội",n:"Không cho mượn tiền lớn, không bàn chuyện kinh doanh"},
+],
+ov:"Ngày tốt — Phụ Mẫu tốt nhất hôm nay (nhờ bề trên hỗ trợ), Nô Bộc đặc biệt tốt (gặp bạn bè, kết nối). Phúc Đức bình an. Tình cảm nhẹ nhàng.",ovc:"ov-good"},
+
+{w:0,a:"Mùng 6",d:"22/5",cc:"Ất Mão",r:"mid",badge:"〰 Trung bình",
+q:"Mão không quan hệ đặc biệt với cung chính — ngày trung bình toàn diện, xử lý tồn đọng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức",rt:"o",nx:"Mão–Sửu không xung không hợp. Ngày bình ổn. Phù hợp làm việc thường ngày.",y:"Xử lý email, báo cáo, việc hành chính",n:"Không khởi sự việc quan trọng"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt",rt:"o",nx:"Mão–Dần liền cung, không xung. Phụ Mẫu bình thường. Quan hệ bề trên ổn định.",y:"Liên lạc hỏi thăm cha mẹ bình thường",n:"Không nhờ bề trên giải quyết việc lớn hôm nay"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"t",nx:"MÃO = CUNG PHÚC ĐỨC → kích hoạt trực tiếp. Thái Âm(H) hài hòa. Phúc Đức + Thiên Hi + Hy Thần — ngày tinh thần đặc biệt bình an và vui vẻ. Hóa Khoa danh tiếng nhẹ. Đào Hoa tăng sức hút.",y:"Thư giãn, làm điều bản thân yêu thích, gặp gỡ bạn bè, chăm sóc bản thân",n:"Không làm việc căng thẳng — ngày nghỉ ngơi tuyệt vời nhất"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",nx:"Mão–Thìn liền cung. Điền Trạch bình thường, không có vấn đề đặc biệt.",y:"Bảo trì nhà cửa nhỏ, dọn dẹp",n:"Không sửa chữa lớn"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.Lộc Tồn(Đ), Đại Hao(H)",rt:"o",nx:"Mão–Tý không quan hệ đặc biệt. Công việc bình thường. Đại Hao nhắc chi phí nhỏ.",y:"Kiểm tra lại hợp đồng cũ, xử lý hành chính",n:"Không thương lượng mới"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, Thiên Khôi, Hữu Bật",rt:"o",nx:"Mão–Ngọ không quan hệ đặc biệt. Thái Tuế yên tĩnh. Quan hệ xã hội bình thường.",y:"Liên hệ đồng nghiệp thường ngày",n:"Không giao việc quan trọng cho người khác"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H)",rt:"o",nx:"Mão–Mùi không xung. Thiên Lương(Đ) bảo hộ tốt. Đi lại bình thường ổn định.",y:"Đi lại bình thường, gặp gỡ người quen",n:"Không đi xa không cần thiết"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ)",rt:"o",nx:"Thân–Mão không xung. Sức khỏe bình thường. Lộc Tồn + Bác Sĩ duy trì.",y:"Vận động nhẹ, duy trì sức khỏe bình thường",n:"Không bỏ bữa"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), Kinh Dương(H)",rt:"o",nx:"Mão không kích Tuất. Tài bình thường. Hóa Kỳ nhắc cẩn thận rủi ro nhỏ.",y:"Kiểm tra sổ sách, rà soát chi tiêu",n:"Không chi tiêu lớn, không đầu tư"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long",rt:"o",nx:"Dậu–Mão xung nhẹ → Tử Tức hơi bị khuấy động. Vũ Khúc + Hóa Quyền giữ vững. Quan hệ con cái có thể hơi căng nhỏ.",y:"Kiên nhẫn hơn với con cái/đệ tử hôm nay",n:"Tránh kỷ luật hay phán xét con cái khi cả hai đều bình thường"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Địa Giải, Nguyệt Đức",rt:"o",nx:"Mão không có quan hệ xấu với Hợi. Quan hệ bình ổn. Thái Dương hài hòa.",y:"Cuộc sống bình thường cùng nhau",n:"Không cần làm gì đặc biệt"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân",rt:"o",nx:"Mão–Tị không quan hệ đặc biệt. Huynh Đệ bình thường. Phá Quân bình thường.",y:"Duy trì quan hệ anh em bình thường",n:"Không cho mượn tiền, không bàn chuyện kinh doanh"},
+],
+ov:"Ngày trung bình — Phúc Đức là điểm sáng nhất (thư giãn, chăm sóc bản thân). Xử lý việc tồn đọng. Nghỉ ngơi nạp lực.",ovc:"ov-mid"},
+
+{w:0,a:"Mùng 7",d:"23/5",cc:"Bính Thìn",r:"bad2",badge:"⚠ Khá xấu",
+q:"Thìn = Điền Trạch(Tham Lang) + Thìn xung Tuất(Tài Bạch) + Thìn xung Sửu(Mệnh) → sức khỏe và tài chính đề phòng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, L.H Quyền, Bệnh Phù(chiếu đối)",rt:"x",nx:"Thìn–Sửu tứ hành xung → Mệnh bị khuấy động. Thiên Hình tăng áp lực pháp lý. L.H Quyền muốn hành động nhưng bị kìm hãm. Tinh thần bực bội. Bệnh Phù chiếu từ cung đối.",y:"Thiền định, nghỉ ngơi, tự chăm sóc bản thân",n:"Không ký văn bản pháp lý, không tranh cãi, không ra quyết định lớn"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt",rt:"o",nx:"Dần–Thìn không quan hệ đặc biệt. Phụ Mẫu bình thường. Tuy nhiên khí trường ngày xấu có thể ảnh hưởng đến cha mẹ — hỏi thăm sức khỏe bề trên.",y:"Hỏi thăm sức khỏe cha mẹ, quan tâm người thân cao tuổi",n:"Không để bề trên phải lo lắng vì mình hôm nay"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"o",nx:"Mão–Thìn liền cung không xung. Phúc Đức bình thường. Thái Âm hài hòa. Tinh thần có thể hơi u ám do ngày xấu nhưng Phúc Đức + Thiên Hi vẫn hỗ trợ nội tâm.",y:"Thiền định, đọc sách, thư giãn tĩnh lặng trong nhà",n:"Không ra ngoài gặp đông người trong ngày có hung khí"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La, Quả Tú, L.Đà La(Đ)",rt:"x",nx:"THÌN = CUNG ĐIỀN TRẠCH → kích hoạt trực tiếp. Tham Lang gặp ngày Thìn — biến động nhà cửa, bất động sản mạnh nhất tháng. Địa Kiếp hao tổn. Bệnh Phù + Thiên La + Quả Tú → nhiều hung tinh cùng phát. Điếu Khách dễ có người không mong muốn đến nhà. L.Đà La ngăn trở.",y:"Kiểm tra kỹ nhà cửa, khóa cửa cẩn thận, kiểm tra điện nước",n:"TUYỆT ĐỐI không mua bán nhà đất hôm nay, không ký hợp đồng bất động sản, không cho người lạ vào nhà"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Đại Hao(H), L.Lộc Tồn(Đ), Trực Phù",rt:"x",nx:"Thất Sát từ Thìn lan sang. Cự Môn dễ bùng khẩu thiệt. Đại Hao phát sinh chi phí. Trực Phù cảnh báo xung đột với quản lý.",y:"Làm việc yên lặng hoàn toàn",n:"Không tranh luận với sếp, không thương lượng hợp đồng"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, L.K Dương(H), Âm Sát, Thiên Thương",rt:"x",nx:"Thất Sát từ Thìn khuếch đại Thái Tuế tại Ngọ. L.K Dương va chạm bất ngờ. Âm Sát cảnh báo kẻ xấu. Thiên Thương gây lo lắng về quan hệ.",y:"Làm việc độc lập hoàn toàn",n:"Không nhờ ai, không giao tiền/tài sản cho bất kỳ ai"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Bệnh Phù, Địa Kiếp(H), Thiên La",rt:"x",nx:"Mùi–Thìn tứ hành xung nhẹ → Thiên Di bị áp lực. Bệnh Phù + Địa Kiếp + Thiên La tại Thiên Di phát tác mạnh — ngày DỄ CÓ TAI NẠN KHI DI CHUYỂN. Ngày này KHÔNG nên đi xa.",y:"Ở nhà là tốt nhất, nếu phải đi thì đường ngắn, quen thuộc, đi chậm",n:"Không đi xa, không lái xe đường dài, không tham gia giao thông giờ cao điểm"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"x",nx:"THÌN XUNG THÂN → cung Tật Ách bị khuấy động. Thất Sát bùng phát — sức khỏe dễ có vấn đề bất ngờ, dễ bị thương do tai nạn nhỏ. Dù có Lộc Tồn + Bác Sĩ bảo vệ nhưng Thất Sát rất mạnh.",y:"Cẩn thận tuyệt đối khi di chuyển, kiểm tra sức khỏe nếu có triệu chứng lạ",n:"Không làm việc nặng nhọc, không hoạt động thể chất mạo hiểm, không lái xe khi mệt"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), Kinh Dương(H), DV.Lộc Tồn",rt:"x",nx:"Thìn–Tuất XUNG TRỰC TIẾP → Tài Bạch bị đánh. Hóa Kỳ + Kinh Dương phát tác mạnh. Tiền vào nhanh ra nhanh, dễ mất tiền không rõ lý do — sự cố bất ngờ.",y:"Giữ chặt tiền, kiểm tra lại mọi giao dịch đang chờ",n:"Không đầu tư bất kỳ thứ gì, không cho vay, không mua sắm lớn"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",nx:"Dậu–Thìn không xung. Vũ Khúc + Hóa Quyền bình thường. Quan hệ con cái/đệ tử ổn định hôm nay — không bị khuấy động.",y:"Duy trì quan hệ con cái bình thường, không thay đổi kế hoạch con",n:"Không đưa con đi xa trong ngày nhiều hung tinh"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Địa Giải, Nguyệt Đức",rt:"o",nx:"Thìn không xung Hợi → Phu Thê là ĐIỂM SÁNG NHẤT ngày hôm nay. Thái Dương chiếu sáng. Địa Giải + Nguyệt Đức cùng bảo vệ. Đây là nơi để tìm lại cân bằng tâm lý.",y:"Tâm sự với người yêu/vợ chồng để xả stress, tìm sự an ủi",n:"Không để mang stress công việc về nhà — tình cảm là vùng bình yên"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",nx:"Thìn–Tị không quan hệ đặc biệt. Huynh Đệ bình thường. Thiên Giải + Thiên Quý giảm nhẹ hung khí. Quan hệ anh em không có vấn đề hôm nay.",y:"Duy trì quan hệ anh em/bạn thân bình thường",n:"Tránh nhờ anh em/bạn thân giúp đỡ trong ngày nhiều hung tinh — họ cũng bị ảnh hưởng"},
+],
+ov:"Ngày khá xấu — Điền Trạch, Tật Ách, Thiên Di và Tài Bạch đều xấu. Ở nhà là tốt nhất, cẩn thận giao thông, không chi tiêu lớn. Phu Thê là điểm sáng duy nhất.",ovc:"ov-bad2"},
+
+// ══════════════════════ TUẦN 2 ══════════════════════
+{w:1,a:"Mùng 8",d:"24/5",cc:"Đinh Tị",r:"bad",badge:"🔴 Xấu",
+q:"TỊ = ĐÚNG LƯU NGUYỆT → Phá Quân kích hoạt toàn diện · Tị xung Hợi(Phu Thê) · NGÀY XẤU NHẤT THÁNG",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, L.H Quyền, Long Đức",rt:"x",nx:"Tị tam hợp Sửu nhưng Phá Quân tại Tị mang phá hoại vào Mệnh. Thiên Hình tăng áp lực đột biến. Tư duy cực đoan — BẪY của Phá Quân.",y:"Ghi chép ý tưởng thay đổi nhưng CHƯA hành động",n:"Không ra quyết định lớn dù cảm thấy rất tự tin — đó là bẫy"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, ĐV.Thiên Việt",rt:"o",nx:"Dần–Tị không quan hệ đặc biệt. Phụ Mẫu bình thường. Tuy nhiên ngày xấu chung làm khó khăn hơn. Tử Vi + Thiên Phú vẫn giữ vững. Nên quan tâm đến sức khỏe cha mẹ.",y:"Hỏi thăm sức khỏe cha mẹ, không để họ lo lắng",n:"Không nhờ bề trên giải quyết việc lớn trong ngày xấu nhất tháng"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"o",nx:"Mão–Tị không xung. Phúc Đức bình thường. Thái Âm hài hòa nhưng khí xấu ngày kéo tinh thần xuống. Thiên Hi vẫn hỗ trợ nội tâm nhẹ.",y:"Thiền định, nghe nhạc, đọc sách trong nhà để duy trì tinh thần",n:"Không tham gia hoạt động đông người, không ra ngoài không cần thiết"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"x",nx:"Thìn–Tị không quan hệ nhưng khí Phá Quân từ Tị lan sang khuếch đại Địa Kiếp tại Điền Trạch. Bệnh Phù + Điếu Khách tại đây phát mạnh hơn. Điều Khách có thể gây vấn đề nhà cửa.",y:"Kiểm tra an toàn nhà cửa, khóa cửa cẩn thận",n:"Không ký hợp đồng bất động sản, không cho người lạ vào nhà"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Đại Hao(H), Thiên Y, L.Lộc Tồn(Đ)",rt:"x",nx:"Phá Quân từ Tị chiếu qua cung đối Ngọ phản chiếu sang Tý. Cự Môn bùng khẩu thiệt mạnh nhất tháng. Đại Hao phát tác. Dễ xung đột nghiêm trọng với cấp trên.",y:"Im lặng hoàn toàn, lắng nghe, không phát biểu trong họp",n:"Không tranh luận, không ký hợp đồng, không đề xuất dự án mới"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, L.K Dương(H), L.Hóa Kỳ(H), Âm Sát",rt:"x",nx:"Tị liền cạnh Ngọ → kích động trực tiếp toàn bộ Thái Tuế. Ba hung tinh lưu đồng thời bùng phát. Âm Sát — kẻ xấu ẩn mình. Nguy cơ bị phản bội cao nhất tháng.",y:"Hoàn toàn làm việc một mình",n:"Không nhờ ai, không tin ai, không cho mượn tiền/tài sản"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Bệnh Phù, Địa Kiếp(H), Thiên La",rt:"x",nx:"Mùi–Tị không quan hệ nhưng khí Phá Quân lan sang. Bệnh Phù + Địa Kiếp + Thiên La tại Thiên Di phát mạnh. Ngày KHÔNG NÊN đi xa, dễ gặp tai nạn hoặc sự cố khi di chuyển.",y:"Ở nhà, hạn chế đi lại đến mức tối đa",n:"Không đi xa, không lái xe đường dài, tránh giao thông đông"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"o",nx:"Thân không bị xung trực tiếp hôm nay. Thất Sát bình thường. Lộc Tồn + Bác Sĩ + DV.Lộc Tồn bảo vệ. Sức khỏe tương đối ổn định dù ngày xấu toàn diện.",y:"Nghỉ ngơi, chăm sóc sức khỏe tinh thần",n:"Không làm việc quá sức, không dùng chất kích thích để duy trì năng lượng"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), Kinh Dương(H), L.Thiên Mã(Đ)",rt:"x",nx:"Phá Quân ở Tị + Hóa Kỳ + Kinh Dương + L.Thiên Mã → tiền vào nhanh ra nhanh. Nguy cơ mất tiền lớn nhất trong tháng hôm nay.",y:"Không làm gì với tài chính — giữ nguyên hoàn toàn",n:"TUYỆT ĐỐI không đầu tư, không ký tài chính, không cho vay dù nhỏ"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",nx:"Dậu–Tị không xung. Vũ Khúc + Hóa Quyền + DV.H Quyền bình thường. Quan hệ con cái/đệ tử ổn định, không bị khuấy động nghiêm trọng hôm nay.",y:"Duy trì quan hệ con cái bình thường",n:"Không đưa con ra ngoài nhiều trong ngày xấu toàn diện"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), L.Kiếp Sát, L.Thiên Khôi, Tiểu Hao",rt:"x",nx:"TỊ XUNG HỢI trực tiếp — Phu Thê bị đánh nặng nhất tháng. Phá Quân xung vào Thái Dương. L.Kiếp Sát gây bất ngờ xấu. Tiểu Hao phát sinh chi tiêu. NGÀY DỄ CÃI VÃ NHẤT THÁNG.",y:"Chủ động quan tâm trước, không chờ đối phương, cực kỳ nhẹ nhàng",n:"TUYỆT ĐỐI không tranh cãi, không đề xuất điều gì, không phân tích đúng sai"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"x",nx:"TỊ = CUNG HUYNH ĐỆ = LƯU NGUYỆT THÁNG 4 → Phá Quân bùng phát mạnh nhất. Tuế Phá + Thiên Khốc + Thiên Hư cùng phát. Quan hệ anh em/bạn thân dễ đổ vỡ, bị phản bội, tranh cãi mạnh.",y:"Giữ khoảng cách hoàn toàn với anh em/bạn thân hôm nay",n:"Không gặp gỡ anh em/bạn thân, không cho mượn bất kỳ thứ gì, không nhờ vả"},
+],
+ov:"NGÀY XẤU NHẤT THÁNG — Ở nhà hoàn toàn. Không đi xa, không ký kết, không giao tiền. Bảo vệ Phu Thê là ưu tiên số 1. Huynh Đệ và Nô Bộc đều rất xấu.",ovc:"ov-bad"},
+
+{w:1,a:"Mùng 9",d:"25/5",cc:"Mậu Ngọ",r:"bad2",badge:"⚠ Khá xấu",
+q:"Ngọ = Nô Bộc(Thái Tuế) · Ngọ–Tý xung Quan Lộc → quan hệ xã hội và công việc căng thẳng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức",rt:"o",nx:"Ngọ không trực tiếp kích Sửu. Thiên Cơ bình thường. Khí xấu làm tinh thần không thoải mái.",y:"Làm việc độc lập, tránh họp hành",n:"Không ra quyết định quan trọng trong trạng thái bực bội"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt",rt:"o",nx:"Dần–Ngọ tam hợp hỏa nhẹ → Phụ Mẫu được hỗ trợ nhẹ. Tử Vi + Thiên Phú ổn định. Ân Quang hỗ trợ cha mẹ. Đây là điểm tương đối tốt trong ngày xấu — có thể nhờ bề trên nhẹ.",y:"Hỏi thăm cha mẹ, nhờ bề trên tư vấn nhỏ",n:"Không nhờ bề trên giải quyết việc lớn hôm nay"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"o",nx:"Mão–Ngọ không xung. Phúc Đức bình thường. Thái Âm hài hòa. Tinh thần hơi u ám nhưng Thiên Hi + Hy Thần vẫn hỗ trợ nội tâm.",y:"Thiền định, đọc sách, thư giãn cá nhân trong nhà",n:"Không tham gia tiệc tùng hay gặp đông người"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",nx:"Thìn–Ngọ không quan hệ. Điền Trạch bình thường. Bệnh Phù cần chú ý nhỏ về nhà cửa.",y:"Kiểm tra nhà cửa bình thường",n:"Không sửa chữa lớn, không ký hợp đồng bất động sản"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Đại Hao(H), L.Lộc Tồn(Đ), Trực Phù, Thiên Y",rt:"x",nx:"Ngọ–Tý xung → Quan Lộc bị khuấy động. Cự Môn bùng lên — dễ tranh luận tại nơi làm. Trực Phù cảnh báo xung đột với quản lý. Đại Hao chi phí bất ngờ.",y:"Làm việc yên lặng, hạn chế trao đổi",n:"Không tranh luận với sếp hay đồng nghiệp về bất kỳ chủ đề gì"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, L.K Dương(H), L.Hóa Kỳ(H), Âm Sát",rt:"x",nx:"NGỌ = CUNG NÔ BỘC → kích hoạt trực tiếp. Thái Tuế bùng phát — bạn bè/đồng nghiệp dễ trở mặt. L.K Dương gây va chạm bất ngờ. Âm Sát — kẻ xấu lộ diện.",y:"Hoàn toàn làm việc một mình",n:"Không nhờ ai, không bảo lãnh, không tin người mới, không hùn vốn"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Bệnh Phù, Địa Kiếp(H)",rt:"o",nx:"Mùi–Ngọ liền cung không xung. Thiên Lương(Đ) bảo hộ đi lại. Bệnh Phù + Địa Kiếp cần cẩn thận nhưng không nghiêm trọng.",y:"Đi lại bình thường nhưng cẩn thận hơn",n:"Tránh đi xa không cần thiết, tránh giao thông giờ cao điểm"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"o",nx:"Thân–Ngọ không xung. Sức khỏe bình thường. Lộc Tồn + Bác Sĩ duy trì bảo vệ.",y:"Duy trì sức khỏe bình thường, nghỉ ngơi đủ giấc",n:"Không làm việc quá sức"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), L.Thiên Việt",rt:"o",nx:"Ngọ không kích Tuất trực tiếp. L.Hóa Lộc ổn định. Khí ngày xấu làm tài lộc không phát huy. Tiền giữ nguyên.",y:"Giữ tiền, kiểm tra tài khoản",n:"Không chi tiêu lớn, không đầu tư, không cho vay"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, DV.H Quyền(V)",rt:"o",nx:"Dậu–Ngọ không xung. Vũ Khúc bình thường. Quan hệ con cái ổn định. Thanh Long mang may mắn nhỏ.",y:"Duy trì quan hệ con cái bình thường",n:"Không để con cái bị ảnh hưởng bởi tâm trạng xấu của mình"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Địa Giải, Nguyệt Đức",rt:"o",nx:"Ngọ không xung Hợi. Phu Thê là điểm tích cực nhất hôm nay. Thái Dương chiếu sáng. Nguyệt Đức bảo vệ.",y:"Tâm sự với người thân, tìm sự an ủi, hướng về gia đình",n:"Không mang stress công việc hay xã hội về nhà"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"x",nx:"Tị = lưu nguyệt + Ngọ khuếch đại. Huynh Đệ vẫn xấu. Phá Quân + Tuế Phá + Thiên Khốc tiếp tục phát tác. Quan hệ anh em/bạn thân vẫn cần đề phòng hôm nay.",y:"Giữ khoảng cách với anh em/bạn thân",n:"Không cho mượn tiền, không nhờ vả, không hùn vốn"},
+],
+ov:"Ngày khá xấu — cô lập xã hội, làm việc độc lập. Phu Thê và Phụ Mẫu là điểm sáng. Huynh Đệ và Nô Bộc vẫn xấu. Tài chính giữ nguyên.",ovc:"ov-bad2"},
+
+{w:1,a:"Mùng 10",d:"26/5",cc:"Kỷ Mùi",r:"mid",badge:"〰 Trung bình",
+q:"Mùi đối chiếu Sửu(Mệnh) nhẹ + Mùi–Tuất xung nhẹ Tài Bạch → ngày nội tâm, lên kế hoạch",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, L.H Quyền",rt:"x",nx:"Mùi–Sửu tứ hành xung nhẹ → Mệnh bị áp lực nội tâm. Dễ lo lắng, suy nghĩ quá nhiều. Thiên Cơ quay vào trong phân tích.",y:"Suy nghĩ chiến lược, lên kế hoạch trên giấy",n:"Không ra quyết định khi đang lo lắng — chờ ngày 11, 12"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, ĐV.Thiên Việt",rt:"o",nx:"Dần–Mùi không quan hệ. Phụ Mẫu bình thường. Tử Vi + Thiên Phú ổn định. Quan hệ bề trên bình thường.",y:"Hỏi thăm cha mẹ, bề trên bình thường",n:"Không nhờ bề trên giải quyết việc lớn"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"o",nx:"Mão–Mùi không xung. Phúc Đức bình thường. Thái Âm hài hòa. Tinh thần ở mức bình thường sau chuỗi ngày xấu.",y:"Thiền định, nghỉ ngơi có chất lượng để phục hồi tinh thần",n:"Không làm việc căng thẳng — tinh thần cần phục hồi"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",nx:"Thìn–Mùi tứ hành xung nhẹ → Điền Trạch hơi bị khuấy động. Tham Lang hơi biến động. Bệnh Phù + Điếu Khách cần chú ý nhỏ.",y:"Kiểm tra nhà cửa, dọn dẹp nhỏ",n:"Không ký hợp đồng bất động sản"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), L.Lộc Tồn(Đ), Văn Xương(V), Thiên Y",rt:"o",nx:"Mùi không kích Tý. Công việc bình thường. L.Lộc Tồn bảo toàn. Phù hợp nghiên cứu, đọc sách.",y:"Đọc tài liệu chuyên môn, tổng kết bài học từ 3 ngày xấu 7–8–9",n:"Tránh thuyết trình hay đàm phán quan trọng"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, Thiên Khôi, Hữu Bật",rt:"o",nx:"Mùi–Ngọ tương sinh nhẹ → Nô Bộc được hỗ trợ rất nhẹ. Thái Tuế dịu lại. Thiên Khôi và Hữu Bật hỗ trợ nhẹ.",y:"Liên hệ lại bạn bè/đồng nghiệp thân thiết cũ",n:"Vẫn chưa nên nhờ vả hay bảo lãnh — cần thêm thời gian hồi phục"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù",rt:"x",nx:"MÙI = CUNG THIÊN DI → kích hoạt trực tiếp. Tuy nhiên Thiên Lương(Đ) bảo hộ là sao chính. Địa Kiếp + Bệnh Phù phát tác khi bị kích hoạt trực tiếp. Cẩn thận hơn khi di chuyển hôm nay.",y:"Đi lại cẩn thận, dùng phương tiện an toàn, đường quen thuộc",n:"Không đi xa một mình, không liều lĩnh trên đường, tránh vội vàng"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"o",nx:"Thân–Mùi không xung. Sức khỏe bình thường. Lộc Tồn + Bác Sĩ duy trì bảo vệ.",y:"Nghỉ ngơi, duy trì sức khỏe bình thường",n:"Không làm việc quá sức khi tinh thần lo lắng"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), L.Thiên Việt",rt:"o",nx:"Mùi–Tuất tứ hành xung nhẹ → Tài Bạch hơi bị khuấy động. Hóa Kỳ nhạy cảm hơn. L.Hóa Lộc vẫn giữ vững.",y:"Rà soát ngân sách, tổng kết tài chính, không làm gì mới",n:"Không chi tiêu lớn, không đầu tư, không quyết định tài chính"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, DV.H Quyền(V)",rt:"o",nx:"Dậu–Mùi không xung. Vũ Khúc + Hóa Quyền bình thường. Quan hệ con cái ổn định.",y:"Dành thời gian chất lượng cho con cái",n:"Không kỷ luật quá gay gắt khi tâm trạng lo lắng"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Nguyệt Đức",rt:"o",nx:"Mùi không xung Hợi. Quan hệ bình thường. Đối phương có thể hơi mệt mỏi. Nguyệt Đức bảo vệ.",y:"Quan tâm hỏi thăm nhẹ nhàng, dành không gian cho nhau",n:"Không tạo áp lực hay bàn chuyện nghiêm túc"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",nx:"Tị = lưu nguyệt. Huynh Đệ bình thường hôm nay vì không bị khuấy động thêm. Thiên Giải + Thiên Quý giảm hung. Quan hệ anh em ổn định.",y:"Duy trì quan hệ anh em/bạn thân bình thường",n:"Vẫn không cho mượn tiền lớn"},
+],
+ov:"Ngày nội tâm — lên kế hoạch, suy nghĩ chiến lược. Thiên Di cần cẩn thận khi đi lại. Chuẩn bị cho ngày 11 tốt và ngày 12 cực tốt.",ovc:"ov-mid"},
+
+{w:1,a:"11",d:"27/5",cc:"Canh Thân",r:"good",badge:"✅ Tốt",
+q:"Thân–Tý tam hợp → Quan Lộc mạnh · Thân–Ngọ tam hợp → Nô Bộc tốt · Tật Ách được kích hoạt tốt",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức",rt:"o",nx:"Thân–Sửu không xung không hợp. Tinh thần hướng ngoại trở lại. Thiên Cơ hoạt động hướng về giao tiếp.",y:"Gặp gỡ đối tác, mở rộng quan hệ",n:"Không nên ở nhà một mình cả ngày"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, ĐV.Thiên Việt",rt:"o",nx:"Dần–Thân không xung. Phụ Mẫu bình thường. Tử Vi + Thiên Phú ổn định. Quan hệ bề trên bình thường.",y:"Liên lạc hỏi thăm cha mẹ bình thường",n:"Không nhờ bề trên giải quyết việc lớn — chờ ngày 12"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"o",nx:"Mão–Thân không xung. Phúc Đức bình thường. Thái Âm hài hòa. Tinh thần hồi phục dần sau chuỗi ngày xấu.",y:"Thư giãn nhẹ nhàng, hoạt động sáng tạo, tập thể dục",n:"Không nên ở nhà quá nhiều — ngày phù hợp hướng ngoại"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",nx:"Thìn–Thân tam hợp thủy nhẹ → Điền Trạch được hỗ trợ nhẹ từ tam hợp. Tham Lang hòa giải hơn. Nhà cửa bình thường.",y:"Duy trì nhà cửa bình thường, dọn dẹp nhỏ",n:"Vẫn không ký hợp đồng bất động sản"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.H Khoa(Đ), L.Lộc Tồn(Đ)",rt:"t",nx:"Thân–Tý tam hợp thủy → Quan Lộc được hỗ trợ mạnh. L.H Khoa phát huy — danh tiếng hồi phục và nổi bật. Cự Môn đàm phán sắc bén. Văn Xương hỗ trợ văn bản.",y:"Đàm phán hợp đồng, gặp đối tác, thuyết trình, tái kết nối khách hàng",n:"Không vội ký kết ngay hôm nay — chờ ngày 12 cực tốt hơn"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, Thiên Khôi, Hữu Bật, Tam Thai",rt:"o",nx:"Thân–Ngọ tam hợp nhẹ → Nô Bộc được hỗ trợ. Thiên Khôi + Hữu Bật tốt. Thái Tuế tạm lắng. Tam Thai mang may mắn.",y:"Họp nhóm nhỏ tin tưởng, phối hợp đồng nghiệp thân thiết",n:"Vẫn tránh tin tưởng người mới vào nhóm"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù",rt:"o",nx:"Mùi–Thân không quan hệ đặc biệt. Thiên Lương(Đ) bảo hộ tốt. Đi lại bình thường ổn định. Ngày phù hợp gặp gỡ đối tác ngoài văn phòng.",y:"Gặp gỡ đối tác ngoài văn phòng, đi lại bình thường",n:"Tránh đi vào khu vực không quen biết một mình"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), L.Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"t",nx:"THÂN = CUNG TẬT ÁCH → kích hoạt trực tiếp. Thất Sát bình thường. Lộc Tồn(H) + Bác Sĩ + DV.Lộc Tồn → sức khỏe được bảo vệ tốt. Thiên Mã + L.Thiên Mã → vận động dồi dào, năng lượng cao nhất trong tuần.",y:"Vận động thể thao tích cực, tập gym, đi bộ dài — sức khỏe tốt nhất tuần 2",n:"Tránh vận động quá sức — Thất Sát dễ gây chấn thương nếu quá liều"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, L.Thiên Mã(Đ)",rt:"o",nx:"Thân không kích Tuất. L.Hóa Lộc ổn định. L.Thiên Mã tài động — tiền có thể đến bất ngờ.",y:"Nhận thanh toán tồn đọng, thu hoa hồng",n:"Không đầu tư lớn — chờ ngày 12"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",nx:"Dậu–Thân liền cung không xung. Vũ Khúc + Hóa Quyền + DV.H Quyền bình thường. Thanh Long mang may mắn nhỏ.",y:"Dành thời gian cùng con cái, hướng dẫn đệ tử bình thường",n:"Không thay đổi lịch trình con đột ngột"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Địa Giải, Nguyệt Đức",rt:"o",nx:"Thân không xung Hợi. Quan hệ tình cảm bình thường tốt. Thái Dương hài hòa. Đối phương vui vẻ hơn.",y:"Hẹn hò nhẹ nhàng, ăn uống cùng nhau",n:"Không cần lo lắng về tình cảm"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",nx:"Thân–Tị không quan hệ đặc biệt. Huynh Đệ bình thường. Thiên Giải + Thiên Quý giảm hung. Quan hệ anh em ổn định hơn.",y:"Liên lạc lại bạn thân sau mấy ngày xấu",n:"Vẫn không cho mượn tiền lớn, không hùn vốn"},
+],
+ov:"Ngày tốt — Quan Lộc mạnh (gặp đối tác, đàm phán), Tật Ách tốt (vận động thể thao). Bước đệm trước ngày 12 cực tốt. Thiên Di bình thường thuận lợi.",ovc:"ov-good"},
+
+{w:1,a:"12",d:"28/5",cc:"Tân Dậu",r:"great",badge:"⭐ Rất tốt",
+q:"TỊ–DẬU–SỬU TAM HỢP ĐỦ 3 → Mệnh, Tài Bạch, Tử Tức bùng phát · ngày tốt thứ 2 trong tháng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, Long Đức, L.H Quyền, Tẩu Thư",rt:"t",nx:"Dậu–Sửu–Tị tam hợp hoàn chỉnh → Mệnh được kích hoạt mạnh tương đương mùng 4. Thiên Cơ đạt đỉnh. Long Đức quý nhân xuất hiện rõ. L.H Quyền quyết đoán cao.",y:"Hành động quyết đoán, gặp sếp, đề xuất dự án lớn, ký kết quan trọng",n:"Không bỏ lỡ — đây là ngày tốt thứ 2 trong tháng"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt",rt:"t",nx:"Dần–Dậu không quan hệ nhưng năng lượng ngày rất tốt (tam hợp) kích hoạt toàn bộ lá số. Tử Vi + Thiên Phú + Thiên Việt + ĐV.Thiên Việt → cha mẹ/bề trên cực kỳ sẵn lòng hỗ trợ. Ân Quang + Thiên Trù mang thêm ân huệ. Ngày tốt nhất để nhờ bề trên hỗ trợ việc quan trọng.",y:"Nhờ cha mẹ/bề trên hỗ trợ việc quan trọng nhất, báo cáo thành tích",n:"Không bỏ lỡ cơ hội nhờ bề trên — họ đang ở trạng thái tốt nhất để giúp"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, DV.H Khoa(V), DV.Khúc(Đ)",rt:"t",nx:"Mão–Dậu xung nhẹ → Phúc Đức hơi bị khuấy động. Tuy nhiên Hóa Khoa + DV.H Khoa + DV.Khúc rất mạnh trong ngày tam hợp cực tốt → vẫn tốt về tinh thần và danh tiếng. Phúc Đức + Thiên Hi hỗ trợ nội tâm hạnh phúc dù có xung nhẹ.",y:"Thư giãn có chất lượng, gặp gỡ người yêu thích, hoạt động sáng tạo",n:"Cẩn thận với người xung khắc trong sinh hoạt xã hội (do Mão–Dậu xung)"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",nx:"Thìn–Dậu không quan hệ đặc biệt. Điền Trạch bình thường. Tham Lang + năng lượng ngày tốt → nhà cửa hài hòa hơn. Bệnh Phù vẫn cần chú ý nhỏ.",y:"Nhà cửa bình thường, có thể dọn dẹp tươm tất đón năng lượng tốt",n:"Không ký hợp đồng bất động sản hôm nay — để ngày khác"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Văn Xương(V), L.H Khoa(Đ), L.Lộc Tồn(Đ), Thiên Y",rt:"t",nx:"Tam hợp kích hoạt toàn bộ hệ. L.H Khoa bùng phát — danh tiếng được công nhận mạnh nhất tuần 2. Cự Môn đàm phán xuất sắc. Văn Xương tốt cho văn bản pháp lý.",y:"Nhận thăng chức, ký hợp đồng lớn, thuyết trình quan trọng",n:"Không nên khiêm tốn quá — hôm nay là ngày tỏa sáng"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, Thiên Khôi, ĐV.Thiên Khôi, Hữu Bật, Tam Thai",rt:"o",nx:"Dậu không kích Ngọ. Thiên Khôi + ĐV.Thiên Khôi nổi lên mạnh — quý nhân trong mạng lưới xã hội xuất hiện. Hữu Bật hỗ trợ. Thái Tuế tạm lắng.",y:"Nhờ bạn bè có tầm ảnh hưởng giới thiệu khách hàng hoặc đối tác mới",n:"Không tiết lộ kế hoạch tài chính lớn cho người ngoài nhóm thân"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù",rt:"o",nx:"Mùi–Dậu không quan hệ. Thiên Lương(Đ) bảo hộ. Đi lại bình thường. Ngày phù hợp gặp gỡ đối tác ngoài nếu cần.",y:"Đi lại, gặp gỡ đối tác bên ngoài tự tin",n:"Tránh những nơi đông đúc không quen biết"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"o",nx:"Thân–Dậu liền cung không xung. Sức khỏe bình thường ổn định. Lộc Tồn + Bác Sĩ duy trì bảo vệ. Năng lượng dồi dào từ ngày tốt.",y:"Vận động thể dục bình thường, sức khỏe ổn",n:"Không bỏ bữa hay ngủ không đủ trong ngày cần năng lượng cao"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, DV.Lộc Tồn, Thiên Mã(Đ), L.Thiên Mã(Đ)",rt:"t",nx:"Dậu–Sửu–Tị tam hợp → Tài Bạch được kích hoạt toàn diện. L.Hóa Lộc + DV.Lộc Tồn + L.Thiên Việt → 3 luồng hỗ trợ tài chính cùng lúc — tổ hợp mạnh nhất tháng. Thiên Mã + L.Thiên Mã tài về nhanh.",y:"Ký hợp đồng tài chính lớn nhất, nhận đầu tư, thu nợ cũ",n:"Tránh chi tiêu ngay — giữ tiền mới nhận"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"t",nx:"DẬU = CUNG TỬ TỨC → kích hoạt trực tiếp. Dậu–Sửu–Tị tam hợp → Tử Tức bùng phát mạnh nhất. Vũ Khúc + Hóa Quyền + DV.H Quyền → con cái/đệ tử đạt thành tích xuất sắc, có tin cực vui. Thanh Long mang tin mừng. Long Trì + Hoa Cái thêm sắc thái nghệ thuật tài năng.",y:"Nhận tin vui từ con cái/đệ tử, đầu tư giáo dục cho con, khen thưởng người học",n:"Không bỏ lỡ thành tích của con cái hôm nay — ghi nhận và khen thưởng"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), L.Thiên Khôi, Nguyệt Đức",rt:"o",nx:"Dậu không xung Hợi. Thái Dương sáng chiếu. L.Thiên Khôi quý nhân trong tình cảm. Nguyệt Đức bảo vệ. Quan hệ tốt đẹp.",y:"Chia sẻ tin vui với người yêu/vợ chồng, kỷ niệm nhỏ buổi tối",n:"Không để công việc tốt chỉ một mình hưởng — chia sẻ niềm vui"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",nx:"Dậu–Tị không xung. Huynh Đệ bình thường. Thiên Quý + Thiên Giải giảm hung. Quan hệ anh em/bạn thân được hỗ trợ nhẹ từ năng lượng ngày tam hợp tốt.",y:"Gặp gỡ bạn thân chia sẻ tin vui",n:"Vẫn không cho mượn tiền lớn — Phá Quân vẫn còn đây"},
+],
+ov:"NGÀY TỐT THỨ 2 TRONG THÁNG — Ký hợp đồng tài chính lớn, quyết định sự nghiệp. Phụ Mẫu, Tử Tức và Quan Lộc đều rất tốt. Chia sẻ niềm vui với gia đình buổi tối.",ovc:"ov-great"},
+
+{w:1,a:"13",d:"29/5",cc:"Nhâm Tuất",r:"good",badge:"✅ Tốt",
+q:"Tuất = Tài Bạch · Tuất–Sửu lục hợp Mệnh · Dần–Ngọ–Tuất tam hợp → tiếp nối ngày 12",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Long Đức, L.H Quyền",rt:"t",nx:"Tuất–Sửu lục hợp → Mệnh được hỗ trợ. Thiên Cơ hoạt động linh hoạt. Long Đức quý nhân. Tinh thần tích cực sau ngày 12.",y:"Tiếp nối công việc từ ngày 12, gặp đối tác mới",n:"Không nghỉ ngơi quá sớm — chuỗi ngày tốt đang chạy"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt, Thiên Trù, ĐV.Thiên Việt",rt:"t",nx:"Dần–Ngọ–Tuất tam hợp → Phụ Mẫu được hỗ trợ từ tam hợp. Tử Vi + Thiên Phú + Thiên Việt → bề trên/cha mẹ tiếp tục vui vẻ, sẵn sàng hỗ trợ. Thiên Trù + Ân Quang thêm ân huệ. Ngày tốt để tiếp tục nhờ bề trên hỗ trợ.",y:"Tiếp nối việc đã nhờ bề trên từ ngày 12, cảm ơn cha mẹ/bề trên",n:"Không tạo thêm gánh nặng mới cho bề trên — cân bằng nhờ vả"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi, DV.H Khoa(V)",rt:"t",nx:"Mão–Tuất không quan hệ xấu. Thái Âm hài hòa. Hóa Khoa + DV.H Khoa nâng cao danh tiếng nhẹ. Phúc Đức + Thiên Hi + Hy Thần — tinh thần bình an, vui vẻ. Đào Hoa tăng sức hút.",y:"Thư giãn, hưởng thụ niềm vui từ thành quả ngày 12, gặp gỡ bạn bè",n:"Không làm việc căng thẳng — hôm nay là ngày hưởng thụ"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"o",nx:"Thìn–Tuất xung nhẹ → Điền Trạch có áp lực nhỏ. Tham Lang hơi biến động. Bệnh Phù + Điếu Khách cần chú ý nhỏ. Nhà cửa không có vấn đề lớn nhưng cần kiểm tra.",y:"Kiểm tra nhà cửa bình thường, dọn dẹp nhỏ",n:"Không ký hợp đồng bất động sản trong ngày Thìn–Tuất xung"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), L.Lộc Tồn(Đ), L.H Khoa(Đ), Thiên Y",rt:"o",nx:"Tuất không kích Tý. Công việc tiếp nối tốt từ hôm qua. L.H Khoa duy trì danh tiếng. L.Lộc Tồn ổn định thu nhập.",y:"Theo dõi tiến độ hợp đồng đã ký ngày 12, cảm ơn đối tác",n:"Không ký thêm hợp đồng mới — chỉ tiếp nối và củng cố"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, Thiên Khôi, Hữu Bật",rt:"o",nx:"Dần–Ngọ–Tuất tam hợp → Nô Bộc được hỗ trợ nhẹ từ tam hợp. Thái Tuế yên. Thiên Khôi và Hữu Bật hỗ trợ. Quan hệ xã hội bình thường tốt.",y:"Cảm ơn những người đã hỗ trợ trong tuần, duy trì quan hệ",n:"Không nhờ vả thêm — giữ quan hệ cân bằng"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Quốc Ân, Địa Kiếp(H), Bệnh Phù",rt:"o",nx:"Mùi–Tuất tứ hành xung nhẹ → Thiên Di hơi bị áp lực. Thiên Lương(Đ) bảo hộ đủ. Đi lại bình thường nhưng cần cẩn thận hơn hôm qua.",y:"Đi lại bình thường, gặp gỡ đối tác",n:"Tránh đi xa không cần thiết"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"t",nx:"Dần–Ngọ–Tuất tam hợp hỏa → Tật Ách (Thân) được hỗ trợ nhẹ từ tam hợp qua Ngọ. Lộc Tồn + Bác Sĩ + DV.Lộc Tồn → sức khỏe được bảo vệ tốt. Thiên Mã năng lượng dồi dào.",y:"Vận động thể dục, sức khỏe tốt hôm nay",n:"Không quá sức — duy trì mức độ vừa phải"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), L.Thiên Việt, DV.Lộc Tồn",rt:"t",nx:"TUẤT = CUNG TÀI BẠCH → kích hoạt trực tiếp lần 2. L.Hóa Lộc phát huy. L.Thiên Việt quý nhân tài chính. DV.Lộc Tồn hỗ trợ thêm.",y:"Thu tiền từ công việc, nhận hoa hồng, đòi nợ cũ",n:"Không chi tiêu lớn dù có tiền vào"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, Hoa Cái, DV.H Quyền(V)",rt:"o",nx:"Dậu–Tuất liền cung không xung. Vũ Khúc + Hóa Quyền + DV.H Quyền bình thường. Quan hệ con cái/đệ tử ổn định. Thanh Long mang may mắn nhỏ.",y:"Dành thời gian cùng con cái, củng cố quan hệ",n:"Không thay đổi kế hoạch con đột ngột"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), Nguyệt Đức, L.Hồng Loan",rt:"o",nx:"Tuất không xung Hợi. Quan hệ tình cảm ấm áp tiếp tục. L.Hồng Loan mang thêm sắc hồng. Nguyệt Đức bảo vệ.",y:"Hẹn hò ăn tối, tặng quà nhỏ, chia sẻ tin tức tốt",n:"Không bàn chuyện tài chính lớn trong buổi hẹn"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"o",nx:"Tị–Tuất không quan hệ đặc biệt. Huynh Đệ bình thường. Thiên Giải + Thiên Quý giảm hung. Quan hệ anh em/bạn thân ổn định.",y:"Gặp gỡ bạn thân chia sẻ niềm vui trong tuần",n:"Vẫn không cho mượn tiền lớn"},
+],
+ov:"Ngày tốt tiếp nối — thu tiền, gặp đối tác, hẹn hò nhẹ nhàng. Phụ Mẫu và Tật Ách tốt. Phúc Đức bình an. Tài Bạch là điểm nổi bật.",ovc:"ov-good"},
+
+{w:1,a:"14",d:"30/5",cc:"Quý Hợi",r:"bad",badge:"🔴 Xấu",
+q:"Hợi bị Tị(lưu nguyệt) XUNG lần 2 → Phu Thê căng thẳng trở lại · Thiên Di cần đề phòng",
+cs:[
+{n:"Mệnh",chi:"Sửu",sao:"Thiên Cơ(Đ), Thiên Hình, L.H Quyền",rt:"o",nx:"Hợi không kích Sửu. Thiên Hình nhạy cảm hơn do khí xấu. Dễ mệt mỏi sau chuỗi ngày bận rộn.",y:"Nghỉ ngơi, phục hồi năng lượng",n:"Không ra quyết định khi mệt mỏi"},
+{n:"Phụ Mẫu",chi:"Dần",sao:"Tử Vi(M), Thiên Phú(M), Ân Quang, Thiên Việt",rt:"o",nx:"Dần–Hợi không quan hệ. Phụ Mẫu bình thường. Quan hệ bề trên ổn định.",y:"Liên lạc hỏi thăm cha mẹ bình thường",n:"Không nhờ bề trên giải quyết việc lớn"},
+{n:"Phúc Đức",chi:"Mão",sao:"Thái Âm(H), Hóa Khoa(V), Phúc Đức, Hy Thần, Đào Hoa, Thiên Hi",rt:"o",nx:"Mão–Hợi không xung. Phúc Đức bình thường. Thái Âm hài hòa. Tinh thần ổn định.",y:"Thư giãn nhẹ nhàng, nghỉ ngơi",n:"Không làm việc căng thẳng"},
+{n:"Điền Trạch",chi:"Thìn",sao:"Tham Lang(V), Địa Kiếp(H), Điếu Khách, Bệnh Phù, Thiên La",rt:"x",nx:"Thìn–Hợi không quan hệ nhưng Điếu Khách + Bệnh Phù + Địa Kiếp tại Điền Trạch bị kích bởi khí xấu ngày. Dễ có người không mong muốn đến nhà. Bệnh Phù cảnh báo sức khỏe thành viên trong nhà.",y:"Kiểm tra an toàn nhà cửa, hỏi thăm sức khỏe người thân trong nhà",n:"Không ký hợp đồng bất động sản, không tiếp khách không mời"},
+{n:"Quan Lộc",chi:"Tý",sao:"Cự Môn(H), Đại Hao(H), L.Lộc Tồn(Đ), Thiên Y",rt:"o",nx:"Không bị khuấy động trực tiếp. Công việc chậm lại. Đại Hao phát sinh chi phí nhỏ.",y:"Xử lý hồ sơ hành chính",n:"Không thương lượng, không ký kết"},
+{n:"Nô Bộc",chi:"Ngọ",sao:"Thái Tuế, L.Thái Tuế, Thiên Khôi, Hữu Bật",rt:"o",nx:"Hợi–Ngọ không xung. Thái Tuế yên hơn. Thiên Khôi trung hòa. Quan hệ xã hội bình thường.",y:"Làm việc bình thường với đồng nghiệp thân",n:"Vẫn tránh bảo lãnh hoặc hùn vốn"},
+{n:"Thiên Di",chi:"Mùi",sao:"Thiên Lương(Đ), Phượng Các, Giải Thần, Bệnh Phù, Địa Kiếp(H), Thiên La",rt:"x",nx:"Mùi–Hợi không quan hệ nhưng Bệnh Phù + Địa Kiếp + Thiên La tại Thiên Di bị kích bởi khí xấu ngày. Cẩn thận khi di chuyển — dễ gặp sự cố nhỏ trên đường.",y:"Đi lại cẩn thận, đường quen thuộc, không vội vàng",n:"Không đi xa, không lái xe đường dài, tránh giao thông đông"},
+{n:"Tật Ách",chi:"Thân",sao:"Thất Sát(M), Lộc Tồn(H), Bác Sĩ, Thiên Mã(Đ), DV.Lộc Tồn(H)",rt:"o",nx:"Thân–Hợi không xung. Sức khỏe bình thường. Lộc Tồn + Bác Sĩ duy trì.",y:"Nghỉ ngơi, duy trì sức khỏe bình thường",n:"Không làm việc quá sức"},
+{n:"Tài Bạch",chi:"Tuất",sao:"Thiên Đồng(H), L.Hóa Lộc(H), Hóa Kỳ(H), L.Thiên Việt",rt:"o",nx:"Tuất không bị xung. Hóa Kỳ hơi nhạy cảm. L.Hóa Lộc vẫn giữ nền. Tiền giữ nguyên.",y:"Giữ tiền, không chi tiêu lớn",n:"Không đầu tư, không cho vay"},
+{n:"Tử Tức",chi:"Dậu",sao:"Vũ Khúc(M), Long Trì, Hóa Quyền(V), Thanh Long, DV.H Quyền(V)",rt:"o",nx:"Dậu–Hợi không xung. Vũ Khúc bình thường. Quan hệ con cái ổn định. Thanh Long mang may mắn nhỏ.",y:"Dành thời gian cùng con cái nhẹ nhàng",n:"Không kỷ luật con cái khi tâm trạng mình không tốt"},
+{n:"Phu Thê",chi:"Hợi",sao:"Thái Dương(H), Hóa Lộc(B), L.Kiếp Sát, Tiểu Hao",rt:"x",nx:"HỢI = NGÀY HÔM NAY → lưu nguyệt Tị xung lần 2. L.Kiếp Sát bất ngờ. Tiểu Hao chi tiêu do tình cảm. Dễ nổ ra tranh cãi từ việc nhỏ đặc biệt khi cả hai mệt cuối tuần.",y:"Chủ động liên lạc hỏi thăm từ sáng sớm, quan tâm một chiều",n:"Không tranh luận, không đề xuất thay đổi lớn trong quan hệ, không đòi hỏi gì"},
+{n:"Huynh Đệ",chi:"Tị",sao:"Phá Quân(M), Thiên Quý, Thiên Giải, Tuế Phá, Tướng Quân, Thiên Khốc(Đ), Thiên Hư(Đ)",rt:"x",nx:"Tị = lưu nguyệt → Huynh Đệ vẫn xấu. Hợi–Tị xung lại làm khuếch đại thêm. Phá Quân + Tuế Phá + Thiên Khốc phát tác mạnh. Dễ có bất hòa với anh em/bạn thân hôm nay.",y:"Giữ khoảng cách với anh em/bạn thân",n:"Không gặp gỡ, không cho mượn tiền, không nhờ vả"},
+],
+ov:"Ngày xấu — bảo vệ Phu Thê là ưu tiên 1. Thiên Di và Điền Trạch cũng cần đề phòng. Huynh Đệ xấu. Nghỉ ngơi và tích lũy năng lượng cho tuần 3.",ovc:"ov-bad"},
+];
+
+// ─── Render engine ─────────────────────────────────────────────────────────
+var RC={great:"r-great",good:"r-good",mid:"r-mid",bad2:"r-bad2",bad:"r-bad"};
+var BC={great:"bg-great",good:"bg-good",mid:"bg-mid",bad2:"bg-bad2",bad:"bg-bad"};
+var RTC={t:"tr-tot",o:"tr-mid",x:"tr-xau"};
+var TAG={t:"<span class='tag-t'>⭐ Tốt</span>",o:"<span class='tag-o'>〰 Bình</span>",x:"<span class='tag-x'>⚠ Xấu</span>"};
+var root=document.getElementById('root');
+var openIdx=-1;
+var wkEls=[];
+
+// Create week containers
+W.forEach(function(wt,wi){
+  var el=document.createElement('div');
+  el.innerHTML='<div class="wk-title">📅 '+wt+'</div><div id="wk'+wi+'"></div>';
+  root.appendChild(el);
+  wkEls[wi]=el.querySelector('#wk'+wi);
+});
+
+D.forEach(function(d,i){
+  var target=wkEls[d.w];
+
+  var rows=d.cs.map(function(c){
+    return '<tr class="'+RTC[c.rt]+'">'+
+      '<td style="min-width:110px"><div class="cname">'+c.n+'</div><div class="csao">Chi: '+c.chi+'</div><div class="csao">'+c.sao+'</div></td>'+
+      '<td style="width:60px;text-align:center;vertical-align:middle">'+TAG[c.rt]+'</td>'+
+      '<td><div class="cnx">'+c.nx+'</div></td>'+
+      '<td style="min-width:180px">'+
+        '<div class="lamy">✅ Nên: '+c.y+'</div>'+
+        '<div class="lamn">❌ Không: '+c.n+'</div>'+
+      '</td>'+
+    '</tr>';
+  }).join('');
+
+  var card=document.createElement('div');
+  card.className='dc '+RC[d.r];
+  card.dataset.r=d.r;
+  card.innerHTML=
+    '<div class="dh" onclick="tog('+i+',this)">'+
+      '<div class="dam">'+d.a+'</div>'+
+      '<div class="dmeta">'+
+        '<div class="dcc">'+d.cc+' &nbsp;<span class="ddl">'+d.d+' DL</span></div>'+
+        '<div class="dq">'+d.q+'</div>'+
+      '</div>'+
+      '<span class="dbadge '+BC[d.r]+'">'+d.badge+'</span>'+
+      '<span class="darr" id="arr'+i+'">›</span>'+
+    '</div>'+
+    '<div class="db" id="body'+i+'">'+
+      '<table class="ct">'+
+        '<thead><tr><th>Cung — Chi</th><th style="text-align:center">T.thái</th><th>Phân tích chi tiết & lý do</th><th>Nên làm / Không nên</th></tr></thead>'+
+        '<tbody>'+rows+'</tbody>'+
+      '</table>'+
+      '<div class="ov '+d.ovc+'">'+
+        '<div class="ov-title">🎯 Tổng kết ngày '+d.a+' — '+d.cc+'</div>'+
+        '<div class="ov-body">'+d.ov+'</div>'+
+      '</div>'+
+    '</div>';
+  target.appendChild(card);
+});
+
+function tog(i,hdr){
+  var body=document.getElementById('body'+i);
+  var arr=document.getElementById('arr'+i);
+  if(openIdx===i){body.classList.remove('op');arr.classList.remove('op');openIdx=-1;return;}
+  if(openIdx>=0){
+    var ob=document.getElementById('body'+openIdx);
+    var oa=document.getElementById('arr'+openIdx);
+    if(ob)ob.classList.remove('op');
+    if(oa)oa.classList.remove('op');
+  }
+  body.classList.add('op');arr.classList.add('op');openIdx=i;
+  setTimeout(function(){body.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
+}
+
+function flt(r,btn){
+  document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  document.querySelectorAll('.dc').forEach(function(c){
+    c.style.display=(r==='all'||c.dataset.r===r)?'block':'none';
+  });
+  if(openIdx>=0){
+    var ob=document.getElementById('body'+openIdx);var oa=document.getElementById('arr'+openIdx);
+    if(ob)ob.classList.remove('op');if(oa)oa.classList.remove('op');openIdx=-1;
+  }
+}
+</script>
+</body>
+</html>
