@@ -15,16 +15,17 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "Tử vi Mr Hoàng" / "THANG-08-AM-BINH-NGO-2026.md"
 OUTPUT = ROOT / "tuvi-thang-08-binh-ngo-2026.docx"
 
-NAVY = "17365D"
-BLUE = "1F4E79"
-RED = "9C0006"
-GREEN = "216E39"
-GOLD = "9C6500"
-GRAY = "666666"
-LIGHT_BLUE = "D9EAF7"
-LIGHT_RED = "FCE4D6"
-LIGHT_GREEN = "E2F0D9"
-LIGHT_GOLD = "FFF2CC"
+NAVY = "164E63"
+BLUE = "0F766E"
+RED = "C2413B"
+GREEN = "3F7D4A"
+GOLD = "B7791F"
+GRAY = "5F6368"
+LIGHT_BLUE = "E5F3F1"
+LIGHT_RED = "FDE8E2"
+LIGHT_GREEN = "E7F3E5"
+LIGHT_GOLD = "FFF4D6"
+LINE = "D7C4A3"
 
 
 def shade(cell, fill):
@@ -107,6 +108,9 @@ def add_table(doc, lines):
             elif "Cẩn trọng" in value:
                 shade(cells[index], LIGHT_RED)
                 color = RED
+            elif value in {"Tốt", "Khá"}:
+                shade(cells[index], LIGHT_GOLD if value == "Tốt" else LIGHT_BLUE)
+                color = GOLD if value == "Tốt" else BLUE
             set_cell_text(cells[index], value, bold=bold, color=color, size=8)
     doc.add_paragraph().paragraph_format.space_after = Pt(1)
 
@@ -186,7 +190,7 @@ def make_doc():
             bottom = OxmlElement("w:bottom")
             bottom.set(qn("w:val"), "single")
             bottom.set(qn("w:sz"), "8")
-            bottom.set(qn("w:color"), "D9E2F3")
+            bottom.set(qn("w:color"), LINE)
             border.append(bottom)
             paragraph._p.get_or_add_pPr().append(border)
         else:
