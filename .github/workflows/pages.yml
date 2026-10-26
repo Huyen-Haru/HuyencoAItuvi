@@ -1,0 +1,48 @@
+# Build bản trang tĩnh và đăng lên GitHub Pages (nhánh gh-pages).
+# Lần đầu: Settings → Pages → Source "Deploy from a branch" → nhánh gh-pages, thư mục / (root).
+# Bản này không có máy chủ nên AI luận giải không chạy; lá số, lịch, hợp tuổi, nhật ký chạy đầy đủ.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main, claude/update-astrology-app-3qvui1]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      # Các route cần máy chủ (API AI, tìm kiếm) và trang tri thức chưa có dữ liệu không xuất tĩnh được
+      - name: Bỏ các route chỉ chạy trên máy chủ
+        run: rm -rf app/api app/library/search "app/knowledge/[star]"
+
+      - name: Build trang tĩnh
+        run: npx next build
+        env:
+          GITHUB_PAGES: 'true'
+          PAGES_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
+      - run: touch out/.nojekyll
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          force_orphan: true

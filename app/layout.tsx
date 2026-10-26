@@ -44,8 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        {/* Thống kê Vercel chỉ có khi chạy trên Vercel, không có trên GitHub Pages */}
+        {!process.env.NEXT_PUBLIC_STATIC_DEMO && <Analytics />}
+        {!process.env.NEXT_PUBLIC_STATIC_DEMO && <SpeedInsights />}
       </body>
     </html>
   );

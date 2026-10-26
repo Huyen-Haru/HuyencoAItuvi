@@ -19,7 +19,10 @@ export interface AskOptions {
 
 /** Gọi /api/interpret và đọc luồng SSE. Ném lỗi kèm thông điệp tiếng Việt. */
 export async function askAI(opts: AskOptions): Promise<string> {
-  const res = await fetch('/api/interpret', {
+  if (process.env.NEXT_PUBLIC_STATIC_DEMO) {
+    throw new Error('Bản xem thử trên GitHub Pages chưa có máy chủ AI. Hãy chạy app trên Vercel hoặc máy tính (có ANTHROPIC_API_KEY) để dùng AI luận giải.');
+  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/api/interpret`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     signal: opts.signal,
