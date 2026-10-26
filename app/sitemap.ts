@@ -11,15 +11,17 @@ import type { MetadataRoute } from 'next';
 import { ALL_BOOKS } from '@/lib/classics';
 import { getAllKnowledgeRoutes } from '@/lib/seo/knowledge';
 
-const BASE_URL = 'https://wdyziweidoushu666.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastmod = new Date('2026-04-28');
+  const lastmod = new Date('2026-10-26');
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, priority: 1.0, changeFrequency: 'weekly', lastModified: lastmod },
-    { url: `${BASE_URL}/chart`, priority: 0.95, changeFrequency: 'weekly', lastModified: lastmod },
-    { url: `${BASE_URL}/heming`, priority: 0.7, changeFrequency: 'weekly', lastModified: lastmod },
+    { url: `${BASE_URL}/la-so`, priority: 0.95, changeFrequency: 'weekly', lastModified: lastmod },
+    { url: `${BASE_URL}/lich`, priority: 0.9, changeFrequency: 'weekly', lastModified: lastmod },
+    { url: `${BASE_URL}/luan-giai`, priority: 0.9, changeFrequency: 'weekly', lastModified: lastmod },
+    { url: `${BASE_URL}/hop-tuoi`, priority: 0.8, changeFrequency: 'weekly', lastModified: lastmod },
     { url: `${BASE_URL}/library`, priority: 0.85, changeFrequency: 'weekly', lastModified: lastmod },
     { url: `${BASE_URL}/knowledge`, priority: 0.9, changeFrequency: 'weekly', lastModified: lastmod },
     { url: `${BASE_URL}/terms`, priority: 0.3, changeFrequency: 'monthly', lastModified: lastmod },

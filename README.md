@@ -1,3 +1,32 @@
+# Tử Vi AI · Lá số, Lịch vận hạn & AI luận giải (tiếng Việt)
+
+Ứng dụng Next.js xem Tử Vi Đầu Số bằng tiếng Việt, xây trên engine an sao mã nguồn mở bên dưới.
+
+## Tính năng
+
+| Trang | Nội dung |
+|---|---|
+| `/` | Trang chủ, vận ngày hôm nay theo hồ sơ đang chọn |
+| `/la-so` | Lá số 12 cung: chính tinh (miếu/vượng/hãm), cát tinh, sát tinh, Tứ Hóa, Tuần/Triệt, Tràng Sinh, đại hạn, lưu niên (Thái Tuế + Tứ Hóa năm), tam phương tứ chính, cách cục, in/lưu PDF |
+| `/lich` | Lịch vận hạn cá nhân: thẻ Hôm nay, lịch tháng tô màu theo điểm, 12 Trực, Hoàng/Hắc đạo, Nhị thập bát tú, giờ hoàng đạo, lọc ngày theo việc (ký hợp đồng, khai trương, cưới hỏi…), sóng vận khí cả năm, điểm theo quý/tháng, 10 ngày vàng, ngày cần tránh, tải ảnh chia sẻ |
+| `/luan-giai` | AI luận giải (Claude): báo cáo tổng quan, đại hạn, năm, tháng âm; hỏi đáp tự do; tải file / in PDF |
+| `/hop-tuoi` | Hợp tuổi: nạp âm, thiên can, địa chi, đối chiếu Mệnh – Phu Thê, AI phân tích hai lá số |
+| `/ho-so` | Nhiều hồ sơ (gia đình, khách hàng), nhập ngày âm hoặc dương, sao lưu/nhập file |
+| `/nhat-ky` | Nhật ký dự báo vs thực tế, tỉ lệ khớp |
+
+Âm lịch dùng thuật toán Hồ Ngọc Đức theo múi giờ UTC+7 (`lib/lich/amlich.ts`). Cách chấm điểm ngày được mô tả ở đầu `lib/lich/vanhan.ts`.
+Hồ sơ và nhật ký lưu trong trình duyệt (localStorage). App có manifest để cài như ứng dụng trên điện thoại.
+
+## Chạy thử
+
+```bash
+npm install
+cp .env.example .env.local   # điền ANTHROPIC_API_KEY để bật AI luận giải
+npm run dev
+```
+
+---
+
 # 紫微斗数 · 开源排盘引擎
 
 > 🎉 **网站已完成 ICP 备案**（京 ICP 备 2026027116 号），主域名已正式上线、全部功能正常访问。

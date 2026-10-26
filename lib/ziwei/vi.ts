@@ -1,0 +1,303 @@
+/**
+ * Lớp hiển thị tiếng Việt cho lá số.
+ * Engine (iztro) vẫn dùng tên Hán nội bộ; mọi chỗ hiển thị đi qua các hàm ở đây.
+ * Từ điển sinh từ locale vi-VN của iztro, bổ sung cách gọi quen thuộc (Tuần, Triệt…).
+ */
+
+const DICT: Record<string, string> = {
+  '紫微': 'Tử Vi',
+  '天机': 'Thiên Cơ',
+  '太阳': 'Thái Dương',
+  '武曲': 'Vũ Khúc',
+  '天同': 'Thiên Đồng',
+  '廉贞': 'Liêm Trinh',
+  '天府': 'Thiên Phủ',
+  '太阴': 'Thái Âm',
+  '贪狼': 'Tham Lang',
+  '巨门': 'Cự Môn',
+  '天相': 'Thiên Tướng',
+  '天梁': 'Thiên Lương',
+  '七杀': 'Thất Sát',
+  '破军': 'Phá Quân',
+  '左辅': 'Tả Phù',
+  '右弼': 'Hữu Bật',
+  '文昌': 'Văn Xương',
+  '文曲': 'Văn Khúc',
+  '禄存': 'Lộc Tồn',
+  '天马': 'Thiên Mã',
+  '擎羊': 'Kình Dương',
+  '陀罗': 'Đà La',
+  '火星': 'Hỏa Tinh',
+  '铃星': 'Linh Tinh',
+  '天魁': 'Thiên Khôi',
+  '天钺': 'Thiên Việt',
+  '地空': 'Địa Không',
+  '地劫': 'Địa Kiếp',
+  '劫杀': 'Kiếp Sát',
+  '天空': 'Thiên Không',
+  '天刑': 'Thiên Hình',
+  '天姚': 'Thiên Diêu',
+  '解神': 'Giải Thần',
+  '阴煞': 'Âm Sát',
+  '天喜': 'Thiên Hỷ',
+  '天官': 'Thiên Quan',
+  '天福': 'Thiên Phúc',
+  '天哭': 'Thiên Khốc',
+  '天虚': 'Thiên Hư',
+  '龙池': 'Long Trì',
+  '凤阁': 'Phụng Các',
+  '红鸾': 'Hồng Loan',
+  '孤辰': 'Cô Thần',
+  '寡宿': 'Quả Tú',
+  '蜚廉': 'Phi Liêm',
+  '破碎': 'Phá Toái',
+  '台辅': 'Đài Phụ',
+  '封诰': 'Phong Cáo',
+  '天巫': 'Thiên Vu',
+  '天月': 'Thiên Nguyệt',
+  '三台': 'Tam Thai',
+  '八座': 'Bát Tọa',
+  '恩光': 'Ân Quang',
+  '天贵': 'Thiên Quý',
+  '天才': 'Thiên Tài',
+  '天寿': 'Thiên Thọ',
+  '截空': 'Triệt',
+  '旬中': 'Tuần Trung',
+  '旬空': 'Tuần',
+  '空亡': 'Không Vong',
+  '截路': 'Triệt Lộ',
+  '月德': 'Nguyệt Đức',
+  '天伤': 'Thiên Thương',
+  '天使': 'Thiên Sứ',
+  '天厨': 'Thiên Trù',
+  '长生': 'Trường Sinh',
+  '沐浴': 'Mộc Dục',
+  '冠带': 'Quan Đới',
+  '临官': 'Lâm Quan',
+  '帝旺': 'Đế Vượng',
+  '衰': 'Suy',
+  '病': 'Bệnh',
+  '死': 'Tử',
+  '墓': 'Mộ',
+  '绝': 'Tuyệt',
+  '胎': 'Thai',
+  '养': 'Dưỡng',
+  '博士': 'Bác Sỹ',
+  '力士': 'Lực Sỹ',
+  '青龙': 'Thanh Long',
+  '小耗': 'Tiểu Hao',
+  '将军': 'Tướng Quân',
+  '奏书': 'Tấu Thư',
+  '飞廉': 'Phi Liêm',
+  '喜神': 'Hỷ Thần',
+  '病符': 'Bệnh Phù',
+  '大耗': 'Đại Hao',
+  '岁破': 'Tuế Phá',
+  '伏兵': 'Phục Binh',
+  '官府': 'Quan Phủ',
+  '岁建': 'Tuế Kiện',
+  '晦气': 'Hối Khí',
+  '丧门': 'Tang Môn',
+  '贯索': 'Quán Tác',
+  '官符': 'Quan Phù',
+  '龙德': 'Long Đức',
+  '白虎': 'Bạch Hổ',
+  '天德': 'Thiên Đức',
+  '吊客': 'Điếu Khách',
+  '将星': 'Tướng Tinh',
+  '攀鞍': 'Phan Án',
+  '岁驿': 'Tuế Dịch',
+  '息神': 'Tức Thần',
+  '华盖': 'Hoa Cái',
+  '劫煞': 'Kiếp Sát',
+  '灾煞': 'Tai Sát',
+  '天煞': 'Thiên Sát',
+  '指背': 'Chỉ Bối',
+  '咸池': 'Hàm Trì',
+  '月煞': 'Nguyệt Sát',
+  '亡神': 'Vong Thần',
+  '运魁': 'Vận Khôi',
+  '运钺': 'Vận Việt',
+  '运昌': 'Vận Xương',
+  '运曲': 'Vận Khúc',
+  '运鸾': 'Vận Loan',
+  '运喜': 'Vận Hỷ',
+  '运禄': 'Vận Lộc',
+  '运羊': 'Vận Dương',
+  '运陀': 'Vận Đà',
+  '运马': 'Vận Mã',
+  '流魁': 'Lưu Khôi',
+  '流钺': 'Lưu Việt',
+  '流昌': 'Lưu Xương',
+  '流曲': 'Lưu Khúc',
+  '流鸾': 'Lưu Loan',
+  '流喜': 'Lưu Hỷ',
+  '流禄': 'Lưu Lộc',
+  '流羊': 'Lưu Dương',
+  '流陀': 'Lưu Đà',
+  '流马': 'Lưu Mã',
+  '年解': 'Niên Giải',
+  '月魁': 'Thiên Khôi(M)',
+  '月钺': 'Thiên Việt(M)',
+  '月昌': 'Văn Xương(M)',
+  '月曲': 'Văn Khúc(M)',
+  '月鸾': 'Hồng Loan(M)',
+  '月喜': 'Thiên Hỷ(M)',
+  '月禄': 'Lộc Tồn(M)',
+  '月羊': 'Kình Dương(M)',
+  '月陀': 'Đà La(M)',
+  '月马': 'Thiên Mã(M)',
+  '日魁': 'Thiên Khôi(d)',
+  '日钺': 'Thiên Việt(d)',
+  '日昌': 'Văn Xương(d)',
+  '日曲': 'Văn Khúc(d)',
+  '日鸾': 'Hồng Loan(d)',
+  '日喜': 'Thiên Hỷ(d)',
+  '日禄': 'Lộc Tồn(d)',
+  '日羊': 'Kình Dương(d)',
+  '日陀': 'Đà La(d)',
+  '日马': 'Thiên Mã(d)',
+  '时魁': 'Thiên Khôi(H)',
+  '时钺': 'Thiên Việt(H)',
+  '时昌': 'Văn Xương(H)',
+  '时曲': 'Văn Khúc(H)',
+  '时鸾': 'Hồng Loan(H)',
+  '时喜': 'Thiên Hỷ(H)',
+  '时禄': 'Lộc Tồn(H)',
+  '时羊': 'Kình Dương(H)',
+  '时陀': 'Đà La(H)',
+  '时马': 'Thiên Mã(H)',
+  '命宫': 'Mệnh',
+  '身宫': 'Thân',
+  '兄弟': 'Huynh Đệ',
+  '夫妻': 'Phu Thê',
+  '子女': 'Tử Nữ',
+  '财帛': 'Tài Bạch',
+  '疾厄': 'Tật Ách',
+  '迁移': 'Thiên Di',
+  '仆役': 'Nô Bộc',
+  '官禄': 'Quan Lộc',
+  '田宅': 'Điền Trạch',
+  '福德': 'Phúc Đức',
+  '父母': 'Phụ Mẫu',
+  '来因': 'Lai Nhân',
+  '庙': 'Miếu',
+  '旺': 'Vượng',
+  '得': 'Đắc',
+  '利': 'Lợi',
+  '平': 'Bình',
+  '不': 'Bất',
+  '陷': 'Hãm',
+  '禄': 'Lộc',
+  '权': 'Quyền',
+  '科': 'Khoa',
+  '忌': 'Kỵ',
+  '水二局': 'Thủy Nhị Cục',
+  '木三局': 'Mộc Tam Cục',
+  '金四局': 'Kim Tứ Cục',
+  '土五局': 'Thổ Ngũ Cục',
+  '火六局': 'Hỏa Lục Cục',
+  '甲': 'Giáp',
+  '乙': 'Ất',
+  '丙': 'Bính',
+  '丁': 'Đinh',
+  '戊': 'Mậu',
+  '己': 'Kỷ',
+  '庚': 'Canh',
+  '辛': 'Tân',
+  '壬': 'Nhâm',
+  '癸': 'Quý',
+  '子': 'Tý',
+  '丑': 'Sửu',
+  '寅': 'Dần',
+  '卯': 'Mão',
+  '辰': 'Thìn',
+  '巳': 'Tỵ',
+  '午': 'Ngọ',
+  '未': 'Mùi',
+  '申': 'Thân',
+  '酉': 'Dậu',
+  '戌': 'Tuất',
+  '亥': 'Hợi',
+  '男': 'Nam',
+  '女': 'Nữ',
+  '兄弟宫': 'Huynh Đệ',
+  '夫妻宫': 'Phu Thê',
+  '子女宫': 'Tử Nữ',
+  '财帛宫': 'Tài Bạch',
+  '疾厄宫': 'Tật Ách',
+  '迁移宫': 'Thiên Di',
+  '交友宫': 'Nô Bộc',
+  '仆役宫': 'Nô Bộc',
+  '官禄宫': 'Quan Lộc',
+  '田宅宫': 'Điền Trạch',
+  '福德宫': 'Phúc Đức',
+  '父母宫': 'Phụ Mẫu',
+};
+
+export const STEMS_VI = ['Giáp', 'Ất', 'Bính', 'Đinh', 'Mậu', 'Kỷ', 'Canh', 'Tân', 'Nhâm', 'Quý'];
+export const BRANCHES_VI = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tỵ', 'Ngọ', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi'];
+export const ZODIAC_VI = ['Chuột', 'Trâu', 'Hổ', 'Mèo', 'Rồng', 'Rắn', 'Ngựa', 'Dê', 'Khỉ', 'Gà', 'Chó', 'Lợn'];
+
+export const HOURS_VI = BRANCHES_VI.map((b, i) => {
+  const start = (i * 2 + 23) % 24;
+  const end = (start + 2) % 24;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return { branch: i, name: `Giờ ${b}`, range: `${pad(start)}:00–${pad(end)}:00` };
+});
+
+export const SIHUA_VI: Record<string, string> = { '禄': 'Hóa Lộc', '权': 'Hóa Quyền', '科': 'Hóa Khoa', '忌': 'Hóa Kỵ' };
+export const SIHUA_SHORT_VI: Record<string, string> = { '禄': 'Lộc', '权': 'Quyền', '科': 'Khoa', '忌': 'Kỵ' };
+
+/** Dịch một tên Hán (sao, cung, can, chi, cục…) sang tiếng Việt; không có thì giữ nguyên. */
+export function vi(name: string | undefined | null): string {
+  if (!name) return '';
+  return DICT[name] ?? DICT[name.replace(/宫$/, '')] ?? name;
+}
+
+/** Tên cung tiếng Việt, ví dụ '财帛' → 'Tài Bạch'. */
+export function viPalace(name: string): string {
+  return vi(name);
+}
+
+export function canChi(stem: number, branch: number): string {
+  return `${STEMS_VI[((stem % 10) + 10) % 10]} ${BRANCHES_VI[((branch % 12) + 12) % 12]}`;
+}
+
+/** Can chi năm dương lịch, ví dụ 2026 → 'Bính Ngọ'. */
+export function yearCanChi(year: number): string {
+  return canChi(year - 4, year - 4);
+}
+
+export const BRIGHTNESS_VI: Record<string, string> = {
+  '庙': 'M', '旺': 'V', '得': 'Đ', '利': 'L', '平': 'B', '不': 'Bt', '陷': 'H',
+};
+
+const PATTERN_VI: Record<string, string> = {
+  '君臣庆会': 'Quân Thần Khánh Hội', '紫府同宫': 'Tử Phủ Đồng Cung', '府相朝垣': 'Phủ Tướng Triều Viên',
+  '阳梁昌禄': 'Dương Lương Xương Lộc', '武贪格': 'Vũ Tham', '杀破狼': 'Sát Phá Tham',
+  '机月同梁': 'Cơ Nguyệt Đồng Lương', '廉贞天相格': 'Liêm Tướng', '武曲七杀': 'Vũ Sát',
+  '天同天梁格': 'Đồng Lương', '日月同宫': 'Nhật Nguyệt Đồng Cung', '日月夹命': 'Nhật Nguyệt Giáp Mệnh',
+  '巨日同宫': 'Cự Nhật Đồng Cung', '石中隐玉': 'Thạch Trung Ẩn Ngọc', '明珠出海': 'Minh Châu Xuất Hải',
+  '紫微入命': 'Tử Vi Thủ Mệnh', '辅弼夹命': 'Tả Hữu Giáp Mệnh', '昌曲夹命': 'Xương Khúc Giáp Mệnh',
+  '魁钺夹命': 'Khôi Việt Giáp Mệnh', '双禄朝垣': 'Song Lộc Triều Viên', '三奇加会': 'Tam Hóa Liên Châu (Tam Kỳ Gia Hội)',
+  '羊陀夹忌': 'Kình Đà Giáp Kỵ', '火铃夹命': 'Hỏa Linh Giáp Mệnh', '空劫夹命': 'Không Kiếp Giáp Mệnh',
+  '廉杀羊': 'Liêm Sát Dương', '巨火羊': 'Cự Hỏa Dương', '铃昌陀武': 'Linh Xương Đà Vũ',
+  '马头带箭': 'Mã Đầu Đới Tiễn', '化禄入财': 'Hóa Lộc nhập Tài', '化权入官': 'Hóa Quyền nhập Quan',
+  '机月同梁三星会': 'Cơ Nguyệt Đồng Lương hội', '辅弼同会': 'Tả Hữu đồng hội', '魁钺同会': 'Khôi Việt đồng hội',
+  '科权双会': 'Khoa Quyền song hội', '禄存守命': 'Lộc Tồn thủ Mệnh', '禄存守身': 'Lộc Tồn thủ Thân',
+  '天马入命': 'Thiên Mã nhập Mệnh', '天马在迁': 'Thiên Mã tại Di',
+  '火贪格': 'Hỏa Tham', '铃贪格': 'Linh Tham', '化科入命': 'Hóa Khoa nhập Mệnh', '化科入身': 'Hóa Khoa nhập Thân',
+  '昌曲坐命': 'Xương Khúc thủ Mệnh', '昌曲同会': 'Xương Khúc đồng hội',
+};
+
+/** Tên cách cục tiếng Việt; tên động (ví dụ '廉贞化禄入命') được dịch theo từng phần. */
+export function viPattern(name: string): string {
+  if (PATTERN_VI[name]) return PATTERN_VI[name];
+  const m = name.match(/^(.+?)化(禄|权|科|忌)入(.+)$/);
+  if (m) {
+    const where: Record<string, string> = { '命': 'Mệnh', '迁': 'Thiên Di' };
+    return `${vi(m[1])} ${SIHUA_VI[m[2]]} nhập ${where[m[3].trim()] ?? vi(m[3].trim())}`;
+  }
+  return name;
+}

@@ -8,6 +8,8 @@ export interface BirthInfo {
   province?: string;   // 出生省份
   city?: string;       // 出生城市
   longitude?: number;  // 出生地经度（用于真太阳时校正）
+  /** Sinh 23:00–24:00 (giờ Tý muộn): an sao theo ngày hôm sau */
+  lateZi?: boolean;
 }
 
 export interface LunarInfo {
@@ -26,6 +28,8 @@ export interface Star {
   type: 'major' | 'minor' | 'lucky' | 'sha';
   siHua?: SiHua;
   brightness?: 'bright' | 'normal' | 'dim';  // 庙旺利陷
+  /** Nhãn miếu/vượng/đắc/lợi/bình/bất/hãm gốc (Hán) */
+  brightnessLabel?: string;
 }
 
 export interface SelfSihuaMark {
@@ -54,6 +58,10 @@ export interface Palace {
   borrowedFromName?: string;
   /** 若为空宫，借到的对宫主星名列表（结构化数据，文案层不再需要从文本反查） */
   borrowedStars?: string[];
+  /** Vòng Tràng Sinh */
+  changsheng?: string;
+  /** Vòng Bác Sỹ */
+  boshi?: string;
 }
 
 export interface DaXianSiHua {

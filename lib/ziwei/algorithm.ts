@@ -69,7 +69,7 @@ export function generateChart(birthInfo: BirthInfo): ZiweiChart {
   // 调用 iztro 排盘
   const solarDate = `${year}-${month}-${day}`;
   const iztroGender = gender === 'male' ? '男' : '女';
-  const astrolabe = astro.bySolar(solarDate, hour, iztroGender, true, 'zh-CN');
+  const astrolabe = astro.bySolar(solarDate, birthInfo.lateZi ? 12 : hour, iztroGender, true, 'zh-CN');
 
   // ── 组装十二宫 ──
   const palaces: Palace[] = astrolabe.palaces.map(p => {
@@ -82,12 +82,14 @@ export function generateChart(birthInfo: BirthInfo): ZiweiChart {
         name:       s.name as string,
         type:       'major' as const,
         brightness: mapBrightness(s.brightness as string),
-        siHua:      s.mutagen as Star['siHua'],
+        brightnessLabel: (s.brightness as string) || undefined,
+        siHua:      (s.mutagen || undefined) as Star['siHua'],
       })),
       ...(p.minorStars ?? []).map(s => ({
         name:  s.name as string,
         type:  mapStarType(s.name as string, s.type as string),
-        siHua: s.mutagen as Star['siHua'],
+        brightnessLabel: (s.brightness as string) || undefined,
+        siHua: (s.mutagen || undefined) as Star['siHua'],
       })),
       ...(p.adjectiveStars ?? []).map(s => ({
         name:  s.name as string,
@@ -106,12 +108,15 @@ export function generateChart(birthInfo: BirthInfo): ZiweiChart {
       isMingGong:    p.name === '命宫',
       isShenGong:    p.isBodyPalace ?? false,
       isCurrentDaXian: false,
+      changsheng:    (p.changsheng12 as string) || undefined,
+      boshi:         (p.boshi12 as string) || undefined,
     };
   });
 
   // ── 当前年龄 & 大限 ──
+  // Tuổi mụ (âm): iztro tính khoảng đại hạn theo tuổi mụ
   const currentYear = new Date().getFullYear();
-  const currentAge  = currentYear - year;
+  const currentAge  = currentYear - getLunarInfo(year, month, day).lunarYear + 1;
 
   palaces.forEach(p => {
     if (p.daXianAge && currentAge >= p.daXianAge[0] && currentAge <= p.daXianAge[1]) {
