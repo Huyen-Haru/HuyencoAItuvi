@@ -126,7 +126,7 @@ export default function HopTuoiPage() {
                   <h2 className="tv-title">AI phân tích sâu hai lá số</h2>
                   <button className="tv-btn tv-btn-primary" onClick={deep} disabled={busy}>{busy ? 'Đang phân tích…' : '✦ Phân tích'}</button>
                 </div>
-                {err && <p className="text-sm" style={{ color: 'var(--worst)' }}>{err}</p>}
+                {err && <p className="text-sm" style={{ color: 'var(--worst)' }}>{err} <Link className="tv-accent underline" href="/luan-giai">Mở Kết nối AI</Link></p>}
                 {ai ? <Markdown text={ai} /> : !busy && <p className="text-sm tv-muted">AI sẽ đọc cả hai lá số (Mệnh, Phu Thê, Tứ Hóa…) để chỉ ra điểm hòa hợp, điểm cần dung hòa.</p>}
               </div>
             </div>

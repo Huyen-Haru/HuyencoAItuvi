@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Shell from '@/components/tuvi/Shell';
 import RequireProfile from '@/components/tuvi/RequireProfile';
 import Markdown from '@/components/tuvi/Markdown';
+import ApiKeyCard from '@/components/tuvi/ApiKeyCard';
 import type { ZiweiChart } from '@/lib/ziwei/types';
 import { profileToBirthInfo, type Profile } from '@/lib/profiles';
 import { askAI, type ChatMsg } from '@/lib/ai-client';
@@ -95,7 +96,8 @@ function AiView({ profile }: { profile: Profile; chart: ZiweiChart }) {
 
   return (
     <div className="grid lg:grid-cols-[300px_minmax(0,1fr)] gap-6 items-start">
-      <aside className="grid gap-4 no-print lg:sticky lg:top-20">
+      <aside className="grid gap-4 no-print">
+        <ApiKeyCard />
         <div className="tv-card grid gap-3">
           <h2 className="tv-title">Báo cáo một chạm</h2>
           <button className="tv-btn justify-start" disabled={busy} onClick={() => run('Luận tổng quan lá số của tôi', { key: 'tong-quan' })}>🔮 Tổng quan lá số</button>
