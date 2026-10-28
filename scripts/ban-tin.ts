@@ -6,6 +6,8 @@
  * Tùy chọn:
  *   --gio khong-ro          không rõ giờ sinh
  *   --ngay-xem 2026-10-28   xem cho ngày khác (mặc định: hôm nay theo giờ Việt Nam)
+ *   --ngay-mai              dự báo cho ngày mai (dùng khi gửi bản tin buổi tối)
+ *   --chi-tiet              thêm phần vận 12 cung trong ngày
  *   --link https://...      link mở trang web chi tiết
  */
 import { generateChart } from '@/lib/ziwei/algorithm';
@@ -13,12 +15,15 @@ import { profileToBirthInfo, type Profile } from '@/lib/profiles';
 import { indexChart, scoreDay, scoreLabel, DOMAINS, ACTIVITIES, activityScore } from '@/lib/lich/vanhan';
 import { WEEKDAYS_VI, lunarLabel } from '@/lib/lich/ngay';
 import { jobTrend, jobTrendYear } from '@/lib/lich/cong-viec';
+import { palaceDay } from '@/lib/lich/cung-ngay';
 import { BRANCHES_VI, yearCanChi } from '@/lib/ziwei/vi';
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
   return i >= 0 ? process.argv[i + 1] : undefined;
 }
+
+const flag = (name: string) => process.argv.includes(`--${name}`);
 
 function fail(msg: string): never {
   console.error(msg);
@@ -42,7 +47,10 @@ const profile: Profile = {
 // Ngày xem: mặc định hôm nay theo giờ Việt Nam
 const viewArg = arg('ngay-xem');
 const todayVN = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date());
-const [vy, vm, vd] = (viewArg ?? todayVN).split('-').map(Number);
+const [ty, tm, td] = (viewArg ?? todayVN).split('-').map(Number);
+const tomorrow = flag('ngay-mai');
+const view = new Date(ty, tm - 1, td + (tomorrow ? 1 : 0));
+const [vy, vm, vd] = [view.getFullYear(), view.getMonth() + 1, view.getDate()];
 
 const idx = indexChart(generateChart(profileToBirthInfo(profile)));
 const ds = scoreDay(idx, vy, vm, vd);
@@ -71,7 +79,7 @@ const keyMonth = [...yearJobs].sort((a, b) => b.chuDong + b.biDong - (a.chuDong 
 const fmtDay = (x: typeof ds) => `${WEEKDAYS_VI[x.info.weekday]} ${x.info.d}/${x.info.m} (ÂL ${lunarLabel(x.info.lunar)})`;
 
 const out: string[] = [];
-out.push(`# ☯ Bản tin Tử Vi · ${WEEKDAYS_VI[info.weekday]} ${info.d}/${info.m}/${info.y}`);
+out.push(`# ☯ ${tomorrow ? 'Dự báo ngày mai' : 'Bản tin Tử Vi'} · ${WEEKDAYS_VI[info.weekday]} ${info.d}/${info.m}/${info.y}`);
 out.push(`**${ten}** · Âm lịch ${lunarLabel(info.lunar)} năm ${yearCanChi(info.lunar.year)} · Ngày ${info.canChiNgay} · Tháng ${info.canChiThang}${info.tietKhi ? ` · Tiết ${info.tietKhi}` : ''}`);
 out.push('');
 out.push(`## ${dot(ds.score)} Vận ngày: ${ds.score}/100 — ${lab.text}`);
@@ -82,10 +90,23 @@ out.push(`**Lịch ngày:** Trực ${info.truc.name} (${info.truc.quality === 't
 out.push(`**✅ Nên:** ${info.truc.nen.join(', ')}`);
 out.push(`**⛔ Tránh:** ${info.truc.kieng.join(', ')}`);
 out.push(`**🕐 Giờ hoàng đạo:** ${info.gioHoangDao.map(g => `${g.name} ${g.range}`).join(', ')}`);
-out.push(`**🎯 Hợp nhất hôm nay:** ${acts.slice(0, 2).map(x => `${x.a.label} (${x.s})`).join(', ')} · **Kém nhất:** ${acts[acts.length - 1].a.label} (${acts[acts.length - 1].s})`);
+out.push(`**🎯 Hợp nhất trong ngày:** ${acts.slice(0, 2).map(x => `${x.a.label} (${x.s})`).join(', ')} · **Kém nhất:** ${acts[acts.length - 1].a.label} (${acts[acts.length - 1].s})`);
 out.push('');
 out.push(`**Cung ứng ngày:** ${ds.palaceName} — ${ds.palaceStars}.`);
 for (const n of ds.notes) out.push(`- ${n}`);
+if (flag('chi-tiet')) {
+  const cung = palaceDay(idx, ds);
+  out.push('');
+  out.push('## 🔮 Vận 12 cung trong ngày');
+  for (const c of cung) {
+    out.push(`### ${dot(c.score)} ${c.name} (${c.canChi}) · ${c.score} — ${scoreLabel(c.score).text}`);
+    out.push(`Sao chính: ${c.stars}${c.tags.length ? ` · ${c.tags.join(' · ')}` : ''}`);
+    out.push(`→ ${c.advice}`);
+  }
+  const top = [...cung].sort((a, b) => b.score - a.score);
+  out.push('');
+  out.push(`**Cung mạnh nhất:** ${top.slice(0, 3).map(c => `${c.name} (${c.score})`).join(', ')} · **Cung cần giữ gìn:** ${top.slice(-2).reverse().map(c => `${c.name} (${c.score})`).join(', ')}`);
+}
 out.push('');
 out.push(`## 💼 Công việc tháng ${job.lunarMonth} âm (${job.monthCanChi}): ${job.label}`);
 out.push(`Chủ động ${job.chuDong} điểm · Bị động ${job.biDong} điểm`);
