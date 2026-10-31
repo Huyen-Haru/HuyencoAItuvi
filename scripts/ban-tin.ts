@@ -118,6 +118,6 @@ const best = b.week.find(w => w.isBest)!;
 const worst = b.week.find(w => w.isWorst)!;
 out.push(`Đẹp nhất **${best.label}** (${best.score}, ${verdictOf(best.score).toLowerCase()}) · Cẩn trọng **${worst.label}** (${worst.score}).`);
 out.push('');
-out.push(`👉 **[Mở bản tin đầy đủ có biểu đồ](${link})**`);
+out.push(`👉 **[Mở bản tin đầy đủ: chi tiết từng cung, tổng quan tháng và năm](${link})**`);
 
 console.log(out.join('\n'));

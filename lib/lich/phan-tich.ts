@@ -58,7 +58,7 @@ export interface Brief {
   bestActivities: { label: string; score: number }[];
 }
 
-const DOMAIN_DEFS = [
+export const DOMAIN_DEFS = [
   { key: 'cong-viec', icon: '💼', label: 'Công việc', short: 'công việc', palaces: ['官禄'] },
   { key: 'tien-bac', icon: '💰', label: 'Tiền bạc', short: 'tiền bạc', palaces: ['财帛'] },
   { key: 'tinh-cam', icon: '❤️', label: 'Tình cảm', short: 'tình cảm', palaces: ['夫妻'] },
