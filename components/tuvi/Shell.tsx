@@ -8,6 +8,7 @@ import { useProfiles } from '@/lib/profiles';
 const NAV = [
   { href: '/', label: 'Trang chủ' },
   { href: '/la-so', label: 'Lá số' },
+  { href: '/ban-tin', label: 'Bản tin' },
   { href: '/lich', label: 'Lịch vận hạn' },
   { href: '/luan-giai', label: 'AI luận giải' },
   { href: '/hop-tuoi', label: 'Hợp tuổi' },

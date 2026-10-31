@@ -2,21 +2,19 @@
  * Bản tin Tử Vi hằng ngày (Markdown) — không dùng AI, không tốn phí.
  *
  * Cách chạy:
- *   npx tsx scripts/ban-tin.ts --ten "Hoàng" --ngay 3/6/1990 --gio 9:30 --gioi-tinh nam
+ *   npx tsx scripts/ban-tin.ts --ten "Huyền" --ngay 6/10/1990 --gio 8:18 --gioi-tinh nu --ngay-mai
  * Tùy chọn:
  *   --gio khong-ro          không rõ giờ sinh
- *   --ngay-xem 2026-10-28   xem cho ngày khác (mặc định: hôm nay theo giờ Việt Nam)
- *   --ngay-mai              dự báo cho ngày mai (dùng khi gửi bản tin buổi tối)
- *   --chi-tiet              thêm phần vận 12 cung trong ngày
- *   --link https://...      link mở trang web chi tiết
+ *   --ngay-xem 2026-10-28   tính từ ngày này thay cho hôm nay (giờ Việt Nam)
+ *   --ngay-mai              dự báo cho ngày hôm sau (dùng khi gửi buổi tối)
+ *   --chi-tiet              thêm bảng 12 cung
+ *   --json                  in dữ liệu phân tích dạng JSON thay cho Markdown
+ *   --web https://...       địa chỉ trang web (mặc định GitHub Pages của dự án)
  */
 import { generateChart } from '@/lib/ziwei/algorithm';
 import { profileToBirthInfo, type Profile } from '@/lib/profiles';
-import { indexChart, scoreDay, scoreLabel, DOMAINS, ACTIVITIES, activityScore } from '@/lib/lich/vanhan';
-import { WEEKDAYS_VI, lunarLabel } from '@/lib/lich/ngay';
-import { jobTrend, jobTrendYear } from '@/lib/lich/cong-viec';
-import { palaceDay } from '@/lib/lich/cung-ngay';
-import { BRANCHES_VI, yearCanChi } from '@/lib/ziwei/vi';
+import { indexChart, scoreLabel } from '@/lib/lich/vanhan';
+import { buildBrief, verdictOf } from '@/lib/lich/phan-tich';
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -36,91 +34,90 @@ const [d, m, y] = ngay.split('/').map(Number);
 if (!d || !m || !y) fail('--ngay phải có dạng d/m/yyyy.');
 const gio = arg('gio') ?? 'khong-ro';
 const [hh, mm] = gio === 'khong-ro' ? [null, 0] : gio.split(':').map(Number);
-const gender = ['nu', 'nữ', 'female'].includes((arg('gioi-tinh') ?? 'nam').toLowerCase()) ? 'female' : 'male';
-const link = arg('link') ?? 'https://huyen-haru.github.io/HuyencoAItuvi/lich/';
+const gt = (arg('gioi-tinh') ?? 'nam').toLowerCase();
+const gender = ['nu', 'nữ', 'female'].includes(gt) ? 'female' : 'male';
+const web = (arg('web') ?? 'https://huyen-haru.github.io/HuyencoAItuvi').replace(/\/$/, '');
 
 const profile: Profile = {
   id: 'cli', name: ten, gender, year: y, month: m, day: d,
   hour: hh, minute: mm ?? 0, createdAt: 0,
 };
 
-// Ngày xem: mặc định hôm nay theo giờ Việt Nam
-const viewArg = arg('ngay-xem');
+// Ngày xem: mặc định hôm nay theo giờ Việt Nam, +1 nếu --ngay-mai
 const todayVN = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date());
-const [ty, tm, td] = (viewArg ?? todayVN).split('-').map(Number);
+const [ty, tm, td] = (arg('ngay-xem') ?? todayVN).split('-').map(Number);
 const tomorrow = flag('ngay-mai');
 const view = new Date(ty, tm - 1, td + (tomorrow ? 1 : 0));
 const [vy, vm, vd] = [view.getFullYear(), view.getMonth() + 1, view.getDate()];
 
 const idx = indexChart(generateChart(profileToBirthInfo(profile)));
-const ds = scoreDay(idx, vy, vm, vd);
-const { info } = ds;
-const lab = scoreLabel(ds.score);
+const b = buildBrief(idx, vy, vm, vd);
 
-const dot = (s: number) => (s >= 72 ? '🟢' : s >= 60 ? '🟩' : s >= 45 ? '🟨' : s >= 33 ? '🟧' : '🟥');
-const bar = (s: number) => '█'.repeat(Math.round(s / 10)) + '░'.repeat(10 - Math.round(s / 10));
-
-// 7 ngày tới
-const next7 = Array.from({ length: 7 }, (_, i) => {
-  const t = new Date(vy, vm - 1, vd + 1 + i);
-  return scoreDay(idx, t.getFullYear(), t.getMonth() + 1, t.getDate());
+const pad = (n: number) => String(n).padStart(2, '0');
+const params = new URLSearchParams({
+  ten, ns: `${y}-${pad(m)}-${pad(d)}`, gio: hh === null ? 'khong-ro' : `${pad(hh)}:${pad(mm ?? 0)}`,
+  gt: gender === 'female' ? 'nu' : 'nam', ngay: `${vy}-${pad(vm)}-${pad(vd)}`,
 });
-const best = [...next7].sort((a, b) => b.score - a.score).slice(0, 3);
-const worst = [...next7].sort((a, b) => a.score - b.score)[0];
+const link = `${web}/ban-tin/?${params.toString()}`;
 
-// Việc hợp nhất hôm nay
-const acts = ACTIVITIES.map(a => ({ a, s: activityScore(ds, a) })).sort((p, q) => q.s - p.s);
+if (flag('json')) {
+  const { ds, ...rest } = b;
+  console.log(JSON.stringify({ ten, link, score: ds.score, label: scoreLabel(ds.score).text, ...rest }, null, 2));
+  process.exit(0);
+}
 
-// Công việc: tháng âm hiện tại + tháng then chốt còn lại trong năm âm
-const job = jobTrend(idx, info.lunar.year, info.lunar.month);
-const yearJobs = jobTrendYear(idx, info.lunar.year).filter(j => j.lunarMonth >= info.lunar.month);
-const keyMonth = [...yearJobs].sort((a, b) => b.chuDong + b.biDong - (a.chuDong + a.biDong))[0];
-
-const fmtDay = (x: typeof ds) => `${WEEKDAYS_VI[x.info.weekday]} ${x.info.d}/${x.info.m} (ÂL ${lunarLabel(x.info.lunar)})`;
+const dot = (s: number) => (s >= 66 ? '🟢' : s >= 58 ? '🟩' : s >= 48 ? '🟡' : s >= 40 ? '🟠' : '🔴');
+const KP_ICON = { 'co-hoi': '✨', 'luu-y': '⚠️', 'nen-lam': '🎯' } as const;
 
 const out: string[] = [];
-out.push(`# ☯ ${tomorrow ? 'Dự báo ngày mai' : 'Bản tin Tử Vi'} · ${WEEKDAYS_VI[info.weekday]} ${info.d}/${info.m}/${info.y}`);
-out.push(`**${ten}** · Âm lịch ${lunarLabel(info.lunar)} năm ${yearCanChi(info.lunar.year)} · Ngày ${info.canChiNgay} · Tháng ${info.canChiThang}${info.tietKhi ? ` · Tiết ${info.tietKhi}` : ''}`);
+out.push(`# ${tomorrow ? '🌙 Ngày mai' : '☀️ Hôm nay'} của ${ten}`);
+out.push(`**${b.dateLabel}** · ${b.lunarLine}`);
 out.push('');
-out.push(`## ${dot(ds.score)} Vận ngày: ${ds.score}/100 — ${lab.text}`);
+out.push(`> ### ${dot(b.ds.score)} ${b.ds.score}/100 · ${scoreLabel(b.ds.score).text}`);
+out.push(`> ${b.theme}`);
 out.push('');
-for (const dm of DOMAINS) out.push(`- ${dm.icon} ${dm.label}: \`${bar(ds.domains[dm.key])}\` ${ds.domains[dm.key]}`);
+out.push('---');
+out.push('### 🔑 3 điều cần biết');
+b.keyPoints.forEach(k => {
+  out.push(`${KP_ICON[k.kind]} **${k.title}**`);
+  out.push(`${k.text}`);
+  out.push('');
+});
+out.push('---');
+out.push('### 📊 Từng lĩnh vực');
+for (const dm of b.domains) {
+  out.push(`${dot(dm.score)} **${dm.icon} ${dm.label} · ${dm.score} · ${dm.verdict}**`);
+  out.push(`${dm.why}`);
+  out.push(`👉 ${dm.action}`);
+  out.push('');
+}
+out.push('---');
+out.push('### ⏰ Giờ đẹp trong ngày');
+for (const h of b.hours.filter(x => x.good)) out.push(`- **${h.range}** (giờ ${h.name}): ${h.suggestion}`);
+out.push(`- ⛔ Tránh: ${b.calendar.kieng.join(', ').toLowerCase()}`);
 out.push('');
-out.push(`**Lịch ngày:** Trực ${info.truc.name} (${info.truc.quality === 'tot' ? 'tốt' : info.truc.quality === 'xau' ? 'xấu' : 'bình'}) · ${info.than.name} ${info.than.hoangDao ? '— Hoàng đạo' : '— Hắc đạo'} · Sao ${info.sao28.name} (${info.sao28.tot ? 'tốt' : 'xấu'}) · Xung tuổi ${BRANCHES_VI[info.xungBranch]}`);
-out.push(`**✅ Nên:** ${info.truc.nen.join(', ')}`);
-out.push(`**⛔ Tránh:** ${info.truc.kieng.join(', ')}`);
-out.push(`**🕐 Giờ hoàng đạo:** ${info.gioHoangDao.map(g => `${g.name} ${g.range}`).join(', ')}`);
-out.push(`**🎯 Hợp nhất trong ngày:** ${acts.slice(0, 2).map(x => `${x.a.label} (${x.s})`).join(', ')} · **Kém nhất:** ${acts[acts.length - 1].a.label} (${acts[acts.length - 1].s})`);
+out.push(`<sub>Trực ${b.calendar.truc} (${b.calendar.trucQuality}) · ${b.calendar.than}, ${b.calendar.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'} · Sao ${b.calendar.sao} (${b.calendar.saoTot ? 'tốt' : 'xấu'}) · Xung tuổi ${b.calendar.xung}</sub>`);
 out.push('');
-out.push(`**Cung ứng ngày:** ${ds.palaceName} — ${ds.palaceStars}.`);
-for (const n of ds.notes) out.push(`- ${n}`);
+
 if (flag('chi-tiet')) {
-  const cung = palaceDay(idx, ds);
+  out.push('---');
+  out.push('### 🔮 12 cung hôm đó');
+  const sorted = [...b.palaces].sort((a, c) => c.score - a.score);
+  out.push(sorted.map(p => `${dot(p.score)} ${p.name} **${p.score}**`).join(' · '));
   out.push('');
-  out.push('## 🔮 Vận 12 cung trong ngày');
-  for (const c of cung) {
-    out.push(`### ${dot(c.score)} ${c.name} (${c.canChi}) · ${c.score} — ${scoreLabel(c.score).text}`);
-    out.push(`Sao chính: ${c.stars}${c.tags.length ? ` · ${c.tags.join(' · ')}` : ''}`);
-    out.push(`→ ${c.advice}`);
-  }
-  const top = [...cung].sort((a, b) => b.score - a.score);
-  out.push('');
-  out.push(`**Cung mạnh nhất:** ${top.slice(0, 3).map(c => `${c.name} (${c.score})`).join(', ')} · **Cung cần giữ gìn:** ${top.slice(-2).reverse().map(c => `${c.name} (${c.score})`).join(', ')}`);
 }
+
+out.push('---');
+out.push(`### 💼 Công việc tháng ${b.job.lunarMonth} âm: ${b.job.label}`);
+out.push(`Chủ động **${b.job.chuDong}** · Bị động **${b.job.biDong}**. ${b.job.reasons[0] ?? ''}`);
+if (b.job.keyMonth) out.push(`📌 Tháng then chốt sắp tới: **tháng ${b.job.keyMonth.lunarMonth} âm**, ${b.job.keyMonth.label.toLowerCase()}.`);
 out.push('');
-out.push(`## 💼 Công việc tháng ${job.lunarMonth} âm (${job.monthCanChi}): ${job.label}`);
-out.push(`Chủ động ${job.chuDong} điểm · Bị động ${job.biDong} điểm`);
-for (const r of job.reasons) out.push(`- ${r}`);
-if (keyMonth && keyMonth.lunarMonth !== job.lunarMonth && keyMonth.chuDong + keyMonth.biDong > job.chuDong + job.biDong) {
-  out.push(`- 📌 Tháng then chốt sắp tới: **tháng ${keyMonth.lunarMonth} âm** — ${keyMonth.label.toLowerCase()} (chủ động ${keyMonth.chuDong} · bị động ${keyMonth.biDong}).`);
-}
+out.push('### 📅 7 ngày tới');
+out.push(b.week.map(w => `${w.short} ${dot(w.score)}${w.score}${w.isBest ? '⭐' : ''}`).join(' · '));
+const best = b.week.find(w => w.isBest)!;
+const worst = b.week.find(w => w.isWorst)!;
+out.push(`Đẹp nhất **${best.label}** (${best.score}, ${verdictOf(best.score).toLowerCase()}) · Cẩn trọng **${worst.label}** (${worst.score}).`);
 out.push('');
-out.push('## 📅 7 ngày tới');
-out.push(`- Đẹp nhất: ${best.map(b => `${fmtDay(b)} ${dot(b.score)} ${b.score}`).join(' · ')}`);
-out.push(`- Cần cẩn trọng: ${fmtDay(worst)} ${dot(worst.score)} ${worst.score}`);
-out.push('');
-out.push(`[Mở lịch chi tiết](${link})`);
-out.push('');
-out.push('_Bản tin tính tự động theo lá số và lịch vạn niên, mang tính tham khảo._');
+out.push(`👉 **[Mở bản tin đầy đủ có biểu đồ](${link})**`);
 
 console.log(out.join('\n'));
