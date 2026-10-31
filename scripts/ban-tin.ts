@@ -96,7 +96,7 @@ out.push('### ⏰ Giờ đẹp trong ngày');
 for (const h of b.hours.filter(x => x.good)) out.push(`- **${h.range}** (giờ ${h.name}): ${h.suggestion}`);
 out.push(`- ⛔ Tránh: ${b.calendar.kieng.join(', ').toLowerCase()}`);
 out.push('');
-out.push(`<sub>Trực ${b.calendar.truc} (${b.calendar.trucQuality}) · ${b.calendar.than}, ${b.calendar.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'} · Sao ${b.calendar.sao} (${b.calendar.saoTot ? 'tốt' : 'xấu'}) · Xung tuổi ${b.calendar.xung}</sub>`);
+out.push(`_Trực ${b.calendar.truc} (${b.calendar.trucQuality}) · ${b.calendar.than}, ${b.calendar.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'} · Sao ${b.calendar.sao} (${b.calendar.saoTot ? 'tốt' : 'xấu'}) · Xung tuổi ${b.calendar.xung}_`);
 out.push('');
 
 if (flag('chi-tiet')) {
