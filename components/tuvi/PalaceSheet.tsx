@@ -7,6 +7,8 @@ import { vi, canChi, SIHUA_VI } from '@/lib/ziwei/vi';
 import { tuanTriet } from '@/lib/ziwei/describe';
 import { STAR_MEANING, PALACE_MEANING } from '@/lib/ziwei/y-nghia';
 import { verdictOf } from '@/lib/lich/phan-tich';
+import { suggestForPalace, type Scope } from '@/lib/lich/de-xuat';
+import type { JobTrend } from '@/lib/lich/cong-viec';
 
 const BR_LABEL: Record<string, string> = {
   '庙': 'Miếu', '旺': 'Vượng', '得': 'Đắc', '利': 'Lợi', '平': 'Bình', '不': 'Bất', '陷': 'Hãm',
@@ -24,6 +26,9 @@ export interface PalaceSheetData {
   advice: string;
   /** Ví dụ "trong ngày 1/11", "trong tháng 11/2026", "trong năm 2026" */
   scopeLabel: string;
+  scope: Scope;
+  /** Xu hướng công việc của kỳ (dùng cho đề xuất cung Quan Lộc) */
+  job?: JobTrend;
   best?: { label: string; score: number }[];
   worst?: { label: string; score: number }[];
   series?: { labels: string[]; values: number[] };
@@ -77,6 +82,7 @@ export default function PalaceSheet({ idx, data, onClose }: { idx: ChartIndex; d
   const minor = p.stars.filter(s => s.type === 'minor' && !HIDDEN.has(s.name));
   const tt = tuanTriet(p);
   const nameKey = p.name === '命宫' ? '命宫' : p.name.replace(/宫$/, '');
+  const suggestions = suggestForPalace(idx, data.key, { score: data.score, factors: data.factors, scope: data.scope, job: data.job });
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center no-print" role="dialog" aria-modal="true" aria-label={`Chi tiết cung ${data.name}`}>
@@ -119,6 +125,21 @@ export default function PalaceSheet({ idx, data, onClose }: { idx: ChartIndex; d
           ) : <p className="text-sm tv-muted">Không có tác động đặc biệt; điểm chủ yếu do nền sao của cung.</p>}
           <p className="text-sm font-medium rounded-lg px-3 py-2" style={{ background: 'var(--ac-bg)', color: 'var(--tx-0)' }}>👉 {data.advice}</p>
         </section>
+
+        {suggestions.length > 0 && (
+          <section className="grid gap-3">
+            <h3 className="font-semibold" style={{ color: 'var(--tx-0)' }}>💡 Đề xuất cụ thể cho bạn</h3>
+            {suggestions.map(g => (
+              <div key={g.title} className="rounded-xl p-3 grid gap-1.5" style={{ background: 'var(--bg-1)', border: '1px solid var(--bdr-med)' }}>
+                <div className="text-sm font-semibold tv-accent">{g.icon} {g.title}</div>
+                <ul className="grid gap-1.5 text-sm" style={{ color: 'var(--tx-1)' }}>
+                  {g.items.map(it => <li key={it} className="pl-4 relative"><span className="absolute left-0 tv-accent">✓</span>{it}</li>)}
+                </ul>
+                {g.note && <p className="text-[11px] tv-muted italic">{g.note}</p>}
+              </div>
+            ))}
+          </section>
+        )}
 
         {data.series && (
           <section className="grid gap-2">

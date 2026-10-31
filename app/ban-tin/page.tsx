@@ -9,6 +9,13 @@ import { indexChart, scoreLabel, type ChartIndex } from '@/lib/lich/vanhan';
 import { buildBrief, DOMAIN_DEFS, type Brief } from '@/lib/lich/phan-tich';
 import { monthOverview, yearOverview, type PeriodOverview } from '@/lib/lich/tong-quan';
 import PalaceSheet, { tone, type PalaceSheetData } from '@/components/tuvi/PalaceSheet';
+import { suggestForPalace, topSuggestion, pickDomainPalace } from '@/lib/lich/de-xuat';
+import type { JobTrend } from '@/lib/lich/cong-viec';
+
+/** Kỳ có biến động công việc rõ nhất (dùng cho đề xuất Quan Lộc) */
+function strongestJob(jobs: JobTrend[]): JobTrend | undefined {
+  return [...jobs].sort((a, b) => b.chuDong + b.biDong - (a.chuDong + a.biDong))[0];
+}
 
 function ScoreRing({ score }: { score: number }) {
   const r = 52;
@@ -42,11 +49,16 @@ const KP: Record<string, { icon: string; color: string }> = {
   'nen-lam': { icon: '🎯', color: 'var(--ac)' },
 };
 
-function BriefView({ b, name, onOpen }: { b: Brief; name: string; onOpen: (d: PalaceSheetData) => void }) {
+function BriefView({ b, name, idx, onOpen }: { b: Brief; name: string; idx: ChartIndex; onOpen: (d: PalaceSheetData) => void }) {
   const dayLabel = `ngày ${b.ds.info.d}/${b.ds.info.m}`;
   const openPalace = (key: string) => {
     const p = b.palaces.find(x => x.key === key);
-    if (p) onOpen({ key: p.key, branch: p.branch, name: p.name, score: p.score, factors: p.factors, advice: p.advice, scopeLabel: dayLabel });
+    if (p) onOpen({ key: p.key, branch: p.branch, name: p.name, score: p.score, factors: p.factors, advice: p.advice, scopeLabel: dayLabel, scope: 'ngay', job: b.job });
+  };
+  const tip = (domainKey: string, domainScore: number) => {
+    const keys = DOMAIN_DEFS.find(x => x.key === domainKey)!.palaces;
+    const p = pickDomainPalace(domainScore, keys.map(k => b.palaces.find(x => x.key === k)!).filter(Boolean));
+    return p ? topSuggestion(suggestForPalace(idx, p.key, { score: p.score, factors: p.factors, scope: 'ngay', job: b.job })) : undefined;
   };
   const maxWeek = Math.max(...b.week.map(w => w.score));
 
@@ -93,6 +105,7 @@ function BriefView({ b, name, onOpen }: { b: Brief; name: string; onOpen: (d: Pa
                 </ul>
               )}
               <p className="text-sm font-medium rounded-lg px-3 py-2" style={{ background: 'var(--bg-1)', color: 'var(--tx-0)' }}>👉 {d.action}</p>
+              {(() => { const t = tip(d.key, d.score); return t ? <p className="text-[13px] tv-accent">💡 {t} <span className="tv-muted">Bấm để xem thêm đề xuất.</span></p> : null; })()}
             </button>
           ))}
         </div>
@@ -177,24 +190,31 @@ function PalaceGrid({ palaces, onPick }: { palaces: { key: string; name: string;
 }
 
 /** Tổng quan tháng hoặc năm */
-function PeriodView({ o, name, onOpen, onPickDay, onPickMonth }: {
+function PeriodView({ o, name, idx, onOpen, onPickDay, onPickMonth }: {
   o: PeriodOverview;
   name: string;
+  idx: ChartIndex;
   onOpen: (d: PalaceSheetData) => void;
   onPickDay: (key: string) => void;
   onPickMonth: (m: number) => void;
 }) {
+  const job = strongestJob(o.jobs);
   const scopeLabel = o.scope === 'thang' ? `trong ${o.title.toLowerCase()}` : `trong ${o.title.split(' · ')[0].toLowerCase()}`;
   const openPalace = (key: string) => {
     const p = o.palaces.find(x => x.key === key);
     if (!p) return;
     onOpen({
       key: p.key, branch: p.branch, name: p.name, score: p.score, factors: p.factors, advice: p.advice, scopeLabel,
-      best: p.best, worst: p.worst,
+      scope: o.scope, job, best: p.best, worst: p.worst,
       series: { labels: o.series.map(x => x.label), values: p.series },
     });
   };
   const maxS = Math.max(...o.series.map(x => x.score));
+  const tip = (domainKey: string, domainScore: number) => {
+    const keys = DOMAIN_DEFS.find(x => x.key === domainKey)!.palaces;
+    const p = pickDomainPalace(domainScore, keys.map(k => o.palaces.find(x => x.key === k)!).filter(Boolean));
+    return p ? topSuggestion(suggestForPalace(idx, p.key, { score: p.score, factors: p.factors, scope: o.scope, job })) : undefined;
+  };
 
   return (
     <div className="grid gap-5 max-w-3xl mx-auto">
@@ -256,6 +276,7 @@ function PeriodView({ o, name, onOpen, onPickDay, onPickMonth }: {
               </div>
               <Meter score={d.score} />
               <p className="text-[13px] tv-muted">{d.note}</p>
+              {(() => { const t = tip(d.key, d.score); return t ? <p className="text-[13px] tv-accent">💡 {t} <span className="tv-muted">Bấm để xem thêm.</span></p> : null; })()}
             </button>
           ))}
         </div>
@@ -408,7 +429,7 @@ function LinkView({ profile, base, date, offset, setOffset }: { profile: Profile
       {scope === 'ngay' && (
         <>
           <DateSwitch base={base} day={offset} setDay={setOffset} />
-          <BriefView b={b} name={profile.name} onOpen={setSheet} />
+          <BriefView b={b} name={profile.name} idx={idx} onOpen={setSheet} />
         </>
       )}
 
@@ -419,7 +440,7 @@ function LinkView({ profile, base, date, offset, setOffset }: { profile: Profile
             <span className="font-semibold px-2">Tháng {ym.m}/{ym.y}</span>
             <button className="tv-chip !py-1.5 !px-3" onClick={() => shiftMonth(1)} aria-label="Tháng sau">›</button>
           </div>
-          <PeriodView o={month} name={profile.name} onOpen={setSheet} onPickDay={goDay} onPickMonth={goMonth} />
+          <PeriodView o={month} name={profile.name} idx={idx} onOpen={setSheet} onPickDay={goDay} onPickMonth={goMonth} />
         </>
       )}
 
@@ -431,7 +452,7 @@ function LinkView({ profile, base, date, offset, setOffset }: { profile: Profile
             <button className="tv-chip !py-1.5 !px-3" onClick={() => setYear(y => y + 1)} aria-label="Năm sau">›</button>
           </div>
           {yearData
-            ? <PeriodView o={yearData} name={profile.name} onOpen={setSheet} onPickDay={goDay} onPickMonth={goMonth} />
+            ? <PeriodView o={yearData} name={profile.name} idx={idx} onOpen={setSheet} onPickDay={goDay} onPickMonth={goMonth} />
             : <div className="tv-card text-center py-16 tv-muted max-w-3xl mx-auto">Đang tính vận cả năm…</div>}
         </>
       )}

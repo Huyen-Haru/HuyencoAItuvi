@@ -14,7 +14,8 @@
 import { generateChart } from '@/lib/ziwei/algorithm';
 import { profileToBirthInfo, type Profile } from '@/lib/profiles';
 import { indexChart, scoreLabel } from '@/lib/lich/vanhan';
-import { buildBrief, verdictOf } from '@/lib/lich/phan-tich';
+import { buildBrief, verdictOf, DOMAIN_DEFS } from '@/lib/lich/phan-tich';
+import { suggestForPalace, pickDomainPalace } from '@/lib/lich/de-xuat';
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -89,6 +90,20 @@ for (const dm of b.domains) {
   out.push(`${dot(dm.score)} **${dm.icon} ${dm.label} · ${dm.score} · ${dm.verdict}**`);
   out.push(`${dm.why}`);
   out.push(`👉 ${dm.action}`);
+  // Đề xuất cụ thể theo lá số (2 ý đầu của nhóm "Đề xuất …")
+  const keys = DOMAIN_DEFS.find(x => x.key === dm.key)!.palaces;
+  const pd = pickDomainPalace(dm.score, keys.map(k => b.palaces.find(x => x.key === k)!).filter(Boolean));
+  if (pd) {
+    const groups = suggestForPalace(idx, pd.key, { score: pd.score, factors: pd.factors, scope: 'ngay', job: b.job });
+    const g = groups.find(x => x.title.startsWith('Đề xuất')) ?? groups[0];
+    for (const it of (g?.items ?? []).slice(0, 2)) out.push(`💡 ${it}`);
+  }
+  // Sức khỏe: luôn kèm bộ phận nên kiểm tra theo cung Tật Ách
+  if (dm.key === 'suc-khoe') {
+    const ta = b.palaces.find(x => x.key === '疾厄');
+    const check = ta && suggestForPalace(idx, '疾厄', { score: ta.score, factors: ta.factors, scope: 'ngay' }).find(x => x.title.startsWith('Nên kiểm tra'));
+    if (check) out.push(`🩺 ${check.items[0]}`);
+  }
   out.push('');
 }
 out.push('---');
