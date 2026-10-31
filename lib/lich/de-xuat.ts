@@ -95,6 +95,141 @@ const LOVE: Record<string, string> = {
   '七杀': 'mạnh mẽ, dễ va chạm', '破军': 'nhiều thay đổi, cần kiên nhẫn',
 };
 
+
+/** Bản thân (Mệnh): điểm mạnh / điểm cần rèn theo chính tinh */
+const SELF: Record<string, [string, string]> = {
+  '紫微': ['có uy, biết tổ chức, được người khác tin cậy', 'dễ tự ái, thích được tôn trọng, khó nhận góp ý'],
+  '天机': ['nhanh trí, nhiều ý tưởng, giỏi lập kế hoạch', 'hay nghĩ nhiều, dễ đổi ý, thiếu kiên trì'],
+  '太阳': ['nhiệt tình, rộng lượng, có tinh thần trách nhiệm', 'ôm việc người khác, dễ hao sức vì người'],
+  '武曲': ['quyết đoán, thực tế, giỏi tiền bạc', 'cứng rắn, ít thể hiện cảm xúc'],
+  '天同': ['hiền hòa, dễ gần, biết hưởng thụ', 'thiếu động lực, ngại thay đổi'],
+  '廉贞': ['nguyên tắc, mạnh mẽ, đa tài', 'dễ căng thẳng, cố chấp'],
+  '天府': ['ổn định, chu đáo, giỏi quản lý', 'bảo thủ, ngại rủi ro'],
+  '太阴': ['tinh tế, nhạy cảm, chăm chút', 'dễ buồn, hay giữ trong lòng'],
+  '贪狼': ['đa tài, giao tiếp giỏi, ham học hỏi', 'dễ bị cám dỗ, thiếu tập trung'],
+  '巨门': ['phân tích sắc bén, ăn nói giỏi', 'dễ bị hiểu lầm vì lời nói, hay nghi ngờ'],
+  '天相': ['công bằng, khéo léo, đáng tin', 'phụ thuộc người khác, ngại va chạm'],
+  '天梁': ['bao dung, có tâm giúp người, chín chắn', 'hay dạy người khác, cô đơn trong suy nghĩ'],
+  '七杀': ['dũng cảm, dám làm, độc lập', 'nóng vội, dễ xung đột'],
+  '破军': ['tiên phong, dám phá cũ lập mới', 'hấp tấp, dễ hao tổn tiền bạc và sức lực'],
+};
+
+/** Nhà cửa (Điền Trạch) theo chính tinh */
+const HOME: Record<string, string> = {
+  '紫微': 'hợp nhà rộng, khu trung tâm, có thể sở hữu bất động sản giá trị', '天机': 'hay đổi chỗ ở, hợp nhà gần trường học, văn phòng',
+  '太阳': 'hợp nhà sáng, hướng Đông hoặc Nam, nhiều ánh nắng', '武曲': 'tự tay gây dựng nhà cửa, hợp mua bằng tiền tích lũy',
+  '天同': 'hợp nhà yên tĩnh, có cây xanh, nhận nhà từ gia đình', '廉贞': 'dễ có tranh chấp nhà đất, cần giấy tờ rõ ràng',
+  '天府': 'kho lộc về nhà đất, hợp tích lũy bất động sản lâu dài', '太阴': 'rất hợp sở hữu nhà đất, giá trị tăng theo thời gian',
+  '贪狼': 'hợp nhà gần khu vui chơi, buôn bán; tránh mua theo cảm hứng', '巨门': 'dễ có chuyện thị phi hàng xóm, hợp nhà kín đáo',
+  '天相': 'hợp mua nhà qua người quen giới thiệu, giấy tờ chuẩn chỉnh', '天梁': 'có quý nhân về nhà cửa, hợp nhà cũ cải tạo',
+  '七杀': 'hay thay đổi chỗ ở, hợp tự xây hoặc sửa lớn', '破军': 'dễ phá đi làm lại, chi phí sửa chữa cao, cần dự trù',
+};
+
+/** Con cái (Tử Nữ) theo chính tinh */
+const CHILD: Record<string, string> = {
+  '紫微': 'con có chí, tự trọng; nên tôn trọng ý kiến của con', '天机': 'con thông minh, hiếu động; hợp cho học tư duy, lập trình',
+  '太阳': 'con hướng ngoại, có trách nhiệm; khuyến khích hoạt động nhóm', '武曲': 'con thực tế, cứng tính; dạy con bằng ví dụ cụ thể',
+  '天同': 'con hiền, hay được chiều; cần rèn tính tự lập', '廉贞': 'con có cá tính mạnh; cần kỷ luật nhưng nhẹ nhàng',
+  '天府': 'con ngoan, ổn định; hợp tích lũy quỹ học cho con', '太阴': 'con nhạy cảm, tình cảm; quan tâm cảm xúc của con',
+  '贪狼': 'con đa tài, ham chơi; định hướng năng khiếu nghệ thuật, thể thao', '巨门': 'con hay hỏi, hay cãi; giải thích lý lẽ rõ ràng',
+  '天相': 'con biết điều, hợp tác tốt; khen ngợi đúng lúc', '天梁': 'con chín chắn sớm; hợp cho học y, giáo dục',
+  '七杀': 'con mạnh mẽ, độc lập; cho con thử thách vừa sức', '破军': 'con thích khác biệt; kiên nhẫn, tránh áp đặt',
+};
+
+/** Cha mẹ, bề trên (Phụ Mẫu) theo chính tinh */
+const PARENT: Record<string, string> = {
+  '紫微': 'cha mẹ, cấp trên có uy; nên tôn trọng, xin ý kiến trước việc lớn', '天机': 'cha mẹ, cấp trên hay thay đổi ý; xác nhận lại bằng văn bản',
+  '太阳': 'được cha (bề trên nam) che chở; giữ liên lạc thường xuyên', '武曲': 'bề trên nghiêm khắc, coi trọng kết quả; báo cáo bằng số liệu',
+  '天同': 'cha mẹ hiền, quan hệ êm ấm', '廉贞': 'dễ bất đồng quan điểm với bề trên; nhường nhịn, nói chuyện riêng',
+  '天府': 'được thừa hưởng, bề trên chu đáo', '太阴': 'gắn bó với mẹ (bề trên nữ); quan tâm sức khỏe của mẹ',
+  '贪狼': 'bề trên dễ gần nhưng hay đòi hỏi', '巨门': 'dễ hiểu lầm với bề trên vì lời nói; nói ít, làm nhiều',
+  '天相': 'bề trên công bằng, được nâng đỡ', '天梁': 'có quý nhân là người lớn tuổi; nên nhờ cậy khi cần',
+  '七杀': 'quan hệ với bề trên dễ căng; giữ khoảng cách vừa phải', '破军': 'quan hệ với cha mẹ nhiều thay đổi; chủ động hàn gắn',
+};
+
+/** Bạn bè, đồng nghiệp, anh chị em (Nô Bộc, Huynh Đệ) theo chính tinh */
+const SOCIAL: Record<string, string> = {
+  '紫微': 'bạn bè có địa vị; hợp kết giao người giỏi hơn mình', '天机': 'bạn bè thông minh nhưng hay thay đổi; chọn lọc người thân thiết',
+  '太阳': 'bạn bè đông, mình hay là người giúp; biết từ chối khi quá sức', '武曲': 'bạn bè thực tế; tách bạch tình cảm và tiền bạc',
+  '天同': 'bạn bè vui vẻ, hòa đồng', '廉贞': 'quan hệ dễ căng khi có quyền lợi; rõ ràng từ đầu',
+  '天府': 'bạn bè đáng tin, hỗ trợ lâu dài', '太阴': 'hợp bạn nữ, bạn tâm giao',
+  '贪狼': 'quen nhiều, nhưng ít người thật lòng; cẩn thận rủ rê ăn chơi', '巨门': 'dễ thị phi trong nhóm; tránh nói sau lưng',
+  '天相': 'hợp làm việc nhóm, cộng sự tốt', '天梁': 'có người lớn tuổi nâng đỡ',
+  '七杀': 'bạn bè mạnh mẽ, dễ va chạm; giữ hòa khí', '破军': 'bạn bè thay đổi nhiều; không góp vốn vội',
+};
+
+/** Đi lại, ra ngoài (Thiên Di) theo chính tinh */
+const TRAVEL: Record<string, string> = {
+  '紫微': 'ra ngoài được nể trọng, hợp làm việc ở môi trường lớn', '天机': 'hay di chuyển, hợp công việc đi lại nhiều',
+  '太阳': 'ra ngoài nổi bật, hợp làm việc xa nhà, nước ngoài', '武曲': 'ra ngoài kiếm tiền tốt, hợp kinh doanh xa',
+  '天同': 'đi đâu cũng dễ hòa nhập, hợp du lịch nghỉ dưỡng', '廉贞': 'ra ngoài dễ va chạm; giữ bình tĩnh nơi đông người',
+  '天府': 'ra ngoài ổn định, có người giúp', '太阴': 'hợp đi xa vào ban đêm, làm việc ở nơi yên tĩnh',
+  '贪狼': 'ra ngoài nhiều duyên, nhiều cơ hội giao tiếp', '巨门': 'ra ngoài dễ thị phi; cẩn trọng lời nói',
+  '天相': 'ra ngoài được quý nhân phù trợ', '天梁': 'đi xa có người che chở, hợp công tác',
+  '七杀': 'đi xa lập nghiệp, nhưng cẩn thận an toàn', '破军': 'đi xa nhiều biến động; chuẩn bị kỹ trước khi đi',
+};
+
+/** Tinh thần (Phúc Đức) theo chính tinh */
+const SPIRIT: Record<string, string> = {
+  '紫微': 'cần cảm giác được làm chủ; nghỉ ngơi bằng việc mình kiểm soát được', '天机': 'đầu óc hay suy nghĩ; hợp thiền, đọc sách',
+  '太阳': 'vui khi giúp được người; nhưng cần thời gian cho riêng mình', '武曲': 'thư giãn bằng vận động, thể thao',
+  '天同': 'biết hưởng phúc, thích ăn ngon, nghỉ ngơi', '廉贞': 'dễ căng thẳng; hợp yoga, thở sâu, âm nhạc',
+  '天府': 'tinh thần vững, thích sự an toàn', '太阴': 'cảm xúc sâu; hợp viết nhật ký, nghe nhạc nhẹ',
+  '贪狼': 'nhiều sở thích; chọn 1–2 thú vui lành mạnh', '巨门': 'hay lo, hay nghi; tập buông bỏ, bớt suy diễn',
+  '天相': 'tinh thần ổn khi mọi thứ công bằng, rõ ràng', '天梁': 'hợp tu tập, làm việc thiện, tâm linh',
+  '七杀': 'cần mục tiêu để thấy có ý nghĩa; tránh làm việc quá sức', '破军': 'tâm trạng thất thường; giữ nếp sinh hoạt đều đặn',
+};
+
+/** Màu hợp mệnh (bản mệnh và hành sinh ra mệnh) */
+const LUCKY_COLORS: Record<string, string> = {
+  'Kim': 'trắng, xám, bạc, vàng đất',
+  'Mộc': 'xanh lá, đen, xanh dương',
+  'Thủy': 'đen, xanh dương, trắng, bạc',
+  'Hỏa': 'đỏ, hồng, tím, xanh lá',
+  'Thổ': 'vàng, nâu, cam, đỏ',
+};
+
+/** Hóa giải thực tế theo cung */
+const REMEDY: Record<string, string[]> = {
+  '官禄': ['Chia mục tiêu lớn thành việc nhỏ, làm xong từng việc.', 'Chủ động xin phản hồi từ cấp trên, tránh đối đầu công khai.', 'Lưu lại email, hợp đồng, kết quả công việc làm bằng chứng.', 'Dùng thời gian này học thêm một kỹ năng hoặc chứng chỉ.'],
+  '财帛': ['Lập quỹ khẩn cấp đủ 3–6 tháng chi tiêu trước khi đầu tư.', 'Ghi chép chi tiêu hằng ngày, cắt bớt khoản không cần thiết.', 'Tạm dừng đầu tư mới; trả trước các khoản nợ lãi cao.', 'Không cho vay, không đứng ra bảo lãnh.'],
+  '夫妻': ['Dành ít nhất một buổi mỗi tuần chỉ cho hai người, tắt điện thoại.', 'Nói lời cảm ơn và xin lỗi nhiều hơn; không bàn chuyện tiền lúc đang căng thẳng.', 'Viết ra điều mình cần thay vì trách móc.', 'Nếu mâu thuẫn kéo dài, cân nhắc tư vấn tâm lý cặp đôi.'],
+  '疾厄': ['Đặt lịch khám sớm, đừng chờ có triệu chứng nặng.', 'Ngủ trước 23h, đi bộ hoặc tập yoga 30 phút mỗi ngày.', 'Giảm rượu bia, đồ chiên rán; uống đủ 2 lít nước.', 'Đi lại chậm, tránh làm việc nặng khi đang mệt.'],
+  '福德': ['Thiền hoặc hít thở sâu 10 phút mỗi sáng.', 'Viết nhật ký để giải tỏa suy nghĩ.', 'Gặp gỡ người tích cực, giảm thời gian trên mạng xã hội.', 'Cho bản thân một ngày nghỉ thật sự.'],
+  '田宅': ['Dọn dẹp, bỏ đồ cũ hỏng; sửa ngay chỗ rò rỉ, chập điện.', 'Kiểm tra lại giấy tờ nhà đất, hợp đồng thuê.', 'Không mua bán, chuyển nhà gấp; chờ thời điểm tốt hơn.'],
+  '子女': ['Dành thời gian chơi và lắng nghe con mỗi ngày.', 'Đưa con đi khám sức khỏe, kiểm tra việc học nhẹ nhàng.', 'Tránh so sánh con với người khác.'],
+  '父母': ['Gọi điện, về thăm cha mẹ; đưa bố mẹ đi khám định kỳ.', 'Với cấp trên: báo cáo bằng văn bản, xin ý kiến trước khi làm.', 'Đọc kỹ giấy tờ trước khi ký.'],
+  '迁移': ['Dời chuyến đi không cần thiết; nếu đi thì đi cùng người.', 'Kiểm tra xe, mua bảo hiểm du lịch, giữ giấy tờ cẩn thận.', 'Tránh tranh cãi nơi công cộng.'],
+  '仆役': ['Không cho vay; mọi hợp tác cần hợp đồng rõ ràng.', 'Giữ khoảng cách với người hay than phiền, kéo mình vào thị phi.', 'Giữ bí mật kế hoạch công việc.'],
+  '兄弟': ['Không góp vốn hay vay mượn với người thân lúc này.', 'Có hiểu lầm thì nói thẳng, trực tiếp.', 'Tránh bàn chuyện chia tài sản.'],
+  '命宫': ['Chậm lại, ngủ đủ, hoãn quyết định lớn vài ngày.', 'Làm từng việc một, tránh ôm đồm.', 'Chăm sóc bản thân: ăn uống đủ chất, vận động nhẹ.'],
+};
+
+/** Việc thiện / tâm linh tham khảo theo cung */
+const KIND_ACT: Record<string, string> = {
+  '官禄': 'giúp đồng nghiệp mới, chia sẻ kiến thức miễn phí',
+  '财帛': 'bố thí, ủng hộ người khó khăn một khoản nhỏ để "chuyển hóa" hao tài',
+  '夫妻': 'cùng nhau làm một việc tốt (đi từ thiện, nấu ăn cho người thân)',
+  '疾厄': 'hiến máu (nếu đủ sức khỏe), giúp đỡ người bệnh',
+  '福德': 'đi chùa, phóng sinh, làm việc thiện thầm lặng',
+  '田宅': 'thắp hương gia tiên, giữ bàn thờ sạch sẽ',
+  '子女': 'tặng sách, đồ chơi cho trẻ em khó khăn',
+  '父母': 'chăm sóc, biếu quà cha mẹ, người lớn tuổi',
+  '迁移': 'giúp người lạ đi đường, nhường chỗ nơi công cộng',
+  '仆役': 'giúp bạn bè một việc nhỏ không cần đáp lại',
+  '兄弟': 'quan tâm anh chị em, họp mặt gia đình',
+  '命宫': 'sống chậm, làm một việc tốt mỗi ngày',
+};
+
+const SHA_REMEDY: Record<string, string> = {
+  '擎羊': 'Có Kình Dương: cẩn thận dao kéo, va chạm, phẫu thuật; đi xe chậm.',
+  '陀罗': 'Có Đà La: việc dễ dây dưa; kiên nhẫn, chia nhỏ việc, đừng nóng.',
+  '火星': 'Có Hỏa Tinh: dễ nóng giận bột phát; hít thở sâu trước khi nói.',
+  '铃星': 'Có Linh Tinh: áp lực âm ỉ; chia sẻ với người tin cậy.',
+  '地空': 'Có Địa Không: dễ hụt hẫng, hao tài; không đầu tư theo lời mời chào.',
+  '地劫': 'Có Địa Kiếp: dễ mất mát bất ngờ; giữ tài sản cẩn thận, không cho vay.',
+};
+
 /* ───────── Tiện ích ───────── */
 
 function majors(p: Palace | undefined) {
@@ -151,6 +286,32 @@ export function suggestForPalace(
   const b = idx.chart.birthInfo;
   const element = yearPillar(b.year, b.month, b.day).element;
   const out: SuggestionGroup[] = [];
+
+  // "Hợp với bạn" theo sao cho các cung chưa có phần riêng bên dưới
+  const PROFILE: Record<string, { title: string; table: Record<string, string> }> = {
+    '田宅': { title: 'Nhà cửa của bạn', table: HOME },
+    '子女': { title: 'Con cái của bạn', table: CHILD },
+    '父母': { title: 'Cha mẹ, bề trên của bạn', table: PARENT },
+    '仆役': { title: 'Bạn bè, đồng nghiệp của bạn', table: SOCIAL },
+    '兄弟': { title: 'Anh chị em, cộng sự của bạn', table: SOCIAL },
+    '迁移': { title: 'Khi ra ngoài, đi xa', table: TRAVEL },
+    '福德': { title: 'Tinh thần của bạn', table: SPIRIT },
+  };
+  if (PROFILE[key]) {
+    const lines = stars.map(st => PROFILE[key].table[st]).filter(Boolean);
+    if (lines.length) out.push({ icon: '🧭', title: `${PROFILE[key].title} (theo ${starNames})`, items: lines.map(l => `${l[0].toUpperCase()}${l.slice(1)}.`) });
+  }
+  if (key === '命宫') {
+    const sw = stars.map(st => SELF[st]).filter(Boolean);
+    if (sw.length) out.push({
+      icon: '🧭', title: `Con người bạn (Mệnh có ${starNames})`,
+      items: [
+        `Điểm mạnh: ${sw.map(x => x[0]).join('; ')}.`,
+        `Điểm cần rèn: ${sw.map(x => x[1]).join('; ')}.`,
+        `Màu hợp mệnh ${element}: ${LUCKY_COLORS[element]}.`,
+      ],
+    });
+  }
 
   switch (key) {
     case '官禄': {
@@ -319,6 +480,31 @@ export function suggestForPalace(
             : ['Dễ mệt và nóng vội: nghỉ ngơi đủ, hoãn quyết định lớn.', 'Làm từng việc nhỏ, tránh ôm đồm.'],
       });
       break;
+  }
+
+  // ───── Cách hóa giải khi cung xấu ─────
+  const shaHere = p?.stars.filter(st => SHA.includes(st.name)).map(st => st.name) ?? [];
+  const tuanTriet = p?.stars.some(st => ['旬空', '截路', '空亡'].includes(st.name)) ?? false;
+  const needRemedy = lv === 'xau' || ky || xung;
+  if (needRemedy) {
+    const why: string[] = [];
+    if (ky) why.push(`Hóa Kỵ ${hoaWhen(ctx.factors, 'Hóa Kỵ', when)}: chậm lại, kiểm tra kỹ mọi việc của cung này, giảm kỳ vọng và nói rõ ràng để tránh hiểu lầm.`);
+    if (xung) why.push('Bị xung: tránh khởi sự việc lớn trong thời điểm xung; nếu được, dời sang ngày hợp tuổi (xem mục Lịch vận hạn).');
+    for (const sh of shaHere) if (SHA_REMEDY[sh]) why.push(SHA_REMEDY[sh]);
+    if (tuanTriet) why.push('Cung gặp Tuần/Triệt: việc của cung này thường đến chậm hoặc bị chặn; đừng nóng vội, kiên trì sẽ qua.');
+    out.push({
+      icon: '🛡', title: 'Cách hóa giải',
+      items: [...why, ...(REMEDY[key] ?? [])],
+    });
+    out.push({
+      icon: '🪷', title: 'Hóa giải theo quan niệm dân gian (tham khảo)',
+      items: [
+        `Dùng màu hợp mệnh ${element} (${LUCKY_COLORS[element]}) cho trang phục, vật dụng hằng ngày.`,
+        `Làm việc thiện: ${KIND_ACT[key] ?? 'giúp đỡ người khác một việc nhỏ mỗi ngày'}.`,
+        'Giữ nhà cửa sạch sẽ, thông thoáng; sống chậm và giữ tâm an.',
+      ],
+      note: 'Mang tính văn hóa, giúp tâm an; việc thực tế ở mục trên mới là chính.',
+    });
   }
   return out;
 }

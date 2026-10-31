@@ -97,6 +97,14 @@ for (const dm of b.domains) {
     const groups = suggestForPalace(idx, pd.key, { score: pd.score, factors: pd.factors, scope: 'ngay', job: b.job });
     const g = groups.find(x => x.title.startsWith('Đề xuất')) ?? groups[0];
     for (const it of (g?.items ?? []).slice(0, 2)) out.push(`💡 ${it}`);
+    // Cung xấu: thêm 1–2 cách hóa giải cụ thể
+    const fix = groups.find(x => x.title === 'Cách hóa giải');
+    if (fix) {
+      // 1 dòng theo nguyên nhân + 1 việc thực tế nên làm
+      const isCause = (t: string) => /^(Có |Hóa Kỵ|Bị xung|Cung gặp)/.test(t);
+      const picks = [fix.items.find(isCause), fix.items.find(t => !isCause(t))].filter(Boolean) as string[];
+      for (const it of picks) out.push(`🛡 ${it}`);
+    }
   }
   // Sức khỏe: luôn kèm bộ phận nên kiểm tra theo cung Tật Ách
   if (dm.key === 'suc-khoe') {

@@ -130,7 +130,8 @@ export default function PalaceSheet({ idx, data, onClose }: { idx: ChartIndex; d
           <section className="grid gap-3">
             <h3 className="font-semibold" style={{ color: 'var(--tx-0)' }}>💡 Đề xuất cụ thể cho bạn</h3>
             {suggestions.map(g => (
-              <div key={g.title} className="rounded-xl p-3 grid gap-1.5" style={{ background: 'var(--bg-1)', border: '1px solid var(--bdr-med)' }}>
+              <div key={g.title} className="rounded-xl p-3 grid gap-1.5"
+                style={{ background: g.icon === '🛡' ? 'var(--worst-bg)' : 'var(--bg-1)', border: `1px solid ${g.icon === '🛡' ? 'var(--worst)' : 'var(--bdr-med)'}` }}>
                 <div className="text-sm font-semibold tv-accent">{g.icon} {g.title}</div>
                 <ul className="grid gap-1.5 text-sm" style={{ color: 'var(--tx-1)' }}>
                   {g.items.map(it => <li key={it} className="pl-4 relative"><span className="absolute left-0 tv-accent">✓</span>{it}</li>)}
